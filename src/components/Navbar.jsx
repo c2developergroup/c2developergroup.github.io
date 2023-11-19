@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "../css/app.css"
 // import { useTranslation } from "react-i18next";
 // import { LanguageButton } from "./LanguageButton.jsx";
-// import { Darkmode } from "./Darkmode.jsx";
+import { Darkmode } from "./Darkmode.jsx";
 
 export const Navbar = () => {
     // const [t] = useTranslation("app");
@@ -11,14 +11,13 @@ export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="fixed flex justify-between items-center z-40 w-screen py-3 font-serif dark:text-gray-200 text-black bg-blue-500 top-0 left-0">
-            <h2
-                className="text-4xl text-red-600 font-semibold ml-10 lg:ml-32 cursor-pointer"
+        <header className="fixed flex justify-between items-center z-40 w-screen py-3 font-serif text-gray-200 bg-blue-500 dark:bg-blue-700 top-0 left-0 transition duration-300">
+            <img
+            src="/c2logowhite.png"
+                className="h-16 ml-10 lg:ml-10 cursor-pointer"
                 onClick={() => {
                     navigate("/");
-                }}>
-                C2 DEVELOPER GROUP
-            </h2>
+                }}/>
             <div
                 className="hidden resp:flex justify-center items-center mr-5 w-10 h-10 text-2xl bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.3)] rounded-full cursor-pointer"
                 onClick={() => {
@@ -42,11 +41,8 @@ export const Navbar = () => {
                     " " +
                     (isOpen ? "resp:right-0" : "resp:-right-60")
                 }>
-                <h2 className="text-gray-600 dark:text-gray-100 text-center text-4xl font-semibold hidden resp:block resp:mt-5">
-                    C2 DEV GROUP
-                </h2>
                 <ul className="flex items-center resp:mt-5 resp:flex-col">
-                    <li className="my-2.5">
+                    {/* <li className="my-2.5">
                         <NavLink
                             onClick={() => {
                                 setIsOpen(false);
@@ -55,13 +51,13 @@ export const Navbar = () => {
                             className="text-xl font-medium ml-6 hover:text-cyan-300 hover:transition-all duration-300 resp:m-0">
                             INICIO
                         </NavLink>
-                    </li>
+                    </li> */}
                     {/* <li className="my-2.5">
                         <LanguageButton className="ml-3 md:mt-2.5 resp:absolute resp:top-3 resp:right-5 w-9 h-6" />
-                    </li>
+                    </li> */}
                     <li className="my-2.5">
                         <Darkmode className="text-[10%] ml-3 resp:absolute resp:top-3 resp:left-3" />
-                    </li> */}
+                    </li>
                 </ul>
             </nav>
         </header>

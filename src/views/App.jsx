@@ -4,7 +4,8 @@ export const App = () => {
 
   return (
     <>
-      <h1 className="text-red-300">maldita</h1>
+      <div className="mt-28"></div>
+      <div className="w-[90rem] flex justify-center m-auto mt-80"><h2 className="text-blue-500 dark:text-white text-8xl text-center">¿Estás listo para hacer tu página web o aplicación con nosotros?</h2></div>
     </>
   )
 }
