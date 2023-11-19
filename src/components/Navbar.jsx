@@ -1,5 +1,6 @@
 import{ useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import "../css/app.css"
 // import { useTranslation } from "react-i18next";
 // import { LanguageButton } from "./LanguageButton.jsx";
 // import { Darkmode } from "./Darkmode.jsx";
@@ -10,7 +11,7 @@ export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="fixed flex justify-between items-center z-40 w-screen py-3 font-serif dark:text-gray-200 text-black glassNav top-0 left-0">
+        <header className="fixed flex justify-between items-center z-40 w-screen py-3 font-serif dark:text-gray-200 text-black bg-blue-500 top-0 left-0">
             <h2
                 className="text-4xl text-red-600 font-semibold ml-10 lg:ml-32 cursor-pointer"
                 onClick={() => {
