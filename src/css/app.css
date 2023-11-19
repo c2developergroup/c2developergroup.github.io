@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-h2 {
+h2, ul {
     font-family: 'Smooch Sans', sans-serif;
 }

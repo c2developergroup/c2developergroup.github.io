@@ -42,16 +42,36 @@ export const Navbar = () => {
                     (isOpen ? "resp:right-0" : "resp:-right-60")
                 }>
                 <ul className="flex items-center resp:mt-5 resp:flex-col">
-                    {/* <li className="my-2.5">
+                    <li className="my-2.5">
                         <NavLink
                             onClick={() => {
                                 setIsOpen(false);
                             }}
                             to="/"
-                            className="text-xl font-medium ml-6 hover:text-cyan-300 hover:transition-all duration-300 resp:m-0">
-                            INICIO
+                            className="text-xl font-medium ml-6 hover:text-neutral-300 hover:transition-all duration-300 resp:m-0">
+                            Lo que hacemos
                         </NavLink>
-                    </li> */}
+                    </li>
+                    <li className="my-2.5">
+                        <NavLink
+                            onClick={() => {
+                                setIsOpen(false);
+                            }}
+                            to="/"
+                            className="text-xl font-medium ml-6 hover:text-neutral-300 hover:transition-all duration-300 resp:m-0">
+                            Trabajos
+                        </NavLink>
+                    </li>
+                    <li className="my-2.5">
+                        <NavLink
+                            onClick={() => {
+                                setIsOpen(false);
+                            }}
+                            to="/"
+                            className="text-xl font-medium ml-6 mr-6 hover:text-neutral-300 hover:transition-all duration-300 resp:m-0">
+                            Acerca de nosotros
+                        </NavLink>
+                    </li>
                     {/* <li className="my-2.5">
                         <LanguageButton className="ml-3 md:mt-2.5 resp:absolute resp:top-3 resp:right-5 w-9 h-6" />
                     </li> */}
