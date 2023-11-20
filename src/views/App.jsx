@@ -1,12 +1,14 @@
+import { useRef } from "react";
 import Slider from "react-slick";
+import { FaArrowRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaArrowRight } from "react-icons/fa";
-
 import "../css/app.css";
 import "../css/3Deffect.css";
 
 export const App = () => {
+  const cardRef = useRef(null);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -18,34 +20,22 @@ export const App = () => {
   };
 
   // 3D Effect
-  // const card = document.querySelector(".card");
-  // const motionMatchMedia = window.matchMedia("(prefers-reduced-motion)");
-  // const THRESHOLD = 15;
+  const handleHover = (e) => {
+    const { clientX, clientY, currentTarget } = e;
+    const { clientWidth, clientHeight, offsetLeft, offsetTop } = currentTarget;
 
-  // /*
-  //  * Read the blog post here:
-  //  * https://letsbuildui.dev/articles/a-3d-hover-effect-using-css-transforms
-  //  */
-  // function handleHover(e) {
-  //   const { clientX, clientY, currentTarget } = e;
-  //   const { clientWidth, clientHeight, offsetLeft, offsetTop } = currentTarget;
+    const horizontal = (clientX - offsetLeft) / clientWidth;
+    const vertical = (clientY - offsetTop) / clientHeight;
+    const rotateX = ((0.5 - vertical) * 60).toFixed(2);
+    const rotateY = ((0.5 - horizontal) * 60).toFixed(2);
 
-  //   const horizontal = (clientX - offsetLeft) / clientWidth;
-  //   const vertical = (clientY - offsetTop) / clientHeight;
-  //   const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
-  //   const rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
+    cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  };
 
-  //   card.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
-  // }
-
-  // function resetStyles(e) {
-  //   card.style.transform = `perspective(${e.currentTarget.clientWidth}px) rotateX(0deg) rotateY(0deg)`;
-  // }
-
-  // if (!motionMatchMedia.matches) {
-  //   card.addEventListener("mousemove", handleHover);
-  //   card.addEventListener("mouseleave", resetStyles);
-  // }
+  const resetStyles = () => {
+    cardRef.current.style.transform =
+      "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+  };
 
   return (
     <>
@@ -56,9 +46,25 @@ export const App = () => {
         </h2>
       </div>
       <div className="mx-20 flex justify-end">
-        <img src="/computer.png" className="w-[30rem] z-10" />
-        <div className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[29rem] h-[19rem] z-0 absolute mr-2 mt-2 flex justify-center items-center">
-          <img src="/c2logowhite.png" className="w-[20rem] mb-10 card" />
+        <div className="w-[30rem] h-[30rem]">
+          {/* <img
+            src="/c2logowhite.png"
+            className="w-28 ml-[11rem] mt-[18rem] absolute invert"
+          /> */}
+          <img src="/computer.png" className="w-[30rem] " />
+        </div>
+        <div
+          className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[27.6rem] h-[15.6rem] z-0 absolute mr-[1.2rem] mt-[1.2rem] flex justify-center items-center"
+          onMouseMove={handleHover}
+          onMouseLeave={resetStyles}
+        >
+          <img
+            ref={cardRef}
+            src="/c2logowhite.png"
+            className="w-[25rem] mb-10 card z-20"
+            // onMouseMove={handleHover}
+            // onMouseLeave={resetStyles}
+          />
         </div>
       </div>
       <div className="w-[50rem] h-[30rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-32 rounded-lg flex justify-center">
