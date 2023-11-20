@@ -77,7 +77,7 @@ export const App = () => {
             sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
             empresa u organización en el internet.
           </p>
-          <button className="text-neutral-800 mt-7 flex items-center gap-6">
+          <button className="text-neutral-300 hover:text-neutral-100 transition duration-300 mt-7 flex items-center gap-6">
             Contáctanos <FaArrowRight className="mt-1" />
           </button>
         </div>
@@ -114,6 +114,15 @@ export const App = () => {
             Contáctanos
           </button>
         </div>
+      </div>
+      <div className="h-[20rem] w-[70rem] m-auto my-20 flex gap-x-5 justify-evenly flex-wrap items-center invert dark:invert-0">
+      <img src="/c2logowhite.png" className="w-54 h-24" />
+      <img src="/c2logowhite.png" className="w-54 h-24" />
+      <img src="/c2logowhite.png" className="w-54 h-24" />
+      <img src="/c2logowhite.png" className="w-54 h-24" />
+      <img src="/c2logowhite.png" className="w-54 h-24" />
+      <img src="/c2logowhite.png" className="w-54 h-24" />
+
       </div>
     </>
   );
