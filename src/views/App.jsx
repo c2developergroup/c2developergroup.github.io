@@ -1,9 +1,11 @@
 import { useRef } from "react";
 import Slider from "react-slick";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../css/app.css";
+import "../css/lightBackgroundEffect.css"
 import "../css/3Deffect.css";
 
 export const App = () => {
@@ -26,8 +28,8 @@ export const App = () => {
 
     const horizontal = (clientX - offsetLeft) / clientWidth;
     const vertical = (clientY - offsetTop) / clientHeight;
-    const rotateX = ((0.5 - vertical) * 60).toFixed(2);
-    const rotateY = ((0.5 - horizontal) * 60).toFixed(2);
+    const rotateX = ((0.5 - vertical) * 40).toFixed(2);
+    const rotateY = ((0.5 - horizontal) * 40).toFixed(2);
 
     cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   };
@@ -40,18 +42,18 @@ export const App = () => {
   return (
     <>
       <div className="mt-28"></div>
-      <div className="w-[60rem] flex justify-center ml-20 mt-40">
-        <h2 className="text-blue-500 dark:text-white text-5xl transition duration-300">
+      <div className="w-[60rem] flex justify-center ml-40 mt-40">
+        <h2 className="text-blue-500 dark:text-white text-6xl transition duration-300">
           ¿Estás listo para hacer tu página web o aplicación con nosotros?
         </h2>
       </div>
       <div className="mx-20 flex justify-end">
         <div className="w-[30rem] h-[30rem]">
-          {/* <img
-            src="/c2logowhite.png"
-            className="w-28 ml-[11rem] mt-[18rem] absolute invert"
-          /> */}
-          <img src="/computer.png" className="w-[30rem] " />
+          <img
+            src="/squarelogowhite.png"
+            className="w-10 ml-[13.5rem] mt-[18rem] absolute invert"
+          />
+          <img src="/computer.png" className="w-[30rem]" />
         </div>
         <div
           className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[27.6rem] h-[15.6rem] z-0 absolute mr-[1.2rem] mt-[1.2rem] flex justify-center items-center"
@@ -67,7 +69,7 @@ export const App = () => {
           />
         </div>
       </div>
-      <div className="w-[50rem] h-[30rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-32 rounded-lg flex justify-center">
+      <div className="w-[50rem] h-[30rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-center">
         <div className="w-40 mt-16">
           <h2 className="text-6xl text-white text-end">Nuestro enfoque</h2>
         </div>
@@ -78,7 +80,7 @@ export const App = () => {
             empresa u organización en el internet.
           </p>
           <button className="text-neutral-300 hover:text-neutral-100 transition duration-300 mt-7 flex items-center gap-6">
-            Contáctanos <FaArrowRight className="mt-1" />
+            Contáctanos <FaArrowRight className="ml-1" />
           </button>
         </div>
       </div>
@@ -123,7 +125,23 @@ export const App = () => {
         <img src="/c2logowhite.png" className="w-54 h-24" />
         <img src="/c2logowhite.png" className="w-54 h-24" />
       </div>
-      <div className="w-full h-40 bg-blue-500 dark:bg-blue-700"></div>
+      <div className="w-full h-40 bg-blue-500 dark:bg-blue-700 text-white flex items-center justify-between">
+        <div className="ml-10">
+          <img src="/c2logowhite.png" className="w-54 h-24 mb-2" />
+        </div>
+        <div className="flex gap-x-6 w-36">
+          <FaWhatsapp className="text-4xl cursor-pointer" />
+          <FaInstagram className="text-4xl cursor-pointer" />
+        </div>
+        <div className="mr-16">
+          <h2 className="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
+            Forma parte de nuestro equipo
+          </h2>
+          <h2 className="text-2xl mt-2 hover:text-neutral-200 transition duration-300 cursor-pointer">
+            Contáctanos
+          </h2>
+        </div>
+      </div>
     </>
   );
 };
