@@ -116,14 +116,14 @@ export const App = () => {
         </div>
       </div>
       <div className="h-[20rem] w-[70rem] m-auto my-20 flex gap-x-5 justify-evenly flex-wrap items-center invert dark:invert-0">
-      <img src="/c2logowhite.png" className="w-54 h-24" />
-      <img src="/c2logowhite.png" className="w-54 h-24" />
-      <img src="/c2logowhite.png" className="w-54 h-24" />
-      <img src="/c2logowhite.png" className="w-54 h-24" />
-      <img src="/c2logowhite.png" className="w-54 h-24" />
-      <img src="/c2logowhite.png" className="w-54 h-24" />
-
+        <img src="/c2logowhite.png" className="w-54 h-24" />
+        <img src="/c2logowhite.png" className="w-54 h-24" />
+        <img src="/c2logowhite.png" className="w-54 h-24" />
+        <img src="/c2logowhite.png" className="w-54 h-24" />
+        <img src="/c2logowhite.png" className="w-54 h-24" />
+        <img src="/c2logowhite.png" className="w-54 h-24" />
       </div>
+      <div className="w-full h-40 bg-blue-500 dark:bg-blue-700"></div>
     </>
   );
 };
