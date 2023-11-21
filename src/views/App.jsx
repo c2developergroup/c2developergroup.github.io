@@ -5,7 +5,6 @@ import { FaInstagram } from "react-icons/fa6";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../css/app.css";
-import "../css/lightBackgroundEffect.css"
 import "../css/3Deffect.css";
 
 export const App = () => {
