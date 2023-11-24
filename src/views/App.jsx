@@ -1,7 +1,9 @@
-import { useRef } from "react";
+import { useRef, useContext  } from "react";
+import { Context } from "../store/appContext";
 import Slider from "react-slick";
 import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
+import { AiOutlineGithub } from "react-icons/ai";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../css/app.css";
@@ -9,6 +11,8 @@ import "../css/3Deffect.css";
 
 export const App = () => {
   const cardRef = useRef(null);
+  const { store } = useContext(Context);
+
 
   const settings = {
     dots: true,
@@ -55,7 +59,7 @@ export const App = () => {
           <img src="/computer.png" className="w-[30rem]" />
         </div>
         <div
-          className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[27.6rem] h-[15.6rem] z-0 absolute mr-[1.2rem] mt-[1.2rem] flex justify-center items-center"
+          className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[27.7rem] h-[15.7rem] z-0 absolute mr-[1.15rem] mt-[1.15rem] flex justify-center items-center"
           onMouseMove={handleHover}
           onMouseLeave={resetStyles}
         >
@@ -93,10 +97,10 @@ export const App = () => {
             <img src="/c2logowhite.png" className="w-full" alt="Slide 1" />
           </div>
           <div>
-            <img src="/c2logowhite.png" className="w-full" alt="Slide 2" />
+            <img src="/bynxlogowhite.png" className="w-full" alt="Slide 2" />
           </div>
           <div>
-            <img src="/c2logowhite.png" className="w-full" alt="Slide 3" />
+            <img src="/serologowhite.png" className="w-10/12 m-auto" alt="Slide 3" />
           </div>
           <div>
             <img src="/c2logowhite.png" className="w-full" alt="Slide 4" />
@@ -116,13 +120,27 @@ export const App = () => {
           </button>
         </div>
       </div>
-      <div className="h-[20rem] w-[70rem] m-auto my-20 flex gap-x-5 justify-evenly flex-wrap items-center invert dark:invert-0">
-        <img src="/c2logowhite.png" className="w-54 h-24" />
-        <img src="/c2logowhite.png" className="w-54 h-24" />
-        <img src="/c2logowhite.png" className="w-54 h-24" />
-        <img src="/c2logowhite.png" className="w-54 h-24" />
-        <img src="/c2logowhite.png" className="w-54 h-24" />
-        <img src="/c2logowhite.png" className="w-54 h-24" />
+      <div className="h-[20rem] w-[70rem] m-auto my-20 flex gap-x-5 justify-evenly flex-wrap items-center transition duration-300">
+        {store.theme === "dark" && (
+          <>
+            <img src="/bynxlogowhite.png" className="w-54 h-24 mt-1 cursor-pointer" />
+            <img src="/serologowhite.png" className="w-54 h-24 cursor-pointer" />
+            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
+            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
+            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
+            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
+          </>
+        )}
+        {store.theme === "light" && (
+          <>
+            <img src="/bynxlogoblack.png" className="w-54 h-24 cursor-pointer" />
+            <img src="/serologoblack.png" className="w-54 h-24 cursor-pointer" />
+            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
+            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
+            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
+            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
+          </>
+        )}
       </div>
       <div className="w-full h-40 bg-blue-500 dark:bg-blue-700 text-white flex items-center justify-between">
         <div className="ml-10">
@@ -131,6 +149,7 @@ export const App = () => {
         <div className="flex gap-x-6 w-36">
           <FaWhatsapp className="text-4xl cursor-pointer" />
           <FaInstagram className="text-4xl cursor-pointer" />
+          <AiOutlineGithub className="text-4xl cursor-pointer" />
         </div>
         <div className="mr-16">
           <h2 className="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
