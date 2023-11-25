@@ -16,6 +16,7 @@ export const App = () => {
 
   const settings = {
     dots: true,
+    dotsClass: "slick-dots-portfolio",
     infinite: true,
     speed: 500,
     slidesToShow: 1,
