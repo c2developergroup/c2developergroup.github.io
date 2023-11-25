@@ -56,38 +56,40 @@ export const App = () => {
     <>
       <div className="mt-28"></div>
       <div className="w-[90rem] flex ml-40 mt-40">
-        <h2 className="text-blue-500 dark:text-white text-9xl transition duration-300">
+        <h2 className="text-black dark:text-white text-9xl transition duration-300">
           Exponenciamos tu{" "}
-          <TypeAnimation
-            sequence={[
-              680,
-              'empresa',
-              2000,
-              'proyecto',
-              2000,
-              'emprendimiento',
-              2000,
-              'organización',
-              2000,
-              'presencia',
-              2000,
-            ]}
-            wrapper="span"
-            cursor={false}
-            repeat={Infinity}
-            className="font-extrabold"
-            style={{ display: 'inline-block' }}
-          />
+          <span className="text-blue-500">
+            <TypeAnimation
+              sequence={[
+                680,
+                'empresa',
+                2000,
+                'proyecto',
+                2000,
+                'emprendimiento',
+                2000,
+                'organización',
+                2000,
+                'presencia',
+                2000,
+              ]}
+              wrapper="span"
+              cursor={false}
+              repeat={Infinity}
+              className="font-extrabold"
+              style={{ display: 'inline-block' }}
+            />
+          </span>
         </h2>
       </div>
       <div className="w-[90rem] flex ml-40 mt-4">
-        <h2 className="text-blue-500 dark:text-white text-6xl transition duration-300">
+        <h2 className="text-black dark:text-white text-6xl transition duration-300">
           con{" "}
-          <span className="text-transparent font-extrabold text-ecommerce bg-clip-text bg-gradient-to-r dark:from-green-400 dark:to-green-600">e-commerce</span>
+          <span className="text-transparent font-extrabold text-ecommerce bg-clip-text bg-gradient-to-r from-green-400 to-green-600">e-commerce</span>
           ,{" "}
-          <span className="text-transparent font-extrabold bg-clip-text bg-gradient-to-r dark:from-[#00ccff] dark:to-[#3fa9ff]">páginas web</span>
+          <span className="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-[#00ccff] to-[#3fa9ff]">páginas web</span>
           ,{" "}
-          <span className="text-transparent font-extrabold bg-clip-text bg-gradient-to-r dark:from-yellow-300 dark:to-yellow-500">aplicaciones</span>
+          <span className="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">aplicaciones</span>
           ...
         </h2>
       </div>
@@ -192,16 +194,16 @@ export const App = () => {
           <h2 className="text-white text-5xl text-center">
             ¿Tienes algún proyecto? Construyámoslo juntos
           </h2>
-          <button className="w-32 m-auto mt-5 bg-white text-black p-3 rounded-lg">
+          <button className="w-32 m-auto mt-5 bg-white text-black text-2xl p-3 rounded-lg">
             Contáctanos
           </button>
         </div>
       </div>
-      <h2 className="text-6xl text-center mb-10 mt-20 text-blue-500 dark:text-white">
+      <h2 className="text-6xl text-center mb-5 mt-20 text-blue-500 dark:text-white">
         Algunos de nuestros trabajos
       </h2>
       {/* Carrusel */}
-      <div className="relative full m-auto mt-28">
+      <div className="relative full m-auto mt-15">
         <Slider {...settings}>
           <div className="px-10 pt-10 pb-16">
             <img
@@ -240,12 +242,12 @@ export const App = () => {
           </div>
         </Slider>
       </div>
-      <div className="w-full h-64 bg-blue-500 dark:bg-blue-700 transition duration-300 mt-40 mb-40 flex items-center">
+      <div className="w-full h-64 transition duration-300 mt-40 mb-40 flex items-center">
         <div className="w-[50rem] m-auto mt-12 flex flex-col">
-          <h2 className="text-white text-5xl text-center">
+          <h2 className="text-black dark:text-white text-5xl text-center">
             ¿Estás listo para hacer tu página web o aplicación con nosotros?
           </h2>
-          <button className="w-32 m-auto mt-5 bg-white text-black p-3 rounded-lg">
+          <button className="w-32 m-auto mt-5 bg-blue-500 dark:bg-blue-600 text-white text-2xl p-3 rounded-lg">
             Contáctanos
           </button>
         </div>
