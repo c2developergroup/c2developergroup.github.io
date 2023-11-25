@@ -56,7 +56,7 @@ export const App = () => {
       <div className="mt-28"></div>
       <div className="w-[60rem] flex justify-center ml-40 mt-40">
         <h2 className="text-blue-500 dark:text-white text-6xl transition duration-300">
-          ¿Estás listo para hacer tu página web o aplicación con nosotros?
+          LOREM IPSUM
         </h2>
       </div>
       <div className="mx-20 flex justify-end">
@@ -88,6 +88,7 @@ export const App = () => {
         </div>
         <div className="w-96 text-2xl text-white mt-16 ml-10 leading-9">
           <p>
+            ¿Estás listo para hacer tu página web o aplicación con nosotros?
             Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
             sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
             empresa u organización en el internet.
