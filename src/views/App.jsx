@@ -88,7 +88,7 @@ export const App = () => {
           <span className="text-transparent font-extrabold bg-clip-text bg-gradient-to-r dark:from-[#00ccff] dark:to-[#3fa9ff]">páginas web</span>
           ,{" "}
           <span className="text-transparent font-extrabold bg-clip-text bg-gradient-to-r dark:from-yellow-300 dark:to-yellow-500">aplicaciones</span>
-          , ...
+          ...
         </h2>
       </div>
       <div className="mx-20 flex justify-end">
