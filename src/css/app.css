@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-h2, ul {
-    font-family: 'Smooch Sans', sans-serif;
+h2,
+ul {
+  font-family: "Smooch Sans", sans-serif;
+}
+
+.slick-dots {
+  bottom: -30px;
+}
+
+.slick-dots li button:before {
+  font-family: "slick";
+  font-display: auto;
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  content: "";
+  text-align: center;
+  opacity: 1;
+  background: #b1becf;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  background: #fff;
+  border: solid 3px #1c212c;
 }

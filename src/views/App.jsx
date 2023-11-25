@@ -1,4 +1,4 @@
-import { useRef, useContext  } from "react";
+import { useRef, useContext } from "react";
 import { Context } from "../store/appContext";
 import Slider from "react-slick";
 import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
@@ -10,9 +10,9 @@ import "../css/app.css";
 import "../css/3Deffect.css";
 
 export const App = () => {
-  const cardRef = useRef(null);
+  const cardImgRef = useRef(null);
+  const cardDivRef = useRef(null);
   const { store } = useContext(Context);
-
 
   const settings = {
     dots: true,
@@ -20,25 +20,33 @@ export const App = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    arrows: false,
+    // autoplay: true,
     autoplaySpeed: 4000,
+    centerMode: true,
+    centerPadding: "300px",
+    focusOnSelect: true,
+    customPaging: function (slider, i) {
+      return <button type="button">{i}</button>;
+    },
   };
 
   // 3D Effect
   const handleHover = (e) => {
-    const { clientX, clientY, currentTarget } = e;
-    const { clientWidth, clientHeight, offsetLeft, offsetTop } = currentTarget;
+    const { clientX, clientY } = e;
+    const { clientWidth, clientHeight, offsetLeft, offsetTop } =
+      cardDivRef.current;
 
     const horizontal = (clientX - offsetLeft) / clientWidth;
     const vertical = (clientY - offsetTop) / clientHeight;
     const rotateX = ((0.5 - vertical) * 40).toFixed(2);
     const rotateY = ((0.5 - horizontal) * 40).toFixed(2);
 
-    cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    cardImgRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   };
 
   const resetStyles = () => {
-    cardRef.current.style.transform =
+    cardImgRef.current.style.transform =
       "perspective(1000px) rotateX(0deg) rotateY(0deg)";
   };
 
@@ -59,12 +67,13 @@ export const App = () => {
           <img src="/computer.png" className="w-[30rem]" />
         </div>
         <div
+          ref={cardDivRef}
           className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[27.7rem] h-[15.7rem] z-0 absolute mr-[1.15rem] mt-[1.15rem] flex justify-center items-center"
           onMouseMove={handleHover}
           onMouseLeave={resetStyles}
         >
           <img
-            ref={cardRef}
+            ref={cardImgRef}
             src="/c2logowhite.png"
             className="w-[25rem] mb-10 card z-20"
             // onMouseMove={handleHover}
@@ -91,22 +100,42 @@ export const App = () => {
         Algunos de nuestros trabajos
       </h2>
       {/* Carrusel */}
-      <div className="relative w-8/12 m-auto mt-28">
-        <Slider {...settings} className="invert dark:invert-0">
-          <div>
-            <img src="/c2logowhite.png" className="w-full" alt="Slide 1" />
+      <div className="relative full m-auto mt-28">
+        <Slider {...settings}>
+          <div className="px-10 pb-16">
+            <img
+              src="/screenshot.png"
+              className="w-full rounded-xl"
+              alt="Slide 1"
+            />
           </div>
-          <div>
-            <img src="/bynxlogowhite.png" className="w-full" alt="Slide 2" />
+          <div className="px-10 pb-16">
+            <img
+              src="/screenshot.png"
+              className="w-full rounded-xl"
+              alt="Slide 2"
+            />
           </div>
-          <div>
-            <img src="/serologowhite.png" className="w-10/12 m-auto" alt="Slide 3" />
+          <div className="px-10 pb-16">
+            <img
+              src="/screenshot.png"
+              className="w-full rounded-xl"
+              alt="Slide 3"
+            />
           </div>
-          <div>
-            <img src="/c2logowhite.png" className="w-full" alt="Slide 4" />
+          <div className="px-10 pb-16">
+            <img
+              src="/screenshot.png"
+              className="w-full rounded-xl"
+              alt="Slide 4"
+            />
           </div>
-          <div>
-            <img src="/c2logowhite.png" className="w-full" alt="Slide 5" />
+          <div className="px-10 pb-16">
+            <img
+              src="/screenshot.png"
+              className="w-full rounded-xl"
+              alt="Slide 5"
+            />
           </div>
         </Slider>
       </div>
@@ -123,22 +152,58 @@ export const App = () => {
       <div className="h-[20rem] w-[70rem] m-auto my-20 flex gap-x-5 justify-evenly flex-wrap items-center transition duration-300">
         {store.theme === "dark" && (
           <>
-            <img src="/bynxlogowhite.png" className="w-54 h-24 mt-1 cursor-pointer" />
-            <img src="/serologowhite.png" className="w-54 h-24 cursor-pointer" />
-            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
-            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
-            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
-            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
+            <img
+              src="/bynxlogowhite.png"
+              className="w-54 h-24 mt-1 cursor-pointer"
+            />
+            <img
+              src="/serologowhite.png"
+              className="w-54 h-24 cursor-pointer"
+            />
+            <img
+              src="/zussetlogowhite.png"
+              className="w-54 h-24 invert dark:invert-0"
+            />
+            <img
+              src="/c2logowhite.png"
+              className="w-54 h-24 invert dark:invert-0"
+            />
+            <img
+              src="/c2logowhite.png"
+              className="w-54 h-24 invert dark:invert-0"
+            />
+            <img
+              src="/c2logowhite.png"
+              className="w-54 h-24 invert dark:invert-0"
+            />
           </>
         )}
         {store.theme === "light" && (
           <>
-            <img src="/bynxlogoblack.png" className="w-54 h-24 cursor-pointer" />
-            <img src="/serologoblack.png" className="w-54 h-24 cursor-pointer" />
-            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
-            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
-            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
-            <img src="/c2logowhite.png" className="w-54 h-24 invert dark:invert-0" />
+            <img
+              src="/bynxlogoblack.png"
+              className="w-54 h-24 cursor-pointer"
+            />
+            <img
+              src="/serologowhite.png"
+              className="w-54 h-24 cursor-pointer invert dark:invert-0"
+            />
+            <img
+              src="/zussetlogowhite.png"
+              className="w-54 h-24 invert dark:invert-0"
+            />
+            <img
+              src="/c2logowhite.png"
+              className="w-54 h-24 invert dark:invert-0"
+            />
+            <img
+              src="/c2logowhite.png"
+              className="w-54 h-24 invert dark:invert-0"
+            />
+            <img
+              src="/c2logowhite.png"
+              className="w-54 h-24 invert dark:invert-0"
+            />
           </>
         )}
       </div>
