@@ -5,7 +5,57 @@
 h2,
 ul {
   font-family: "Smooch Sans", sans-serif;
+  font-weight: 700;
 }
+
+p,
+button {
+  font-family: "Smooch Sans", sans-serif;
+  font-weight: 500;
+}
+
+/* .text-ecommerce {
+    -webkit-animation: text-ecommerce-bg 12s infinite;
+    animation: text-ecommerce-bg 12s infinite;
+    background-size: 800% 800%;
+    background-image: linear-gradient( 90deg, #4ade80, #16a34a, #4ade80, #16a34a, #4ade80, #16a34a, #4ade80, #16a34a, #4ade80, #16a34a);
+}
+
+@-webkit-keyframes text-ecommerce-bg {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 33.333% 50%;
+    }
+
+    83.333% {
+        background-position: 66.666% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes text-ecommerce-bg {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 33.333% 50%;
+    }
+
+    83.333% {
+        background-position: 66.666% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+} */
 
 .slick-dots-portfolio {
   position: absolute;

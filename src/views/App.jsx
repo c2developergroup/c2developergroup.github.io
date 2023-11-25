@@ -1,6 +1,7 @@
 import { useRef, useContext } from "react";
 import { Context } from "../store/appContext";
 import Slider from "react-slick";
+import { TypeAnimation } from 'react-type-animation';
 import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { AiOutlineGithub } from "react-icons/ai";
@@ -54,9 +55,40 @@ export const App = () => {
   return (
     <>
       <div className="mt-28"></div>
-      <div className="w-[60rem] flex justify-center ml-40 mt-40">
+      <div className="w-[90rem] flex ml-40 mt-40">
+        <h2 className="text-blue-500 dark:text-white text-9xl transition duration-300">
+          Exponenciamos tu{" "}
+          <TypeAnimation
+            sequence={[
+              680,
+              'empresa',
+              2000,
+              'proyecto',
+              2000,
+              'emprendimiento',
+              2000,
+              'organización',
+              2000,
+              'presencia',
+              2000,
+            ]}
+            wrapper="span"
+            cursor={false}
+            repeat={Infinity}
+            className="font-extrabold"
+            style={{ display: 'inline-block' }}
+          />
+        </h2>
+      </div>
+      <div className="w-[90rem] flex ml-40 mt-4">
         <h2 className="text-blue-500 dark:text-white text-6xl transition duration-300">
-          LOREM IPSUM
+          con{" "}
+          <span className="text-transparent font-extrabold text-ecommerce bg-clip-text bg-gradient-to-r dark:from-green-400 dark:to-green-600">e-commerce</span>
+          ,{" "}
+          <span className="text-transparent font-extrabold bg-clip-text bg-gradient-to-r dark:from-[#00ccff] dark:to-[#3fa9ff]">páginas web</span>
+          ,{" "}
+          <span className="text-transparent font-extrabold bg-clip-text bg-gradient-to-r dark:from-yellow-300 dark:to-yellow-500">aplicaciones</span>
+          , ...
         </h2>
       </div>
       <div className="mx-20 flex justify-end">
@@ -80,75 +112,6 @@ export const App = () => {
             // onMouseMove={handleHover}
             // onMouseLeave={resetStyles}
           />
-        </div>
-      </div>
-      <div className="w-[50rem] h-[30rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-center">
-        <div className="w-40 mt-16">
-          <h2 className="text-6xl text-white text-end">Nuestro enfoque</h2>
-        </div>
-        <div className="w-96 text-2xl text-white mt-16 ml-10 leading-9">
-          <p>
-            ¿Estás listo para hacer tu página web o aplicación con nosotros?
-            Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
-            sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
-            empresa u organización en el internet.
-          </p>
-          <button className="text-neutral-300 hover:text-neutral-100 transition duration-300 mt-7 flex items-center gap-6">
-            Contáctanos <FaArrowRight className="ml-1" />
-          </button>
-        </div>
-      </div>
-      <h2 className="text-6xl text-center mb-10 mt-20 text-blue-500 dark:text-white">
-        Algunos de nuestros trabajos
-      </h2>
-      {/* Carrusel */}
-      <div className="relative full m-auto mt-28">
-        <Slider {...settings}>
-          <div className="px-10 pt-10 pb-16">
-            <img
-              src="/screenshot.png"
-              className="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-              alt="Slide 1"
-            />
-          </div>
-          <div className="px-10 pt-10 pb-16">
-            <img
-              src="/screenshot.png"
-              className="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-              alt="Slide 2"
-            />
-          </div>
-          <div className="px-10 pt-10 pb-16">
-            <img
-              src="/screenshot.png"
-              className="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-              alt="Slide 3"
-            />
-          </div>
-          <div className="px-10 pt-10 pb-16">
-            <img
-              src="/screenshot.png"
-              className="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-              alt="Slide 4"
-            />
-          </div>
-          <div className="px-10 pt-10 pb-16">
-            <img
-              src="/screenshot.png"
-              className="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-              alt="Slide 5"
-            />
-          </div>
-        </Slider>
-      </div>
-      <div className="w-full h-64 bg-blue-500 dark:bg-blue-700 transition duration-300 mt-40 flex items-center">
-        <div className="w-96 m-auto mt-12 flex flex-col">
-          <h2 className="text-white text-5xl text-center">
-            ¿Tienes algún proyecto? Construyámoslo juntos
-          </h2>
-          <button className="w-32 m-auto mt-5 bg-white text-black p-3 rounded-lg">
-            Contáctanos
-          </button>
         </div>
       </div>
       <div className="h-[20rem] w-[70rem] m-auto my-20 flex gap-x-5 justify-evenly flex-wrap items-center transition duration-300">
@@ -208,6 +171,84 @@ export const App = () => {
             />
           </>
         )}
+      </div>
+      <div className="w-[50rem] h-[30rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-center">
+        <div className="w-40 mt-16">
+          <h2 className="text-6xl text-white text-end">Nuestro enfoque</h2>
+        </div>
+        <div className="w-96 text-2xl text-white mt-16 ml-10 leading-9">
+          <p>
+            Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
+            sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
+            empresa u organización en el internet.
+          </p>
+          <button className="text-neutral-300 hover:text-neutral-100 transition duration-300 mt-7 flex items-center gap-6">
+            Contáctanos <FaArrowRight className="ml-1" />
+          </button>
+        </div>
+      </div>
+      <div className="w-full h-64 bg-blue-500 dark:bg-blue-700 transition duration-300 mt-40 flex items-center">
+        <div className="w-96 m-auto mt-12 flex flex-col">
+          <h2 className="text-white text-5xl text-center">
+            ¿Tienes algún proyecto? Construyámoslo juntos
+          </h2>
+          <button className="w-32 m-auto mt-5 bg-white text-black p-3 rounded-lg">
+            Contáctanos
+          </button>
+        </div>
+      </div>
+      <h2 className="text-6xl text-center mb-10 mt-20 text-blue-500 dark:text-white">
+        Algunos de nuestros trabajos
+      </h2>
+      {/* Carrusel */}
+      <div className="relative full m-auto mt-28">
+        <Slider {...settings}>
+          <div className="px-10 pt-10 pb-16">
+            <img
+              src="/screenshot.png"
+              className="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+              alt="Slide 1"
+            />
+          </div>
+          <div className="px-10 pt-10 pb-16">
+            <img
+              src="/screenshot.png"
+              className="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+              alt="Slide 2"
+            />
+          </div>
+          <div className="px-10 pt-10 pb-16">
+            <img
+              src="/screenshot.png"
+              className="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+              alt="Slide 3"
+            />
+          </div>
+          <div className="px-10 pt-10 pb-16">
+            <img
+              src="/screenshot.png"
+              className="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+              alt="Slide 4"
+            />
+          </div>
+          <div className="px-10 pt-10 pb-16">
+            <img
+              src="/screenshot.png"
+              className="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+              alt="Slide 5"
+            />
+          </div>
+        </Slider>
+      </div>
+      <div className="w-full h-64 bg-blue-500 dark:bg-blue-700 transition duration-300 mt-40 mb-40 flex items-center">
+        <div className="w-[50rem] m-auto mt-12 flex flex-col">
+          <h2 className="text-white text-5xl text-center">
+            ¿Estás listo para hacer tu página web o aplicación con nosotros?
+          </h2>
+          <button className="w-32 m-auto mt-5 bg-white text-black p-3 rounded-lg">
+            Contáctanos
+          </button>
+        </div>
       </div>
       <div className="w-full h-40 bg-blue-500 dark:bg-blue-700 text-white flex items-center justify-between">
         <div className="ml-10">
