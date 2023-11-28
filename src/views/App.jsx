@@ -23,7 +23,7 @@ export const App = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 4000,
     centerMode: true,
     centerPadding: "300px",
@@ -82,7 +82,7 @@ export const App = () => {
           </span>
         </h2>
       </div>
-      <div className="w-[90rem] flex ml-40 mt-4">
+      <div className="w-[90rem] flex ml-40 mt-4 mb-10">
         <h2 className="text-black dark:text-white text-6xl transition duration-300">
           con{" "}
           <span className="text-transparent font-extrabold text-ecommerce bg-clip-text bg-gradient-to-r from-green-400 to-green-600">e-commerce</span>
@@ -174,7 +174,7 @@ export const App = () => {
           </>
         )}
       </div>
-      <div className="w-[50rem] h-[30rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-center">
+      <div className="card w-[50rem] h-[30rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-center">
         <div className="w-40 mt-16">
           <h2 className="text-6xl text-white text-end">Nuestro enfoque</h2>
         </div>
@@ -254,12 +254,14 @@ export const App = () => {
       </div>
       <div className="w-full h-40 bg-blue-500 dark:bg-blue-700 text-white flex items-center justify-between">
         <div className="ml-10">
-          <img src="/c2logowhite.png" className="w-54 h-24 mb-2" />
+          {/* <img src="/c2logowhite.png" className="w-54 h-24 mb-2" /> */}
+          <h2 className="text-4xl">Links Interesantes</h2>
+          <h2 className="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">Sobre Nosotros</h2>
         </div>
-        <div className="flex gap-x-6 w-36">
-          <FaWhatsapp className="text-4xl cursor-pointer" />
-          <FaInstagram className="text-4xl cursor-pointer" />
-          <AiOutlineGithub className="text-4xl cursor-pointer" />
+        <div className="flex items-center gap-x-6 w-36">
+          <FaWhatsapp className="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
+          <FaInstagram className="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
+          <AiOutlineGithub className="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
         </div>
         <div className="mr-16">
           <h2 className="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
