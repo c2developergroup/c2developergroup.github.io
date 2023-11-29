@@ -174,7 +174,8 @@ export const App = () => {
           </>
         )}
       </div>
-      <div className="card w-[50rem] h-[30rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-center">
+      
+      <div className="card1 w-[50rem] h-[30rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-center">
         <div className="w-40 mt-16">
           <h2 className="text-6xl text-white text-end">Nuestro enfoque</h2>
         </div>
