@@ -94,6 +94,9 @@ export const App = () => {
         </h2>
       </div>
       <div className="mx-20 flex justify-end">
+        <div className="w-[10rem] h-[20rem] mr-40">
+              <img src="/tablet.png" className="invert-0 dark:invert transition duration-300" />
+        </div>
         <div className="w-[30rem] h-[30rem]">
           <img
             src="/squarelogowhite.png"
