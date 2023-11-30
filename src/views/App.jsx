@@ -1,7 +1,7 @@
 import { useRef, useContext } from "react";
 import { Context } from "../store/appContext";
 import Slider from "react-slick";
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
 import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { AiOutlineGithub } from "react-icons/ai";
@@ -13,6 +13,8 @@ import "../css/3Deffect.css";
 export const App = () => {
   const cardImgRef = useRef(null);
   const cardDivRef = useRef(null);
+  const cardImg1Ref = useRef(null);
+  const cardDiv1Ref = useRef(null);
   const { store } = useContext(Context);
 
   const settings = {
@@ -38,6 +40,7 @@ export const App = () => {
     const { clientX, clientY } = e;
     const { clientWidth, clientHeight, offsetLeft, offsetTop } =
       cardDivRef.current;
+    cardDiv1Ref.current;
 
     const horizontal = (clientX - offsetLeft) / clientWidth;
     const vertical = (clientY - offsetTop) / clientHeight;
@@ -45,79 +48,122 @@ export const App = () => {
     const rotateY = ((0.5 - horizontal) * 40).toFixed(2);
 
     cardImgRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    cardImg1Ref.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   };
 
   const resetStyles = () => {
     cardImgRef.current.style.transform =
+      "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+    cardImg1Ref.current.style.transform =
       "perspective(1000px) rotateX(0deg) rotateY(0deg)";
   };
 
   return (
     <>
       <div className="mt-28"></div>
-      <div className="w-[90rem] flex ml-40 mt-40">
-        <h2 className="text-black dark:text-white text-9xl transition duration-300">
+      <div className="w-11/12 flex ml-20 mt-40">
+        <h2 className="text-black dark:text-white text-8xl transition duration-300">
           Exponenciamos tu{" "}
           <span className="text-blue-500">
             <TypeAnimation
               sequence={[
                 680,
-                'empresa',
+                "empresa",
                 2000,
-                'proyecto',
+                "proyecto",
                 2000,
-                'emprendimiento',
+                "emprendimiento",
                 2000,
-                'organización',
+                "organización",
                 2000,
-                'presencia',
+                "presencia",
                 2000,
               ]}
               wrapper="span"
               cursor={false}
               repeat={Infinity}
               className="font-extrabold"
-              style={{ display: 'inline-block' }}
+              style={{ display: "inline-block" }}
             />
           </span>
         </h2>
       </div>
-      <div className="w-[90rem] flex ml-40 mt-4 mb-10">
-        <h2 className="text-black dark:text-white text-6xl transition duration-300">
+      <div className="w-11/12 flex ml-20 mt-4 mb-10">
+        <h2 className="text-black dark:text-white text-5xl transition duration-300">
           con{" "}
-          <span className="text-transparent font-extrabold text-ecommerce bg-clip-text bg-gradient-to-r from-green-400 to-green-600">e-commerce</span>
+          <span className="text-transparent font-extrabold text-ecommerce bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
+            e-commerce
+          </span>
           ,{" "}
-          <span className="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-[#00ccff] to-[#3fa9ff]">páginas web</span>
+          <span className="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-[#00ccff] to-[#3fa9ff]">
+            páginas web
+          </span>
           ,{" "}
-          <span className="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">aplicaciones</span>
+          <span className="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
+            aplicaciones
+          </span>
           ...
         </h2>
       </div>
-      <div className="mx-20 flex justify-end">
-        <div className="w-[10rem] h-[20rem] mr-40">
-              <img src="/tablet.png" className="invert-0 dark:invert transition duration-300" />
+      <h2 className="text-5xl text-blue-500 dark:text-white z-10 absolute ml-36 mt-5">
+            Tratamiento Responsive
+          </h2>
+      <div className="mx-20 w-11/12 h-[30rem] flex justify-evenly items-end">
+        <div>
+          <img src="/phone.png" className="w-[12rem] mb-3" />
+          {/* <div
+            ref={cardDiv1Ref}
+            className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[12rem] h-[15.51rem] z-[-10] absolute mr-[40.5rem] mt-[1.217rem] flex justify-center items-center"
+            onMouseMove={handleHover}
+            onMouseLeave={resetStyles}
+          >
+            <img
+              ref={cardImg1Ref}
+              src="/c2logowhite.png"
+              className="w-[15rem] mb-10 card z-20"
+              // onMouseMove={handleHover}
+              // onMouseLeave={resetStyles}
+            />
+          </div> */}
         </div>
-        <div className="w-[30rem] h-[30rem]">
-          <img
-            src="/squarelogowhite.png"
-            className="w-10 ml-[13.5rem] mt-[18rem] absolute invert"
-          />
-          <img src="/computer.png" className="w-[30rem]" />
+
+        <div>
+          <img src="/tablet.png" className="w-[17rem]" />
+          {/* <div
+            ref={cardDiv1Ref}
+            className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[12rem] h-[15.51rem] z-[-10] absolute mr-[40.5rem] mt-[1.217rem] flex justify-center items-center"
+            onMouseMove={handleHover}
+            onMouseLeave={resetStyles}
+          >
+            <img
+              ref={cardImg1Ref}
+              src="/c2logowhite.png"
+              className="w-[15rem] mb-10 card z-20"
+              // onMouseMove={handleHover}
+              // onMouseLeave={resetStyles}
+            />
+          </div> */}
         </div>
-        <div
-          ref={cardDivRef}
-          className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[27.7rem] h-[15.7rem] z-0 absolute mr-[1.15rem] mt-[1.15rem] flex justify-center items-center"
-          onMouseMove={handleHover}
-          onMouseLeave={resetStyles}
-        >
-          <img
-            ref={cardImgRef}
-            src="/c2logowhite.png"
-            className="w-[25rem] mb-10 card z-20"
-            // onMouseMove={handleHover}
-            // onMouseLeave={resetStyles}
-          />
-        </div>
+
+        {/* <img
+          src="/squarelogowhite.png"
+          className="w-10 ml-[13.5rem] mt-[18rem] absolute invert"
+        /> */}
+        <img src="/computer.png" className="w-[30rem]" />
+        {/* <div
+            ref={cardDivRef}
+            className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[27.7rem] h-[15.7rem] z-0 absolute mr-[1.15rem] mt-[1.15rem] flex justify-center items-center"
+            onMouseMove={handleHover}
+            onMouseLeave={resetStyles}
+          >
+            <img
+              ref={cardImgRef}
+              src="/c2logowhite.png"
+              className="w-[25rem] mb-10 card z-20"
+              // onMouseMove={handleHover}
+              // onMouseLeave={resetStyles}
+            />
+        </div> */}
       </div>
       <div className="h-[20rem] w-[70rem] m-auto my-20 flex gap-x-5 justify-evenly flex-wrap items-center transition duration-300">
         {store.theme === "dark" && (
@@ -177,7 +223,7 @@ export const App = () => {
           </>
         )}
       </div>
-      
+
       <div className="card1 w-[50rem] h-[30rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-center">
         <div className="w-40 mt-16">
           <h2 className="text-6xl text-white text-end">Nuestro enfoque</h2>
@@ -260,7 +306,9 @@ export const App = () => {
         <div className="ml-10">
           {/* <img src="/c2logowhite.png" className="w-54 h-24 mb-2" /> */}
           <h2 className="text-4xl">Links Interesantes</h2>
-          <h2 className="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">Sobre Nosotros</h2>
+          <h2 className="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
+            Sobre Nosotros
+          </h2>
         </div>
         <div className="flex items-center gap-x-6 w-36">
           <FaWhatsapp className="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
