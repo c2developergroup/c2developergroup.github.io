@@ -106,25 +106,25 @@ export const App = () => {
         </h2>
       </div>
       <h2 className="text-5xl text-blue-500 dark:text-white z-10 absolute ml-36 mt-5">
-            Tratamiento Responsive
-          </h2>
+        Tratamiento Responsive
+      </h2>
       <div className="mx-20 w-11/12 h-[30rem] flex justify-evenly items-end">
         <div>
           <img src="/phone.png" className="w-[12rem] mb-3" />
-          {/* <div
+          <div
             ref={cardDiv1Ref}
-            className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[12rem] h-[15.51rem] z-[-10] absolute mr-[40.5rem] mt-[1.217rem] flex justify-center items-center"
+            className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[8em] h-[17rem] z-[-20] absolute mr-[82.5rem] mb-[1.4rem] rounded-xl flex justify-center items-center"
             onMouseMove={handleHover}
             onMouseLeave={resetStyles}
           >
             <img
               ref={cardImg1Ref}
               src="/c2logowhite.png"
-              className="w-[15rem] mb-10 card z-20"
+              className="w-[11.5rem] mb-10 card z-20"
               // onMouseMove={handleHover}
               // onMouseLeave={resetStyles}
             />
-          </div> */}
+          </div>
         </div>
 
         <div>
