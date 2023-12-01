@@ -11,7 +11,7 @@ export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="fixed flex justify-between items-center z-40 w-screen py-3 font-serif text-gray-200 bg-blue-500 dark:bg-blue-700 top-0 left-0 transition duration-300">
+        <header className="fixed flex justify-between items-center z-[100] w-screen py-3 font-serif text-gray-200 bg-blue-500 dark:bg-blue-700 top-0 left-0 transition duration-300">
             <img
             src="/c2logowhite.png"
                 className="h-16 ml-10 lg:ml-10 cursor-pointer"

@@ -108,51 +108,51 @@ export const App = () => {
       <h2 className="text-5xl text-blue-500 dark:text-white z-10 absolute ml-36 mt-5">
         Tratamiento Responsive
       </h2>
-      <div className="mx-20 w-11/12 h-[30rem] flex justify-evenly items-end">
-        <div>
-          <img src="/phone.png" className="w-[12rem] mb-3" />
+      <div className="mx-20 w-11/12 h-[30rem] flex justify-evenly items-end resp:flex-col">
+        <div className="relative w-[8rem] h-[14rem]">
+          <img src="/phone.png" className="w-full h-full z-50" />
           <div
             ref={cardDiv1Ref}
-            className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[8em] h-[17rem] z-[-20] absolute mr-[82.5rem] mb-[1.4rem] rounded-xl flex justify-center items-center"
+            className="top-0 left-0 bg-blue-500 dark:bg-blue-700 transition duration-300 w-full h-full -z-10 absolute flex justify-center items-center rounded-3xl"
             onMouseMove={handleHover}
             onMouseLeave={resetStyles}
           >
             <img
               ref={cardImg1Ref}
               src="/c2logowhite.png"
-              className="w-[11.5rem] mb-10 card z-20"
+              className="w-[11rem] card z-20"
               // onMouseMove={handleHover}
               // onMouseLeave={resetStyles}
             />
           </div>
         </div>
 
-        <div>
-          <img src="/tablet.png" className="w-[17rem]" />
-          {/* <div
+        <div className="relative w-[17rem] h-[22rem]">
+          <img src="/tablet.png" className="w-full h-full" />
+          <div
             ref={cardDiv1Ref}
-            className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[12rem] h-[15.51rem] z-[-10] absolute mr-[40.5rem] mt-[1.217rem] flex justify-center items-center"
+            className="top-0 left-0 bg-blue-500 dark:bg-blue-700 transition duration-300 w-full h-full -z-10 absolute flex justify-center items-center rounded-xl"
             onMouseMove={handleHover}
             onMouseLeave={resetStyles}
           >
             <img
               ref={cardImg1Ref}
               src="/c2logowhite.png"
-              className="w-[15rem] mb-10 card z-20"
+              className="w-[18rem] mb-10 card z-20"
               // onMouseMove={handleHover}
               // onMouseLeave={resetStyles}
             />
-          </div> */}
+          </div>
         </div>
-
-        {/* <img
+        <div className="flex justify-center items-start">
+          {/* <img
           src="/squarelogowhite.png"
           className="w-10 ml-[13.5rem] mt-[18rem] absolute invert"
         /> */}
-        <img src="/computer.png" className="w-[30rem]" />
-        {/* <div
+          <img src="/computer.png" className="w-[30rem] z-50" />
+          <div
             ref={cardDivRef}
-            className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[27.7rem] h-[15.7rem] z-0 absolute mr-[1.15rem] mt-[1.15rem] flex justify-center items-center"
+            className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[28rem] h-[17rem] flex justify-center items-center absolute -z-20"
             onMouseMove={handleHover}
             onMouseLeave={resetStyles}
           >
@@ -160,10 +160,11 @@ export const App = () => {
               ref={cardImgRef}
               src="/c2logowhite.png"
               className="w-[25rem] mb-10 card z-20"
-              // onMouseMove={handleHover}
-              // onMouseLeave={resetStyles}
+              onMouseMove={handleHover}
+              onMouseLeave={resetStyles}
             />
-        </div> */}
+          </div>
+        </div>
       </div>
       <div className="h-[20rem] w-[70rem] m-auto my-20 flex gap-x-5 justify-evenly flex-wrap items-center transition duration-300">
         {store.theme === "dark" && (
