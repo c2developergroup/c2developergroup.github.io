@@ -15,6 +15,8 @@ export const App = () => {
   const cardDivRef = useRef(null);
   const cardImg1Ref = useRef(null);
   const cardDiv1Ref = useRef(null);
+  const cardImg2Ref = useRef(null);
+  const cardDiv2Ref = useRef(null);
   const { store } = useContext(Context);
 
   const settings = {
@@ -41,6 +43,7 @@ export const App = () => {
     const { clientWidth, clientHeight, offsetLeft, offsetTop } =
       cardDivRef.current;
     cardDiv1Ref.current;
+    cardDiv2Ref.current;
 
     const horizontal = (clientX - offsetLeft) / clientWidth;
     const vertical = (clientY - offsetTop) / clientHeight;
@@ -49,6 +52,7 @@ export const App = () => {
 
     cardImgRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     cardImg1Ref.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    cardImg2Ref.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   };
 
   const resetStyles = () => {
@@ -56,13 +60,15 @@ export const App = () => {
       "perspective(1000px) rotateX(0deg) rotateY(0deg)";
     cardImg1Ref.current.style.transform =
       "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+    cardImg2Ref.current.style.transform =
+      "perspective(1000px) rotateX(0deg) rotateY(0deg)";
   };
 
   return (
     <>
       <div className="mt-28"></div>
       <div className="w-11/12 flex ml-20 mt-40">
-        <h2 className="text-black dark:text-white text-8xl transition duration-300">
+        <h2 className="text-black dark:text-white text-8xl resp:text-7xl transition duration-300">
           Exponenciamos tu{" "}
           <span className="text-blue-500">
             <TypeAnimation
@@ -89,7 +95,7 @@ export const App = () => {
         </h2>
       </div>
       <div className="w-11/12 flex ml-20 mt-4 mb-10">
-        <h2 className="text-black dark:text-white text-5xl transition duration-300">
+        <h2 className="text-black dark:text-white text-5xl resp:text-4xl transition duration-300">
           con{" "}
           <span className="text-transparent font-extrabold text-ecommerce bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
             e-commerce
@@ -108,17 +114,20 @@ export const App = () => {
       <h2 className="text-5xl text-blue-500 dark:text-white z-10 absolute ml-36 mt-5">
         Tratamiento Responsive
       </h2>
-      <div className="mx-20 w-11/12 h-[30rem] flex justify-evenly items-end resp:flex-col">
-        <div className="relative w-[8rem] h-[14rem]">
-          <img src="/phone.png" className="w-full h-full z-50" />
-          <div
-            ref={cardDiv1Ref}
-            className="top-0 left-0 bg-blue-500 dark:bg-blue-700 transition duration-300 w-full h-full -z-10 absolute flex justify-center items-center rounded-3xl"
+      <div className="mx-20 w-11/12 h-[30rem] resp:w-screen flex justify-evenly items-end">
+        <div className="relative w-[7rem] h-[14rem] resp:w-[7rem] resp:h-[7rem]">
+          <img
+            src="/phone.png"
+            className="w-full h-full z-50"
             onMouseMove={handleHover}
             onMouseLeave={resetStyles}
+          />
+          <div
+            ref={cardDiv2Ref}
+            className="top-0 left-0 bg-blue-500 dark:bg-blue-700 transition duration-300 w-full h-full -z-10 absolute flex justify-center items-center rounded-3xl"
           >
             <img
-              ref={cardImg1Ref}
+              ref={cardImg2Ref}
               src="/c2logowhite.png"
               className="w-[11rem] card z-20"
               // onMouseMove={handleHover}
@@ -127,13 +136,16 @@ export const App = () => {
           </div>
         </div>
 
-        <div className="relative w-[17rem] h-[22rem]">
-          <img src="/tablet.png" className="w-full h-full" />
+        <div className="relative w-[17rem] h-[22rem] resp:w-[14rem] resp:h-[14rem]">
+          <img
+            src="/tablet.png"
+            className="w-full h-full"
+            onMouseMove={handleHover}
+            onMouseLeave={resetStyles}
+          />
           <div
             ref={cardDiv1Ref}
             className="top-0 left-0 bg-blue-500 dark:bg-blue-700 transition duration-300 w-full h-full -z-10 absolute flex justify-center items-center rounded-xl"
-            onMouseMove={handleHover}
-            onMouseLeave={resetStyles}
           >
             <img
               ref={cardImg1Ref}
@@ -149,12 +161,15 @@ export const App = () => {
           src="/squarelogowhite.png"
           className="w-10 ml-[13.5rem] mt-[18rem] absolute invert"
         /> */}
-          <img src="/computer.png" className="w-[30rem] z-50" />
+          <img
+            src="/computer.png"
+            className="w-[30rem] z-50"
+            onMouseMove={handleHover}
+            onMouseLeave={resetStyles}
+          />
           <div
             ref={cardDivRef}
             className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[28rem] h-[17rem] flex justify-center items-center absolute -z-20"
-            onMouseMove={handleHover}
-            onMouseLeave={resetStyles}
           >
             <img
               ref={cardImgRef}
@@ -166,7 +181,7 @@ export const App = () => {
           </div>
         </div>
       </div>
-      <div className="h-[20rem] w-[70rem] m-auto my-20 flex gap-x-5 justify-evenly flex-wrap items-center transition duration-300">
+      <div className="h-[20rem] w-screen m-auto my-20 flex gap-x-5 justify-evenly flex-wrap items-center transition duration-300">
         {store.theme === "dark" && (
           <>
             <img
@@ -225,7 +240,7 @@ export const App = () => {
         )}
       </div>
 
-      <div className="card1 w-[50rem] h-[30rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-center">
+      <div className="card1 w-[50rem] h-[30rem] resp:w-[10rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-center">
         <div className="w-40 mt-16">
           <h2 className="text-6xl text-white text-end">Nuestro enfoque</h2>
         </div>
