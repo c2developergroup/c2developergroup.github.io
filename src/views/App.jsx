@@ -66,9 +66,9 @@ export const App = () => {
 
   return (
     <>
-      <div className="w-10/12 m-auto">
-        <h2 className="text-black mt-40 dark:text-white text-8xl resp:text-7xl transition duration-300 w-full">
-          Exponenciamos tu{" "}
+      <section className="w-10/12 m-auto mt-40">
+        <h2 className="text-black dark:text-white text-8xl resp:text-6xl transition duration-300">
+          Exponenciamos tu <br />
           <span className="text-blue-500">
             <TypeAnimation
               sequence={[
@@ -107,31 +107,33 @@ export const App = () => {
           </span>
           ...
         </h2>
-      </div>
-      <h2 className="text-5xl text-blue-500 dark:text-white z-10 ml-36 mt-20">
-        Tratamiento Responsive
-      </h2>
-      <div className="m-auto w-11/12 flex justify-evenly items-end">
-        <img
-          src="/phone.png"
-          className="w-[12%]"
-          onMouseMove={handleHover}
-          onMouseLeave={resetStyles}
-        />
-        <img
-          src="/tablet.png"
-          className="w-[23%]"
-          onMouseMove={handleHover}
-          onMouseLeave={resetStyles}
-        />
-        <img
-          src="/computer.png"
-          className="w-[40%]"
-          onMouseMove={handleHover}
-          onMouseLeave={resetStyles}
-        />
-      </div>
-      <div className="m-auto my-20 flex gap-5 justify-evenly flex-wrap items-center transition duration-300">
+      </section>
+      <section className="w-10/12 m-auto mt-28">
+        <h2 className="text-5xl text-blue-500 dark:text-white">
+          Tratamiento Responsive
+        </h2>
+        <div className="flex justify-between items-end">
+          <img
+            src="/phone.png"
+            className="w-[13%]"
+            onMouseMove={handleHover}
+            onMouseLeave={resetStyles}
+          />
+          <img
+            src="/tablet.png"
+            className="w-[23%]"
+            onMouseMove={handleHover}
+            onMouseLeave={resetStyles}
+          />
+          <img
+            src="/computer.png"
+            className="w-[45%]"
+            onMouseMove={handleHover}
+            onMouseLeave={resetStyles}
+          />
+        </div>
+      </section>
+      <section className="m-auto my-20 flex gap-5 justify-evenly flex-wrap items-center transition duration-300">
         {store.theme === "dark" && (
           <>
             <img
@@ -188,11 +190,10 @@ export const App = () => {
             />
           </>
         )}
-      </div>
-
-      <div className="card1 max-w-[90%] w-[50rem] md:py-20 py-10 mobl:px-8 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-around items-center relative mobl:flex-col">
+      </section>
+      <section className="card1 max-w-[90%] w-[50rem] md:py-20 py-10 mobl:px-8 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-around items-center relative mobl:flex-col">
         <div className="tiny:w-[30%] mobl:mb-10">
-          <h2 className="text-6xl text-white text-end">Nuestro enfoque</h2>
+          <h2 className="text-6xl text-white">Nuestro enfoque</h2>
         </div>
         <div className="tiny:w-[60%] text-2xl text-white leading-9">
           <p>
@@ -204,22 +205,21 @@ export const App = () => {
             Contáctanos <FaArrowRight />
           </button>
         </div>
-      </div>
-      <div className="w-full h-64 bg-blue-500 dark:bg-blue-700 transition duration-300 mt-40 flex items-center">
-        <div className="w-96 m-auto mt-12 flex flex-col">
-          <h2 className="text-white text-5xl text-center">
-            ¿Tienes algún proyecto? Construyámoslo juntos
-          </h2>
-          <button className="w-32 m-auto mt-5 bg-white text-black text-2xl p-3 rounded-lg">
-            Contáctanos
-          </button>
-        </div>
-      </div>
-      <h2 className="text-6xl text-center mb-5 mt-20 text-blue-500 dark:text-white">
-        Algunos de nuestros trabajos
-      </h2>
-      {/* Carrusel */}
-      <div className="relative full m-auto mt-15">
+      </section>
+      <section className="w-full bg-blue-500 dark:bg-blue-700 transition duration-300 mt-40 flex flex-col items-center gap-5 p-6">
+        <h2 className="text-white text-5xl text-center">
+          ¿Tienes algún proyecto? <br />
+          Construyámoslo juntos
+        </h2>
+        <button className="w-32 bg-white text-black text-2xl p-3 rounded-lg">
+          Contáctanos
+        </button>
+      </section>
+      <section>
+        <h2 className="text-6xl text-center mb-5 mt-20 text-blue-500 dark:text-white">
+          Algunos de nuestros trabajos
+        </h2>
+        {/* Carrusel */}
         <Slider {...settings}>
           <div className="px-10 pt-10 pb-16">
             <img
@@ -257,18 +257,17 @@ export const App = () => {
             />
           </div>
         </Slider>
-      </div>
-      <div className="w-full h-64 transition duration-300 mt-40 mb-40 flex items-center">
-        <div className="w-[50rem] m-auto mt-12 flex flex-col">
-          <h2 className="text-black dark:text-white text-5xl text-center">
-            ¿Estás listo para hacer tu página web o aplicación con nosotros?
-          </h2>
-          <button className="w-32 m-auto mt-5 bg-blue-500 dark:bg-blue-600 text-white text-2xl p-3 rounded-lg">
-            Contáctanos
-          </button>
-        </div>
-      </div>
-      <div className="w-full bg-blue-500 dark:bg-blue-700 text-white flex resp:flex-col resp:gap-y-10 p-10 items-center justify-around">
+      </section>
+      <section className="transition duration-300 my-40 flex flex-col items-center gap-5 p-6 bg-blue-500 dark:bg-blue-600">
+        <h2 className="text-white text-5xl text-center">
+          ¿Estás listo para hacer tu página web o aplicación <br /> con
+          nosotros?
+        </h2>
+        <button className="w-32 bg-white text-black text-2xl p-3 rounded-lg">
+          Contáctanos
+        </button>
+      </section>
+      <footer className="w-full bg-blue-500 dark:bg-blue-700 text-white flex resp:flex-col resp:gap-y-10 p-10 items-center justify-around">
         <div>
           {/* <img src="/c2logowhite.png" className="w-54 h-24 mb-2" /> */}
           <h2 className="text-4xl">Links Interesantes</h2>
@@ -289,7 +288,7 @@ export const App = () => {
             Contáctanos
           </h2>
         </div>
-      </div>
+      </footer>
     </>
   );
 };
