@@ -16,6 +16,7 @@ export default {
           lg: "1024px",
           xl: "1280px",
           "2xl": "1536px",
+          mobl: { max: "480px" },
           resp: { max: "768px" }
       }
   },

@@ -147,12 +147,6 @@ p {
   --card-width: 50rem;
 }
 
-.card1 {
-  width: var(--card-width);
-  height: var(--card-height);
-  position: relative;
-}
-
 .card1::before {
   content: "";
   width: 102%;

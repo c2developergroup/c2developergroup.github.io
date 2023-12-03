@@ -30,7 +30,7 @@ export const App = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     centerMode: true,
-    centerPadding: "300px",
+    centerPadding: "200px",
     focusOnSelect: true,
     customPaging: function (slider, i) {
       return <button type="button">{i}</button>;
@@ -66,9 +66,8 @@ export const App = () => {
 
   return (
     <>
-      <div className="mt-28"></div>
-      <div className="w-11/12 flex ml-20 mt-40">
-        <h2 className="text-black dark:text-white text-8xl resp:text-7xl transition duration-300">
+      <div className="w-10/12 m-auto">
+        <h2 className="text-black mt-40 dark:text-white text-8xl resp:text-7xl transition duration-300 w-full">
           Exponenciamos tu{" "}
           <span className="text-blue-500">
             <TypeAnimation
@@ -93,8 +92,6 @@ export const App = () => {
             />
           </span>
         </h2>
-      </div>
-      <div className="w-11/12 flex ml-20 mt-4 mb-10">
         <h2 className="text-black dark:text-white text-5xl resp:text-4xl transition duration-300">
           con{" "}
           <span className="text-transparent font-extrabold text-ecommerce bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
@@ -111,77 +108,30 @@ export const App = () => {
           ...
         </h2>
       </div>
-      <h2 className="text-5xl text-blue-500 dark:text-white z-10 absolute ml-36 mt-5">
+      <h2 className="text-5xl text-blue-500 dark:text-white z-10 ml-36 mt-20">
         Tratamiento Responsive
       </h2>
-      <div className="mx-20 w-11/12 h-[30rem] resp:w-screen flex justify-evenly items-end">
-        <div className="relative w-[7rem] h-[14rem] resp:w-[7rem] resp:h-[7rem]">
-          <img
-            src="/phone.png"
-            className="w-full h-full z-50"
-            onMouseMove={handleHover}
-            onMouseLeave={resetStyles}
-          />
-          <div
-            ref={cardDiv2Ref}
-            className="top-0 left-0 bg-blue-500 dark:bg-blue-700 transition duration-300 w-full h-full -z-10 absolute flex justify-center items-center rounded-3xl"
-          >
-            <img
-              ref={cardImg2Ref}
-              src="/c2logowhite.png"
-              className="w-[11rem] card z-20"
-              // onMouseMove={handleHover}
-              // onMouseLeave={resetStyles}
-            />
-          </div>
-        </div>
-
-        <div className="relative w-[17rem] h-[22rem] resp:w-[14rem] resp:h-[14rem]">
-          <img
-            src="/tablet.png"
-            className="w-full h-full"
-            onMouseMove={handleHover}
-            onMouseLeave={resetStyles}
-          />
-          <div
-            ref={cardDiv1Ref}
-            className="top-0 left-0 bg-blue-500 dark:bg-blue-700 transition duration-300 w-full h-full -z-10 absolute flex justify-center items-center rounded-xl"
-          >
-            <img
-              ref={cardImg1Ref}
-              src="/c2logowhite.png"
-              className="w-[18rem] mb-10 card z-20"
-              // onMouseMove={handleHover}
-              // onMouseLeave={resetStyles}
-            />
-          </div>
-        </div>
-        <div className="flex justify-center items-start">
-          {/* <img
-          src="/squarelogowhite.png"
-          className="w-10 ml-[13.5rem] mt-[18rem] absolute invert"
-        /> */}
-          <img
-            src="/computer.png"
-            className="w-[30rem] z-50"
-            onMouseMove={handleHover}
-            onMouseLeave={resetStyles}
-          />
-          <div
-            ref={cardDivRef}
-            className="bg-blue-500 dark:bg-blue-700 transition duration-300 w-[28rem] h-[17rem] flex justify-center items-center absolute -z-20"
-          >
-            <img
-              ref={cardImgRef}
-              src="/c2logowhite.png"
-              className="w-[25rem] mb-10 card z-20"
-              onMouseMove={handleHover}
-              onMouseLeave={resetStyles}
-            />
-          </div>
-        </div>
+      <div className="m-auto w-11/12 flex justify-evenly items-end">
+        <img
+          src="/phone.png"
+          className="w-[12%]"
+          onMouseMove={handleHover}
+          onMouseLeave={resetStyles}
+        />
+        <img
+          src="/tablet.png"
+          className="w-[23%]"
+          onMouseMove={handleHover}
+          onMouseLeave={resetStyles}
+        />
+        <img
+          src="/computer.png"
+          className="w-[40%]"
+          onMouseMove={handleHover}
+          onMouseLeave={resetStyles}
+        />
       </div>
-      <div className="h-[20rem] w-screen m-auto my-20 flex gap-x-5 justify-evenly flex-wrap items-center transition duration-300">
+      <div className="m-auto my-20 flex gap-5 justify-evenly flex-wrap items-center transition duration-300">
         {store.theme === "dark" && (
           <>
             <img
@@ -240,18 +190,18 @@ export const App = () => {
         )}
       </div>
 
-      <div className="card1 w-[50rem] h-[30rem] resp:w-[10rem] p-20 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-center">
-        <div className="w-40 mt-16">
+      <div className="card1 max-w-[90%] w-[50rem] md:py-20 py-10 mobl:px-8 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-around items-center relative mobl:flex-col">
+        <div className="tiny:w-[30%] mobl:mb-10">
           <h2 className="text-6xl text-white text-end">Nuestro enfoque</h2>
         </div>
-        <div className="w-96 text-2xl text-white mt-16 ml-10 leading-9">
+        <div className="tiny:w-[60%] text-2xl text-white leading-9">
           <p>
             Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
             sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
             empresa u organización en el internet.
           </p>
           <button className="text-neutral-300 hover:text-neutral-100 transition duration-300 mt-7 flex items-center gap-6">
-            Contáctanos <FaArrowRight className="ml-1" />
+            Contáctanos <FaArrowRight />
           </button>
         </div>
       </div>
@@ -318,24 +268,24 @@ export const App = () => {
           </button>
         </div>
       </div>
-      <div className="w-full h-40 bg-blue-500 dark:bg-blue-700 text-white flex items-center justify-between">
-        <div className="ml-10">
+      <div className="w-full bg-blue-500 dark:bg-blue-700 text-white flex resp:flex-col resp:gap-y-10 p-10 items-center justify-around">
+        <div>
           {/* <img src="/c2logowhite.png" className="w-54 h-24 mb-2" /> */}
           <h2 className="text-4xl">Links Interesantes</h2>
           <h2 className="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
             Sobre Nosotros
           </h2>
         </div>
-        <div className="flex items-center gap-x-6 w-36">
+        <div className="flex items-center gap-x-6 md:mx-36">
           <FaWhatsapp className="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
           <FaInstagram className="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
           <AiOutlineGithub className="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
         </div>
-        <div className="mr-16">
+        <div>
           <h2 className="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
             Forma parte de nuestro equipo
           </h2>
-          <h2 className="text-2xl mt-2 hover:text-neutral-200 transition duration-300 cursor-pointer">
+          <h2 className="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
             Contáctanos
           </h2>
         </div>
