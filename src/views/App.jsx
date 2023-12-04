@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../css/app.css";
 import "../css/3Deffect.css";
+import { NetAnimation } from "../components/netAnimation";
 
 export const App = () => {
   const cardImgRef = useRef(null);
@@ -270,10 +271,11 @@ export const App = () => {
       <footer className="w-full bg-blue-500 dark:bg-blue-700 text-white flex resp:flex-col resp:gap-y-10 p-10 items-center justify-around">
         <div>
           {/* <img src="/c2logowhite.png" className="w-54 h-24 mb-2" /> */}
-          <h2 className="text-4xl">Links Interesantes</h2>
+          {/* <h2 className="text-4xl">Links Interesantes</h2>
           <h2 className="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
             Sobre Nosotros
-          </h2>
+          </h2> */}
+          <NetAnimation/>
         </div>
         <div className="flex items-center gap-x-6 md:mx-36">
           <FaWhatsapp className="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
