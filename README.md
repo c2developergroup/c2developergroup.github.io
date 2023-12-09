@@ -9,6 +9,8 @@ Currently, two official plugins are available:
 
 Inspiraciones para seguir arreglando landing page:
 
+- https://www.urbaninsight.com/
+
 - https://codepen.io/phillip-gimmi/pen/KKJVMdL
 - https://codepen.io/ankitvermaonline/pen/wvRZbLm
 - https://codepen.io/drewcarson/pen/GRPaxZv
