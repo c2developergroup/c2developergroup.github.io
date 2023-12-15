@@ -1,4 +1,4 @@
-import "../css/netAnimation.css";
+import "../css/netAnimation.scss";
 
 export const NetAnimation = () => {
   const canvas = document.getElementById("myCanvas");
