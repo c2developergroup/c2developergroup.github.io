@@ -1,33 +1,33 @@
 
-:root {
-}
+// :root {
+// }
 
-.netAnimation {
-  $theme-h: 100; // can be anything
-  $theme-s: 100; // generally over 50 here
-  $theme-l: 0; // 80 or higher is the best look
-  $theme-dim: $theme-l * 0.9;
-  --theme-h: #{$theme-h}deg;
-  --theme-s: #{$theme-s}%;
-  --theme-l: #{$theme-l}%;
-  --theme-dim: #{$theme-dim}%;
-  --reflected-l: calc(100% - #{$theme-l}%);
-  --reflected-o: #{-2 * ($theme-l/100) * ($theme-l/100) + 2 * ($theme-l/100) + 0.5};
+// .netAnimation {
+//   $theme-h: 100; // can be anything
+//   $theme-s: 100; // generally over 50 here
+//   $theme-l: 0; // 80 or higher is the best look
+//   $theme-dim: $theme-l * 0.9;
+//   --theme-h: #{$theme-h}deg;
+//   --theme-s: #{$theme-s}%;
+//   --theme-l: #{$theme-l}%;
+//   --theme-dim: #{$theme-dim}%;
+//   --reflected-l: calc(100% - #{$theme-l}%);
+//   --reflected-o: #{-2 * ($theme-l/100) * ($theme-l/100) + 2 * ($theme-l/100) + 0.5};
 
-  margin: 0;
-  min-width: 100vw;
-  min-height: 100vh;
-  overflow-x: hidden;
+//   margin: 0;
+//   min-width: 100vw;
+//   min-height: 100vh;
+//   overflow-x: hidden;
 
-  background: linear-gradient(
-    135deg,
-    hsl(var(--theme-h), var(--theme-s), var(--theme-l)),
-    hsl(var(--theme-h), var(--theme-s), var(--theme-dim))
-  );
+//   background: linear-gradient(
+//     135deg,
+//     hsl(var(--theme-h), var(--theme-s), var(--theme-l)),
+//     hsl(var(--theme-h), var(--theme-s), var(--theme-dim))
+//   );
 
-  /* Flex Display */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+//   /* Flex Display */
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
 
-}
+// }
