@@ -33,7 +33,7 @@
     color: #fff;
   } */
 
-.card {
+/* .card {
   background: url("src/card-bg.jpg") no-repeat;
   background-size: cover;
   max-width: 500px;
@@ -59,7 +59,7 @@
   bottom: 0;
 }
 
-/* Slight parallax effect on hover */
+/* Slight parallax effect on hover * /
 .card:hover .content {
   transform: translateZ(12px);
 }
@@ -70,7 +70,7 @@
   transition: transform 0.3s ease;
 }
 
-/* Demo only */
+/* Demo only * /
 .container {
   margin-top: 100px;
 }
@@ -79,4 +79,4 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-}
+} */

@@ -9,15 +9,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../css/app.css";
 import "../css/3Deffect.css";
-import { NetAnimation } from "../components/netAnimation";
+// import { NetAnimation } from "../components/netAnimation";
 
 export const App = () => {
-  const cardImgRef = useRef(null);
   const cardDivRef = useRef(null);
   const cardImg1Ref = useRef(null);
-  const cardDiv1Ref = useRef(null);
   const cardImg2Ref = useRef(null);
-  const cardDiv2Ref = useRef(null);
+  const cardImg3Ref = useRef(null);
   const { store } = useContext(Context);
 
   const settings = {
@@ -41,32 +39,46 @@ export const App = () => {
   // 3D Effect
   const handleHover = (e) => {
     const { clientX, clientY } = e;
-    const { clientWidth, clientHeight, offsetLeft, offsetTop } =
-      cardDivRef.current;
-    cardDiv1Ref.current;
-    cardDiv2Ref.current;
+    // const { clientWidth, clientHeight, offsetLeft, offsetTop } =
+    //   cardDivRef.current;
+    const { clientWidth: img1clientWidth, clientHeight: img1clientHeight, offsetLeft: img1offsetLeft, offsetTop: img1offsetTop } =
+      cardImg1Ref.current;
+    const { clientWidth: img2clientWidth, clientHeight: img2clientHeight, offsetLeft: img2offsetLeft, offsetTop: img2offsetTop } =
+      cardImg2Ref.current;
+    const { clientWidth: img3clientWidth, clientHeight: img3clientHeight, offsetLeft: img3offsetLeft, offsetTop: img3offsetTop } =
+      cardImg3Ref.current;
 
-    const horizontal = (clientX - offsetLeft) / clientWidth;
-    const vertical = (clientY - offsetTop) / clientHeight;
-    const rotateX = ((0.5 - vertical) * 40).toFixed(2);
-    const rotateY = ((0.5 - horizontal) * 40).toFixed(2);
+    const img1horizontal = (clientX - img1offsetLeft) / img1clientWidth;
+    const img1vertical = (clientY - img1offsetTop) / img1clientHeight;
+    const img1rotateX = ((0.5 - img1vertical) * 5).toFixed(2);
+    const img1rotateY = ((0.5 - img1horizontal) * 5).toFixed(2);
 
-    cardImgRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    cardImg1Ref.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    cardImg2Ref.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    const img2horizontal = (clientX - img2offsetLeft) / img2clientWidth;
+    const img2vertical = (clientY - img2offsetTop) / img2clientHeight;
+    const img2rotateX = ((0.5 - img2vertical) * 5).toFixed(2);
+    const img2rotateY = ((0.5 - img2horizontal) * 5).toFixed(2);
+
+    const img3horizontal = (clientX - img3offsetLeft) / img3clientWidth;
+    const img3vertical = (clientY - img3offsetTop) / img3clientHeight;
+    const img3rotateX = ((0.5 - img3vertical) * 5).toFixed(2);
+    const img3rotateY = ((0.5 - img3horizontal) * 5).toFixed(2);
+    cardImg1Ref.current.style.transform = `perspective(1000px) rotateX(${img1rotateX}deg) rotateY(${img1rotateY}deg)`;
+    cardImg2Ref.current.style.transform = `perspective(1000px) rotateX(${img2rotateX}deg) rotateY(${img2rotateY}deg)`;
+    cardImg3Ref.current.style.transform = `perspective(1000px) rotateX(${img3rotateX}deg) rotateY(${img3rotateY}deg)`;
   };
 
   const resetStyles = () => {
-    cardImgRef.current.style.transform =
-      "perspective(1000px) rotateX(0deg) rotateY(0deg)";
     cardImg1Ref.current.style.transform =
       "perspective(1000px) rotateX(0deg) rotateY(0deg)";
     cardImg2Ref.current.style.transform =
+      "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+    cardImg3Ref.current.style.transform =
       "perspective(1000px) rotateX(0deg) rotateY(0deg)";
   };
 
   return (
     <>
+    <div onMouseMove={handleHover} onMouseLeave={resetStyles}>
       <section className="w-10/12 m-auto mt-40">
         <h2 className="text-black dark:text-white text-8xl resp:text-6xl transition duration-300">
           Exponenciamos tu <br />
@@ -113,24 +125,21 @@ export const App = () => {
         <h2 className="text-5xl text-blue-500 dark:text-white">
           Tratamiento Responsive
         </h2>
-        <div className="flex justify-between items-end">
+        <div ref={cardDivRef} className="flex justify-between items-end">
           <img
+            ref={cardImg1Ref}
             src="/phone.png"
             className="w-[13%]"
-            onMouseMove={handleHover}
-            onMouseLeave={resetStyles}
           />
           <img
+            ref={cardImg2Ref}
             src="/tablet.png"
             className="w-[23%]"
-            onMouseMove={handleHover}
-            onMouseLeave={resetStyles}
           />
           <img
+            ref={cardImg3Ref}
             src="/computer.png"
             className="w-[45%]"
-            onMouseMove={handleHover}
-            onMouseLeave={resetStyles}
           />
         </div>
       </section>
@@ -192,7 +201,7 @@ export const App = () => {
           </>
         )}
       </section>
-      <section className="card1 max-w-[90%] w-[50rem] md:py-20 py-10 mobl:px-8 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-around items-center relative mobl:flex-col">
+      <section className="max-w-[90%] w-[50rem] md:py-20 py-10 mobl:px-8 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-around items-center relative mobl:flex-col">
         <div className="tiny:w-[30%] mobl:mb-10">
           <h2 className="text-6xl text-white">Nuestro enfoque</h2>
         </div>
@@ -270,12 +279,12 @@ export const App = () => {
       </section>
       <footer className="w-full bg-blue-500 dark:bg-blue-700 text-white flex resp:flex-col resp:gap-y-10 p-10 items-center justify-around">
         <div>
-          {/* <img src="/c2logowhite.png" className="w-54 h-24 mb-2" /> */}
-          {/* <h2 className="text-4xl">Links Interesantes</h2>
+          <img src="/c2logowhite.png" className="w-54 h-24 mb-2" />
+          <h2 className="text-4xl">Links Interesantes</h2>
           <h2 className="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
             Sobre Nosotros
-          </h2> */}
-          <NetAnimation/>
+          </h2>
+          {/* <NetAnimation/> */}
         </div>
         <div className="flex items-center gap-x-6 md:mx-36">
           <FaWhatsapp className="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
@@ -291,6 +300,7 @@ export const App = () => {
           </h2>
         </div>
       </footer>
+    </div>
     </>
   );
 };
