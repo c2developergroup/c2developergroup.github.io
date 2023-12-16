@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../css/app.css";
 import "../css/3Deffect.css";
+import { MarqueeComponent } from "../components/MarqueeCustomers";
 // import { NetAnimation } from "../components/netAnimation";
 
 export const App = () => {
@@ -144,15 +145,99 @@ export const App = () => {
         </div>
       </section>
       <section className="m-auto my-20 flex gap-5 justify-evenly flex-wrap items-center transition duration-300">
-        {store.theme === "dark" && (
+        {function(){
+          const logosTop = store.theme === "dark" ? [
+            {
+              src: "/bynxlogowhite.png",
+              className: "w-54 h-24 cursor-pointer"
+            },
+            {
+              src: "/serologowhite.png",
+              className: "w-54 h-24 cursor-pointer invert dark:invert-0"
+            },
+            {
+              src: "/zussetlogowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            },
+            {
+              src: "/c2logowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            },
+            {
+              src: "/c2logowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            },
+            {
+              src: "/c2logowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            }
+          ] : [
+            {
+              src: "/bynxlogoblack.png",
+              className: "w-54 h-24 cursor-pointer"
+            },
+            {
+              src: "/serologowhite.png",
+              className: "w-54 h-24 cursor-pointer invert dark:invert-0"
+            },
+            {
+              src: "/zussetlogowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            },
+            {
+              src: "/c2logowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            },
+            {
+              src: "/c2logowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            },
+            {
+              src: "/c2logowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            }
+          ];
+
+          const logosBtm = [
+            {
+              src: "/c2logowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            },
+            {
+              src: "/c2logowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            },
+            {
+              src: "/c2logowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            },
+            {
+              src: "/c2logowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            },
+            {
+              src: "/c2logowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            },
+            {
+              src: "/c2logowhite.png",
+              className: "w-54 h-24 invert dark:invert-0"
+            }
+          ];
+
+          return (
+            <MarqueeComponent logosTop={logosTop} logosBtm={logosBtm} />
+          );
+        }()}
+        {/* {store.theme === "dark" && (
           <>
             <img
               src="/bynxlogowhite.png"
-              className="w-54 h-24 mt-1 cursor-pointer"
+              className="w-54 h-24 cursor-pointer"
             />
             <img
               src="/serologowhite.png"
-              className="w-54 h-24 cursor-pointer"
+              className="w-54 h-24 cursor-pointer invert dark:invert-0"
             />
             <img
               src="/zussetlogowhite.png"
@@ -199,7 +284,7 @@ export const App = () => {
               className="w-54 h-24 invert dark:invert-0"
             />
           </>
-        )}
+        )} */}
       </section>
       <section className="max-w-[90%] w-[50rem] md:py-20 py-10 mobl:px-8 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-around items-center relative mobl:flex-col">
         <div className="tiny:w-[30%] mobl:mb-10">
