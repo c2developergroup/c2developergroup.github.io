@@ -14,3 +14,10 @@ Inspiraciones para seguir arreglando landing page:
 - https://codepen.io/phillip-gimmi/pen/KKJVMdL
 - https://codepen.io/ankitvermaonline/pen/wvRZbLm
 - https://codepen.io/drewcarson/pen/GRPaxZv
+
+MARCAS:
+- BYNX
+- ZUSSET
+- JONOAPPS
+- MELAO BAGS
+- SERØ
