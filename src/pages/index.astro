@@ -1,0 +1,237 @@
+---
+import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
+import { AiOutlineGithub } from "react-icons/ai";
+import { TypeAnimation } from "react-type-animation";
+import { ExampleSlider } from "../components/ExampleSlider"
+import { MarqueeComponent, type MarqueeLogo } from "../components/MarqueeCustomers";
+
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/c2logosquare.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C² Developer Group</title>
+    <link href="/main.css" type="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@500;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body class="dark:bg-neutral-800 bg-white transition duration-300">
+    <div id="root">
+      <div> <!-- onMouseMove={handleHover} onMouseLeave={resetStyles} -->
+        <section class="w-10/12 m-auto mt-40">
+          <h2 class="text-black dark:text-white text-8xl resp:text-6xl transition duration-300">
+            Exponenciamos tu <br />
+            <span class="text-blue-500">
+              <TypeAnimation
+                sequence={[
+                  680,
+                  "empresa",
+                  2000,
+                  "proyecto",
+                  2000,
+                  "emprendimiento",
+                  2000,
+                  "organización",
+                  2000,
+                  "presencia",
+                  2000,
+                ]}
+                wrapper="span"
+                cursor={false}
+                repeat={Infinity}
+                class="font-extrabold"
+                style={{ display: "inline-block" }}
+              />
+            </span>
+          </h2>
+          <h2 class="text-black dark:text-white text-5xl resp:text-4xl transition duration-300">
+            con{" "}
+            <span class="text-transparent font-extrabold text-ecommerce bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
+              e-commerce
+            </span>
+            ,{" "}
+            <span class="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-[#00ccff] to-[#3fa9ff]">
+              páginas web
+            </span>
+            ,{" "}
+            <span class="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
+              aplicaciones
+            </span>
+            ...
+          </h2>
+        </section>
+        <section class="w-10/12 m-auto mt-28">
+          <h2 class="text-5xl text-blue-500 dark:text-white">
+            Tratamiento Responsive
+          </h2>
+          <div class="flex justify-between items-end"> <!-- ref={cardDivRef} -->
+            <img
+              src="/phone.png"
+              class="w-[13%]"
+            /> <!-- ref={cardImg1Ref} -->
+            <img
+              src="/tablet.png"
+              class="w-[23%]"
+            /> <!-- ref={cardImg2Ref} -->
+            <img
+              src="/computer.png"
+              class="w-[45%]"
+            /> <!-- ref={cardImg3Ref} -->
+          </div>
+        </section>
+        <section class="m-auto my-20 flex gap-5 justify-evenly flex-wrap items-center transition duration-300">
+          {function(){
+            const logosTop: MarqueeLogo[] = true /* store.theme === "dark" */ ? [
+              {
+                src: "/bynxlogowhite.png",
+                class: "w-54 h-24 cursor-pointer"
+              },
+              {
+                src: "/serologowhite.png",
+                class: "w-54 h-24 cursor-pointer invert dark:invert-0"
+              },
+              {
+                src: "/zussetlogowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              },
+              {
+                src: "/c2logowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              },
+              {
+                src: "/c2logowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              },
+              {
+                src: "/c2logowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              }
+            ] : [
+              {
+                src: "/bynxlogoblack.png",
+                class: "w-54 h-24 cursor-pointer"
+              },
+              {
+                src: "/serologowhite.png",
+                class: "w-54 h-24 cursor-pointer invert dark:invert-0"
+              },
+              {
+                src: "/zussetlogowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              },
+              {
+                src: "/c2logowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              },
+              {
+                src: "/c2logowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              },
+              {
+                src: "/c2logowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              }
+            ];
+
+            const logosBtm: MarqueeLogo[] = [
+              {
+                src: "/c2logowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              },
+              {
+                src: "/c2logowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              },
+              {
+                src: "/c2logowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              },
+              {
+                src: "/c2logowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              },
+              {
+                src: "/c2logowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              },
+              {
+                src: "/c2logowhite.png",
+                class: "w-54 h-24 invert dark:invert-0"
+              }
+            ];
+
+            return (
+              <MarqueeComponent logosTop={logosTop} logosBtm={logosBtm} />
+            );
+          }()}
+        </section>
+        <section class="max-w-[90%] w-[50rem] md:py-20 py-10 mobl:px-8 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-around items-center relative mobl:flex-col">
+          <div class="tiny:w-[30%] mobl:mb-10">
+            <h2 class="text-6xl text-white">Nuestro enfoque</h2>
+          </div>
+          <div class="tiny:w-[60%] text-2xl text-white leading-9">
+            <p>
+              Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
+              sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
+              empresa u organización en el internet.
+            </p>
+            <button class="text-neutral-300 hover:text-neutral-100 transition duration-300 mt-7 flex items-center gap-6">
+              Contáctanos <FaArrowRight />
+            </button>
+          </div>
+        </section>
+        <section class="w-full bg-blue-500 dark:bg-blue-700 transition duration-300 mt-40 flex flex-col items-center gap-5 p-6">
+          <h2 class="text-white text-5xl text-center">
+            ¿Tienes algún proyecto? <br />
+            Construyámoslo juntos
+          </h2>
+          <button class="w-32 bg-white text-black text-2xl p-3 rounded-lg">
+            Contáctanos
+          </button>
+        </section>
+        <section>
+          <h2 class="text-6xl text-center mb-5 mt-20 text-blue-500 dark:text-white">
+            Algunos de nuestros trabajos
+          </h2>
+          {/* Carrusel */}
+          <ExampleSlider client:visible />
+        </section>
+        <section class="transition duration-300 my-40 flex flex-col items-center gap-5 p-6 bg-blue-500 dark:bg-blue-600">
+          <h2 class="text-white text-5xl text-center">
+            ¿Estás listo para hacer tu página web o aplicación <br /> con
+            nosotros?
+          </h2>
+          <button class="w-32 bg-white text-black text-2xl p-3 rounded-lg">
+            Contáctanos
+          </button>
+        </section>
+        <footer class="w-full bg-blue-500 dark:bg-blue-700 text-white flex resp:flex-col resp:gap-y-10 p-10 items-center justify-around">
+          <div>
+            <img src="/c2logowhite.png" class="w-54 h-24 mb-2" />
+            <h2 class="text-4xl">Links Interesantes</h2>
+            <h2 class="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
+              Sobre Nosotros
+            </h2>
+            {/* <NetAnimation/> */}
+          </div>
+          <div class="flex items-center gap-x-6 md:mx-36">
+            <FaWhatsapp class="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
+            <FaInstagram class="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
+            <AiOutlineGithub class="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
+          </div>
+          <div>
+            <h2 class="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
+              Forma parte de nuestro equipo
+            </h2>
+            <h2 class="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
+              Contáctanos
+            </h2>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

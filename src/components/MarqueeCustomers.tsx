@@ -1,14 +1,17 @@
 import "react";
-import PropTypes from 'prop-types';
-
 import '../css/marquee.css'
 
-export const MarqueeComponent = ({ logosTop, logosBtm }) => {
-  const cardsTop = logosTop.map((item, index) => (
-    <img key={index} src={item.src} className={item.className} />
+export interface MarqueeLogo {
+  src: string,
+  class: string,
+}
+
+export const MarqueeComponent = ({ logosTop, logosBtm }: { logosTop: MarqueeLogo[], logosBtm: MarqueeLogo[] }) => {
+  const cardsTop = logosTop.map((item: MarqueeLogo, index: number) => (
+    <img key={index} src={item.src} className={item.class} />
   ));
-  const cardsBtm = logosBtm.map((item, index) => (
-    <img key={index} src={item.src} className={item.className} />
+  const cardsBtm = logosBtm.map((item: MarqueeLogo, index: number) => (
+    <img key={index} src={item.src} className={item.class} />
   ));
   
   return (
@@ -31,8 +34,4 @@ export const MarqueeComponent = ({ logosTop, logosBtm }) => {
       <br></br>
     </div>
   );
-}
-MarqueeComponent.propTypes = {
-  logosTop: PropTypes.array.isRequired,
-  logosBtm: PropTypes.array.isRequired,
 }

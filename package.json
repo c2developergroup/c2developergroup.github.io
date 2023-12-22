@@ -1,0 +1,36 @@
+{
+  "name": "c2-developer-group",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c2developergroup/c2developergroup.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/c2developergroup/c2developergroup.github.io/issues"
+  },
+  "homepage": "https://github.com/c2developergroup/c2developergroup.github.io#readme",
+  "dependencies": {
+    "@astrojs/react": "^3.0.8",
+    "@astrojs/tailwind": "^5.0.4",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "astro": "^4.0.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
+    "react-slick": "^0.29.0",
+    "react-type-animation": "^3.2.0",
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/react-slick": "^0.23.13",
+    "prettier": "3.1.1"
+  }
+}
