@@ -15,6 +15,10 @@ Inspiraciones para seguir arreglando landing page:
 - https://codepen.io/ankitvermaonline/pen/wvRZbLm
 - https://codepen.io/drewcarson/pen/GRPaxZv
 
+Inspiraciones para footer de landing page:
+
+- https://www.hellomonday.com/
+
 MARCAS:
 - BYNX
 - JONOAPPS
