@@ -42,3 +42,23 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+***
+
+Inspiraciones para footer de landing page:
+
+- https://www.hellomonday.com/
+
+MARCAS:
+- BYNX
+- JONOAPPS
+- MELAO BAGS
+- SERØ
+- SEBASTIAN CASTRO RAJBE PHOTOGRAPHY
+
+PROTOTIPOS:
+- COLEGIO SAN IGNACIO
+- ZUSSET
+- MEEKLI
+- PIZZA'S PISA
+- FIORESTILOS
