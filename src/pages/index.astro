@@ -1,0 +1,275 @@
+---
+import { FaArrowRight, FaStore } from "react-icons/fa/index";
+import { IoPhonePortraitOutline } from "react-icons/io5/index";
+import { MdApps, MdDevices } from "react-icons/md/index";
+import { MarqueeComponent } from "../components/MarqueeCustomers";
+import C2MainPage from "../components/MainPage.astro"
+import C2ReviewCarousel from "../components/ReviewCarousel.astro"
+import C2ProyectosCarousel from "../components/ProyectosCarousel.astro"
+
+import "../css/main.css"
+
+---
+<C2MainPage>
+  <section class="bg-[url('/c2bg-main.svg')] bg-cover bg-bottom">
+    <div class="flex flex-row-reverse">
+      <div class="absolute bg-[url('/c2fg-main-cropped.png')] bg-contain bg-no-repeat bg-right-top mt-[15vh] 4xl:mr-[15rem] 3xl:mr-[10rem] 2xl:mr-[5rem] md:mr-[1rem] mr-[0.5rem] min-h-[15rem] h-[75vh] w-[50%] min-w-[15rem]">
+        <!-- sticky relative absolute fixed static -->
+      </div>
+    </div>
+    <div class="w-10/12 m-auto pt-40">
+      <h2 class="relative z-10 text-black dark:text-white 3xl:text-[10rem] 2xl:text-9xl xl:text-8xl text-7xl resp:text-6xl transition duration-300 drop-shadow-xl shadow-black">
+        Exponenciamos tu <span class="text-blue-500">proyecto</span>
+      </h2>
+      <h2 class="relative z-10 text-black dark:text-white 2xl:text-7xl xl:text-6xl text-5xl resp:text-4xl transition duration-300">
+        con{" "}
+        <span class="text-transparent font-extrabold text-ecommerce bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
+          e-commerce
+        </span>
+        ,{" "}
+        <span class="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-[#00ccff] to-[#3fa9ff]">
+          páginas web
+        </span>
+        ,{" "}
+        <span class="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
+          aplicaciones
+        </span>
+        ...
+      </h2>
+    </div>
+    <div class="min-h-[50vh] h-[20vw]">
+    </div>
+  </section>
+  <section class="bg-blue-700 m-auto flex gap-5 justify-evenly flex-wrap items-center transition duration-300">
+    <MarqueeComponent
+      logosTop={
+        [
+          {
+            src: "/bynxlogowhite.png",
+            class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300"
+          },
+          {
+            src: "/serologowhite.png",
+            class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
+            href: "https://sero-project.vercel.app/"
+          },
+          {
+            src: "/JonoAppsLogoWhite.png",
+            class: "w-54 h-36 cursor-pointer hover:scale-110 transition duration-300",
+            href: "https://jonoapps.com"
+          },
+          {
+            src: "/melaologowhite.png",
+            class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300"
+          },
+          {
+            src: "/sebasphotographylogowhite.png",
+            class: "w-54 h-40 cursor-pointer hover:scale-110 transition duration-300"
+          },
+          {
+            src: "/c2logowhite.png",
+            class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300"
+          },
+        ]}
+      />
+      <!-- logosBtm={[
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+      ]}
+      /> -->
+  </section>
+  <section class="bg-gradient-to-b from-blue-700 from-40% to-neutral-800 to-40% pt-0 pb-20">
+    <div class="max-w-[90%] w-[50rem] md:py-20 py-10 mobl:px-8 bg-[#2a2a2a] m-auto rounded-lg flex justify-around items-center relative mobl:flex-col shadow-2xl shadow-neutral-900">
+      <div class="ps-10 tiny:w-[30%] mobl:mb-10">
+        <h2 class="text-6xl text-white">Nuestro enfoque</h2>
+      </div>
+      <div class="tiny:w-[60%] text-2xl text-white leading-9">
+        <p>
+          Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
+          sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
+          empresa u organización en el internet.
+        </p>
+        <button class="text-neutral-300 hover:text-neutral-100 transition duration-300 mt-7 flex items-center gap-6">
+          Contáctanos <FaArrowRight />
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="w-full transition duration-300 flex flex-col items-center p-6">
+    <h2 class="text-white text-7xl font-bold text-center">
+      ¿Qué hacemos?
+    </h2>
+    <div class="mt-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+      <div class="flex flex-row gap-4 items-center">
+        <div class="bg-green-500 w-[5rem] h-[5rem] rounded-full text-white text-3xl flex items-center content-center">
+          <FaStore className="w-[100%]" />
+        </div>
+        <p class="text-white text-5xl font-bold h-auto">
+          E-Commerce
+        </p>
+      </div>
+    </div>
+    <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+      <div class="flex flex-row flex-wrap gap-5 items-center justify-between">
+        <p class="text-white text-4xl h-auto md:w-[66%]">
+          Los usuarios del internet esperan tener compras online. Melao Bags nos pidió hacer un
+          e-commerce y su ventas aumentaron un 65%.
+          <br>
+          <a href="/proyectos/melao-bags/">
+            <span class="text-white text-2xl font-bold underline">
+              Ver Melao Bags {">"}
+            </span>
+          </a>
+        </p>
+        <div class="md:w-[30%] md:mt-0 mt-5 flex flex-row items-center justify-center">
+          <img
+            class="rounded-3xl shadow-lg shadow-black md:w-[100%] sm:w-10/12 w-11/12"
+            src="/melaobagsscreenshot.png">
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+      <div class="flex flex-row gap-4 items-center">
+        <div class="bg-blue-500 w-[5rem] h-[5rem] rounded-full text-white text-4xl flex items-center content-center">
+          <MdDevices className="w-[100%]" />
+        </div>
+        <p class="text-white text-5xl font-bold h-auto">
+          Tratamiento Responsive
+        </p>
+      </div>
+    </div>
+    <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+      <div class="flex flex-row flex-wrap gap-5 items-center justify-between">
+        <div class="relative md:w-[30%] flex flex-row items-center justify-center">
+          <img
+            class="rounded-3xl shadow-lg shadow-black md:w-[100%] sm:w-10/12 w-11/12"
+            src="/melaobagsscreenshot.png">
+          <img
+            class="absolute -bottom-4 -right-4 h-[80%]"
+            src="/phone.png">
+        </div>
+        <p class="text-white text-4xl h-auto md:w-[66%] md:mt-0 mt-10">
+          95% de los estudiantes escolares utilizan un teléfono inteligente. Rediseñamos la página
+          web del Colegio San Ignacio con usuarios móviles en mente.
+          <br>
+          <a href="/proyectos/colegiosanignacio/">
+            <span class="text-white text-2xl font-bold underline">
+              Ver concepto {">"}
+            </span>
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+      <div class="flex flex-row flex-wrap gap-4 items-center justify-between">
+        <div class="flex flex-col justify-start gap-10 md:h-[100%] h-auto md:w-[66%]">
+          <div class="flex flex-row mt-2">
+            <div class="flex flex-row gap-4 items-center">
+              <div class="bg-yellow-400 w-[5rem] h-[5rem] rounded-full text-black text-4xl flex items-center content-center">
+                <IoPhonePortraitOutline className="w-[100%]" />
+              </div>
+              <p class="text-white text-5xl font-bold h-auto">
+                Aplicación móvil
+              </p>
+            </div>
+          </div>
+          <p class="text-white text-4xl">
+            Texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto
+            aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui
+            <br>
+            <a href="/proyectos/???/">
+              <span class="text-white text-2xl font-bold underline">
+                Ver ??? {">"}
+              </span>
+            </a>
+          </p>
+        </div>
+        <div class="md:max-w-[30%] w-[100%] h-[50vh] md:mt-0 mt-5 md:mb-0 mb-10 flex flex-row items-center justify-center">
+          <img
+            class="h-[100%]"
+            src="/phone.png">
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+      <div class="flex flex-row gap-4 items-center">
+        <div class="bg-violet-700 w-[5rem] h-[5rem] rounded-full text-white text-4xl flex items-center content-center">
+          <MdApps className="w-[100%]" />
+        </div>
+        <p class="text-white text-5xl font-bold h-auto">
+          Portafolio y Catálogos
+        </p>
+      </div>
+    </div>
+    <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+      <div class="flex flex-row flex-wrap gap-4 items-center justify-between">
+        <div class="md:w-[30%] flex flex-row items-center justify-center">
+          <img
+            class="rounded-3xl shadow-lg shadow-black md:w-[100%] sm:w-10/12 w-11/12"
+            src="/melaobagsscreenshot.png">
+        </div>
+        <p class="text-white text-4xl h-auto md:w-[66%] md:mt-0 mt-10">
+          Texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto
+          aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui
+          <br>
+          <a href="/proyectos/???/">
+            <span class="text-white text-2xl font-bold underline">
+              Ver ??? {">"}
+            </span>
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="my-20 xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%] mx-2">
+      <a href="/proyectos/">
+        <p class="text-white text-2xl font-bold underline">
+          Ver más proyectos {">"}
+        </p>
+      </a>
+    </div>
+  </section>
+  <section class="transition duration-300 py-20 flex flex-col items-center gap-5 p-6 bg-blue-700">
+    <h2 class="text-white text-7xl font-bold text-center">
+      ¿Qué dicen de nosotros?
+    </h2>
+    <div class="w-[100%] mt-10"></div>
+    <C2ReviewCarousel />
+  </section>
+  <section class="pb-20">
+    <h2 class="text-6xl text-center mb-5 mt-20 text-blue-500 dark:text-white">
+      Algunos de nuestros trabajos
+    </h2>
+    <C2ProyectosCarousel />
+  </section>
+  <section class="transition duration-300 py-20 flex flex-col items-center gap-5 p-6 bg-blue-700">
+    <p class="text-white text-4xl text-center">
+      ¿Estás listo para hacer tu página web o aplicación <br /> con
+      nosotros?
+    </p>
+    <button class="w-32 bg-white text-black text-2xl p-3 rounded-lg">
+      Contáctanos
+    </button>
+  </section>
+</C2MainPage>

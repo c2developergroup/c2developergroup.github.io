@@ -1,39 +1,37 @@
 {
   "name": "c2-developer-group",
+  "version": "0.2.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c2developergroup/c2developergroup.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/c2developergroup/c2developergroup.github.io/issues"
+  },
+  "homepage": "https://github.com/c2developergroup/c2developergroup.github.io#readme",
   "dependencies": {
-    "@material-tailwind/react": "^2.1.4",
+    "@astrojs/react": "^3.0.8",
+    "@astrojs/tailwind": "^5.0.4",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "astro": "^4.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
-    "react-router-dom": "^6.19.0",
-    "react-slick": "^0.29.0",
-    "react-type-animation": "^3.2.0",
-    "slick-carousel": "^1.8.1"
+    "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.53.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.4",
-    "gh-pages": "^6.1.0",
-    "postcss": "^8.4.31",
-    "sass": "^1.69.5",
-    "tailwindcss": "^3.3.5",
-    "vite": "^5.0.0"
+    "@types/jquery": "^3.5.29",
+    "@types/react-icons": "^3.0.0",
+    "@types/react-slick": "^0.23.13",
+    "@types/slick-carousel": "^1.6.40",
+    "prettier": "3.1.1"
   }
 }

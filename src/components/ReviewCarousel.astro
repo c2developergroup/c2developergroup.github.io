@@ -1,0 +1,105 @@
+---
+import "../css/slick-review.css";
+---
+<div is="c2dev-review-carousel" class="relative max-w-[100%] w-[100%]">
+  {Array(5).fill(
+    <div class="px-10 pt-10 pb-16">
+      <div class="flex flex-row gap-20 w-[100%] items-start justify-center">
+        <div class="bg-black w-[5rem] h-[5rem] rounded-2xl mt-8 text-white text-4xl flex items-center content-center"></div>
+        <div class="flex flex-col justify-center gap-10 max-w-[80rem] w-[100%]">
+          <p class="text-white text-5xl font-bold">
+            <span class="text-7xl">{'“'}</span>
+            Con C2 Developer Group aumentamos nuestro tráfico un 96% y nuestra tasa de
+            conversión un 56%. Los recomendamos.
+            <span class="text-7xl">{'”'}</span>
+          </p>
+          <p class="text-white text-4xl">
+            {"-"} Jonathan Apps
+          </p>
+        </div>
+      </div>
+    </div>
+  )}
+  <!-- <div class="px-10 pt-10 pb-16">
+    <img
+      src="/screenshot.png"
+      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+      alt="Slide 2"
+    />
+  </div>
+  <div class="px-10 pt-10 pb-16">
+    <img
+      src="/screenshot.png"
+      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+      alt="Slide 3"
+    />
+  </div>
+  <div class="px-10 pt-10 pb-16">
+    <img
+      src="/screenshot.png"
+      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+      alt="Slide 4"
+    />
+  </div>
+  <div class="px-10 pt-10 pb-16">
+    <img
+      src="/screenshot.png"
+      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+      alt="Slide 5"
+    />
+  </div> -->
+</div>
+<script>
+  const settings = {
+    dots: true,
+    dotsClass: "slick-dots-portfolio",
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    centerMode: true,
+    centerPadding: "0px",
+    focusOnSelect: true,
+    customPaging: function (_slider: any, i: number) {
+      return `<button type="button">${i}</button>`;
+    },
+  };
+
+  class C2DevReviewCarousel extends HTMLDivElement {
+    observer: IntersectionObserver|null = null;
+    initialized: boolean = false;
+
+    constructor() {
+      super()
+    }
+
+    onIntersect() {
+      if (!this.initialized) {
+        this.initialized = true;
+
+        $(this).slick(settings);
+      }
+    }
+
+    connectedCallback() {
+      let observer = this.observer ?? new IntersectionObserver(
+        this.onIntersect.bind(this),
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0,
+        },
+      );
+      observer.observe(this);
+      this.observer = observer;
+    }
+
+    disconnectedCallback() {
+      this.observer?.unobserve(this);
+    }
+  }
+  window.customElements.define("c2dev-review-carousel", C2DevReviewCarousel, { extends: "div" })
+</script>
