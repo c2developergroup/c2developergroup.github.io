@@ -1,0 +1,113 @@
+.slick-dots-portfolio {
+  position: absolute;
+  bottom: -30px;
+
+  display: block;
+
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+
+  text-align: center;
+}
+.slick-dots-portfolio li {
+  position: relative;
+
+  display: inline-block;
+
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+
+  cursor: pointer;
+}
+.slick-dots-portfolio li button {
+  font-size: 0;
+  line-height: 0;
+
+  display: block;
+
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+
+  cursor: pointer;
+
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+.slick-dots-portfolio li button:hover,
+.slick-dots-portfolio li button:focus {
+  outline: none;
+}
+.slick-dots-portfolio li button:hover:before,
+.slick-dots-portfolio li button:focus:before {
+  opacity: 1;
+}
+.slick-dots-portfolio li button:before {
+  font-family: "slick";
+  font-display: auto;
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  content: "";
+  text-align: center;
+  opacity: 1;
+  background: #b1becf;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.slick-dots-portfolio li.slick-active button:before {
+  opacity: 1;
+  background: #fff;
+  border: solid 3px #1c212c;
+}
+
+:root {
+  --card-height: 30rem;
+  --card-width: 50rem;
+}
+
+.card1::before {
+  content: "";
+  width: 102%;
+  height: 103%;
+  border-radius: 10px;
+  background-image: linear-gradient(var(--rotate), #4a7eff, #073bd5);
+  position: absolute;
+  z-index: -1;
+  top: -1.5%;
+  left: -1%;
+  animation: spin 3.5s linear infinite;
+}
+
+.card1::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 10));
+  background-image: linear-gradient(var(--rotate), #4a7eff, #073bd5);
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 3.5s linear infinite;
+}

@@ -1,0 +1,145 @@
+---
+import "../css/slick-review.css";
+---
+<div is="c2dev-proyectos-carousel" class="relative max-w-[100%] w-[100%]">
+  <div class="px-10 pt-10 pb-16">
+    <img
+      src="/screenshot.png"
+      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+      alt="Slide 1"
+    />
+  </div>
+  <div class="px-10 pt-10 pb-16">
+    <img
+      src="/screenshot.png"
+      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+      alt="Slide 2"
+    />
+  </div>
+  <div class="px-10 pt-10 pb-16">
+    <img
+      src="/screenshot.png"
+      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+      alt="Slide 3"
+    />
+  </div>
+  <div class="px-10 pt-10 pb-16">
+    <img
+      src="/screenshot.png"
+      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+      alt="Slide 4"
+    />
+  </div>
+  <div class="px-10 pt-10 pb-16">
+    <img
+      src="/screenshot.png"
+      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+      alt="Slide 5"
+    />
+  </div>
+</div>
+<script>
+  const proyectosCarouselSettings = {
+    dots: true,
+    dotsClass: "slick-dots-portfolio",
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    centerMode: true,
+    centerPadding: "700px",
+    focusOnSelect: true,
+    customPaging: function (_slider: any, i: number) {
+      return `<button type="button">${i}</button>`;
+    },
+    responsive: [
+      {
+        // 4xl
+        breakpoint: 2100,
+        settings: {
+          centerPadding: "600px",
+        }
+      },
+      {
+        // 3xl
+        breakpoint: 1800,
+        settings: {
+          centerPadding: "500px",
+        }
+      },
+      {
+        // 2xl
+        breakpoint: 1536,
+        settings: {
+          centerPadding: "400px",
+        }
+      },
+      {
+        // xl
+        breakpoint: 1280,
+        settings: {
+          centerPadding: "300px",
+        }
+      },
+      {
+        // lg
+        breakpoint: 1024,
+        settings: {
+          centerPadding: "200px",
+        }
+      },
+      {
+        // md
+        breakpoint: 768,
+        settings: {
+          centerPadding: "100px",
+        }
+      },
+      {
+        // sm
+        breakpoint: 640,
+        settings: {
+          centerPadding: "10px",
+        }
+      },
+    ],
+  };
+
+  class C2DevProyectosCarousel extends HTMLDivElement {
+    observer: IntersectionObserver|null = null;
+    initialized: boolean = false;
+
+    constructor() {1
+      super()
+    }
+
+    onIntersect() {
+      if (!this.initialized) {
+        this.initialized = true;
+
+        $(this).slick(proyectosCarouselSettings);
+      }
+    }
+
+    connectedCallback() {
+      let observer = this.observer ?? new IntersectionObserver(
+        this.onIntersect.bind(this),
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0,
+        },
+      );
+      observer.observe(this);
+      this.observer = observer;
+    }
+
+    disconnectedCallback() {
+      this.observer?.unobserve(this);
+    }
+  }
+  window.customElements.define("c2dev-proyectos-carousel", C2DevProyectosCarousel, { extends: "div" })
+</script>
