@@ -1,237 +1,173 @@
 ---
-import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa6";
-import { AiOutlineGithub } from "react-icons/ai";
-import { TypeAnimation } from "react-type-animation";
-import { ExampleSlider } from "../components/ExampleSlider"
-import { MarqueeComponent, type MarqueeLogo } from "../components/MarqueeCustomers";
+import { FaArrowRight, FaStore } from "react-icons/fa";
+import { IoPhonePortraitOutline } from "react-icons/io5";
+import { MdApps, MdDevices } from "react-icons/md";
+import { MarqueeComponent } from "../components/MarqueeCustomers";
+import C2MainPage from "../components/MainPage.astro"
+
+import "../css/main.css"
 
 ---
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/c2logosquare.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>C² Developer Group</title>
-    <link href="/main.css" type="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@500;700;800;900&display=swap" rel="stylesheet">
-  </head>
-  <body class="dark:bg-neutral-800 bg-white transition duration-300">
-    <div id="root">
-      <div> <!-- onMouseMove={handleHover} onMouseLeave={resetStyles} -->
-        <section class="w-10/12 m-auto mt-40">
-          <h2 class="text-black dark:text-white text-8xl resp:text-6xl transition duration-300">
-            Exponenciamos tu <br />
-            <span class="text-blue-500">
-              <TypeAnimation
-                sequence={[
-                  680,
-                  "empresa",
-                  2000,
-                  "proyecto",
-                  2000,
-                  "emprendimiento",
-                  2000,
-                  "organización",
-                  2000,
-                  "presencia",
-                  2000,
-                ]}
-                wrapper="span"
-                cursor={false}
-                repeat={Infinity}
-                class="font-extrabold"
-                style={{ display: "inline-block" }}
-              />
-            </span>
-          </h2>
-          <h2 class="text-black dark:text-white text-5xl resp:text-4xl transition duration-300">
-            con{" "}
-            <span class="text-transparent font-extrabold text-ecommerce bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
-              e-commerce
-            </span>
-            ,{" "}
-            <span class="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-[#00ccff] to-[#3fa9ff]">
-              páginas web
-            </span>
-            ,{" "}
-            <span class="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
-              aplicaciones
-            </span>
-            ...
-          </h2>
-        </section>
-        <section class="w-10/12 m-auto mt-28">
-          <h2 class="text-5xl text-blue-500 dark:text-white">
-            Tratamiento Responsive
-          </h2>
-          <div class="flex justify-between items-end"> <!-- ref={cardDivRef} -->
-            <img
-              src="/phone.png"
-              class="w-[13%]"
-            /> <!-- ref={cardImg1Ref} -->
-            <img
-              src="/tablet.png"
-              class="w-[23%]"
-            /> <!-- ref={cardImg2Ref} -->
-            <img
-              src="/computer.png"
-              class="w-[45%]"
-            /> <!-- ref={cardImg3Ref} -->
-          </div>
-        </section>
-        <section class="m-auto my-20 flex gap-5 justify-evenly flex-wrap items-center transition duration-300">
-          {function(){
-            const logosTop: MarqueeLogo[] = true /* store.theme === "dark" */ ? [
-              {
-                src: "/bynxlogowhite.png",
-                class: "w-54 h-24 cursor-pointer"
-              },
-              {
-                src: "/serologowhite.png",
-                class: "w-54 h-24 cursor-pointer invert dark:invert-0"
-              },
-              {
-                src: "/zussetlogowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              },
-              {
-                src: "/c2logowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              },
-              {
-                src: "/c2logowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              },
-              {
-                src: "/c2logowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              }
-            ] : [
-              {
-                src: "/bynxlogoblack.png",
-                class: "w-54 h-24 cursor-pointer"
-              },
-              {
-                src: "/serologowhite.png",
-                class: "w-54 h-24 cursor-pointer invert dark:invert-0"
-              },
-              {
-                src: "/zussetlogowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              },
-              {
-                src: "/c2logowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              },
-              {
-                src: "/c2logowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              },
-              {
-                src: "/c2logowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              }
-            ];
-
-            const logosBtm: MarqueeLogo[] = [
-              {
-                src: "/c2logowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              },
-              {
-                src: "/c2logowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              },
-              {
-                src: "/c2logowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              },
-              {
-                src: "/c2logowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              },
-              {
-                src: "/c2logowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              },
-              {
-                src: "/c2logowhite.png",
-                class: "w-54 h-24 invert dark:invert-0"
-              }
-            ];
-
-            return (
-              <MarqueeComponent logosTop={logosTop} logosBtm={logosBtm} />
-            );
-          }()}
-        </section>
-        <section class="max-w-[90%] w-[50rem] md:py-20 py-10 mobl:px-8 bg-blue-500 dark:bg-blue-700 m-auto mt-20 rounded-lg flex justify-around items-center relative mobl:flex-col">
-          <div class="tiny:w-[30%] mobl:mb-10">
-            <h2 class="text-6xl text-white">Nuestro enfoque</h2>
-          </div>
-          <div class="tiny:w-[60%] text-2xl text-white leading-9">
-            <p>
-              Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
-              sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
-              empresa u organización en el internet.
-            </p>
-            <button class="text-neutral-300 hover:text-neutral-100 transition duration-300 mt-7 flex items-center gap-6">
-              Contáctanos <FaArrowRight />
-            </button>
-          </div>
-        </section>
-        <section class="w-full bg-blue-500 dark:bg-blue-700 transition duration-300 mt-40 flex flex-col items-center gap-5 p-6">
-          <h2 class="text-white text-5xl text-center">
-            ¿Tienes algún proyecto? <br />
-            Construyámoslo juntos
-          </h2>
-          <button class="w-32 bg-white text-black text-2xl p-3 rounded-lg">
-            Contáctanos
-          </button>
-        </section>
-        <section>
-          <h2 class="text-6xl text-center mb-5 mt-20 text-blue-500 dark:text-white">
-            Algunos de nuestros trabajos
-          </h2>
-          {/* Carrusel */}
-          <ExampleSlider client:visible />
-        </section>
-        <section class="transition duration-300 my-40 flex flex-col items-center gap-5 p-6 bg-blue-500 dark:bg-blue-600">
-          <h2 class="text-white text-5xl text-center">
-            ¿Estás listo para hacer tu página web o aplicación <br /> con
-            nosotros?
-          </h2>
-          <button class="w-32 bg-white text-black text-2xl p-3 rounded-lg">
-            Contáctanos
-          </button>
-        </section>
-        <footer class="w-full bg-blue-500 dark:bg-blue-700 text-white flex resp:flex-col resp:gap-y-10 p-10 items-center justify-around">
-          <div>
-            <img src="/c2logowhite.png" class="w-54 h-24 mb-2" />
-            <h2 class="text-4xl">Links Interesantes</h2>
-            <h2 class="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
-              Sobre Nosotros
-            </h2>
-            {/* <NetAnimation/> */}
-          </div>
-          <div class="flex items-center gap-x-6 md:mx-36">
-            <FaWhatsapp class="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
-            <FaInstagram class="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
-            <AiOutlineGithub class="text-4xl  hover:text-neutral-200 hover:scale-110 transition duration-300 cursor-pointer" />
-          </div>
-          <div>
-            <h2 class="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
-              Forma parte de nuestro equipo
-            </h2>
-            <h2 class="text-2xl hover:text-neutral-200 transition duration-300 cursor-pointer">
-              Contáctanos
-            </h2>
-          </div>
-        </footer>
+<C2MainPage>
+  <section class="bg-[url('/c2bg-main.svg')] bg-cover bg-bottom">
+    <div class="flex flex-row-reverse">
+      <div class="absolute bg-[url('/c2fg-main-cropped.png')] bg-contain bg-no-repeat bg-right-top mt-[15vh] 4xl:mr-[15rem] 3xl:mr-[10rem] 2xl:mr-[5rem] md:mr-[1rem] mr-[0.5rem] min-h-[15rem] h-[75vh] w-[50%] min-w-[15rem]">
+        <!-- sticky relative absolute fixed static -->
       </div>
     </div>
-  </body>
-</html>
+    <div class="w-10/12 m-auto pt-40">
+      <h2 class="relative z-10 text-black dark:text-white 3xl:text-[10rem] 2xl:text-9xl xl:text-8xl text-7xl resp:text-6xl transition duration-300 drop-shadow-xl shadow-black">
+        Exponenciamos tu <span class="text-blue-500">proyecto</span>
+      </h2>
+      <h2 class="relative z-10 text-black dark:text-white 2xl:text-7xl xl:text-6xl text-5xl resp:text-4xl transition duration-300">
+        con{" "}
+        <span class="text-transparent font-extrabold text-ecommerce bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
+          e-commerce
+        </span>
+        ,{" "}
+        <span class="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-[#00ccff] to-[#3fa9ff]">
+          páginas web
+        </span>
+        ,{" "}
+        <span class="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
+          aplicaciones
+        </span>
+        ...
+      </h2>
+    </div>
+    <div class="min-h-[50vh] h-[20vw]">
+    </div>
+  </section>
+  <section class="bg-blue-700 m-auto flex gap-5 justify-evenly flex-wrap items-center transition duration-300">
+    <MarqueeComponent
+      logosTop={[
+        {
+          src: "/bynxlogowhite.png",
+          class: "w-54 h-24 cursor-pointer"
+        },
+        {
+          src: "/serologowhite.png",
+          class: "w-54 h-24 cursor-pointer invert dark:invert-0"
+        },
+        {
+          src: "/JonoAppsLogoWhite.png",
+          class: "w-54 h-36 invert dark:invert-0"
+        },
+        {
+          src: "/melaologowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+        {
+          src: "/sebasphotographylogowhite.png",
+          class: "w-54 h-40 invert dark:invert-0"
+        },
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+      ]}
+      logosBtm={[
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+        {
+          src: "/c2logowhite.png",
+          class: "w-54 h-24 invert dark:invert-0"
+        },
+      ]}
+      />
+  </section>
+  <section class="bg-gradient-to-b from-blue-700 from-40% to-neutral-800 to-40% pt-0 pb-20">
+    <div class="max-w-[90%] w-[50rem] md:py-20 py-10 mobl:px-8 bg-[#2a2a2a] m-auto rounded-lg flex justify-around items-center relative mobl:flex-col shadow-2xl shadow-neutral-900">
+      <div class="ps-10 tiny:w-[30%] mobl:mb-10">
+        <h2 class="text-6xl text-white">Nuestro enfoque</h2>
+      </div>
+      <div class="tiny:w-[60%] text-2xl text-white leading-9">
+        <p>
+          Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
+          sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
+          empresa u organización en el internet.
+        </p>
+        <button class="text-neutral-300 hover:text-neutral-100 transition duration-300 mt-7 flex items-center gap-6">
+          Contáctanos <FaArrowRight />
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="w-full transition duration-300 flex flex-col items-center p-6">
+    <h2 class="text-white text-7xl text-center">
+      ¿Qué hacemos?
+    </h2>
+    <div class="mt-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+      <div class="flex flex-row gap-4 items-center">
+        <div class="bg-green-500 w-[5rem] h-[5rem] rounded-full text-white text-3xl flex items-center content-center">
+          <FaStore className="w-[100%]" />
+        </div>
+        <p class="text-white text-4xl h-auto">
+          E-Commerce
+        </p>
+      </div>
+    </div>
+    <div class="mt-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+      <div class="flex flex-row gap-4 items-center">
+        <div class="bg-blue-500 w-[5rem] h-[5rem] rounded-full text-white text-4xl flex items-center content-center">
+          <MdDevices className="w-[100%]" />
+        </div>
+        <p class="text-white text-4xl h-auto">
+          Tratamiento Responsive
+        </p>
+      </div>
+    </div>
+    <div class="mt-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+      <div class="flex flex-row gap-4 items-center">
+        <div class="bg-yellow-400 w-[5rem] h-[5rem] rounded-full text-black text-4xl flex items-center content-center">
+          <IoPhonePortraitOutline className="w-[100%]" />
+        </div>
+        <p class="text-white text-4xl h-auto">
+          Aplicación móvil
+        </p>
+      </div>
+    </div>
+    <div class="mt-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+      <div class="flex flex-row gap-4 items-center">
+        <div class="bg-violet-700 w-[5rem] h-[5rem] rounded-full text-white text-4xl flex items-center content-center">
+          <MdApps className="w-[100%]" />
+        </div>
+        <p class="text-white text-4xl h-auto">
+          Portafolio y Catálogos
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="bg-neutral-800">
+    <h2 class="text-6xl text-center mb-5 mt-20 text-blue-500 dark:text-white">
+      Algunos de nuestros trabajos
+    </h2>
+  </section>
+  <section class="transition duration-300 my-40 flex flex-col items-center gap-5 p-6 bg-blue-700">
+    <h2 class="text-white text-5xl text-center">
+      ¿Estás listo para hacer tu página web o aplicación <br /> con
+      nosotros?
+    </h2>
+    <button class="w-32 bg-white text-black text-2xl p-3 rounded-lg">
+      Contáctanos
+    </button>
+  </section>
+</C2MainPage>
