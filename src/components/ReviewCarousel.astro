@@ -1,7 +1,7 @@
 ---
 import "../css/slick-review.css";
 ---
-<div is="c2dev-review-carousel" class="relative max-w-[100%] w-[100%]">
+<c2dev-review-carousel class="relative max-w-[100%] w-[100%]">
   {Array(5).fill(
     <div class="px-10 pt-10 pb-16">
       <div class="flex flex-row gap-20 w-[100%] items-start justify-center">
@@ -20,35 +20,7 @@ import "../css/slick-review.css";
       </div>
     </div>
   )}
-  <!-- <div class="px-10 pt-10 pb-16">
-    <img
-      src="/screenshot.png"
-      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-      alt="Slide 2"
-    />
-  </div>
-  <div class="px-10 pt-10 pb-16">
-    <img
-      src="/screenshot.png"
-      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-      alt="Slide 3"
-    />
-  </div>
-  <div class="px-10 pt-10 pb-16">
-    <img
-      src="/screenshot.png"
-      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-      alt="Slide 4"
-    />
-  </div>
-  <div class="px-10 pt-10 pb-16">
-    <img
-      src="/screenshot.png"
-      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-      alt="Slide 5"
-    />
-  </div> -->
-</div>
+</>
 <script>
   const settings = {
     dots: true,
@@ -68,7 +40,7 @@ import "../css/slick-review.css";
     },
   };
 
-  class C2DevReviewCarousel extends HTMLDivElement {
+  class C2DevReviewCarousel extends HTMLElement {
     observer: IntersectionObserver|null = null;
     initialized: boolean = false;
 
@@ -101,5 +73,5 @@ import "../css/slick-review.css";
       this.observer?.unobserve(this);
     }
   }
-  window.customElements.define("c2dev-review-carousel", C2DevReviewCarousel, { extends: "div" })
+  window.customElements.define("c2dev-review-carousel", C2DevReviewCarousel)
 </script>
