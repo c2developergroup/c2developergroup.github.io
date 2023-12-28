@@ -35,7 +35,7 @@ import "../css/main.css"
 </div>
 <header
   id="--c2dev-navbar-header"
-  class="fixed flex justify-between items-center z-[100] w-screen py-3 font-serif text-gray-200 bg-transparent top-0 left-0 transition duration-300">
+  class="fixed flex justify-between items-center z-[100] w-screen py-3 font-serif text-gray-200 bg-blue-700 top-0 left-0 transition duration-300">
   <a href="/">
     <img src="/c2logowhite.png" class="h-16 ml-10 lg:ml-10 cursor-pointer"/>
   </a>
@@ -77,32 +77,10 @@ import "../css/main.css"
   id="--c2dev-navbar-back"></div>
 <script>
   let stateIsOpen: boolean = false;
-  let stateIsTop: boolean = false;
 
   let __c2dev_navbar_back!: HTMLElement;
   let __c2dev_navbar_hamburger!: HTMLElement;
-  let __c2dev_navbar_header!: HTMLElement;
   let __c2dev_navbar_mobile!: HTMLElement;
-  let __c2dev_navbar_ref!: HTMLElement;
-
-  const navbarTransparency = (() => {
-    const _navTrans = (isTop: boolean) => {
-      return isTop ? "bg-transparent" : "bg-blue-700";
-    }
-    const setTrans = (isTrans: boolean) => {
-      __c2dev_navbar_header.classList.replace(_navTrans(!isTrans), _navTrans(isTrans));
-    };
-    const onIntersect = (entries: IntersectionObserverEntry[]) => {
-      const [entry] = entries;
-      const isTop = entry!!.isIntersecting;
-      stateIsTop = isTop
-      
-      const isTrans = isTop && !stateIsOpen;
-      setTrans(isTrans);
-    };
-
-    return { onIntersect: onIntersect, setTrans: setTrans }
-  })()
 
   const hamburgerMenu = (() => {
     const _updateHamburgerMenu = (stateIsOpen: boolean) => {
@@ -116,7 +94,6 @@ import "../css/main.css"
 
         __c2dev_navbar_back.classList.replace(backVis(!isOpen), backVis(isOpen));
         __c2dev_navbar_mobile.classList.replace(navVis(!isOpen), navVis(isOpen));
-        navbarTransparency.setTrans(stateIsTop && !stateIsOpen)
       }
 
       __inner(stateIsOpen);
@@ -137,20 +114,8 @@ import "../css/main.css"
     __c2dev_navbar_back = document.getElementById("--c2dev-navbar-back")!!;
     __c2dev_navbar_hamburger = document.getElementById("--c2dev-navbar-hamburger")!!;
     __c2dev_navbar_mobile = document.getElementById("--c2dev-navbar-mobile")!!;
-    __c2dev_navbar_header = document.getElementById("--c2dev-navbar-header")!!;
-    __c2dev_navbar_ref = document.getElementById("--c2dev-navbar-ref")!!;
 
     __c2dev_navbar_hamburger.addEventListener("click", hamburgerMenu.toggle);
     __c2dev_navbar_back.addEventListener("click", hamburgerMenu.close);
-
-    let observer = new IntersectionObserver(
-      navbarTransparency.onIntersect,
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0,
-      },
-    );
-    observer.observe(__c2dev_navbar_ref);
   });
 </script>
