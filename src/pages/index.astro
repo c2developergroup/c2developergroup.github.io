@@ -34,8 +34,11 @@ import "../css/main.css"
         </span>
         ...
       </h2>
+      <button class="w-32 bg-transparent border-2 md:mt-6 mt-3 border-white text-white md:text-2xl text-xl md:p-3 p-2 rounded-lg">
+        Contáctanos
+      </button>
     </div>
-    <div class="sm:min-h-[50vh] tiny:min-h-[40vh] min-h-[30vh] h-[20vw]">
+    <div class="md:min-h-[calc(50vh-5rem)] sm:min-h-[calc(50vh-4rem)] tiny:min-h-[calc(40vh-4rem)] min-h-[calc(30vh-4rem)] md:h-[calc(20vw-5rem)] h-[calc(20vw-4rem)]">
     </div>
   </section>
   <section class="bg-blue-700 m-auto flex gap-5 justify-evenly flex-wrap items-center transition duration-300">
@@ -70,38 +73,11 @@ import "../css/main.css"
           },
         ]}
       />
-      <!-- logosBtm={[
-        {
-          src: "/c2logowhite.png",
-          class: "w-54 h-24 invert dark:invert-0"
-        },
-        {
-          src: "/c2logowhite.png",
-          class: "w-54 h-24 invert dark:invert-0"
-        },
-        {
-          src: "/c2logowhite.png",
-          class: "w-54 h-24 invert dark:invert-0"
-        },
-        {
-          src: "/c2logowhite.png",
-          class: "w-54 h-24 invert dark:invert-0"
-        },
-        {
-          src: "/c2logowhite.png",
-          class: "w-54 h-24 invert dark:invert-0"
-        },
-        {
-          src: "/c2logowhite.png",
-          class: "w-54 h-24 invert dark:invert-0"
-        },
-      ]}
-      /> -->
   </section>
   <section class="bg-gradient-to-b from-blue-700 from-40% to-neutral-800 to-40% pt-0 pb-20">
     <div class="max-w-[90%] w-[50rem] md:py-20 py-10 mobl:px-8 bg-[#2a2a2a] m-auto rounded-lg flex justify-around items-center relative mobl:flex-col shadow-2xl shadow-neutral-900">
       <div class="ps-10 tiny:w-[30%] mobl:mb-10">
-        <h2 class="text-6xl text-white">Nuestro enfoque</h2>
+        <h2 class="md:text-6xl sm:text-5xl text-4xl text-white">Nuestro enfoque</h2>
       </div>
       <div class="tiny:w-[60%] text-2xl text-white leading-9">
         <p>
@@ -116,15 +92,15 @@ import "../css/main.css"
     </div>
   </section>
   <section class="w-full transition duration-300 flex flex-col items-center p-6">
-    <h2 class="text-white text-7xl font-bold text-center">
+    <h2 class="text-white md:text-7xl text-5xl font-bold text-center">
       ¿Qué hacemos?
     </h2>
     <div class="mt-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
       <div class="flex flex-row gap-4 items-center">
-        <div class="bg-green-500 w-[5rem] h-[5rem] rounded-full text-white text-3xl flex items-center content-center">
+        <div class="bg-green-500 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-white md:text-3xl text-xl flex items-center content-center">
           <FaStore className="w-[100%]" />
         </div>
-        <p class="text-white text-5xl font-bold h-auto">
+        <p class="text-white md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
           E-Commerce
         </p>
       </div>
@@ -150,10 +126,10 @@ import "../css/main.css"
     </div>
     <div class="mt-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
       <div class="flex flex-row gap-4 items-center">
-        <div class="bg-blue-500 w-[5rem] h-[5rem] rounded-full text-white text-4xl flex items-center content-center">
+        <div class="bg-blue-500 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-white md:text-4xl text-2xl flex items-center content-center">
           <MdDevices className="w-[100%]" />
         </div>
-        <p class="text-white text-5xl font-bold h-auto">
+        <p class="text-white md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
           Tratamiento Responsive
         </p>
       </div>
@@ -185,10 +161,10 @@ import "../css/main.css"
         <div class="flex flex-col justify-start gap-10 md:h-[100%] h-auto md:w-[66%]">
           <div class="flex flex-row mt-2">
             <div class="flex flex-row gap-4 items-center">
-              <div class="bg-yellow-400 w-[5rem] h-[5rem] rounded-full text-black text-4xl flex items-center content-center">
+              <div class="bg-yellow-400 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-black md:text-4xl text-3xl flex items-center content-center">
                 <IoPhonePortraitOutline className="w-[100%]" />
               </div>
-              <p class="text-white text-5xl font-bold h-auto">
+              <p class="text-white md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
                 Aplicación móvil
               </p>
             </div>
@@ -213,10 +189,10 @@ import "../css/main.css"
     </div>
     <div class="flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
       <div class="flex flex-row gap-4 items-center">
-        <div class="bg-violet-700 w-[5rem] h-[5rem] rounded-full text-white text-4xl flex items-center content-center">
+        <div class="bg-violet-700 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-white md:text-4xl text-3xl flex items-center content-center">
           <MdApps className="w-[100%]" />
         </div>
-        <p class="text-white text-5xl font-bold h-auto">
+        <p class="text-white md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
           Portafolio y Catálogos
         </p>
       </div>
@@ -256,17 +232,23 @@ import "../css/main.css"
     <C2ReviewCarousel />
   </section>
   <section class="pb-20">
-    <h2 class="text-6xl text-center mb-5 mt-20 text-blue-500 dark:text-white">
+    <h2 class="md:text-6xl text-4xl text-center mb-5 mt-20 text-blue-500 dark:text-white">
       Algunos de nuestros trabajos
     </h2>
     <C2ProyectosCarousel />
   </section>
   <section class="transition duration-300 py-20 flex flex-col items-center gap-5 p-6 bg-blue-700">
-    <p class="text-white text-4xl text-center">
-      ¿Estás listo para hacer tu página web o aplicación <br /> con
-      nosotros?
-    </p>
-    <button class="w-32 bg-white text-black text-2xl p-3 rounded-lg">
+    <div>
+      <p class="text-white md:text-4xl md:block hidden text-center">
+        ¿Estás listo para hacer tu página web o aplicación <br>
+        con nosotros?
+      </p>
+      <p class="text-white text-4xl md:hidden block text-center">
+        ¿Estás listo para hacer tu página web o aplicación
+        con nosotros?
+      </p>
+    </div>
+    <button class="w-32 bg-white text-black md:text-2xl text-xl md:p-3 p-2 rounded-lg">
       Contáctanos
     </button>
   </section>
