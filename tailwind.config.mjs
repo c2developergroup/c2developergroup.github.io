@@ -21,5 +21,6 @@ export default {
       resp: { max: "768px" },
     },
   },
+  darkMode: "class",
   plugins: [],
 };
