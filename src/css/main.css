@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 h2,
-h3,
-ul,
-button {
-  font-family: "Smooch Sans", sans-serif;
-  font-weight: 700;
+h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
 }
 
-p {
+p,
+ul,
+button {
   font-family: "Smooch Sans", sans-serif;
   font-weight: 500;
 }

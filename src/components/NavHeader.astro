@@ -1,0 +1,50 @@
+---
+import { FaBars } from "react-icons/fa/index";
+
+interface Props {
+  invisible?: boolean,
+}
+
+const { invisible = false } = Astro.props;
+const idPrefix = invisible ? "invisible-" : "";
+const headerClassPrefix = invisible ? "invisible" : "fixed";
+---
+<header
+  id={`--c2dev-${idPrefix}navbar-header`}
+  class={`${headerClassPrefix} flex justify-between items-center z-[100] w-full py-3 font-serif text-gray-900 bg-white top-0 left-0 transition duration-300`}>
+  <a href="/">
+    <img src="/c2logowhite.png" class="invert h-16 ml-10 lg:ml-10 cursor-pointer"/>
+  </a>
+  <div
+    id={`--c2dev-${idPrefix}navbar-hamburger`}
+    class="hidden resp:flex justify-center items-center mr-5 w-10 h-10 text-2xl bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.3)] rounded-full cursor-pointer">
+    <FaBars />
+  </div>
+  <nav
+    id={`--c2dev-${idPrefix}navbar-nav`}
+    class="navbar-home mr-4 lg:mr-16 resp:hidden">
+    <ul class="flex items-center resp:mt-5 resp:flex-col">
+      <li class="my-2.5">
+        <a
+          href="/soluciones/"
+          class="text-xl font-medium ml-6 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
+          Soluciones
+        </a>
+      </li>
+      <li class="my-2.5">
+        <a
+          href="/proyectos/"
+          class="text-xl font-medium ml-6 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
+          Proyectos
+        </a>
+      </li>
+      <li class="my-2.5">
+        <a
+          href="/acerca-de/"
+          class="text-xl font-medium ml-6 mr-6 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
+          Acerca de nosotros
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
