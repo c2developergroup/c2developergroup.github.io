@@ -55,105 +55,91 @@ import "../css/main.css"
             src: "/sebasphotographylogoblack.png",
             class: "w-54 h-40 cursor-pointer hover:scale-110 transition duration-300"
           },
-          // {
-          //   src: "/c2logowhite.png",
-          //   class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300"
-          // },
+          {
+            src: "/c2logoblack.png",
+            class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300"
+          },
         ]}
       />
   </section>
-  <section class="to-40% pt-0 pb-20">
-        <h2 class="md:text-8xl sm:text-5xl text-4xl text-black ml-10">Nuestro enfoque</h2>
-        <div class="w-3/5">
-          <p class="text-black md:text-4xl ms-10">
-            Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
-            sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
-            empresa u organización en el internet.
-          </p>
-        </div>
-        <button class="text-black hover:text-blue-700 transition duration-300 mt-7 flex items-center gap-6">
+  <section class="to-40% py-40">
+    <div class="w-full flex flex-row gap-32 justify-center">
+      <div id="c2dev-nuestro-enfoque-text" class="w-3/5 max-w-[768px]">
+        <h2 class="md:text-8xl sm:text-5xl text-4xl text-black ms-40">Nuestro enfoque</h2>
+        <p class="text-black md:text-4xl text-2xl ms-40">
+          Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
+          sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
+          empresa u organización en el internet.
+        </p>
+        <button class="text-black hover:text-blue-700 md:text-4xl text-2xl transition duration-300 mt-7 ms-40 flex items-center gap-6">
           Contáctanos <FaArrowRight />
         </button>
+      </div>
+      <div id="c2dev-nuestro-enfoque-image" class="bg-[url('/c2squarelogoblack.png')] bg-left bg-contain bg-no-repeat w-2/5 max-w-[256px] h-auto"></div>
+      <script>
+        document.addEventListener("DOMContentLoaded", (_event) => {
+          const c2dev_nuestro_enfoque_image = document.getElementById("c2dev-nuestro-enfoque-image")!!;
+          // const c2dev_nuestro_enfoque_text = document.getElementById("c2dev-nuestro-enfoque-text")!!;
+
+          const resizeObserver = new ResizeObserver(entries => {
+            const newDim = `${entries[0]?.target.clientHeight}px`;
+            c2dev_nuestro_enfoque_image.style.maxWidth = newDim;
+          });
+          resizeObserver.observe(c2dev_nuestro_enfoque_image);
+        });
+      </script>
+    </div>
   </section>
-  <section class="w-full transition duration-300 flex flex-col items-center p-6">
-    <h2 class="text-black md:text-7xl text-5xl font-bold text-center">
-      ¿Qué hacemos?
-    </h2>
-    <div class="mt-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
-      <div class="flex flex-row gap-4 items-center">
-        <div class="bg-green-500 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-white md:text-3xl text-xl flex items-center content-center">
-          <FaStore className="w-[100%]" />
-        </div>
-        <p class="md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
-          E-Commerce
-        </p>
-      </div>
+  <section class="w-full transition duration-300 flex flex-col items-center">
+    <div class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center w-full p-10">
+      <h2 class="text-white md:text-7xl text-5xl font-bold text-center">
+        ¿Qué hacemos?
+      </h2>
     </div>
-    <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
-      <div class="flex flex-row flex-wrap gap-5 items-center justify-between">
-        <p class="text-4xl h-auto md:w-[66%]">
-          Los usuarios del internet esperan tener compras online. Melao Bags nos pidió hacer un
-          e-commerce y su ventas aumentaron un 65%.
-          <br>
-          <a href="/proyectos/melao-bags/">
-            <span class="text-2xl font-bold underline">
-              Ver Melao Bags {">"}
-            </span>
-          </a>
-        </p>
-        <div class="md:w-[30%] md:mt-0 mt-5 flex flex-row items-center justify-center">
-          <img
-            class="rounded-3xl shadow-lg shadow-black md:w-[100%] sm:w-10/12 w-11/12"
-            src="/melaobagsscreenshot.png">
-        </div>
-      </div>
-    </div>
-    <div class="mt-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
-      <div class="flex flex-row gap-4 items-center">
-        <div class="bg-blue-500 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-white md:text-4xl text-2xl flex items-center content-center">
-          <MdDevices className="w-[100%]" />
-        </div>
-        <p class="md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
-          Tratamiento Responsive
-        </p>
-      </div>
-    </div>
-    <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
-      <div class="flex flex-row flex-wrap gap-5 items-center justify-between">
-        <div class="relative md:w-[30%] flex flex-row items-center justify-center">
-          <img
-            class="rounded-3xl shadow-lg shadow-black md:w-[100%] sm:w-10/12 w-11/12"
-            src="/melaobagsscreenshot.png">
-          <img
-            class="absolute -bottom-4 -right-4 h-[80%]"
-            src="/phone.png">
-        </div>
-        <p class="text-4xl h-auto md:w-[66%] md:mt-0 mt-10">
-          95% de los estudiantes escolares utilizan un teléfono inteligente. Rediseñamos la página
-          web del Colegio San Ignacio con usuarios móviles en mente.
-          <br>
-          <a href="/proyectos/colegiosanignacio/">
-            <span class="text-2xl font-bold underline">
-              Ver concepto {">"}
-            </span>
-          </a>
-        </p>
-      </div>
-    </div>
-    <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
-      <div class="flex flex-row flex-wrap gap-4 items-center justify-between">
-        <div class="flex flex-col justify-start gap-10 md:h-[100%] h-auto md:w-[66%]">
-          <div class="flex flex-row mt-2">
+    <div class="flex flex-col items-center py-6 w-full">
+      <div class="mt-10 flex flex-row w-[100%] h-[calc(100vh-4.75rem)] bg-[url('/E-commerceC2LandingPage.webp')] bg-contain bg-no-repeat bg-right-bottom">
+        <div class="flex flex-col mx-40 mt-20 gap-4 md:w-[40%]">
+          <div class="mt-10 flex flex-row max-w-[100%] xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
             <div class="flex flex-row gap-4 items-center">
-              <div class="bg-yellow-400 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-black md:text-4xl text-3xl flex items-center content-center">
-                <IoPhonePortraitOutline className="w-[100%]" />
+              <div class="bg-green-500 3xl:w-[8rem] 2xl:w-[7rem] xl:w-[6rem] md:w-[5rem] w-[3rem] 3xl:h-[8rem] 2xl:h-[7rem] xl:h-[6rem] md:h-[5rem] h-[3rem] rounded-full text-white 3xl:text-6xl 2xl:text-5xl xl:text-4xl md:text-3xl text-xl flex items-center content-center">
+                <FaStore className="w-[100%]" />
               </div>
-              <p class="md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
-                Aplicación móvil
+              <p class="3xl:text-9xl 2xl:text-8xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
+                E-Commerce
               </p>
             </div>
           </div>
-          <p class="text-4xl">
+          <p class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl mt-20 h-auto">
+            Los usuarios del internet esperan tener compras online. Melao Bags nos pidió hacer un
+            e-commerce y su ventas aumentaron un 65%.
+          </p>
+          <p class="mt-32">
+            <a href="/proyectos/melao-bags/">
+              <span class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl font-bold underline">
+                Ver Melao Bags {">"}
+              </span>
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+        <div class="flex flex-row gap-4 items-center">
+          <div class="bg-violet-700 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-white md:text-4xl text-3xl flex items-center content-center">
+            <MdApps className="w-[100%]" />
+          </div>
+          <p class="md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
+            Portafolio y Catálogos
+          </p>
+        </div>
+      </div>
+      <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+        <div class="flex flex-row flex-wrap gap-4 items-center justify-between">
+          <div class="md:w-[30%] flex flex-row items-center justify-center">
+            <img
+              class="rounded-3xl shadow-lg shadow-black md:w-[100%] sm:w-10/12 w-11/12"
+              src="/melaobagsscreenshot.png">
+          </div>
+          <p class="text-4xl h-auto md:w-[66%] md:mt-0 mt-10">
             Texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto
             aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui
             <br>
@@ -164,51 +150,80 @@ import "../css/main.css"
             </a>
           </p>
         </div>
-        <div class="md:max-w-[30%] w-[100%] h-[50vh] md:mt-0 mt-5 md:mb-0 mb-10 flex flex-row items-center justify-center">
-          <img
-            class="h-[100%]"
-            src="/phone.png">
+      </div>
+      <div class="mt-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+        <div class="flex flex-row gap-4 items-center">
+          <div class="bg-blue-500 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-white md:text-4xl text-2xl flex items-center content-center">
+            <MdDevices className="w-[100%]" />
+          </div>
+          <p class="md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
+            Tratamiento Responsive
+          </p>
         </div>
       </div>
-    </div>
-    <div class="flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
-      <div class="flex flex-row gap-4 items-center">
-        <div class="bg-violet-700 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-white md:text-4xl text-3xl flex items-center content-center">
-          <MdApps className="w-[100%]" />
+      <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+        <div class="flex flex-row flex-wrap gap-5 items-center justify-between">
+          <div class="relative md:w-[30%] flex flex-row items-center justify-center">
+            <img
+              class="rounded-3xl shadow-lg shadow-black md:w-[100%] sm:w-10/12 w-11/12"
+              src="/melaobagsscreenshot.png">
+            <img
+              class="absolute -bottom-4 -right-4 h-[80%]"
+              src="/phone.png">
+          </div>
+          <p class="text-4xl h-auto md:w-[66%] md:mt-0 mt-10">
+            95% de los estudiantes escolares utilizan un teléfono inteligente. Rediseñamos la página
+            web del Colegio San Ignacio con usuarios móviles en mente.
+            <br>
+            <a href="/proyectos/colegiosanignacio/">
+              <span class="text-2xl font-bold underline">
+                Ver concepto {">"}
+              </span>
+            </a>
+          </p>
         </div>
-        <p class="md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
-          Portafolio y Catálogos
-        </p>
       </div>
-    </div>
-    <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
-      <div class="flex flex-row flex-wrap gap-4 items-center justify-between">
-        <div class="md:w-[30%] flex flex-row items-center justify-center">
-          <img
-            class="rounded-3xl shadow-lg shadow-black md:w-[100%] sm:w-10/12 w-11/12"
-            src="/melaobagsscreenshot.png">
+      <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+        <div class="flex flex-row flex-wrap gap-4 items-center justify-between">
+          <div class="flex flex-col justify-start gap-10 md:h-[100%] h-auto md:w-[66%]">
+            <div class="flex flex-row mt-2">
+              <div class="flex flex-row gap-4 items-center">
+                <div class="bg-yellow-400 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-black md:text-4xl text-3xl flex items-center content-center">
+                  <IoPhonePortraitOutline className="w-[100%]" />
+                </div>
+                <p class="md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
+                  Aplicación móvil
+                </p>
+              </div>
+            </div>
+            <p class="text-4xl">
+              Texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto
+              aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui
+              <br>
+              <a href="/proyectos/???/">
+                <span class="text-2xl font-bold underline">
+                  Ver ??? {">"}
+                </span>
+              </a>
+            </p>
+          </div>
+          <div class="md:max-w-[30%] w-[100%] h-[50vh] md:mt-0 mt-5 md:mb-0 mb-10 flex flex-row items-center justify-center">
+            <img
+              class="h-[100%]"
+              src="/phone.png">
+          </div>
         </div>
-        <p class="text-4xl h-auto md:w-[66%] md:mt-0 mt-10">
-          Texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto
-          aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui
-          <br>
-          <a href="/proyectos/???/">
-            <span class="text-2xl font-bold underline">
-              Ver ??? {">"}
-            </span>
-          </a>
-        </p>
       </div>
-    </div>
-    <div class="my-20 xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%] mx-2">
-      <a href="/proyectos/">
-        <p class="text-2xl font-bold underline">
-          Ver más proyectos {">"}
-        </p>
-      </a>
+      <div class="my-20 xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%] mx-2">
+        <a href="/proyectos/">
+          <p class="text-2xl font-bold underline">
+            Ver más proyectos {">"}
+          </p>
+        </a>
+      </div>
     </div>
   </section>
-  <section class="transition duration-300 py-20 flex flex-col items-center gap-5 p-6 bg-black">
+  <section class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-20 flex flex-col items-center gap-5 p-6">
     <h2 class="text-white md:text-7xl text-5xl font-bold text-center">
       ¿Qué dicen de nosotros?
     </h2>
@@ -221,7 +236,7 @@ import "../css/main.css"
     </h2>
     <C2ProyectosCarousel />
   </section>
-  <section class="transition duration-300 py-20 flex flex-col items-center gap-5 p-6 bg-black">
+  <section class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-20 flex flex-col items-center gap-5 p-6 bg-black">
     <div>
       <p class="text-white md:text-4xl md:block hidden text-center">
         ¿Estás listo para hacer tu página web o aplicación <br>
@@ -232,7 +247,10 @@ import "../css/main.css"
         con nosotros?
       </p>
     </div>
-    <button class="w-32 bg-white text-black md:text-2xl text-xl md:p-3 p-2 rounded-lg">
+    <!-- <button class="w-32 bg-white text-black md:text-2xl text-xl md:p-3 p-2 rounded-lg">
+      Contáctanos
+    </button> -->
+    <button class="w-auto bg-transparent border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl">
       Contáctanos
     </button>
   </section>
