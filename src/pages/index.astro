@@ -29,55 +29,51 @@ import "../css/main.css"
     <div class="md:min-h-[calc(50vh-5rem)] sm:min-h-[calc(50vh-4rem)] tiny:min-h-[calc(40vh-4rem)] min-h-[calc(30vh-4rem)] md:h-[calc(20vw-5rem)] h-[calc(20vw-4rem)]">
     </div>
   </section>
-  <section class="bg-black m-auto flex gap-5 justify-evenly flex-wrap items-center transition duration-300">
+  <section class="m-auto flex gap-5 justify-evenly flex-wrap items-center transition duration-300">
     <MarqueeComponent
       logosTop={
         [
           {
-            src: "/bynxlogowhite.png",
+            src: "/bynxlogoblack.png",
             class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300"
           },
           {
-            src: "/serologowhite.png",
+            src: "/serologoblack.png",
             class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
             href: "https://sero-project.vercel.app/"
           },
           {
-            src: "/JonoAppsLogoWhite.png",
+            src: "/jonoappslogoblack.png",
             class: "w-54 h-36 cursor-pointer hover:scale-110 transition duration-300",
             href: "https://jonoapps.com"
           },
           {
-            src: "/melaologowhite.png",
+            src: "/melaologoblack.png",
             class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300"
           },
           {
-            src: "/sebasphotographylogowhite.png",
+            src: "/sebasphotographylogoblack.png",
             class: "w-54 h-40 cursor-pointer hover:scale-110 transition duration-300"
           },
-          {
-            src: "/c2logowhite.png",
-            class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300"
-          },
+          // {
+          //   src: "/c2logowhite.png",
+          //   class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300"
+          // },
         ]}
       />
   </section>
-  <section class="bg-gradient-to-b from-black from-40% to-white to-40% pt-0 pb-20">
-    <div class="max-w-[90%] w-[50rem] md:py-20 py-10 mobl:px-8 bg-[#2a2a2a] m-auto rounded-lg flex justify-around items-center relative mobl:flex-col shadow-2xl shadow-neutral-900">
-      <div class="ps-10 tiny:w-[30%] mobl:mb-10">
-        <h2 class="md:text-6xl sm:text-5xl text-4xl text-white">Nuestro enfoque</h2>
-      </div>
-      <div class="tiny:w-[60%] text-2xl text-white leading-9">
-        <p>
-          Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
-          sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
-          empresa u organización en el internet.
-        </p>
-        <button class="text-neutral-300 hover:text-neutral-100 transition duration-300 mt-7 flex items-center gap-6">
+  <section class="to-40% pt-0 pb-20">
+        <h2 class="md:text-8xl sm:text-5xl text-4xl text-black ml-10">Nuestro enfoque</h2>
+        <div class="w-3/5">
+          <p class="text-black md:text-4xl ms-10">
+            Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
+            sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
+            empresa u organización en el internet.
+          </p>
+        </div>
+        <button class="text-black hover:text-blue-700 transition duration-300 mt-7 flex items-center gap-6">
           Contáctanos <FaArrowRight />
         </button>
-      </div>
-    </div>
   </section>
   <section class="w-full transition duration-300 flex flex-col items-center p-6">
     <h2 class="text-black md:text-7xl text-5xl font-bold text-center">

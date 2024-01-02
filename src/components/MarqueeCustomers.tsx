@@ -26,9 +26,6 @@ export const MarqueeComponent = ({ logosTop }: { logosTop: MarqueeLogo[] }) => {
 
   return (
     <div className="marquee__parent">
-      <br></br>
-      <br></br>
-      <br></br>
       <article className="wrapper">
         <div className="marquee">
           <div className="marquee__group">{cardsTop}</div>
@@ -39,9 +36,6 @@ export const MarqueeComponent = ({ logosTop }: { logosTop: MarqueeLogo[] }) => {
           <div className="marquee__group">{cardsBtm}</div>
         </div> */}
       </article>
-      <br></br>
-      <br></br>
-      <br></br>
     </div>
   );
 };
