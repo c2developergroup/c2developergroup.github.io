@@ -1,0 +1,128 @@
+---
+export enum PictureLocation {
+  Left = "left",
+  Right = "right",
+}
+interface Props {
+  iconBgColor: string,
+  iconFgColor?: string,
+  title: string,
+  caseStudyName: string,
+  backgroundImage: string,
+  backgroundImageResp?: string,
+  backgroundImageLoc: PictureLocation,
+}
+const { iconBgColor, iconFgColor = "white", title, caseStudyName, backgroundImage, backgroundImageResp = backgroundImage, backgroundImageLoc } = Astro.props;
+
+const implemented = [
+  PictureLocation.Left,
+  PictureLocation.Right,
+];
+if (!implemented.includes(backgroundImageLoc)) {
+  throw new Error(`Picture Location "${backgroundImageLoc}" not implemented yet`);
+}
+---
+<div class="flex flex-row w-full md:h-[calc(100vh-4.75rem)] md:min-h-[980px] tallratio:min-h-0 tallratio:h-auto h-auto bg-none bg-contain bg-no-repeat bg-right-bottom 2xl:mt-10 md:mt-5 mt-2">
+  <div class:list={[
+    "absolute",
+    "md:block",
+    "tallratio:hidden",
+    "md:min-h-[980px]",
+    "hidden",
+    "-z-10",
+    "w-full",
+    "h-[calc(100vh-4.75rem)]",
+    (backgroundImageLoc == PictureLocation.Right) ? "text-end" : "text-start"]}>
+    <img
+      class:list={[
+        "inline-block",
+        "3xl:w-full",
+        "2xl:w-[70%]",
+        "w-full",
+        "h-full",
+        "object-contain",
+        (backgroundImageLoc == PictureLocation.Right) ? "object-right-bottom" : "object-left-bottom"]}
+      src={backgroundImage}>
+  </div>
+  <div class:list={[
+    "flex",
+    "flex-col",
+    "2xl:mx-40",
+    "md:mx-20",
+    "mx-5",
+    "2xl:mt-20",
+    "md:mt-10",
+    "mt-5",
+    "w-full",
+    (backgroundImageLoc == PictureLocation.Right) ? undefined : "items-end"]}>
+    <div class:list={[
+      "flex",
+      (backgroundImageLoc == PictureLocation.Right) ? "flex-row" : "flex-row-reverse",
+      "w-[100%]",
+      "2xl:mt-10",
+      "md:mt-5",
+      "mt-2"]}>
+      <div class="flex flex-row gap-4 items-center">
+        {(() => {
+          const iconHTML = (
+            <div class:list={[
+              `bg-${iconBgColor}`,
+              "3xl:w-[8rem]",
+              "2xl:w-[7rem]",
+              "xl:w-[6rem]",
+              "md:w-[5rem]",
+              "w-[3rem]",
+              "3xl:h-[8rem]",
+              "2xl:h-[7rem]",
+              "xl:h-[6rem]",
+              "md:h-[5rem]",
+              "h-[3rem]",
+              "rounded-full",
+              `text-${iconFgColor}`,
+              "3xl:text-6xl",
+              "2xl:text-5xl",
+              "xl:text-4xl",
+              "md:text-3xl",
+              "text-xl",
+              "flex",
+              "items-center",
+              "content-center"]}>
+              <slot name="icon" />
+            </div>
+          );
+          const titleHTML = (
+            <p class="4xl:text-9xl 3xl:text-7xl 2xl:text-7xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
+              {title}
+            </p>
+          );
+
+          return (backgroundImageLoc == PictureLocation.Right) ? [iconHTML, titleHTML] : [titleHTML, iconHTML];
+        })()}
+      </div>
+    </div>
+    <p class:list={[
+      "3xl:text-6xl",
+      "xl:text-5xl",
+      "md:text-4xl",
+      "text-3xl",
+      "2xl:mt-20",
+      "md:mt-10",
+      "tallratio:mt-5",
+      "mt-5",
+      "h-auto",
+      (backgroundImageLoc == PictureLocation.Right) ? "md:w-[40%]" : "md:w-[50%]",
+      "tallratio:w-full"]}>
+      <slot />
+    </p>
+    <p class="2xl:mt-32 md:mt-20 mt-10">
+      <a href="/proyectos/melao-bags/">
+        <span class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl font-bold underline bg-white pe-4 py-4">
+          Ver {caseStudyName} {">"}
+        </span>
+      </a>
+    </p>
+  </div>
+</div>
+<img
+  class="md:hidden tallratio:block block w-full"
+  src={backgroundImageResp}>
