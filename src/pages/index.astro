@@ -7,6 +7,7 @@ import C2MainPage from "../components/MainPage.astro"
 import C2ReviewCarousel from "../components/ReviewCarousel.astro"
 import C2ProyectosCarousel from "../components/ProyectosCarousel.astro"
 import C2NavHeader from "../components/NavHeader.astro";
+import C2WhatWeDo, { PictureLocation } from "../components/WhatWeDo.astro";
 
 import "../css/main.css"
 
@@ -97,102 +98,50 @@ import "../css/main.css"
       </h2>
     </div>
     <div class="flex flex-col items-center py-6 w-full">
-      <div class="flex flex-row w-full md:h-[calc(100vh-4.75rem)] tallratio:h-auto h-auto bg-none bg-contain bg-no-repeat bg-right-bottom 2xl:mt-10 md:mt-5 mt-2"><!-- min-h-[1000px] -->
-        <div class="absolute md:block tallratio:hidden hidden -z-10 w-full h-[calc(100vh-4.75rem)] text-end"><!-- min-h-[1000px] -->
-          <img
-            class="inline-block 3xl:w-full 2xl:w-[70%] w-full h-full object-contain object-right-bottom"
-            src="/E-commerceC2LandingPage-croppedresp.webp"><!-- md:w-full -->
-        </div>
-        <div class="flex flex-col 2xl:mx-40 md:mx-20 mx-5 2xl:mt-20 md:mt-10 mt-5 w-full">
-          <div class="flex flex-row w-[100%] 2xl:mt-10 md:mt-5 mt-2">
-            <div class="flex flex-row gap-4 items-center">
-              <div class="bg-green-500 3xl:w-[8rem] 2xl:w-[7rem] xl:w-[6rem] md:w-[5rem] w-[3rem] 3xl:h-[8rem] 2xl:h-[7rem] xl:h-[6rem] md:h-[5rem] h-[3rem] rounded-full text-white 3xl:text-6xl 2xl:text-5xl xl:text-4xl md:text-3xl text-xl flex items-center content-center">
-                <FaStore className="w-[100%]" />
-              </div>
-              <p class="4xl:text-9xl 3xl:text-7xl 2xl:text-7xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
-                E-Commerce
-              </p>
-            </div>
-          </div>
-          <p class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto 4xl:w-[40%] 3xl:w-[30%] md:w-[40%] tallratio:w-full">
-            Los usuarios del internet esperan tener compras online. Melao Bags nos pidió hacer un
-            e-commerce y su ventas aumentaron un 65%.
-          </p>
-          <p class="2xl:mt-32 md:mt-20 mt-10">
-            <a href="/proyectos/melao-bags/">
-              <span class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl font-bold underline">
-                Ver Melao Bags {">"}
-              </span>
-            </a>
-          </p>
-        </div>
-      </div>
-      <img
-        class="md:hidden tallratio:block block w-full"
-        src="/E-commerceC2LandingPage-croppedresp.webp">
-      <!-- *************************************************************************************** -->
-      <div class="flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
-        <div class="flex flex-row gap-4 items-center">
-          <div class="bg-violet-700 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-white md:text-4xl text-3xl flex items-center content-center">
-            <MdApps className="w-[100%]" />
-          </div>
-          <p class="md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
-            Portafolio y Catálogos
-          </p>
-        </div>
-      </div>
-      <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
-        <div class="flex flex-row flex-wrap gap-4 items-center justify-between">
-          <div class="md:w-[30%] flex flex-row items-center justify-center">
-            <img
-              class="rounded-3xl shadow-lg shadow-black md:w-[100%] sm:w-10/12 w-11/12"
-              src="/melaobagsscreenshot.png">
-          </div>
-          <p class="text-4xl h-auto md:w-[66%] md:mt-0 mt-10">
-            Texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto
-            aqui texto aqui texto aqui texto aqui texto aqui texto aqui texto aqui
-            <br>
-            <a href="/proyectos/???/">
-              <span class="text-2xl font-bold underline">
-                Ver ??? {">"}
-              </span>
-            </a>
-          </p>
-        </div>
-      </div>
-      <!-- ************************************************************************************* -->
-      <div class="mt-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
-        <div class="flex flex-row gap-4 items-center">
-          <div class="bg-blue-500 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-white md:text-4xl text-2xl flex items-center content-center">
-            <MdDevices className="w-[100%]" />
-          </div>
-          <p class="md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
-            Tratamiento Responsive
-          </p>
-        </div>
-      </div>
-      <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
-        <div class="flex flex-row flex-wrap gap-5 items-center justify-between">
-          <div class="relative md:w-[30%] flex flex-row items-center justify-center">
-            <img
-              class="rounded-3xl shadow-lg shadow-black md:w-[100%] sm:w-10/12 w-11/12"
-              src="/melaobagsscreenshot.png">
-            <img
-              class="absolute -bottom-4 -right-4 h-[80%]"
-              src="/phone.png">
-          </div>
-          <p class="text-4xl h-auto md:w-[66%] md:mt-0 mt-10">
-            95% de los estudiantes escolares utilizan un teléfono inteligente. Rediseñamos la página
-            web del Colegio San Ignacio con usuarios móviles en mente.
-            <br>
-            <a href="/proyectos/colegiosanignacio/">
-              <span class="text-2xl font-bold underline">
-                Ver concepto {">"}
-              </span>
-            </a>
-          </p>
-        </div>
-      </div>
+      <C2WhatWeDo
+        iconBgColor="green-500"
+        title="E-Commerce"
+        caseStudyName="Melao Bags"
+        backgroundImage="/E-commerceC2LandingPage-croppedresp.webp"
+        backgroundImageLoc={PictureLocation.Right}>
+        <FaStore className="w-[100%]" slot="icon" />
+        <span>Creamos tiendas en línea a medida, seguras y móviles. Maximizamos tu presencia
+          digital con enfoque en seguridad y personalización.</span>
+      </C2WhatWeDo>
+      <C2WhatWeDo
+        iconBgColor="violet-700"
+        title="Portafolio y Catálogos"
+        caseStudyName="Sebastián Castro Rajbe Photography"
+        backgroundImage="/PortfolioMockupC2-croppedmd.webp"
+        backgroundImageResp="/PortfolioMockupC2-croppedresp.webp"
+        backgroundImageLoc={PictureLocation.Left}>
+        <MdApps className="w-[100%]" slot="icon" />
+        <span>Transformamos tu contenido en una poderosa herramienta de exhibición online. Dale
+          vida a tu catálogo y destaca tu portafolio de manera digital.</span>
+      </C2WhatWeDo>
+      <C2WhatWeDo
+        iconBgColor="blue-500"
+        title="Tratamiento Responsive"
+        caseStudyName="SERØ"
+        backgroundImage="/iPhone11AndMacbookPro-croppedmd.webp"
+        backgroundImageResp="/iPhone11AndMacbookPro-croppedresp.webp"
+        backgroundImageLoc={PictureLocation.Right}>
+        <MdDevices className="w-[100%]" slot="icon" />
+        <span>Optimizamos tu presencia digital para todos los dispositivos. Desde smartphones
+          hasta computadoras, garantizamos una experiencia impecable en cada dispositivo.</span>
+      </C2WhatWeDo>
+      <C2WhatWeDo
+        iconBgColor="yellow-400"
+        iconFgColor="black"
+        title="Aplicación móvil"
+        caseStudyName="Sebastián Castro Rajbe Photography"
+        backgroundImage="/PortfolioMockupC2-croppedmd.webp"
+        backgroundImageResp="/PortfolioMockupC2-croppedresp.webp"
+        backgroundImageLoc={PictureLocation.Left}>
+        <IoPhonePortraitOutline className="w-[100%]" slot="icon" />
+        <span>Transformamos tu contenido en una poderosa herramienta de exhibición online. Dale
+          vida a tu catálogo y destaca tu portafolio de manera digital.</span>
+      </C2WhatWeDo>
       <div class="my-10 flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
         <div class="flex flex-row flex-wrap gap-4 items-center justify-between">
           <div class="flex flex-col justify-start gap-10 md:h-[100%] h-auto md:w-[66%]">
