@@ -19,6 +19,7 @@ export default {
       "4xl": "2100px",
       mobl: { max: "480px" },
       resp: { max: "768px" },
+      tallratio: { raw: "(max-aspect-ratio: 3/2)" },
     },
   },
   darkMode: "class",
