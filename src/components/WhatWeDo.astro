@@ -38,6 +38,7 @@ if (!implemented.includes(backgroundImageLoc)) {
         "inline-block",
         "3xl:w-full",
         "2xl:w-[70%]",
+        "md:w-[70%]",
         "w-full",
         "h-full",
         "object-contain",
@@ -111,7 +112,7 @@ if (!implemented.includes(backgroundImageLoc)) {
       "mt-5",
       "h-auto",
       (backgroundImageLoc == PictureLocation.Right) ? "md:w-[40%]" : "md:w-[50%]",
-      "tallratio:w-full"]}>
+      (backgroundImageLoc == PictureLocation.Right) ? "text-start" : "text-end", "tallratio:w-full"]}>
       <slot />
     </p>
     <p class="2xl:mt-32 md:mt-20 mt-10">
