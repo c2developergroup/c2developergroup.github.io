@@ -97,23 +97,28 @@ import "../css/main.css"
       </h2>
     </div>
     <div class="flex flex-col items-center py-6 w-full">
-      <div class="mt-10 flex flex-row w-[100%] h-[calc(100vh-4.75rem)] bg-[url('/E-commerceC2LandingPage.webp')] bg-contain bg-no-repeat bg-right-bottom">
-        <div class="flex flex-col mx-40 mt-20 gap-4 md:w-[40%]">
-          <div class="mt-10 flex flex-row max-w-[100%] xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
+      <div class="flex flex-row w-full md:h-[calc(100vh-4.75rem)] h-auto bg-none bg-contain bg-no-repeat bg-right-bottom 2xl:mt-10 md:mt-5 mt-2"><!-- min-h-[1000px] -->
+        <div class="absolute md:block hidden -z-10 w-full h-[calc(100vh-4.75rem)] text-end"><!-- min-h-[1000px] -->
+          <img
+            class="inline-block 3xl:w-full 2xl:w-[60%] md:w-[60%] w-full h-full object-contain object-right-bottom"
+            src="/E-commerceC2LandingPage.webp">
+        </div>
+        <div class="flex flex-col 2xl:mx-40 md:mx-20 mx-5 2xl:mt-20 md:mt-10 mt-5 gap-4 4xl:w-[40%] 3xl:w-[30%] md:w-[40%]">
+          <div class="flex flex-row max-w-[100%] xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%] 2xl:mt-10 md:mt-5 mt-2">
             <div class="flex flex-row gap-4 items-center">
               <div class="bg-green-500 3xl:w-[8rem] 2xl:w-[7rem] xl:w-[6rem] md:w-[5rem] w-[3rem] 3xl:h-[8rem] 2xl:h-[7rem] xl:h-[6rem] md:h-[5rem] h-[3rem] rounded-full text-white 3xl:text-6xl 2xl:text-5xl xl:text-4xl md:text-3xl text-xl flex items-center content-center">
                 <FaStore className="w-[100%]" />
               </div>
-              <p class="3xl:text-9xl 2xl:text-8xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
+              <p class="4xl:text-9xl 3xl:text-7xl 2xl:text-7xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
                 E-Commerce
               </p>
             </div>
           </div>
-          <p class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl mt-20 h-auto">
+          <p class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl 2xl:mt-20 md:mt-10 mt-5 h-auto">
             Los usuarios del internet esperan tener compras online. Melao Bags nos pidió hacer un
             e-commerce y su ventas aumentaron un 65%.
           </p>
-          <p class="mt-32">
+          <p class="2xl:mt-32 md:mt-20 mt-10">
             <a href="/proyectos/melao-bags/">
               <span class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl font-bold underline">
                 Ver Melao Bags {">"}
@@ -122,6 +127,9 @@ import "../css/main.css"
           </p>
         </div>
       </div>
+      <img
+        class="md:hidden block w-full"
+        src="/E-commerceC2LandingPage.webp">
       <div class="flex flex-row xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%]">
         <div class="flex flex-row gap-4 items-center">
           <div class="bg-violet-700 md:w-[5rem] w-[3rem] md:h-[5rem] h-[3rem] rounded-full text-white md:text-4xl text-3xl flex items-center content-center">
