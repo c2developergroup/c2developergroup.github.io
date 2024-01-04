@@ -22,12 +22,10 @@ if (!implemented.includes(backgroundImageLoc)) {
   throw new Error(`Picture Location "${backgroundImageLoc}" not implemented yet`);
 }
 ---
-<div class="flex flex-row w-full md:h-[calc(100vh-4.75rem)] md:min-h-[980px] tallratio:min-h-0 tallratio:h-auto h-auto bg-none bg-contain bg-no-repeat bg-right-bottom 2xl:mt-10 md:mt-5 mt-2">
-  <div class={`absolute md:block tallratio:hidden md:min-h-[980px] hidden -z-10 w-full h-[calc(100vh-4.75rem)] ${(backgroundImageLoc == PictureLocation.Right) ? "text-end" : "text-start"}`}>
+<div class="flex flex-row w-full tallratio:min-h-0 tallratio:h-auto h-auto bg-none bg-contain bg-no-repeat bg-right-bottom 2xl:mt-10 md:mt-5 mt-2">
     <img
-      class={`inline-block 3xl:w-full 2xl:w-[80%] md:w-[75%] w-full h-full object-contain ${(backgroundImageLoc == PictureLocation.Right) ? "object-right-bottom" : "object-left-bottom"}`}
+      class={`absolute -z-30 resp:hidden 3xl:w-full 2xl:w-[80%] md:w-[75%] w-full h-full object-contain ${(backgroundImageLoc == PictureLocation.Right) ? "object-right-bottom right-0" : "object-left-bottom left-0"}`}
       src={backgroundImage}>
-  </div>
   <div class={`flex flex-col 2xl:mx-40 md:mx-20 mx-5 2xl:mt-20 md:mt-10 mt-5 w-full ${(backgroundImageLoc == PictureLocation.Right) ? "" : "items-end"}`}>
     <div class={`flex ${(backgroundImageLoc == PictureLocation.Right) ? "flex-row" : "flex-row-reverse"} w-[100%] 2xl:mt-10 md:mt-5 mt-2`}>
       <div class="flex flex-row gap-4 items-center">
@@ -60,5 +58,5 @@ if (!implemented.includes(backgroundImageLoc)) {
   </div>
 </div>
 <img
-  class="md:hidden tallratio:block block w-full"
+  class="hidden resp:block tallratio:block w-full"
   src={backgroundImageResp}>
