@@ -47,7 +47,7 @@ if (!implemented.includes(backgroundImageLoc)) {
         })()}
       </div>
     </div>
-    <p class:list={`3xl:text-6xl xl:text-5xl md:text-4xl text-3xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto ${(backgroundImageLoc == PictureLocation.Right) ? "md:w-[40%]" : "md:w-[50%]"} ${(backgroundImageLoc == PictureLocation.Right) ? "text-start" : "text-end"} tallratio:w-full`}>
+    <p class={`3xl:text-6xl xl:text-5xl md:text-4xl text-3xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto ${(backgroundImageLoc == PictureLocation.Right) ? "md:w-[40%]" : "md:w-[50%]"} ${(backgroundImageLoc == PictureLocation.Right) ? "text-start" : "text-end"} tallratio:w-full`}>
       <slot />
     </p>
     <p class="2xl:mt-32 md:mt-20 mt-10">
