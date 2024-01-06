@@ -3,99 +3,130 @@ import { FaArrowRight, FaStore } from "react-icons/fa/index";
 import { IoPhonePortraitOutline } from "react-icons/io5/index";
 import { MdApps, MdDevices } from "react-icons/md/index";
 import { MarqueeComponent } from "../components/MarqueeCustomers";
-import C2MainPage from "../components/MainPage.astro"
-import C2ReviewCarousel from "../components/ReviewCarousel.astro"
-import C2ProyectosCarousel from "../components/ProyectosCarousel.astro"
+import C2MainPage from "../components/MainPage.astro";
+import C2ReviewCarousel from "../components/ReviewCarousel.astro";
+import C2ProyectosCarousel from "../components/ProyectosCarousel.astro";
 import C2NavHeader from "../components/NavHeader.astro";
 import C2WhatWeDo, { PictureLocation } from "../components/WhatWeDo.astro";
 
-import "../css/main.css"
-
+import "../css/main.css";
 ---
+
 <C2MainPage>
   <section class="bg-[url('/c2bg-main.png')] bg-cover bg-bottom h-[100vh]">
     <C2NavHeader invisible={true} />
     <div class="w-10/12 m-auto pt-40">
-      <div class="relative z-10 text-white dark:text-white 3xl:text-[10rem] xl:text-9xl text-8xl resp:text-6xl transition duration-300 drop-shadow-xl shadow-black">
-        <h2 class="md:block hidden">Exponenciamos tu <br> proyecto</h2>
+      <div
+        class="relative z-10 text-white dark:text-white 3xl:text-[10rem] xl:text-9xl text-8xl resp:text-6xl transition duration-300 drop-shadow-xl shadow-black"
+      >
+        <h2 class="md:block hidden">Exponenciamos tu <br /> proyecto</h2>
         <h2 class="md:hidden block">Exponenciamos tu proyecto</h2>
       </div>
-      <h2 class="relative z-10 text-white dark:text-white font-['Smooch_Sans'] font-bold 2xl:text-7xl xl:text-5xl text-4xl resp:text-4xl transition duration-300">
+      <h2
+        class="relative z-10 text-white dark:text-white font-['Smooch_Sans'] font-bold 2xl:text-7xl xl:text-5xl text-4xl resp:text-4xl transition duration-300"
+      >
         E-commerce, páginas web y aplicaciones.
       </h2>
-      <button class="w-auto bg-transparent border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl">
+      <button
+        class="w-auto bg-transparent border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
+      >
         Contáctanos
       </button>
     </div>
-    <div class="md:min-h-[calc(50vh-5rem)] sm:min-h-[calc(50vh-4rem)] tiny:min-h-[calc(40vh-4rem)] min-h-[calc(30vh-4rem)] md:h-[calc(20vw-5rem)] h-[calc(20vw-4rem)]">
+    <div
+      class="md:min-h-[calc(50vh-5rem)] sm:min-h-[calc(50vh-4rem)] tiny:min-h-[calc(40vh-4rem)] min-h-[calc(30vh-4rem)] md:h-[calc(20vw-5rem)] h-[calc(20vw-4rem)]"
+    >
     </div>
   </section>
-  <section class="m-auto flex gap-5 justify-evenly flex-wrap items-center transition duration-300">
+  <section
+    class="m-auto flex gap-5 justify-evenly flex-wrap items-center transition duration-300"
+  >
     <MarqueeComponent
-      logosTop={
-        [
-          {
-            src: "/bynxlogoblack.png",
-            class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300"
-          },
-          {
-            src: "/serologoblack.png",
-            class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
-            href: "https://sero-project.vercel.app/"
-          },
-          {
-            src: "/jonoappslogoblack.png",
-            class: "w-54 h-36 cursor-pointer hover:scale-110 transition duration-300",
-            href: "https://jonoapps.com"
-          },
-          {
-            src: "/melaologoblack.png",
-            class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300"
-          },
-          {
-            src: "/sebasphotographylogoblack.png",
-            class: "w-54 h-40 cursor-pointer hover:scale-110 transition duration-300"
-          },
-          {
-            src: "/c2logoblack.png",
-            class: "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300"
-          },
-        ]}
-      />
+      logosTop={[
+        {
+          src: "/bynxlogoblack.png",
+          class:
+            "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
+        },
+        {
+          src: "/serologoblack.png",
+          class:
+            "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
+          href: "https://sero-project.vercel.app/",
+        },
+        {
+          src: "/jonoappslogoblack.png",
+          class:
+            "w-54 h-36 cursor-pointer hover:scale-110 transition duration-300",
+          href: "https://jonoapps.com",
+        },
+        {
+          src: "/melaologoblack.png",
+          class:
+            "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
+        },
+        {
+          src: "/sebasphotographylogoblack.png",
+          class:
+            "w-54 h-40 cursor-pointer hover:scale-110 transition duration-300",
+        },
+        {
+          src: "/c2logoblack.png",
+          class:
+            "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
+        },
+      ]}
+    />
   </section>
   <section class="to-40% md:py-40 pb-40 pt-10">
-    <div class="w-full flex xl:flex-row xl:flex-wrap flex-col gap-32 justify-center">
-      <div id="c2dev-nuestro-enfoque-text" class="xl:w-3/5 w-full xl:max-w-[768px]">
-        <h2 class="md:text-8xl sm:text-5xl text-4xl text-black xl:ms-40 ms-4">Nuestro enfoque</h2>
+    <div
+      class="w-full flex xl:flex-row xl:flex-wrap flex-col gap-32 justify-center"
+    >
+      <div
+        id="c2dev-nuestro-enfoque-text"
+        class="xl:w-3/5 w-full xl:max-w-[768px]"
+      >
+        <h2 class="md:text-8xl sm:text-5xl text-4xl text-black xl:ms-40 ms-4">
+          Nuestro enfoque
+        </h2>
         <p class="text-black md:text-4xl text-2xl xl:ms-40 ms-4">
-          Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases
-          sólidas en <b>diseño y funcionabilidad</b> que hagan destacar a la
-          empresa u organización en el internet.
+          Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases sólidas
+          en <b>diseño y funcionabilidad</b> que hagan destacar a la empresa u organización
+          en el internet.
         </p>
-        <button class="text-black hover:text-blue-700 md:text-4xl text-2xl transition duration-300 mt-7 xl:ms-40 ms-4 flex items-center gap-6">
+        <button
+          class="text-black hover:text-blue-700 md:text-4xl text-2xl transition duration-300 mt-7 xl:ms-40 ms-4 flex items-center gap-6"
+        >
           Contáctanos <FaArrowRight />
         </button>
       </div>
-      <div id="c2dev-nuestro-enfoque-image" class="bg-[url('/c2squarelogoblack.png')] xl:bg-left bg-center bg-contain bg-no-repeat xl:w-2/5 xl:max-w-[256px] w-full xl:h-auto h-40"></div>
+      <div
+        id="c2dev-nuestro-enfoque-image"
+        class="bg-[url('/c2squarelogoblack.png')] xl:bg-left bg-center bg-contain bg-no-repeat xl:w-2/5 xl:max-w-[256px] w-full xl:h-auto h-40"
+      >
+      </div>
     </div>
   </section>
   <section class="w-full transition duration-300 flex flex-col items-center">
-    <div class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center w-full p-10">
+    <div
+      class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center w-full p-10"
+    >
       <h2 class="text-white md:text-7xl text-5xl font-bold text-center">
         ¿Qué hacemos?
       </h2>
     </div>
-    <div class="flex flex-col items-center py-6 w-full gap-y-40">
+    <div class="flex flex-col items-center w-full gap-y-52 mt-40">
       <C2WhatWeDo
         iconBgColor="green-500"
         title="E-Commerce"
         caseStudyName="Melao Bags"
         backgroundImage="/E-commerceC2LandingPage-croppedresp.webp"
-        backgroundImageLoc={PictureLocation.Right}>
+        backgroundImageLoc={PictureLocation.Right}
+      >
         <FaStore className="w-[100%]" slot="icon" />
         <span>
-          Creamos tiendas en línea a medida, seguras y móviles. Maximizamos tu presencia
-          digital con enfoque en seguridad y personalización.
+          Creamos tiendas en línea a medida, seguras y móviles. Maximizamos tu
+          presencia digital con enfoque en seguridad y personalización.
           <span class="hidden bg-green-500"></span>
         </span>
       </C2WhatWeDo>
@@ -105,11 +136,13 @@ import "../css/main.css"
         caseStudyName="Sebastián Castro Rajbe Photography"
         backgroundImage="/PortfolioMockupC2-croppedresp.webp"
         backgroundImageResp="/PortfolioMockupC2-croppedresp.webp"
-        backgroundImageLoc={PictureLocation.Left}>
+        backgroundImageLoc={PictureLocation.Left}
+      >
         <MdApps className="w-[100%]" slot="icon" />
         <span>
-          Transformamos tu contenido en una poderosa herramienta de exhibición online. Dale
-          vida a tu catálogo y destaca tu portafolio de manera digital.
+          Transformamos tu contenido en una poderosa herramienta de exhibición
+          online. Dale vida a tu catálogo y destaca tu portafolio de manera
+          digital.
           <span class="hidden bg-violet-700"></span>
         </span>
       </C2WhatWeDo>
@@ -119,11 +152,13 @@ import "../css/main.css"
         caseStudyName="SERØ"
         backgroundImage="/iPhone11AndMacbookPro-croppedmd.webp"
         backgroundImageResp="/iPhone11AndMacbookPro-croppedresp.webp"
-        backgroundImageLoc={PictureLocation.Right}>
+        backgroundImageLoc={PictureLocation.Right}
+      >
         <MdDevices className="w-[100%]" slot="icon" />
         <span>
-          Optimizamos tu presencia digital para todos los dispositivos. Desde smartphones
-          hasta computadoras, garantizamos una experiencia impecable en cada dispositivo.
+          Optimizamos tu presencia digital para todos los dispositivos. Desde
+          smartphones hasta computadoras, garantizamos una experiencia impecable
+          en cada dispositivo.
           <span class="hidden bg-blue-500"></span>
         </span>
       </C2WhatWeDo>
@@ -134,25 +169,28 @@ import "../css/main.css"
         caseStudyName="intDESIGN"
         backgroundImage="/intDesignMockup-cropped.webp"
         backgroundImageResp="/intDesignMockup.webp"
-        backgroundImageLoc={PictureLocation.Left}>
+        backgroundImageLoc={PictureLocation.Left}
+      >
         <IoPhonePortraitOutline className="w-[100%]" slot="icon" />
         <span>
-          Transformamos tus ideas en aplicaciones móviles impactantes. Desarrollamos
-          soluciones personalizadas, intuitivas y funcionales que llevan tu marca a nuevas
-          alturas en el mundo móvil.
+          Transformamos tus ideas en aplicaciones móviles impactantes.
+          Desarrollamos soluciones personalizadas, intuitivas y funcionales que
+          llevan tu marca a nuevas alturas en el mundo móvil.
           <span class="hidden bg-yellow-400"></span>
         </span>
       </C2WhatWeDo>
-      <div class="my-20 xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%] mx-2">
-        <a href="/proyectos/">
-          <p class="text-2xl font-bold underline">
-            Ver más proyectos {">"}
-          </p>
-        </a>
-      </div>
+    </div>
+    <div class="my-20 xl:w-[75rem] lg:w-[50rem] md:w-[45rem] w-[100%] mx-2">
+      <a href="/proyectos/">
+        <p class="text-2xl font-bold underline">
+          Ver más proyectos {">"}
+        </p>
+      </a>
     </div>
   </section>
-  <section class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-20 flex flex-col items-center gap-5 p-6">
+  <section
+    class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-20 flex flex-col items-center gap-5 p-6"
+  >
     <h2 class="text-white md:text-7xl text-5xl font-bold text-center">
       ¿Qué dicen de nosotros?
     </h2>
@@ -160,28 +198,44 @@ import "../css/main.css"
     <C2ReviewCarousel />
   </section>
   <section class="py-20">
-    <div class="flex flex-row w-full md:h-[calc(100vh-4.75rem)] md:min-h-[700px] tallratio:min-h-0 tallratio:h-auto h-auto bg-none bg-contain bg-no-repeat bg-right-bottom 2xl:mt-10 md:mt-5 mt-2">
-      <div class="absolute md:block tallratio:hidden md:min-h-[700px] hidden -z-10 w-full h-[calc(100vh-4.75rem)] text-end">
+    <div
+      class="flex flex-row w-full md:h-[calc(100vh-4.75rem)] md:min-h-[700px] tallratio:min-h-0 tallratio:h-auto h-auto bg-none bg-contain bg-no-repeat bg-right-bottom 2xl:mt-10 md:mt-5 mt-2"
+    >
+      <div
+        class="absolute md:block tallratio:hidden md:min-h-[700px] hidden -z-10 w-full h-[calc(100vh-4.75rem)] text-end"
+      >
         <img
-          class="inline-block md:w-[40%] pe-[5%] w-full h-full object-contain object-right"}
-          src="/soporte.svg">
+          class="inline-block md:w-[40%] pe-[5%] w-full h-full object-contain object-right"
+          }
+          src="/soporte.svg"
+        />
       </div>
-      <div class="flex flex-col 2xl:mx-40 md:mx-20 mx-5 2xl:mt-20 md:mt-10 mt-5 w-full">
+      <div
+        class="flex flex-col 2xl:mx-40 md:mx-20 mx-5 2xl:mt-20 md:mt-10 mt-5 w-full"
+      >
         <div class="flex flex-row w-[100%] 2xl:mt-10 md:mt-5 mt-2">
           <div class="flex flex-row gap-4 items-center">
-            <h2 class="4xl:text-9xl 3xl:text-7xl 2xl:text-7xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold h-auto"> Mantenimiento y Soporte
+            <h2
+              class="4xl:text-9xl 3xl:text-7xl 2xl:text-7xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold h-auto"
+            >
+              Mantenimiento y Soporte
             </h2>
           </div>
         </div>
-        <p class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto md:w-[50%] text-start tallratio:w-full">
-          Después de lanzar tu proyecto, seguimos cuidándolo. Con nuestro servicio de mantenimiento,
-          nos aseguramos de que funcione bien siempre. Hacemos actualizaciones para mantenerlo seguro
-          y mejoramos su rendimiento. Estamos aquí para que tu proyecto digital tenga éxito a largo
-          plazo.
+        <p
+          class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto md:w-[50%] text-start tallratio:w-full"
+        >
+          Después de lanzar tu proyecto, seguimos cuidándolo. Con nuestro
+          servicio de mantenimiento, nos aseguramos de que funcione bien
+          siempre. Hacemos actualizaciones para mantenerlo seguro y mejoramos su
+          rendimiento. Estamos aquí para que tu proyecto digital tenga éxito a
+          largo plazo.
         </p>
         <p class="2xl:mt-20 md:mt-10 mt-4">
           <a href="/proyectos/melao-bags/">
-            <button class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-1 border-black text-black font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl">
+            <button
+              class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-1 border-black text-black font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
+            >
               Contáctanos
             </button>
             <!-- <span class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl font-bold underline bg-white pe-4 py-4">
@@ -193,7 +247,8 @@ import "../css/main.css"
     </div>
     <img
       class="md:hidden tallratio:block block w-full p-20"
-      src="/soporte.svg">
+      src="/soporte.svg"
+    />
     <!-- <h2 class="md:text-8xl sm:text-5xl text-4xl text-black xl:ms-40 ms-4">Mantenimiento y Soporte</h2>
     <div class="w-full flex xl:flex-row xl:flex-wrap flex-col justify-center">
       <div id="c2dev-nuestro-enfoque-text" class="flex-auto xl:basis-3/5 xl:max-w-[60vw] xl:ps-40 ps-4 basis-full">
@@ -218,18 +273,21 @@ import "../css/main.css"
     </h2>
     <C2ProyectosCarousel />
   </section>
-  <section class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-20 flex flex-col items-center gap-5 p-6 bg-black">
+  <section
+    class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-20 flex flex-col items-center gap-5 p-6 bg-black"
+  >
     <div>
       <p class="text-white md:text-4xl md:block hidden text-center">
-        ¿Estás listo para hacer tu página web o aplicación <br>
+        ¿Estás listo para hacer tu página web o aplicación <br />
         con nosotros?
       </p>
       <p class="text-white text-4xl md:hidden block text-center">
-        ¿Estás listo para hacer tu página web o aplicación
-        con nosotros?
+        ¿Estás listo para hacer tu página web o aplicación con nosotros?
       </p>
     </div>
-    <button class="w-auto bg-transparent border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl">
+    <button
+      class="w-auto bg-transparent border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
+    >
       Contáctanos
     </button>
   </section>
