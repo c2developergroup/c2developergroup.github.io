@@ -30,76 +30,80 @@ if (!implemented.includes(backgroundImageLoc)) {
 }
 ---
 
-<div
-  class="flex flex-row w-full tallratio:min-h-0 tallratio:h-auto bg-none bg-contain bg-no-repeat bg-right-bottom"
->
-  <img
-    class={`absolute -z-30 resp:hidden w-[50vw] h-[auto] object-contain ${
-      backgroundImageLoc == PictureLocation.Right
-        ? "object-right-bottom right-0"
-        : "object-left-bottom left-0"
-    }`}
-    src={backgroundImage}
-  />
+<div>
   <div
-    class={`flex flex-col 2xl:mx-40 md:mx-20 mx-5 w-full ${
-      backgroundImageLoc == PictureLocation.Right ? "" : "items-end"
-    }`}
+    class="flex flex-row w-full tallratio:min-h-0 tallratio:h-auto bg-none bg-contain bg-no-repeat bg-right-bottom"
   >
+    <img
+      class={`absolute -z-30 resp:hidden w-[50vw] h-[auto] object-contain ${
+        backgroundImageLoc == PictureLocation.Right
+          ? "object-right-bottom right-0"
+          : "object-left-bottom left-0"
+      }`}
+      src={backgroundImage}
+    />
     <div
-      class={`flex ${
-        backgroundImageLoc == PictureLocation.Right
-          ? "flex-row"
-          : "flex-row-reverse"
-      } w-[100%] 2xl:mt-10 md:mt-5 mt-2`}
+      class={`flex flex-col 2xl:mx-40 md:mx-20 mx-5 w-full ${
+        backgroundImageLoc == PictureLocation.Right ? "" : "items-end"
+      }`}
     >
-      <div class="flex flex-row gap-4 items-center">
-        {
-          (() => {
-            const iconHTML = (
-              <div
-                class={`bg-${iconBgColor} 3xl:w-[8rem] 2xl:w-[7rem] xl:w-[6rem] md:w-[5rem] w-[3rem] 3xl:h-[8rem] 2xl:h-[7rem] xl:h-[6rem] md:h-[5rem] h-[3rem] rounded-full text-${iconFgColor} 3xl:text-6xl 2xl:text-5xl xl:text-4xl md:text-3xl text-xl flex items-center content-center`}
-              >
-                <slot name="icon" />
-              </div>
-            );
-            const titleHTML = (
-              <p class="4xl:text-9xl 3xl:text-7xl 2xl:text-7xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
-                {title}
-              </p>
-            );
+      <div
+        class={`flex ${
+          backgroundImageLoc == PictureLocation.Right
+            ? "flex-row"
+            : "flex-row-reverse"
+        } w-[100%] 2xl:mt-10 md:mt-5 mt-2`}
+      >
+        <div class="flex flex-row gap-4 items-center">
+          {
+            (() => {
+              const iconHTML = (
+                <div
+                  class={`bg-${iconBgColor} 3xl:w-[8rem] 2xl:w-[7rem] xl:w-[6rem] md:w-[5rem] w-[3rem] 3xl:h-[8rem] 2xl:h-[7rem] xl:h-[6rem] md:h-[5rem] h-[3rem] rounded-full text-${iconFgColor} 3xl:text-6xl 2xl:text-5xl xl:text-4xl md:text-3xl text-xl flex items-center content-center`}
+                >
+                  <slot name="icon" />
+                </div>
+              );
+              const titleHTML = (
+                <p class="4xl:text-9xl 3xl:text-7xl 2xl:text-7xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold h-auto">
+                  {title}
+                </p>
+              );
 
-            return backgroundImageLoc == PictureLocation.Right
-              ? [iconHTML, titleHTML]
-              : [titleHTML, iconHTML];
-          })()
-        }
+              return backgroundImageLoc == PictureLocation.Right
+                ? [iconHTML, titleHTML]
+                : [titleHTML, iconHTML];
+            })()
+          }
+        </div>
       </div>
+      <p
+        class={`3xl:text-6xl xl:text-5xl md:text-4xl text-3xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto ${
+          backgroundImageLoc == PictureLocation.Right
+            ? "md:w-[40%]"
+            : "md:w-[50%]"
+        } ${
+          backgroundImageLoc == PictureLocation.Right
+            ? "text-start"
+            : "text-end"
+        } tallratio:w-full`}
+      >
+        <slot />
+      </p>
+      <p class="2xl:mt-32 md:mt-20 mt-10">
+        <a href="/proyectos/melao-bags/">
+          <span
+            class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl font-bold underline pe-4 py-4"
+          >
+            Ver {caseStudyName}
+            {">"}
+          </span>
+        </a>
+      </p>
     </div>
-    <p
-      class={`3xl:text-6xl xl:text-5xl md:text-4xl text-3xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto ${
-        backgroundImageLoc == PictureLocation.Right
-          ? "md:w-[40%]"
-          : "md:w-[50%]"
-      } ${
-        backgroundImageLoc == PictureLocation.Right ? "text-start" : "text-end"
-      } tallratio:w-full`}
-    >
-      <slot />
-    </p>
-    <p class="2xl:mt-32 md:mt-20 mt-10">
-      <a href="/proyectos/melao-bags/">
-        <span
-          class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl font-bold underline pe-4 py-4"
-        >
-          Ver {caseStudyName}
-          {">"}
-        </span>
-      </a>
-    </p>
   </div>
+  <img
+    class="hidden resp:block tallratio:block w-full"
+    src={backgroundImageResp}
+  />
 </div>
-<img
-  class="hidden resp:block tallratio:block w-full"
-  src={backgroundImageResp}
-/>
