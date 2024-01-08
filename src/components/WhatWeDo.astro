@@ -35,7 +35,7 @@ if (!implemented.includes(backgroundImageLoc)) {
     class="flex flex-row w-full tallratio:min-h-0 tallratio:h-auto bg-none bg-contain bg-no-repeat bg-right-bottom"
   >
     <img
-      class={`absolute -z-30 resp:hidden w-[50vw] h-[auto] object-contain ${
+      class={`absolute -z-30 resp:hidden w-[50vw] max-w-[1100px] h-[auto] object-contain ${
         backgroundImageLoc == PictureLocation.Right
           ? "object-right-bottom right-0"
           : "object-left-bottom left-0"
