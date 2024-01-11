@@ -1,43 +1,45 @@
 ---
 import "../css/slick-review.css";
 ---
+
 <c2dev-proyectos-carousel class="relative max-w-[100%] w-[100%]">
   <div class="px-10 pt-10 pb-16">
-    <img
-      src="/screenshot.png"
-      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-      alt="Slide 1"
-    />
+    <video
+      autoplay
+      muted
+      class="w-full cursor-pointer rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-800 transition duration-300"
+      alt="Slide 1"><source src="/serobucle.mp4" type="video/mp4" /></video
+    >
   </div>
   <div class="px-10 pt-10 pb-16">
     <img
-      src="/screenshot.png"
+      src="/melaobagslandingpage.png"
       class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
       alt="Slide 2"
     />
   </div>
   <div class="px-10 pt-10 pb-16">
     <img
-      src="/screenshot.png"
+      src="/melaobagslandingpage.png"
       class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
       alt="Slide 3"
     />
   </div>
   <div class="px-10 pt-10 pb-16">
     <img
-      src="/screenshot.png"
+      src="/melaobagslandingpage.png"
       class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
       alt="Slide 4"
     />
   </div>
   <div class="px-10 pt-10 pb-16">
     <img
-      src="/screenshot.png"
+      src="/melaobagslandingpage.png"
       class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
       alt="Slide 5"
     />
   </div>
-</d>
+</c2dev-proyectos-carousel>
 <script>
   const proyectosCarouselSettings = {
     dots: true,
@@ -61,59 +63,60 @@ import "../css/slick-review.css";
         breakpoint: 2100,
         settings: {
           centerPadding: "600px",
-        }
+        },
       },
       {
         // 3xl
         breakpoint: 1800,
         settings: {
           centerPadding: "500px",
-        }
+        },
       },
       {
         // 2xl
         breakpoint: 1536,
         settings: {
           centerPadding: "400px",
-        }
+        },
       },
       {
         // xl
         breakpoint: 1280,
         settings: {
           centerPadding: "300px",
-        }
+        },
       },
       {
         // lg
         breakpoint: 1024,
         settings: {
           centerPadding: "200px",
-        }
+        },
       },
       {
         // md
         breakpoint: 768,
         settings: {
           centerPadding: "100px",
-        }
+        },
       },
       {
         // sm
         breakpoint: 640,
         settings: {
           centerPadding: "10px",
-        }
+        },
       },
     ],
   };
 
   class C2DevProyectosCarousel extends HTMLElement {
-    observer: IntersectionObserver|null = null;
+    observer: IntersectionObserver | null = null;
     initialized: boolean = false;
 
-    constructor() {1
-      super()
+    constructor() {
+      1;
+      super();
     }
 
     onIntersect() {
@@ -125,14 +128,13 @@ import "../css/slick-review.css";
     }
 
     connectedCallback() {
-      let observer = this.observer ?? new IntersectionObserver(
-        this.onIntersect.bind(this),
-        {
+      let observer =
+        this.observer ??
+        new IntersectionObserver(this.onIntersect.bind(this), {
           root: null,
           rootMargin: "0px",
           threshold: 0,
-        },
-      );
+        });
       observer.observe(this);
       this.observer = observer;
     }
@@ -141,5 +143,8 @@ import "../css/slick-review.css";
       this.observer?.unobserve(this);
     }
   }
-  window.customElements.define("c2dev-proyectos-carousel", C2DevProyectosCarousel)
+  window.customElements.define(
+    "c2dev-proyectos-carousel",
+    C2DevProyectosCarousel
+  );
 </script>
