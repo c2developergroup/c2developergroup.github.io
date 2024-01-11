@@ -13,7 +13,10 @@ import "../css/main.css";
 ---
 
 <C2MainPage>
-  <section id="inicio" class="bg-[url('/c2bg-main.png')] bg-cover bg-bottom h-[100vh]">
+  <section
+    id="inicio"
+    class="bg-[url('/c2bg-main.png')] bg-cover bg-bottom h-[100vh]"
+  >
     <C2NavHeader invisible={true} />
     <div class="w-10/12 m-auto pt-40">
       <div
@@ -107,8 +110,11 @@ import "../css/main.css";
       </div>
     </div>
   </section>
-  <section id="servicios" class="w-full transition duration-300 flex flex-col items-center pt-20">
-    <div 
+  <section
+    id="servicios"
+    class="w-full transition duration-300 flex flex-col items-center pt-20"
+  >
+    <div
       class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center w-full p-10"
     >
       <h2 class="text-white md:text-7xl text-5xl font-bold text-center">
@@ -192,7 +198,6 @@ import "../css/main.css";
         </span>
       </C2WhatWeDo>
     </div>
-    
   </section>
   <section
     class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-20 flex flex-col items-center gap-5 p-6"
@@ -229,7 +234,7 @@ import "../css/main.css";
           </div>
         </div>
         <p
-          class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto md:w-[50%] text-start tallratio:w-full"
+          class="3xl:text-6xl xl:text-4xl md:text-3xl text-3xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto md:w-[50%] text-start tallratio:w-full"
         >
           Después de lanzar tu proyecto, seguimos cuidándolo. Con nuestro
           servicio de mantenimiento, nos aseguramos de que funcione bien
@@ -294,19 +299,18 @@ import "../css/main.css";
   <section
     class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-10 flex flex-col items-center gap-5 p-6 bg-black"
   >
-    <div>
-      <p class="text-white md:text-4xl md:block hidden text-center">
+    <div class="w-3/5">
+      <h2
+        class="text-white md:text-4xl font-['Bebas_Neue'] md:block hidden text-center"
+      >
         ¿Estás listo para hacer tu página web o aplicación <br />
         con nosotros?
-      </p>
-      <p class="text-white text-4xl md:hidden block text-center">
+      </h2>
+      <h2
+        class="text-white text-4xl font-['Bebas_Neue'] md:hidden block text-center"
+      >
         ¿Estás listo para hacer tu página web o aplicación con nosotros?
-      </p>
+      </h2>
     </div>
-    <button
-      class="w-auto bg-transparent hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer transition duration-300 border-[0.005rem] border-white text-white font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
-    >
-      Contáctanos
-    </button>
   </section>
 </C2MainPage>
