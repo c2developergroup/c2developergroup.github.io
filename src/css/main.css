@@ -19,6 +19,8 @@ html {
   scroll-behavior: smooth;
 }
 
+.slide-in-left{-webkit-animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both}
+
 /* .text-ecommerce {
     -webkit-animation: text-ecommerce-bg 12s infinite;
     animation: text-ecommerce-bg 12s infinite;
