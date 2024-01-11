@@ -1,39 +1,44 @@
 ---
 import C2NavHeader from "./NavHeader.astro";
 
-import "../css/main.css"
+// import "../css/main.css";
 ---
+
 <div
   id="--c2dev-navbar-mobile"
-  class="navbar-home collapse hidden resp:block resp:visible text-gray-900 bg-white resp:m-0 resp:fixed resp:w-60 resp:h-screen resp:top-0 resp:p-7 resp:z-30 resp:-right-60 resp:translate-x-0 transition-transform duration-300">
+  class="navbar-home collapse hidden resp:block resp:visible text-gray-900 bg-white resp:m-0 resp:fixed resp:w-60 resp:h-screen resp:top-0 resp:p-7 resp:z-30 resp:-right-60 resp:translate-x-0 transition-transform duration-300"
+>
   <ul class="flex items-center resp:mt-5 resp:flex-col">
-    <li class="my-4">
-    </li>
+    <li class="my-4"></li>
     <li class="my-2.5">
       <a
-        href="/inicio/"
-        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
+        href="/"
+        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0"
+      >
         Inicio
       </a>
     </li>
     <li class="my-2.5">
       <a
         href="/servicios/"
-        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
+        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0"
+      >
         Servicios
       </a>
     </li>
     <li class="my-2.5">
       <a
         href="/proyectos/"
-        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
+        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0"
+      >
         Proyectos
       </a>
     </li>
     <li class="my-2.5">
       <a
         href="/acerca-de/"
-        class="text-xl font-bold ml-10 mr-6 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
+        class="text-xl font-bold ml-10 mr-6 hover:text-blue-700 hover:transition-all duration-300 resp:m-0"
+      >
         Acerca de nosotros
       </a>
     </li>
@@ -42,7 +47,9 @@ import "../css/main.css"
 <C2NavHeader />
 <div
   class="collapse resp:visible resp:fixed resp:top-0 resp:left-0 resp:w-full resp:h-screen resp:z-20 resp:bg-[rgba(0,0,0,0.5)] hidden"
-  id="--c2dev-navbar-back"></div>
+  id="--c2dev-navbar-back"
+>
+</div>
 <script>
   let stateIsOpen: boolean = false;
 
@@ -55,14 +62,20 @@ import "../css/main.css"
       const __inner = (isOpen: boolean) => {
         const backVis = (isOpen: boolean) => {
           return isOpen ? "resp:block" : "hidden";
-        }
+        };
         const navVis = (isOpen: boolean) => {
           return isOpen ? "resp:-translate-x-60" : "resp:translate-x-0";
-        }
+        };
 
-        __c2dev_navbar_back.classList.replace(backVis(!isOpen), backVis(isOpen));
-        __c2dev_navbar_mobile.classList.replace(navVis(!isOpen), navVis(isOpen));
-      }
+        __c2dev_navbar_back.classList.replace(
+          backVis(!isOpen),
+          backVis(isOpen)
+        );
+        __c2dev_navbar_mobile.classList.replace(
+          navVis(!isOpen),
+          navVis(isOpen)
+        );
+      };
 
       __inner(stateIsOpen);
       return stateIsOpen;
@@ -76,11 +89,13 @@ import "../css/main.css"
     };
 
     return { toggle: toggle, close: close };
-  })()
+  })();
 
   document.addEventListener("DOMContentLoaded", (_event) => {
     __c2dev_navbar_back = document.getElementById("--c2dev-navbar-back")!!;
-    __c2dev_navbar_hamburger = document.getElementById("--c2dev-navbar-hamburger")!!;
+    __c2dev_navbar_hamburger = document.getElementById(
+      "--c2dev-navbar-hamburger"
+    )!!;
     __c2dev_navbar_mobile = document.getElementById("--c2dev-navbar-mobile")!!;
 
     __c2dev_navbar_hamburger.addEventListener("click", hamburgerMenu.toggle);

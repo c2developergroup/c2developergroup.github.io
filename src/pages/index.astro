@@ -13,7 +13,7 @@ import "../css/main.css";
 ---
 
 <C2MainPage>
-  <section class="bg-[url('/c2bg-main.png')] bg-cover bg-bottom h-[100vh]">
+  <section id="inicio" class="bg-[url('/c2bg-main.png')] bg-cover bg-bottom h-[100vh]">
     <C2NavHeader invisible={true} />
     <div class="w-10/12 m-auto pt-40">
       <div
@@ -78,7 +78,7 @@ import "../css/main.css";
       ]}
     />
   </section>
-  <section class="to-40% md:py-40 pb-40 pt-10">
+  <section class="to-40% pb-10 pt-20 pr-40">
     <div
       class="w-full flex xl:flex-row xl:flex-wrap flex-col gap-32 justify-center"
     >
@@ -86,7 +86,7 @@ import "../css/main.css";
         id="c2dev-nuestro-enfoque-text"
         class="xl:w-3/5 w-full xl:max-w-[768px]"
       >
-        <h2 class="md:text-8xl sm:text-5xl text-4xl text-black xl:ms-40 ms-4">
+        <h2 class="md:text-[5.6rem] sm:text-5xl text-4xl text-black xl:ms-40">
           Nuestro enfoque
         </h2>
         <p class="text-black md:text-4xl text-2xl xl:ms-40 ms-4">
@@ -107,8 +107,8 @@ import "../css/main.css";
       </div>
     </div>
   </section>
-  <section class="w-full transition duration-300 flex flex-col items-center">
-    <div
+  <section id="servicios" class="w-full transition duration-300 flex flex-col items-center pt-20">
+    <div 
       class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center w-full p-10"
     >
       <h2 class="text-white md:text-7xl text-5xl font-bold text-center">
@@ -123,7 +123,10 @@ import "../css/main.css";
         backgroundImage="/E-commerceC2LandingPage-croppedresp.webp"
         backgroundImageLoc={PictureLocation.Right}
       >
-        <FaStore className="3xl:text-7xl 2xl:text-8xl xl:text-5xl md:text-4xl text-2xl" slot="icon" />
+        <FaStore
+          className="3xl:text-7xl 2xl:text-8xl xl:text-5xl md:text-4xl text-2xl"
+          slot="icon"
+        />
         <span>
           Creamos tiendas en línea a medida, seguras y móviles. Maximizamos tu
           presencia digital con enfoque en seguridad y personalización.
@@ -138,7 +141,10 @@ import "../css/main.css";
         backgroundImageResp="/PortfolioMockupC2-croppedresp.webp"
         backgroundImageLoc={PictureLocation.Left}
       >
-        <MdApps className="3xl:text-7xl 2xl:text-8xl xl:text-5xl md:text-4xl text-2xl" slot="icon" />
+        <MdApps
+          className="3xl:text-7xl 2xl:text-8xl xl:text-5xl md:text-4xl text-2xl"
+          slot="icon"
+        />
         <span>
           Transformamos tu contenido en una poderosa herramienta de exhibición
           online. Dale vida a tu catálogo y destaca tu portafolio de manera
@@ -154,7 +160,10 @@ import "../css/main.css";
         backgroundImageResp="/iPhone11AndMacbookPro-croppedresp.webp"
         backgroundImageLoc={PictureLocation.Right}
       >
-        <MdDevices className="3xl:text-7xl 2xl:text-8xl xl:text-5xl md:text-4xl text-2xl" slot="icon" />
+        <MdDevices
+          className="3xl:text-7xl 2xl:text-8xl xl:text-5xl md:text-4xl text-2xl"
+          slot="icon"
+        />
         <span>
           Optimizamos tu presencia digital para todos los dispositivos. Desde
           smartphones hasta computadoras, garantizamos una experiencia impecable
@@ -171,7 +180,10 @@ import "../css/main.css";
         backgroundImageResp="/intDesignMockup.webp"
         backgroundImageLoc={PictureLocation.Left}
       >
-        <IoPhonePortraitOutline className="3xl:text-7xl 2xl:text-8xl xl:text-5xl md:text-4xl text-2xl" slot="icon" />
+        <IoPhonePortraitOutline
+          className="3xl:text-7xl 2xl:text-8xl xl:text-5xl md:text-4xl text-2xl"
+          slot="icon"
+        />
         <span>
           Transformamos tus ideas en aplicaciones móviles impactantes.
           Desarrollamos soluciones personalizadas, intuitivas y funcionales que
@@ -180,13 +192,7 @@ import "../css/main.css";
         </span>
       </C2WhatWeDo>
     </div>
-    <div class="w-full">
-      <a href="/proyectos/" class="my-20 tiny:ml-28 tiny:text-left text-center block">
-        <p class="text-4xl font-bold underline hover:text-blue-800 transition duration-300">
-          Ver más proyectos {">"}
-        </p>
-      </a>
-    </div>
+    
   </section>
   <section
     class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-20 flex flex-col items-center gap-5 p-6"
@@ -197,7 +203,7 @@ import "../css/main.css";
     <div class="w-[100%] md:mt-10 mt-4"></div>
     <C2ReviewCarousel />
   </section>
-  <section class="py-20">
+  <section class="pt-20">
     <div
       class="flex flex-row w-full md:h-[calc(100vh-4.75rem)] md:min-h-[700px] tallratio:min-h-0 tallratio:h-auto h-auto bg-none bg-contain bg-no-repeat bg-right-bottom 2xl:mt-10 md:mt-5 mt-2"
     >
@@ -267,14 +273,26 @@ import "../css/main.css";
         src="/soporte.png">
     </div> -->
   </section>
-  <section class="pb-20">
+  <section id="proyectos" class="pt-20">
     <h2 class="md:text-6xl text-4xl text-center mb-5 mt-20">
       Algunos de nuestros trabajos
     </h2>
     <C2ProyectosCarousel />
   </section>
+  <div class="w-full">
+    <a
+      href="/proyectos/"
+      class="my-20 tiny:ml-28 tiny:text-left text-center block"
+    >
+      <p
+        class="text-4xl font-bold underline hover:text-blue-800 transition duration-300"
+      >
+        Ver más proyectos {">"}
+      </p>
+    </a>
+  </div>
   <section
-    class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-20 flex flex-col items-center gap-5 p-6 bg-black"
+    class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-10 flex flex-col items-center gap-5 p-6 bg-black"
   >
     <div>
       <p class="text-white md:text-4xl md:block hidden text-center">
@@ -286,7 +304,7 @@ import "../css/main.css";
       </p>
     </div>
     <button
-      class="w-auto bg-transparent hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer transition duration-300 border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
+      class="w-auto bg-transparent hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer transition duration-300 border-[0.005rem] border-white text-white font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
     >
       Contáctanos
     </button>

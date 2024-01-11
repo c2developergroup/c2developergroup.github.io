@@ -45,10 +45,6 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ---
 
-Inspiraciones para footer de landing page:
-
-- https://www.hellomonday.com/
-
 MARCAS:
 
 - BYNX

@@ -1,6 +1,8 @@
 ---
 import { FaBars } from "react-icons/fa/index";
 
+import "../css/main.css"
+
 interface Props {
   invisible?: boolean,
 }
@@ -44,21 +46,21 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
     <ul class="flex items-center resp:mt-5 resp:flex-col">
       <li class="my-2.5">
         <a
-          href="/inicio/"
+          href="#inicio"
           class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
           Inicio
         </a>
       </li>
       <li class="my-2.5">
         <a
-          href="/servicios/"
+          href="#servicios"
           class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
           Servicios
         </a>
       </li>
       <li class="my-2.5">
         <a
-          href="/proyectos/"
+          href="#proyectos"
           class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
           Proyectos
         </a>
