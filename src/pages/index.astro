@@ -256,10 +256,7 @@ import "../css/main.css";
         </p>
       </div>
     </div>
-    <img
-      class="md:hidden tallratio:block block w-full"
-      src="/soporte.svg"
-    />
+    <img class="md:hidden tallratio:block block w-full" src="/soporte.svg" />
     <!-- <h2 class="md:text-8xl sm:text-5xl text-4xl text-black xl:ms-40 ms-4">Mantenimiento y Soporte</h2>
     <div class="w-full flex xl:flex-row xl:flex-wrap flex-col justify-center">
       <div id="c2dev-nuestro-enfoque-text" class="flex-auto xl:basis-3/5 xl:max-w-[60vw] xl:ps-40 ps-4 basis-full">
@@ -311,6 +308,79 @@ import "../css/main.css";
       >
         ¿Estás listo para hacer tu página web o aplicación con nosotros?
       </h2>
+    </div>
+  </section>
+  <section class="to-40% pb-10 pt-20 pr-40">
+    <div
+      class="w-3/5 flex xl:flex-row lg:flex-row xl:flex-wrap flex-col gap-32 justify-center"
+    >
+      <div
+        id="c2dev-nuestro-enfoque-text"
+        class="xl:w-4/5 w-full xl:max-w-[768px]"
+      >
+        <h2 class="md:text-5xl sm:text-3xl text-2xl text-black mb-5">
+          Cuéntanos tu proyecto
+        </h2>
+        <form class="">
+          <div class="w-full sm:w-60 md:w-1/2 md:pr-2">
+            <input
+              type="text"
+              name="name"
+              placeholder="Nombres y Apellidos"
+              required
+              maxlength="100"
+              class="appearance-none bg-transparent border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
+            />
+            <div class="border-b border-blue-700 py-1 px-2 mb-10"></div>
+          </div>
+          <div class="w-full sm:w-60 md:w-1/2 md:pr-2">
+            <input
+              type="text"
+              name="email"
+              placeholder="Correo electrónico"
+              required
+              maxlength="100"
+              class="appearance-none bg-transparent border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
+            />
+            <div class="border-b border-blue-700 py-1 px-2 mb-10"></div>
+          </div>
+          <div class="w-full sm:w-60 md:w-1/2 md:pr-2">
+            <input
+              type="text"
+              name="number"
+              placeholder="Número de teléfono"
+              required
+              maxlength="100"
+              class="appearance-none bg-transparent border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
+            />
+            <div class="border-b border-blue-700 py-1 px-2 mb-10"></div>
+          </div>
+          <div class="w-full flex flex-wrap justify-between">
+            <div
+              class="flex flex-col w-3/5 border rounded-lg border-blue-700 p-2 mb-10"
+            >
+              <textarea
+                name="message"
+                placeholder="Mensaje"
+                class="appearance-none bg-transparent border-none w-full text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm resize-none"
+                required
+                maxlength="1000"
+                rows="6"></textarea>
+              <div class="flex justify-end">
+                <div
+                  class="bg-blue-600 rounded-full w-5 h-5 hover:bg-blue-700 cursor-pointer transition duration-300"
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <img
+        src="/c2squarelogoblack.png"
+        class="xl:bg-left bg-center bg-contain bg-no-repeat xl:w-2/5 xl:max-w-[256px] w-full xl:h-auto
+    h-40"
+      />
     </div>
   </section>
 </C2MainPage>
