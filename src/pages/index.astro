@@ -15,10 +15,10 @@ import "../css/main.css";
 <C2MainPage>
   <section
     id="inicio"
-    class="bg-[url('/c2bg-main.png')] bg-cover bg-bottom h-[100vh]"
+    class="bg-[url('/c2bg-main.png')] bg-cover bg-bottom min-h-[100vh]"
   >
     <C2NavHeader invisible={true} />
-    <div class="w-10/12 m-auto pt-40">
+    <div class="w-10/12 m-auto pt-20">
       <div
         class="slide-in-blurred-left relative z-10 text-white dark:text-white 3xl:text-[10rem] xl:text-9xl text-8xl resp:text-6xl transition duration-300 drop-shadow-xl shadow-black"
       >
@@ -31,14 +31,10 @@ import "../css/main.css";
         E-commerce, páginas web y aplicaciones.
       </h2>
       <button
-        class="slide-in-blurred-left w-auto bg-transparent hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer transition duration-300 border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
+        class="slide-in-blurred-left hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer transition duration-300 border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl mb-20"
       >
         Contáctanos
       </button>
-    </div>
-    <div
-      class="md:min-h-[calc(50vh-5rem)] sm:min-h-[calc(50vh-4rem)] tiny:min-h-[calc(40vh-4rem)] min-h-[calc(30vh-4rem)] md:h-[calc(20vw-5rem)] h-[calc(20vw-4rem)]"
-    >
     </div>
   </section>
   <section
@@ -81,32 +77,32 @@ import "../css/main.css";
       ]}
     />
   </section>
-  <section class="to-40% pb-10 pt-20 pr-40">
-    <div
-      class="w-full flex xl:flex-row xl:flex-wrap flex-col gap-32 justify-center"
-    >
+  <section class="to-40% pb-10">
+    <div class="flex lg:flex-row flex-col justify-center px-20">
       <div
         id="c2dev-nuestro-enfoque-text"
-        class="xl:w-3/5 w-full xl:max-w-[768px]"
+        class="resp:w-full w-3/5 p-20 flex flex-col resp:items-center"
       >
-        <h2 class="md:text-[5.6rem] sm:text-5xl text-4xl text-black xl:ms-40">
+        <h2 class="md:text-[5.6rem] sm:text-5xl text-4xl text-black">
           Nuestro enfoque
         </h2>
-        <p class="text-black md:text-4xl text-2xl xl:ms-40 ms-4">
+        <p class="text-black md:text-4xl text-2xl resp:text-center">
           Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases sólidas
           en <b>diseño y funcionabilidad</b> que hagan destacar a la empresa u organización
           en el internet.
         </p>
         <button
-          class="text-black hover:text-blue-700 underline md:text-4xl text-2xl transition duration-300 mt-7 xl:ms-40 ms-4 flex items-center gap-6"
+          class="text-black hover:text-blue-700 underline md:text-4xl text-2xl transition duration-300 mt-7 flex items-center gap-6"
         >
           Contáctanos <FaArrowRight />
         </button>
       </div>
-      <div
-        id="c2dev-nuestro-enfoque-image"
-        class="bg-[url('/c2squarelogoblack.png')] xl:bg-left bg-center bg-contain bg-no-repeat xl:w-2/5 xl:max-w-[256px] w-full xl:h-auto h-40"
-      >
+      <div class="flex justify-center resp:w-full w-2/5 md:p-20 md:pt-28">
+        <img
+          id="c2dev-nuestro-enfoque-image"
+          src="c2squarelogoblack.png"
+          class="resp:w-1/2"
+        />
       </div>
     </div>
   </section>
@@ -121,7 +117,7 @@ import "../css/main.css";
         ¿Qué hacemos?
       </h2>
     </div>
-    <div class="flex flex-col items-center w-full gap-y-52 mt-40">
+    <div class="flex flex-col items-center w-full gap-y-40 mt-40">
       <C2WhatWeDo
         iconBgColor="green-500"
         title="E-Commerce"
@@ -312,7 +308,7 @@ import "../css/main.css";
   </section>
   <section>
     <div class="flex">
-      <div class="w-[50%] p-20 flex justify-center">
+      <div class="w-[50%] resp:w-full p-20 flex justify-center">
         <div>
           <h2 class="md:text-5xl sm:text-3xl text-2xl text-black mb-5">
             Cuéntanos tu proyecto
@@ -324,7 +320,7 @@ import "../css/main.css";
               placeholder="Nombres y Apellidos"
               required
               maxlength="100"
-              class="appearance-none bg-transparent border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
+              class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
             />
             <div class="border-b border-blue-700 py-1 px-2 mb-10"></div>
             <input
@@ -333,7 +329,7 @@ import "../css/main.css";
               placeholder="Correo electrónico"
               required
               maxlength="100"
-              class="appearance-none bg-transparent border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
+              class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
             />
             <div class="border-b border-blue-700 py-1 px-2 mb-10"></div>
             <input
@@ -342,7 +338,7 @@ import "../css/main.css";
               placeholder="Número de teléfono"
               required
               maxlength="100"
-              class="appearance-none bg-transparent border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm"
+              class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
             />
             <div class="border-b border-blue-700 py-1 px-2 mb-10"></div>
             <div
@@ -351,7 +347,7 @@ import "../css/main.css";
               <textarea
                 name="message"
                 placeholder="Mensaje"
-                class="appearance-none bg-transparent border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm resize-none"
+                class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm resize-none"
                 required
                 maxlength="1000"
                 rows="6"></textarea>
@@ -365,7 +361,7 @@ import "../css/main.css";
           </form>
         </div>
       </div>
-      <div class="w-[50%] p-20 flex justify-center">
+      <div class="w-[50%] p-20 flex justify-center resp:hidden">
         <img src="/c2squarelogoblack.png" class="w-full max-w-[28rem] h-auto" />
       </div>
     </div>
