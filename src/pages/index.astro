@@ -7,7 +7,7 @@ import C2MainPage from "../components/MainPage.astro";
 import C2ReviewCarousel from "../components/ReviewCarousel.astro";
 import C2ProyectosCarousel from "../components/ProyectosCarousel.astro";
 import C2NavHeader from "../components/NavHeader.astro";
-import C2WhatWeDo, { PictureLocation } from "../components/WhatWeDo.astro";
+import C2WhatWeDo from "../components/WhatWeDo.astro";
 
 import "../css/main.css";
 ---
@@ -120,81 +120,7 @@ import "../css/main.css";
       </h2>
     </div>
     <div class="flex flex-col items-center w-full gap-y-40 mt-40">
-      <C2WhatWeDo
-        iconBgColor="green-500"
-        title="E-Commerce"
-        caseStudyName="Melao Bags"
-        backgroundImage="/E-commerceC2LandingPage-croppedresp.webp"
-        backgroundImageLoc={PictureLocation.Right}
-      >
-        <FaStore
-          className="3xl:text-7xl 2xl:text-8xl xl:text-5xl md:text-4xl text-2xl"
-          slot="icon"
-        />
-        <span>
-          Creamos tiendas en línea a medida, seguras y móviles. Maximizamos tu
-          presencia digital con enfoque en seguridad y personalización.
-          <span class="hidden bg-green-500"></span>
-        </span>
-      </C2WhatWeDo>
-      <C2WhatWeDo
-        iconBgColor="violet-700"
-        title="Portafolio y Catálogos"
-        caseStudyName="Sebastián Castro Rajbe Photography"
-        backgroundImage="/PortfolioMockupC2-croppedresp.webp"
-        backgroundImageResp="/PortfolioMockupC2-croppedresp.webp"
-        backgroundImageLoc={PictureLocation.Left}
-      >
-        <MdApps
-          className="3xl:text-7xl 2xl:text-8xl xl:text-5xl md:text-4xl text-2xl"
-          slot="icon"
-        />
-        <span>
-          Transformamos tu contenido en una poderosa herramienta de exhibición
-          online. Dale vida a tu catálogo y destaca tu portafolio de manera
-          digital.
-          <span class="hidden bg-violet-700"></span>
-        </span>
-      </C2WhatWeDo>
-      <C2WhatWeDo
-        iconBgColor="blue-500"
-        title="Tratamiento Responsive"
-        caseStudyName="SERØ"
-        backgroundImage="/iPhone11AndMacbookPro-croppedmd.webp"
-        backgroundImageResp="/iPhone11AndMacbookPro-croppedresp.webp"
-        backgroundImageLoc={PictureLocation.Right}
-      >
-        <MdDevices
-          className="3xl:text-7xl 2xl:text-8xl xl:text-5xl md:text-4xl text-2xl"
-          slot="icon"
-        />
-        <span>
-          Optimizamos tu presencia digital para todos los dispositivos. Desde
-          smartphones hasta computadoras, garantizamos una experiencia impecable
-          en cada dispositivo.
-          <span class="hidden bg-blue-500"></span>
-        </span>
-      </C2WhatWeDo>
-      <C2WhatWeDo
-        iconBgColor="yellow-400"
-        iconFgColor="black"
-        title="Aplicación móvil"
-        caseStudyName="intDESIGN"
-        backgroundImage="/intDesignMockup-cropped.webp"
-        backgroundImageResp="/intDesignMockup.webp"
-        backgroundImageLoc={PictureLocation.Left}
-      >
-        <IoPhonePortraitOutline
-          className="3xl:text-7xl 2xl:text-8xl xl:text-5xl md:text-4xl text-2xl"
-          slot="icon"
-        />
-        <span>
-          Transformamos tus ideas en aplicaciones móviles impactantes.
-          Desarrollamos soluciones personalizadas, intuitivas y funcionales que
-          llevan tu marca a nuevas alturas en el mundo móvil.
-          <span class="hidden bg-yellow-400"></span>
-        </span>
-      </C2WhatWeDo>
+      <C2WhatWeDo />
     </div>
   </section>
   <section
