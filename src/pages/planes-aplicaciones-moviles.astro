@@ -1,0 +1,92 @@
+---
+import C2MainPage from "../components/MainPage.astro";
+import C2NavHeader from "../components/NavHeader.astro";
+---
+
+<C2MainPage>
+  <section class="">
+    <C2NavHeader invisible={true} />
+    <h2
+      class="text-center text-6xl mt-1 bg-clip-text text-transparent bg-gradient-to-r from-blue-950 via-blue-700 to-blue-950"
+    >
+      Aplicaciones móviles
+    </h2>
+    <div class="fade-in-bottom flex gap-10 justify-center resp:flex-col">
+      <!-- Plan básico -->
+      <div class="mb-10">
+        <div class="flex justify-center mb-2">
+          <div
+            class="shadow-[0_0_20px_0_rgba(0,0,0,0.15)] w-[60rem] h-[33rem] mt-5 rounded-3xl py-5 px-10 flex"
+          >
+            <div class="w-4/12">
+              <h2 class="text-4xl mt-10">Plan personalizado</h2>
+              <h2 class="text-[#1843A2] text-3xl my-5">A consultar</h2>
+              <div class="">
+                <a href="/"
+                  ><button
+                    class="hover:text-blue-800 hover:border-blue-800 cursor-pointer transition duration-300 border-[0.005rem] md:mt-2 mt-3 border-black text-black font-['Smooch_sans'] font-bold 4xl:text-4xl md:text-2xl text-xl md:px-5 px-2 md:py-2 py-2 rounded-[16px]"
+                  >
+                    Contáctanos
+                  </button></a
+                >
+              </div>
+            </div>
+            <div class="w-4/5">
+              <p class="text-center text-3xl mt-6 mx-10 font-bold">
+                Trabajaremos estrechamente contigo para comprender tus
+                necesidades específicas. Haz realidad tus ideas con un plan
+                diseñado exclusivamente para ti.
+              </p>
+              <ul class="mx-10 text-2xl mt-5 font-bold">
+                <li>• Acceso al código.</li>
+                <li>• Pruebas automatizadas.</li>
+                <li>
+                  • Garantía de 3 meses de soporte técnico y arreglo de bugs.
+                </li>
+                <li>• Distribución de AppStore y PlayStore.</li>
+                <li>• Optimización ASO y SEO.</li>
+                <li>• Servicio de diseño y experiencia de usuario.</li>
+                <li>• Acceso a expertos de experiencia de usuario.</li>
+                <li>• Seguridad de la aplicación.</li>
+                <li>• Servicio de especialización según la funcionalidad de la aplicación.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex">
+          <a href="/" class="w-52">
+            <p
+              class="ml-3 text-neutral-400 text-2xl font-bold underline hover:text-blue-800 transition duration-300"
+            >
+              Ver referencia
+            </p>
+          </a>
+          <div class="w-full"></div>
+        </div>
+      </div>
+    </div>
+    <section
+      class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center"
+    >
+      <h2 class="text-7xl text-center text-white pt-20">
+        Hosting y mantenimiento
+      </h2>
+      <p class="text-white text-center text-4xl font-bold mx-64 mt-10 pb-8">
+        Nos encargamos de alojar tu sitio web en servidores seguros y
+        confiables, garantizando un rendimiento óptimo. Además, nuestro equipo
+        se encarga del mantenimiento continuo para que tú puedas centrarte en tu
+        negocio. ¡Consulta para obtener información y disfruta de la
+        tranquilidad de tener tu presencia online siempre activa!
+      </p>
+      <div class="flex justify-center pb-20">
+        <a href="/#contacto"
+          ><button
+            class="hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer transition duration-300 border-[0.005rem] border-white text-white font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
+          >
+            Contáctanos
+          </button></a
+        >
+      </div>
+    </section>
+  </section>
+</C2MainPage>
