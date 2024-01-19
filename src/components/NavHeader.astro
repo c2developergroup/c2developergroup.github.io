@@ -1,5 +1,6 @@
 ---
-import { FaBars } from "react-icons/fa/index";
+import { FaBars, FaGlobeAmericas, FaStore } from "react-icons/fa/index";
+import { MdApps, MdPhoneIphone } from "react-icons/md/index";
 
 import "../css/main.css"
 
@@ -46,28 +47,29 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
     <ul class="flex items-center resp:mt-5 resp:flex-col">
       <li class="my-2.5">
         <a
-          href="/#inicio"
+          href="/"
           class="text-2xl font-medium ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
           Inicio
         </a>
       </li>
       <li class="my-2.5">
         <a
-          href="/servicios"
+          id={`--c2dev-${idPrefix}navbar-header-item-servicios`}
+          href="#servicios"
           class="text-2xl font-medium ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
           Servicios
         </a>
       </li>
       <li class="my-2.5">
         <a
-          href="/#proyectos"
+          href="/proyectos/"
           class="text-2xl font-medium ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
           Proyectos
         </a>
       </li>
       <li class="my-2.5">
         <a
-          href="/acerca-de-nosotros/"
+          href="/acerca-de/"
           class="text-2xl font-medium ml-10 mr-6 hover:text-blue-700 hover:transition-all duration-300 resp:m-0">
           Acerca de nosotros
         </a>
@@ -75,3 +77,151 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
     </ul>
   </nav>
 </header>
+{ (!invisible) && (
+  <div id="--c2dev-navbar-header-item-servicios-popover" class="hidden z-[200] w-max top-0 left-0 p-5 rounded-xl drop-shadow-xl bg-white text-black">
+    <div class="mb-4">
+      <a href="/servicios/e-commerce" class="font-['Smooch_Sans'] font-regular text-2xl hover:text-blue-700 hover:transition-all duration-300">
+        <div class="flex flex-row gap-4 items-center">
+          <div
+            class="bg-green-500 w-[3rem] h-[3rem] rounded-full text-white flex items-center justify-center"
+          >
+            <FaStore />
+          </div>
+          <span>
+            E-Commerce
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="mb-4">
+      <a href="/servicios/paginas-web" class="font-['Smooch_Sans'] font-regular text-2xl hover:text-blue-700 hover:transition-all duration-300 mt-4">
+        <div class="flex flex-row gap-4 items-center">
+          <div
+            class="bg-blue-500 w-[3rem] h-[3rem] rounded-full text-white flex items-center justify-center"
+          >
+            <FaGlobeAmericas />
+          </div>
+          <span>
+            Páginas Web
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="mb-4">
+      <a href="/servicios/aplicaciones-moviles" class="font-['Smooch_Sans'] font-regular text-2xl hover:text-blue-700 hover:transition-all duration-300 ">
+        <div class="flex flex-row gap-4 items-center">
+          <div
+            class="bg-yellow-400 w-[3rem] h-[3rem] rounded-full text-black flex items-center justify-center"
+          >
+            <MdPhoneIphone />
+          </div>
+          <span>
+            Aplicaciones Móviles
+          </span>
+        </div>
+      </a>
+    </div>
+    <div>
+      <a href="/servicios/catalogos" class="font-['Smooch_Sans'] font-regular text-2xl hover:text-blue-700 hover:transition-all duration-300">
+        <div class="flex flex-row gap-4 items-center">
+          <div
+            class="bg-violet-700 w-[3rem] h-[3rem] rounded-full text-white flex items-center justify-center"
+          >
+            <MdApps />
+          </div>
+          <span>
+            Catálogos y Portafolios
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+) }
+<script>
+  let statePopoverOpen: boolean = false;
+  let popoverCleanup: any = null;
+
+  let __c2dev_navbar_servicios!: HTMLElement;
+  let __c2dev_navbar_servicios_popover!: HTMLElement;
+
+  const popoverMenu = (() => {
+    const _updatePopverMenu = (stateIsOpen: boolean) => {
+      const __inner = (isOpen: boolean) => {
+        const update = () => {
+          popoverCleanup = FloatingUIDOM.autoUpdate(
+            __c2dev_navbar_servicios,
+            __c2dev_navbar_servicios_popover,
+            () => {
+              FloatingUIDOM.computePosition(
+                __c2dev_navbar_servicios,
+                __c2dev_navbar_servicios_popover,
+                {
+                  placement: 'bottom',
+                  middleware: [
+                    FloatingUIDOM.offset(40),
+                    FloatingUIDOM.flip(),
+                    FloatingUIDOM.shift({padding: 5}),
+                  ],
+                },
+              ).then(({x, y}: {x: number, y: number}) => {
+                Object.assign(__c2dev_navbar_servicios_popover.style, {
+                  left: `${x}px`,
+                  top: `${y}px`,
+                });
+              });
+            }
+          );
+        }
+        const popoverVis = (isOpen: boolean) => {
+          return isOpen ? "absolute" : "hidden";
+        };
+        
+        __c2dev_navbar_servicios_popover.classList.replace(
+          popoverVis(!isOpen),
+          popoverVis(isOpen)
+        );
+
+        if (isOpen) {
+          update();
+        } else if (popoverCleanup !== null && popoverCleanup !== undefined) {
+          popoverCleanup();
+          popoverCleanup = null;
+        }
+      };
+
+      __inner(stateIsOpen);
+      return stateIsOpen;
+    };
+    const toggle = () => {
+      statePopoverOpen = _updatePopverMenu(!statePopoverOpen);
+    };
+    const open = () => {
+      statePopoverOpen = true;
+      _updatePopverMenu(true);
+    };
+    const close = () => {
+      statePopoverOpen = false;
+      _updatePopverMenu(false);
+    };
+
+    return { toggle: toggle, open: open, close: close };
+  })();
+
+  document.addEventListener("DOMContentLoaded", (_event) => {
+    const eatEvent = (f: (() => void)) => {
+      return (ev: Event) => {
+        ev.preventDefault();
+        f();
+      };
+    };
+
+    __c2dev_navbar_servicios = document.getElementById(
+      "--c2dev-navbar-header-item-servicios"
+    )!!;
+    __c2dev_navbar_servicios_popover = document.getElementById(
+      "--c2dev-navbar-header-item-servicios-popover"
+    )!!;
+
+    __c2dev_navbar_servicios.addEventListener("click", eatEvent(popoverMenu.toggle));
+  });
+</script>
