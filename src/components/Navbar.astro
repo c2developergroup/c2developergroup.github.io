@@ -18,27 +18,17 @@ import C2NavHeader from "./NavHeader.astro";
         Inicio
       </a>
     </li>
-    <li
-      id="--c2dev-navbar-mobile-item-servicios"
-      class="my-2.5">
+    <li id="--c2dev-navbar-mobile-item-servicios" class="my-2.5">
       <span
         id="--c2dev-navbar-mobile-item-servicios-span"
-        class="text-xl font-bold ml-10 hover:text-neutral-700 hover:transition-all  resp:m-0 after:content-['►']"
+        class="text-xl font-bold ml-10 hover:text-neutral-700 hover:transition-all resp:m-0 after:content-['►']"
       >
         <span class="hidden after:content-['▼']"></span>
         Servicios
       </span>
     </li>
-    <li class="my-2.5 hamburger-menu-servicios w-full  hidden">
-      <hr>
-    </li>
-    <li class="my-2.5 hamburger-menu-servicios hidden">
-      <a
-        href="/servicios/e-commerce"
-        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0"
-      >
-        E-Commerce
-      </a>
+    <li class="my-2.5 hamburger-menu-servicios w-full hidden">
+      <hr />
     </li>
     <li class="my-2.5 hamburger-menu-servicios hidden">
       <a
@@ -65,7 +55,7 @@ import C2NavHeader from "./NavHeader.astro";
       </a>
     </li>
     <li class="my-2.5 hamburger-menu-servicios w-full hidden">
-      <hr>
+      <hr />
     </li>
     <li class="my-2.5">
       <a
@@ -73,6 +63,14 @@ import C2NavHeader from "./NavHeader.astro";
         class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0"
       >
         Proyectos
+      </a>
+    </li>
+    <li class="my-2.5 hamburger-menu-servicios hidden">
+      <a
+        href="/servicios/e-commerce"
+        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0"
+      >
+        E-Commerce
       </a>
     </li>
     <li class="my-2.5">
@@ -148,16 +146,13 @@ import C2NavHeader from "./NavHeader.astro";
         };
 
         for (let navItem of __c2dev_hamburger_menu_servicios) {
-          navItem.classList.replace(
-            subVis(!isOpen),
-            subVis(isOpen)
-          );
+          navItem.classList.replace(subVis(!isOpen), subVis(isOpen));
         }
         __c2dev_navbar_mobile_item_servicios_span.classList.replace(
           arrowVis(!isOpen),
-          arrowVis(isOpen),
+          arrowVis(isOpen)
         );
-      }
+      };
 
       __inner(stateServiciosOpen);
       return stateServiciosOpen;
@@ -179,13 +174,22 @@ import C2NavHeader from "./NavHeader.astro";
       "--c2dev-navbar-hamburger"
     )!!;
     __c2dev_navbar_mobile = document.getElementById("--c2dev-navbar-mobile")!!;
-    __c2dev_navbar_mobile_item_servicios = document.getElementById("--c2dev-navbar-mobile-item-servicios")!!;
-    __c2dev_navbar_mobile_item_servicios_span = document.getElementById("--c2dev-navbar-mobile-item-servicios-span")!!;
+    __c2dev_navbar_mobile_item_servicios = document.getElementById(
+      "--c2dev-navbar-mobile-item-servicios"
+    )!!;
+    __c2dev_navbar_mobile_item_servicios_span = document.getElementById(
+      "--c2dev-navbar-mobile-item-servicios-span"
+    )!!;
 
-    __c2dev_hamburger_menu_servicios = [...document.getElementsByClassName("hamburger-menu-servicios")!!] as HTMLElement[];
+    __c2dev_hamburger_menu_servicios = [
+      ...document.getElementsByClassName("hamburger-menu-servicios")!!,
+    ] as HTMLElement[];
 
     __c2dev_navbar_hamburger.addEventListener("click", hamburgerMenu.toggle);
     __c2dev_navbar_back.addEventListener("click", hamburgerMenu.close);
-    __c2dev_navbar_mobile_item_servicios.addEventListener("click", serviciosMenu.toggle);
+    __c2dev_navbar_mobile_item_servicios.addEventListener(
+      "click",
+      serviciosMenu.toggle
+    );
   });
 </script>
