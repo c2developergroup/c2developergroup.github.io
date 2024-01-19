@@ -30,11 +30,13 @@ import "../css/main.css";
       >
         E-commerce, páginas web y aplicaciones.
       </h2>
-      <button
-        class="slide-in-blurred-left hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer transition duration-300 border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl mb-20"
+      <a href="/#contacto"
+        ><button
+          class="slide-in-blurred-left hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer transition duration-300 border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl mb-20"
+        >
+          Contáctanos
+        </button></a
       >
-        Contáctanos
-      </button>
     </div>
   </section>
   <section
@@ -239,7 +241,7 @@ import "../css/main.css";
           largo plazo.
         </p>
         <p class="2xl:mt-20 md:mt-10 mt-4">
-          <a href="/proyectos/melao-bags/">
+          <a href="/#contacto">
             <button
               class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-1 border-black text-black hover:border-blue-800 hover:text-blue-800 transition duration-300 cursor-pointer font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
             >
@@ -279,7 +281,7 @@ import "../css/main.css";
   </section>
   <div class="w-full">
     <a
-      href="/proyectos/"
+      href="/proyectos"
       class="my-20 tiny:ml-28 tiny:text-left text-center block"
     >
       <p
@@ -290,6 +292,7 @@ import "../css/main.css";
     </a>
   </div>
   <section
+    id="contacto"
     class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-10 flex flex-col items-center gap-5 p-6 bg-black"
   >
     <div class="w-3/5">
@@ -322,7 +325,7 @@ import "../css/main.css";
               maxlength="100"
               class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
             />
-            <div class="border-b border-blue-700 py-1 px-2 mb-10"></div>
+            <div class="border-b border-blue-700 py-1 px-2 mb-5"></div>
             <input
               type="text"
               name="email"
@@ -331,7 +334,7 @@ import "../css/main.css";
               maxlength="100"
               class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
             />
-            <div class="border-b border-blue-700 py-1 px-2 mb-10"></div>
+            <div class="border-b border-blue-700 py-1 px-2 mb-5"></div>
             <input
               type="text"
               name="number"
@@ -340,7 +343,16 @@ import "../css/main.css";
               maxlength="100"
               class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
             />
-            <div class="border-b border-blue-700 py-1 px-2 mb-10"></div>
+            <div class="border-b border-blue-700 py-1 px-2 mb-5"></div>
+            <input
+              type="text"
+              name="subject"
+              placeholder="Asunto"
+              required
+              maxlength="100"
+              class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
+            />
+            <div class="border-b border-blue-700 py-1 px-2 mb-7"></div>
             <div
               class="flex flex-col border rounded-lg border-blue-700 p-2 mb-10"
             >
@@ -362,7 +374,10 @@ import "../css/main.css";
         </div>
       </div>
       <div class="w-[50%] resp:hidden">
-        <img src="/c2squarelogoblack.png" class="w-96 max-w-[28rem] pt-20 ml-28" />
+        <img
+          src="/c2squarelogoblack.png"
+          class="w-96 max-w-[28rem] pt-20 ml-28"
+        />
       </div>
     </div>
   </section>
