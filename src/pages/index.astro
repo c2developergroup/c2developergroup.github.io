@@ -1,7 +1,5 @@
 ---
-import { FaArrowRight, FaStore } from "react-icons/fa/index";
-import { IoPhonePortraitOutline } from "react-icons/io5/index";
-import { MdApps, MdDevices } from "react-icons/md/index";
+import { FaArrowRight } from "react-icons/fa/index";
 import { MarqueeComponent } from "../components/MarqueeCustomers";
 import C2MainPage from "../components/MainPage.astro";
 import C2ReviewCarousel from "../components/ReviewCarousel.astro";
@@ -18,7 +16,7 @@ import "../css/main.css";
     class="bg-[url('/c2bg-main.png')] bg-cover bg-bottom min-h-[100vh]"
   >
     <C2NavHeader invisible={true} />
-    <div class="w-10/12 m-auto md:pt-40 lg:pt-20 xl:pt-40">
+    <div class="w-10/12 m-auto pt-20 md:pt-40">
       <div
         class="slide-in-blurred-left relative z-10 text-white dark:text-white 3xl:text-[10rem] xl:text-9xl text-8xl resp:text-6xl transition duration-300 drop-shadow-xl shadow-black"
       >
@@ -80,26 +78,31 @@ import "../css/main.css";
     />
   </section>
   <section class="to-40% pb-10">
-    <div class="flex lg:flex-row flex-col justify-center px-20 fade-in-bottom">
+    <div class="flex justify-center px-20 mobl:px-10 fade-in-bottom">
       <div
         id="c2dev-nuestro-enfoque-text"
-        class="resp:w-full w-3/5 p-20 flex flex-col resp:items-center"
+        class="resp:w-full w-3/5 md:p-20 flex flex-col resp:items-center"
       >
-        <h2 class="md:text-[5.6rem] sm:text-5xl text-4xl text-black">
+        <h2 class="md:text-[5.6rem] sm:text-5xl text-4xl resp:text-center">
           Nuestro enfoque
         </h2>
-        <p class="text-black md:text-4xl text-2xl resp:text-center">
+        <p class="text-black md:text-4xl text-xl resp:text-center">
           Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases sólidas
           en <b>diseño y funcionabilidad</b> que hagan destacar a la empresa u organización
           en el internet.
         </p>
+        <!-- <p class="text-black md:text-4xl text-2xl resp:text-center">
+          Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases sólidas
+          en <b>diseño y funcionabilidad</b> que hagan destacar a la empresa u organización
+          en el internet.
+        </p> -->
         <button
-          class="text-black hover:text-blue-700 underline md:text-4xl text-2xl transition duration-300 mt-7 flex items-center gap-6"
+          class="text-black hover:text-blue-700 underline md:text-4xl text-2xl transition duration-300 mt-[3vh] flex items-center gap-6"
         >
           Contáctanos <FaArrowRight />
         </button>
       </div>
-      <div class="flex justify-center resp:w-full w-2/5 md:p-20 md:pt-28">
+      <div class="flex justify-center resp:hidden w-2/5 md:p-20 md:pt-28">
         <img
           id="c2dev-nuestro-enfoque-image"
           src="c2squarelogoblack.png"
@@ -137,7 +140,7 @@ import "../css/main.css";
       class="flex flex-row w-full md:h-[calc(100vh-4.75rem)] md:min-h-[700px] tallratio:min-h-0 tallratio:h-auto h-auto bg-none bg-contain bg-no-repeat bg-right-bottom 2xl:mt-10 md:mt-5 mt-2"
     >
       <div
-        class="absolute md:block tallratio:hidden md:min-h-[700px] hidden -z-10 w-full h-[calc(100vh-4.75rem)] text-end"
+        class="absolute md:block tallratio:hidden md:min-h-[700px] hidden resp:hidden -z-10 w-full h-[calc(100vh-4.75rem)] text-end"
       >
         <img
           class="inline-block md:w-[40%] pe-[5%] w-full h-full object-contain object-right"
@@ -157,7 +160,7 @@ import "../css/main.css";
           </div>
         </div>
         <p
-          class="3xl:text-6xl xl:text-4xl md:text-3xl text-3xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto md:w-[50%] text-start tallratio:w-full"
+          class="3xl:text-6xl xl:text-4xl md:text-4xl text-xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto md:w-[50%] text-start tallratio:w-full"
         >
           Después de lanzar tu proyecto, seguimos cuidándolo. Con nuestro
           servicio de mantenimiento, nos aseguramos de que funcione bien
@@ -179,7 +182,6 @@ import "../css/main.css";
         </p>
       </div>
     </div>
-    <img class="md:hidden tallratio:block block w-full" src="/soporte.svg" />
   </section>
   <section id="proyectos" class="pt-20">
     <h2 class="md:text-6xl text-4xl text-center mb-5 mt-5">
