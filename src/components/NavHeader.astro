@@ -127,7 +127,7 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
   !invisible && (
     <div
       id="--c2dev-navbar-header-item-servicios-popover"
-      class="hidden z-[200] w-max top-0 left-0 p-5 rounded-xl drop-shadow-xl bg-white text-black"
+      class="hidden z-[200] w-max top-0 left-0 p-5 rounded-xl drop-shadow-xl bg-white text-black border border-gray-200"
     >
       <div class="mb-4">
         <a
@@ -183,7 +183,7 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
       </div>
       <div
         id="--c2dev-navbar-header-item-servicios-popover-arrow"
-        class="absolute z-[200] w-8 h-8 rotate-45 bg-white"
+        class="absolute z-[150] w-8 h-8 rotate-45 bg-white border-t border-l border-gray-200"
       />
     </div>
   )
@@ -258,7 +258,7 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
                     top: arrowY != null ? `${arrowY}px` : "",
                     right: "",
                     bottom: "",
-                    [staticSide]: "-4px",
+                    [staticSide]: "-16px",
                   });
                 }
               );
