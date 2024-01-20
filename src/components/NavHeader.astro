@@ -181,18 +181,40 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
           </div>
         </a>
       </div>
+      <div
+        id="--c2dev-navbar-header-item-servicios-popover-arrow"
+        class="absolute z-[200] w-8 h-8 rotate-45 bg-white"
+      />
     </div>
   )
 }
 <script>
   // Floating UI JS
   declare const FloatingUIDOM: any;
+  type FloatingUIComputedPosition = {
+    x: number;
+    y: number;
+    placement: string;
+    middlewareData: {
+      arrow: {
+        x: number;
+        y: number;
+      };
+    };
+  };
+  const placementTranslator: any = {
+    top: "bottom",
+    right: "left",
+    bottom: "top",
+    left: "right",
+  };
 
   let statePopoverOpen: boolean = false;
   let popoverCleanup: any = null;
 
   let __c2dev_navbar_servicios!: HTMLElement;
   let __c2dev_navbar_servicios_popover!: HTMLElement;
+  let __c2dev_navbar_servicios_popover_arrow!: HTMLElement;
 
   const popoverMenu = (() => {
     const _updatePopverMenu = (stateIsOpen: boolean) => {
@@ -211,14 +233,35 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
                     FloatingUIDOM.offset(40),
                     FloatingUIDOM.flip(),
                     FloatingUIDOM.shift({ padding: 5 }),
+                    FloatingUIDOM.arrow({
+                      element: __c2dev_navbar_servicios_popover_arrow,
+                    }),
                   ],
                 }
-              ).then(({ x, y }: { x: number; y: number }) => {
-                Object.assign(__c2dev_navbar_servicios_popover.style, {
-                  left: `${x}px`,
-                  top: `${y}px`,
-                });
-              });
+              ).then(
+                ({
+                  x,
+                  y,
+                  placement,
+                  middlewareData,
+                }: FloatingUIComputedPosition) => {
+                  Object.assign(__c2dev_navbar_servicios_popover.style, {
+                    left: `${x}px`,
+                    top: `${y}px`,
+                  });
+
+                  const { x: arrowX, y: arrowY } = middlewareData.arrow;
+                  const staticSide: string =
+                    placementTranslator[placement.split("-")[0] as string];
+                  Object.assign(__c2dev_navbar_servicios_popover_arrow.style, {
+                    left: arrowX != null ? `${arrowX}px` : "",
+                    top: arrowY != null ? `${arrowY}px` : "",
+                    right: "",
+                    bottom: "",
+                    [staticSide]: "-4px",
+                  });
+                }
+              );
             }
           );
         };
@@ -270,6 +313,9 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
     )!!;
     __c2dev_navbar_servicios_popover = document.getElementById(
       "--c2dev-navbar-header-item-servicios-popover"
+    )!!;
+    __c2dev_navbar_servicios_popover_arrow = document.getElementById(
+      "--c2dev-navbar-header-item-servicios-popover-arrow"
     )!!;
 
     __c2dev_navbar_servicios.addEventListener(
