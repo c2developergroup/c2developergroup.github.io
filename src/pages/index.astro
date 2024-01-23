@@ -16,7 +16,7 @@ import "../css/main.css";
     class="bg-[url('/c2bg-main.png')] bg-cover bg-bottom min-h-[100vh]"
   >
     <C2NavHeader invisible={true} />
-    <div class="w-10/12 m-auto md:pt-40 lg:pt-20 xl:pt-40">
+    <div class="w-10/12 m-auto pt-20 md:pt-40">
       <div
         class="slide-in-blurred-left relative z-10 text-white dark:text-white 3xl:text-[10rem] xl:text-9xl text-8xl resp:text-6xl transition duration-300 drop-shadow-xl shadow-black"
       >
@@ -78,30 +78,37 @@ import "../css/main.css";
     />
   </section>
   <section class="to-40% pb-10">
-    <div class="flex lg:flex-row flex-col justify-center px-20 fade-in-bottom">
+    <div class="flex justify-center px-20 mobl:px-10 3xl:px-48 3xl:mt-20 fade-in-bottom">
       <div
         id="c2dev-nuestro-enfoque-text"
-        class="resp:w-full w-3/5 p-20 flex flex-col resp:items-center"
+        class="resp:w-full w-3/5 md:p-20 flex flex-col resp:items-center"
       >
-        <h2 class="md:text-[5.6rem] sm:text-5xl text-4xl text-black">
+        <h2 class="md:text-[5.6rem] 2xl:text-8xl sm:text-5xl text-4xl resp:text-center 3xl:text-9xl">
           Nuestro enfoque
         </h2>
-        <p class="text-black md:text-4xl text-2xl resp:text-center">
+        <p class="text-black md:text-4xl text-xl resp:text-center mt-10 3xl:text-5xl">
           Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases sólidas
           en <b>diseño y funcionabilidad</b> que hagan destacar a la empresa u organización
           en el internet.
         </p>
-        <button
-          class="text-black hover:text-blue-700 underline md:text-4xl text-2xl transition duration-300 mt-7 flex items-center gap-6"
-        >
-          Contáctanos <FaArrowRight />
-        </button>
+        <!-- <p class="text-black md:text-4xl text-2xl resp:text-center">
+          Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases sólidas
+          en <b>diseño y funcionabilidad</b> que hagan destacar a la empresa u organización
+          en el internet.
+        </p> -->
+        <a href="/#contacto">
+          <button
+            class="text-black hover:text-blue-700 underline md:text-4xl text-2xl transition duration-300 mt-[3vh] flex items-center gap-6"
+          >
+            Contáctanos <FaArrowRight />
+          </button>
+        </a>
       </div>
-      <div class="flex justify-center resp:w-full w-2/5 md:p-20 md:pt-28">
+      <div class="flex justify-center resp:hidden w-2/5 md:p-20 md:pt-28">
         <img
           id="c2dev-nuestro-enfoque-image"
           src="c2squarelogoblack.png"
-          class="resp:w-1/2"
+          class="resp:w-1/2 3xl:w-7/12"
         />
       </div>
     </div>
@@ -117,25 +124,27 @@ import "../css/main.css";
         ¿Qué hacemos?
       </h2>
     </div>
-    <div class="flex flex-col items-center w-full gap-y-40 mt-40">
+    <div
+      class="flex flex-col items-center w-full gap-y-40 resp:gap-y-10 mt-10 tiny:mt-20 md:mt-40"
+    >
       <C2WhatWeDo />
     </div>
   </section>
   <section
-    class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-20 flex flex-col items-center gap-5 p-6"
+    class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-20 mt-20 flex flex-col items-center gap-5 p-6"
   >
-    <h2 class="text-white md:text-7xl text-5xl font-medium text-center">
+    <h2 class="text-white md:text-7xl text-5xl 3xl:text-8xl font-medium text-center">
       ¿Qué dicen de nosotros?
     </h2>
     <div class="w-[100%] md:mt-10 mt-4"></div>
     <C2ReviewCarousel />
   </section>
-  <section class="pt-20">
+  <section>
     <div
       class="flex flex-row w-full md:h-[calc(100vh-4.75rem)] md:min-h-[700px] tallratio:min-h-0 tallratio:h-auto h-auto bg-none bg-contain bg-no-repeat bg-right-bottom 2xl:mt-10 md:mt-5 mt-2"
     >
       <div
-        class="absolute md:block tallratio:hidden md:min-h-[700px] hidden -z-10 w-full h-[calc(100vh-4.75rem)] text-end"
+        class="absolute md:block tallratio:hidden md:min-h-[700px] hidden resp:hidden -z-10 w-full h-[calc(100vh-4.75rem)] text-end"
       >
         <img
           class="inline-block md:w-[40%] pe-[5%] w-full h-full object-contain object-right"
@@ -143,19 +152,15 @@ import "../css/main.css";
         />
       </div>
       <div
-        class="flex flex-col 2xl:mx-40 md:mx-20 mx-5 2xl:mt-20 md:mt-10 mt-5 w-full"
+        class="px-20 resp:px-10"
       >
-        <div class="flex flex-row w-[100%] 2xl:mt-10 md:mt-5 mt-2">
-          <div class="flex flex-row gap-4 items-center">
-            <h2
-              class="4xl:text-9xl 3xl:text-7xl 2xl:text-7xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-medium h-auto"
-            >
-              Mantenimiento y Soporte
-            </h2>
-          </div>
-        </div>
+        <h2
+          class="4xl:text-9xl 3xl:text-7xl 2xl:text-7xl xl:text-7xl lg:text-6xl text-5xl font-medium h-auto mt-20 resp:mt-8"
+        >
+          Mantenimiento y Soporte
+        </h2>
         <p
-          class="3xl:text-6xl xl:text-4xl md:text-3xl text-3xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto md:w-[50%] text-start tallratio:w-full"
+          class="3xl:text-6xl xl:text-4xl md:text-4xl text-xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto md:w-[50%] text-start tallratio:w-full"
         >
           Después de lanzar tu proyecto, seguimos cuidándolo. Con nuestro
           servicio de mantenimiento, nos aseguramos de que funcione bien
@@ -166,7 +171,7 @@ import "../css/main.css";
         <p class="2xl:mt-20 md:mt-10 mt-4">
           <a href="/#contacto">
             <button
-              class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-1 border-black text-black hover:border-blue-800 hover:text-blue-800 transition duration-300 cursor-pointer font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
+              class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-2 border-black text-black hover:border-blue-800 hover:text-blue-800 transition duration-300 cursor-pointer font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
             >
               Contáctanos
             </button>
@@ -177,7 +182,10 @@ import "../css/main.css";
         </p>
       </div>
     </div>
-    <img class="md:hidden tallratio:block block w-full" src="/soporte.svg" />
+    <img
+      class="hidden resp:block mobl:w-4/5 w-3/5 m-auto mt-10 object-contain object-right"
+      src="/soporte.svg"
+    />
   </section>
   <section id="proyectos" class="pt-20">
     <h2 class="md:text-6xl text-4xl text-center mb-5 mt-5">
@@ -201,35 +209,27 @@ import "../css/main.css";
     id="contacto"
     class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-10 flex flex-col items-center gap-5 p-6 bg-black"
   >
-    <div class="w-3/5">
-      <h2
-        class="text-white md:text-4xl font-['Bebas_Neue'] md:block hidden text-center"
-      >
-        ¿Estás listo para hacer tu página web o aplicación <br />
-        con nosotros?
-      </h2>
-      <h2
-        class="text-white text-4xl font-['Bebas_Neue'] md:hidden block text-center"
-      >
-        ¿Estás listo para hacer tu página web o aplicación con nosotros?
-      </h2>
-    </div>
+    <h2 class="text-white md:text-4xl text-3xl font-['Bebas_Neue'] text-center">
+      ¿Estás listo para hacer tu página web o aplicación
+      <br class="hidden sm:block" />
+      con nosotros?
+    </h2>
   </section>
   <section>
     <div class="flex">
-      <div class="w-[50%] resp:w-full p-20 flex justify-center">
-        <div>
-          <h2 class="md:text-5xl sm:text-3xl text-2xl text-black mb-5">
+      <div class="w-[50%] resp:w-full p-20 mobl:p-10 flex justify-center">
+        <div class="w-full">
+          <h2 class="md:text-5xl text-3xl text-black mb-5">
             Cuéntanos tu proyecto
           </h2>
-          <form>
+          <form class="font-['Smooch_Sans']">
             <input
               type="text"
               name="name"
               placeholder="Nombres y Apellidos"
               required
               maxlength="100"
-              class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
+              class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none w-full"
             />
             <div class="border-b border-blue-700 py-1 px-2 mb-5"></div>
             <input
@@ -238,7 +238,7 @@ import "../css/main.css";
               placeholder="Correo electrónico"
               required
               maxlength="100"
-              class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
+              class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none w-full"
             />
             <div class="border-b border-blue-700 py-1 px-2 mb-5"></div>
             <input
@@ -247,7 +247,7 @@ import "../css/main.css";
               placeholder="Número de teléfono"
               required
               maxlength="100"
-              class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
+              class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none w-full"
             />
             <div class="border-b border-blue-700 py-1 px-2 mb-5"></div>
             <input
@@ -256,16 +256,51 @@ import "../css/main.css";
               placeholder="Asunto"
               required
               maxlength="100"
-              class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm w-full"
+              class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none w-full"
             />
-            <div class="border-b border-blue-700 py-1 px-2 mb-7"></div>
+            <div class="border-b border-blue-700 py-1 px-2 mb-4"></div>
+            <div>
+              <label for="service-select" class="text-gray-400"
+                >Tipo de Servicio</label
+              >
+              <select
+                name="service-select"
+                id="service-select"
+                class="p-1 border border-blue-600 rounded-lg outline-blue-600 w-full"
+                required
+              >
+                <option disabled selected>Seleccione una opción</option>
+                <option value="value2">Página web</option>
+                <option value="value3">Aplicación móvil</option>
+                <option value="value3">Catálogo o portafolio</option>
+                <option value="value3">E-Commerce</option>
+              </select>
+            </div>
+            <div class="mt-3">
+              <label for="service-plan-select" class="text-gray-400"
+                >Plan de Servicio</label
+              >
+              <select
+                name="service-plan-select"
+                id="service-plan-select"
+                class="p-1 border border-blue-600 rounded-lg outline-blue-600 w-full"
+                required
+                disabled
+              >
+                <option disabled selected>Seleccione una opción</option>
+                <option value="value2">Plan Básico</option>
+                <option value="value3">Plan Plus</option>
+                <option value="value3">Plan Premium</option>
+                <option value="value3">Plan Personalizado</option>
+              </select>
+            </div>
             <div
-              class="flex flex-col border rounded-lg border-blue-700 p-2 mb-10"
+              class="mt-5 flex flex-col border rounded-lg border-blue-700 p-2 mb-10"
             >
               <textarea
                 name="message"
                 placeholder="Mensaje"
-                class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none text-sm resize-none"
+                class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none resize-none"
                 required
                 maxlength="1000"
                 rows="6"></textarea>
@@ -282,9 +317,17 @@ import "../css/main.css";
       <div class="w-[50%] resp:hidden">
         <img
           src="/c2squarelogoblack.png"
-          class="w-96 max-w-[28rem] pt-20 ml-28"
+          class="w-full max-w-[28rem] pt-20 ml-28"
         />
       </div>
     </div>
   </section>
+  <script>
+    const habilitarPlanSelect = () => {
+      servicePlanSelect?.removeAttribute("disabled");
+    };
+    const servicePlanSelect = document.querySelector("#service-plan-select");
+    const serviceSelect = document.querySelector("#service-select");
+    serviceSelect?.addEventListener("change", habilitarPlanSelect);
+  </script>
 </C2MainPage>
