@@ -2,8 +2,8 @@
 import "../css/slick-review.css";
 ---
 
-<c2dev-review-carousel class="relative max-w-[100%] w-[100%]">
-  <div class="md:px-10 3xl:px-5 px-3 md:pt-10 pt-3 pb-8">
+<c2dev-review-carousel class="flex justify-center relative max-w-[100%] w-[100%]">
+  <div class="2xl:px-3 md:px-10 3xl:px-5 px-3 md:pt-10 pt-3 pb-8">
     <div
       class="flex flex-row md:gap-10 sm:gap-5 gap-4 w-[100%] items-start justify-center"
     >
@@ -28,7 +28,7 @@ import "../css/slick-review.css";
       </div>
     </div>
   </div>
-  <div class="md:px-10 px-3 md:pt-10 pt-3 pb-8">
+  <div class="2xl:px-3 md:px-10 px-3 md:pt-10 pt-3 pb-8">
     <div
       class="flex flex-row md:gap-10 sm:gap-5 gap-4 w-[100%] items-start justify-center"
     >
@@ -54,7 +54,7 @@ import "../css/slick-review.css";
       </div>
     </div>
   </div>
-  <div class="md:px-10 px-3 md:pt-10 pt-3 pb-8">
+  <div class="2xl:px-3 md:px-10 px-3 md:pt-10 pt-3 pb-8">
     <div
       class="flex flex-row md:gap-10 sm:gap-5 gap-4 w-[100%] items-start justify-center"
     >
@@ -78,7 +78,7 @@ import "../css/slick-review.css";
       </div>
     </div>
   </div>
-  <div class="md:px-10 px-3 md:pt-10 pt-3 pb-8">
+  <div class="2xl:px-3 md:px-10 px-3 md:pt-10 pt-3 pb-8">
     <div
       class="flex flex-row md:gap-10 sm:gap-5 gap-4 w-[100%] items-start justify-center"
     >
@@ -103,7 +103,7 @@ import "../css/slick-review.css";
       </div>
     </div>
   </div>
-  <div class="md:px-10 px-3 md:pt-10 pt-3 pb-8">
+  <div class="2xl:px-3 md:px-10 px-3 md:pt-10 pt-3 pb-8">
     <div
       class="flex flex-row md:gap-10 sm:gap-5 gap-4 w-[100%] items-start justify-center"
     >
@@ -135,14 +135,12 @@ import "../css/slick-review.css";
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
     autoplay: true,
     autoplaySpeed: 20000,
     centerMode: true,
     centerPadding: "0px",
     focusOnSelect: true,
-    nextArrow: true,
-    prevArrow: true,
     customPaging: function (_slider: any, i: number) {
       return `<button type="button">${i}</button>`;
     },
