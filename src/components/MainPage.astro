@@ -1,6 +1,7 @@
 ---
-import C2Navbar from "../components/Navbar.astro";
+import C2Animations from "../components/Animations.astro";
 import C2Footer from "../components/Footer.astro";
+import C2Navbar from "../components/Navbar.astro";
 ---
 
 <html lang="es" class="light">
@@ -20,7 +21,6 @@ import C2Footer from "../components/Footer.astro";
       type="text/css"
       href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   </head>
   <body class="bg-white transition duration-300">
     <div id="root">
@@ -48,9 +48,6 @@ import C2Footer from "../components/Footer.astro";
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.5.4"></script>
-    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="text/javascript">
-      AOS.init();
-    </script> -->
+    <C2Animations />
   </body>
 </html>
