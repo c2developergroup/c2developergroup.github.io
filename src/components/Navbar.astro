@@ -1,5 +1,7 @@
 ---
 import C2NavHeader from "./NavHeader.astro";
+import { FaStore } from "react-icons/fa/index";
+import { MdApps, MdPhoneIphone, MdDevices } from "react-icons/md/index";
 
 // import "../css/main.css";
 ---
@@ -30,36 +32,64 @@ import C2NavHeader from "./NavHeader.astro";
     <li class="my-2.5 hamburger-menu-servicios w-full hidden">
       <hr />
     </li>
-    <li class="my-2.5 hamburger-menu-servicios hidden">
+    <li class="my-2.5 self-start hamburger-menu-servicios hidden">
       <a
         href="/servicios/paginas-web"
         class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0"
       >
-        Páginas Web
+        <div class="flex gap-2 items-center text-lg">
+          <div
+            class="bg-blue-500 w-8 h-8 rounded-full text-white flex items-center justify-center"
+          >
+            <MdDevices className="text-md" />
+          </div>
+          <span>Páginas Web</span>
+        </div>
       </a>
     </li>
-    <li class="my-2.5 hamburger-menu-servicios hidden">
+    <li class="my-2.5 self-start hamburger-menu-servicios hidden">
       <a
         href="/servicios/aplicaciones-moviles"
         class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0"
       >
-        Aplicaciones Móviles
+        <div class="flex gap-2 items-center text-lg">
+          <div
+            class="bg-yellow-400 w-8 h-8 rounded-full text-white flex items-center justify-center"
+          >
+            <MdPhoneIphone className="text-md" />
+          </div>
+          <span>Aplicaciones Móviles</span>
+        </div>
       </a>
     </li>
-    <li class="my-2.5 hamburger-menu-servicios hidden">
+    <li class="my-2.5 self-start hamburger-menu-servicios hidden">
       <a
         href="/servicios/catalogos"
         class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0"
       >
-        Catálogos y Portafolios
+        <div class="flex gap-2 items-center text-lg">
+          <div
+            class="bg-violet-700 w-8 h-8 rounded-full text-white flex items-center justify-center"
+          >
+            <MdApps className="text-md" />
+          </div>
+          <span>Catálogos y Portafolios</span>
+        </div>
       </a>
     </li>
-    <li class="my-2.5 hamburger-menu-servicios hidden">
+    <li class="my-2.5 self-start hamburger-menu-servicios hidden">
       <a
         href="/servicios/e-commerce"
         class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 resp:m-0"
       >
-        E-Commerce
+      <div class="flex gap-2 items-center text-lg">
+        <div
+          class="bg-green-500 w-8 h-8 rounded-full text-white flex items-center justify-center"
+        >
+          <FaStore className="text-md" />
+        </div>
+        <span>E-Commerce</span>
+      </div>
       </a>
     </li>
     <li class="my-2.5 hamburger-menu-servicios w-full hidden">

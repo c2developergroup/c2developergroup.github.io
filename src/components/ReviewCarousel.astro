@@ -135,7 +135,7 @@ import "../css/slick-review.css";
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: window.matchMedia("(max-width: 768px)").matches ? false : false, // cambiar el segundo false por true para que aparezcan las flechas a partir de las pantallas de 768px
     autoplay: true,
     autoplaySpeed: 20000,
     centerMode: true,
