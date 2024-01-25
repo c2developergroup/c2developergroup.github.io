@@ -1,5 +1,4 @@
 ---
-import { FaArrowRight } from "react-icons/fa/index";
 import { MarqueeComponent } from "../components/MarqueeCustomers";
 import C2MainPage from "../components/MainPage.astro";
 import C2ReviewCarousel from "../components/ReviewCarousel.astro";
@@ -16,7 +15,7 @@ import "../css/main.css";
     class="bg-[url('/c2bg-main.png')] bg-cover bg-bottom min-h-[100vh]"
   >
     <C2NavHeader invisible={true} />
-    <div class="w-10/12 m-auto pt-20 md:pt-40">
+    <div class="w-10/12 m-auto pt-40">
       <div
         class="slide-in-blurred-left relative z-10 text-white dark:text-white 3xl:text-[10rem] xl:text-9xl text-8xl resp:text-6xl transition duration-300 drop-shadow-xl shadow-black"
       >
@@ -78,15 +77,19 @@ import "../css/main.css";
     />
   </section>
   <section class="to-40% pb-10">
-    <div class="flex justify-center px-20 mobl:px-10 3xl:px-48 3xl:mt-20 fade-in-bottom">
+    <div
+      class="flex justify-center px-20 mobl:px-10 3xl:px-48 3xl:mt-20 mt-5 fade-in-bottom"
+    >
       <div
         id="c2dev-nuestro-enfoque-text"
-        class="resp:w-full w-3/5 md:p-20 flex flex-col resp:items-center"
+        class="resp:w-full w-3/5 md:p-20 flex flex-col"
       >
-        <h2 class="md:text-[5.6rem] 2xl:text-8xl sm:text-5xl text-4xl resp:text-center 3xl:text-9xl">
+        <h2 class="md:text-8xl sm:text-6xl text-5xl 3xl:text-9xl">
           Nuestro enfoque
         </h2>
-        <p class="text-black md:text-4xl text-xl resp:text-center mt-10 3xl:text-5xl">
+        <p
+          class="text-black text-2xl md:text-4xl 3xl:text-5xl text-start mt-5 md:mt-10"
+        >
           Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases sólidas
           en <b>diseño y funcionabilidad</b> que hagan destacar a la empresa u organización
           en el internet.
@@ -96,13 +99,6 @@ import "../css/main.css";
           en <b>diseño y funcionabilidad</b> que hagan destacar a la empresa u organización
           en el internet.
         </p> -->
-        <a href="/#contacto">
-          <button
-            class="text-black hover:text-blue-700 underline md:text-4xl text-2xl transition duration-300 mt-[3vh] flex items-center gap-6"
-          >
-            Contáctanos <FaArrowRight />
-          </button>
-        </a>
       </div>
       <div class="flex justify-center resp:hidden w-2/5 md:p-20 md:pt-28">
         <img
@@ -115,7 +111,7 @@ import "../css/main.css";
   </section>
   <section
     id="servicios"
-    class="w-full transition duration-300 flex flex-col items-center pt-20"
+    class="w-full transition duration-300 flex flex-col items-center md:mt-20 mt-10"
   >
     <div
       class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center w-full p-10"
@@ -133,7 +129,9 @@ import "../css/main.css";
   <section
     class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-20 mt-20 flex flex-col items-center gap-5 p-6"
   >
-    <h2 class="text-white md:text-7xl text-5xl 3xl:text-8xl font-medium text-center">
+    <h2
+      class="text-white md:text-7xl text-5xl 3xl:text-8xl font-medium text-center"
+    >
       ¿Qué dicen de nosotros?
     </h2>
     <div class="w-[100%] md:mt-10 mt-4"></div>
@@ -151,9 +149,7 @@ import "../css/main.css";
           src="/soporte.svg"
         />
       </div>
-      <div
-        class="px-20 resp:px-10"
-      >
+      <div class="px-20 resp:px-10">
         <h2
           class="4xl:text-9xl 3xl:text-7xl 2xl:text-7xl xl:text-7xl lg:text-6xl text-5xl font-medium h-auto mt-20 resp:mt-8"
         >
@@ -193,13 +189,10 @@ import "../css/main.css";
     </h2>
     <C2ProyectosCarousel />
   </section>
-  <div class="w-full">
-    <a
-      href="/proyectos"
-      class="my-20 tiny:ml-28 tiny:text-left text-center block"
-    >
+  <div>
+    <a href="/proyectos" class="my-20 ml-8 block">
       <p
-        class="text-4xl font-bold underline hover:text-blue-800 transition duration-300"
+        class="md:text-4xl text-2xl font-bold underline hover:text-blue-800 transition duration-300"
       >
         Ver más proyectos {">"}
       </p>
