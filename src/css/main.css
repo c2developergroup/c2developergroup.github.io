@@ -15,10 +15,6 @@ button {
   font-weight: 500;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .slide-in-blurred-left {
   -webkit-animation: slide-in-blurred-left 1.6s cubic-bezier(0.23, 1, 0.32, 1)
     both;
