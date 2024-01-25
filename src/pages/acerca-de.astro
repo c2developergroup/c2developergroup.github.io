@@ -4,13 +4,11 @@ import C2NavHeader from "../components/NavHeader.astro";
 ---
 
 <C2MainPage>
-  <section
-    class="bg-[url('/aboutus.png')] bg-cover bg-center mt-20"
-  >
+  <section class="bg-[url('/aboutus.png')] bg-cover bg-center mt-20">
     <C2NavHeader invisible={true} />
     <div class="w-10/12 m-auto pt-20 pb-20">
       <div
-        class="slide-in-blurred-left relative z-10 text-white 3xl:text-[10rem] xl:text-8xl text-8xl resp:text-6xl transition duration-300 drop-shadow-xl shadow-black mt-80 mb-10"
+        class="slide-in-blurred-left relative z-10 text-white 3xl:text-[10rem] xl:text-8xl text-8xl text-center resp:text-6xl transition duration-300 drop-shadow-xl shadow-black mt-80 mb-10"
       >
         <h2 class="md:block hidden text-center">Somos C² Developer Group</h2>
         <h2 class="md:hidden block">Somos C² Developer Group</h2>
@@ -33,7 +31,7 @@ import C2NavHeader from "../components/NavHeader.astro";
   <section>
     <div class="w-10/12 m-auto pb-16 pt-24">
       <div
-        class="relative z-10 text-black dark:text-white 3xl:text-[10rem] xl:text-7xl text-8xl resp:text-6xl transition duration-300"
+        class="relative z-10 text-black dark:text-white 3xl:text-[6rem] xl:text-7xl text-6xl resp:text-5xl transition duration-300"
       >
         <h2 class="md:block hidden text-center">
           "Don't let your dreams be<br /> dreams"
@@ -43,7 +41,7 @@ import C2NavHeader from "../components/NavHeader.astro";
         </h2>
       </div>
       <h2
-        class="relative z-10 mr-40 text-black dark:text-white font-medium text-right 2xl:text-6xl xl:text-4xl text-3xl resp:text-3xl transition duration-300"
+        class="relative z-10 mr-40 resp:mr-5 resp:mt-5 text-black dark:text-white font-medium text-right 2xl:text-5xl xl:text-4xl text-3xl resp:text-3xl transition duration-300"
       >
         <span class="font-sans">{"~"}</span>SHIA LABEOUF
       </h2>
@@ -57,19 +55,24 @@ import C2NavHeader from "../components/NavHeader.astro";
         Apostamos a cualquiera
       </h2>
     </div>
-    <div class="w-full p-20 flex resp:items-center">
-      <div class="flex justify-center w-64 mr-20">
+    <div class="w-full p-20 flex resp:items-center resp:hidden">
+      <div class="flex justify-center w-64 mr-20 resp:hidden">
         <img
           id="c2dev-nuestro-enfoque-image"
           src="/c2squarelogoblack.png"
-          class="resp:w-1/2 w-64"
+          class="resp:w-48 w-64"
         />
       </div>
-      <h2 class="md:text-[5.6rem] sm:text-5xl text-4xl text-black text-right">
+      <h2
+        class="md:text-[5.6rem] sm:text-5xl text-4xl text-black text-right resp:hidden"
+      >
         Con planes que se adaptan a tu proyecto
       </h2>
     </div>
-    <p class="text-black md:text-4xl text-2xl resp:text-center mx-20 mb-20">
+    <h2 class="text-4xl text-black text-right hidden resp:block mr-10 mt-10">
+      Con planes que se adaptan a tu <br />proyecto
+    </h2>
+    <p class="text-black md:text-4xl text-2xl resp:text-right mx-20 mb-20">
       En C² Developer Group nos preocupamos por todos y por ello hemos diseñado
       una variedad de planes que puedan adaptarse a tu proyecto. Sabemos y
       garantizamos que con nuestros servicios aumentará la presencia online de
