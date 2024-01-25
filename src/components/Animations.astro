@@ -1,0 +1,54 @@
+---
+
+---
+
+<script>
+  let __element_c2animate: Element[] = [];
+  let __observer!: IntersectionObserver;
+
+  const onIntersect = (
+    entries: IntersectionObserverEntry[],
+    observer: IntersectionObserver
+  ) => {
+    let i = 0;
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        console.debug(`entry ${i} +INTERSECTING`, entry);
+        entry.target.classList.add("c2animate-visible");
+        console.debug(`entry ${i} -OBSERVING`, entry);
+        observer.unobserve(entry.target);
+      } else {
+        console.debug(`entry ${i} -INTERSECTING`, entry);
+      }
+      i++;
+    }
+  };
+
+  const init = () => {
+    __element_c2animate = [...document.getElementsByClassName("c2animate")!!];
+    __observer = new IntersectionObserver(onIntersect, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+    });
+    console.debug("Animations: _c2animate", __element_c2animate);
+
+    for (const element of __element_c2animate) {
+      element.classList.add("c2animate-init");
+    }
+    console.debug("Animations: class init");
+
+    window.requestAnimationFrame(() => {
+      for (const element of __element_c2animate) {
+        element.classList.add("c2animate-start");
+        __observer.observe(element);
+      }
+      console.debug("Animations: transition init");
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", (_event) => {
+    console.debug("Animations: DOMContentLoaded");
+    init();
+  });
+</script>
