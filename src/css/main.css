@@ -51,6 +51,7 @@ button {
 .c2animate.c2animate-init.c2animate-start.slide-in-blurred-left {
   transition-property: all;
   transition-duration: 1s;
+  transition-delay: 0.7s;
   transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 .c2animate.c2animate-init.c2animate-visible.slide-in-blurred-left {
@@ -74,7 +75,8 @@ button {
 }
 .c2animate.c2animate-init.c2animate-start.slide-in-blurred-right {
   transition-property: all;
-  transition-duration: 1s;
+  transition-duration: 0.6s;
+  transition-delay: 0.7s;
   transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 .c2animate.c2animate-init.c2animate-visible.slide-in-blurred-right {
@@ -99,6 +101,7 @@ button {
 .c2animate.c2animate-init.c2animate-start.slide-in-blurred-bottom {
   transition-property: all;
   transition-duration: 0.6s;
+  transition-delay: 0.7s;
   transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 .c2animate.c2animate-init.c2animate-visible.slide-in-blurred-bottom {
@@ -119,6 +122,7 @@ button {
 .c2animate.c2animate-init.c2animate-start.fade-in-bottom {
   transition-property: all;
   transition-duration: 1s;
+  transition-delay: 0.7s;
   transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .c2animate.c2animate-init.c2animate-visible.fade-in-bottom {
