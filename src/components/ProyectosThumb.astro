@@ -15,10 +15,10 @@ const { title, url = "/", image } = Astro.props;
       style={{ backgroundImage: `url('${image}')` }}
     >
     </div>
-    <h2 class="w-full mt-5 text-4xl text-center underline text-neutral-700">
+    <h2 class="c2animate fade-in-bottom w-full mt-5 text-4xl text-center underline text-neutral-700">
       {title}
     </h2>
-    <p class="w-full mt-4 text-xl text-center text-neutral-500">
+    <p class=" c2animate fade-in-bottom w-full mt-4 text-xl text-center text-neutral-500">
       <slot />
     </p>
   </div>
