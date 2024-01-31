@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview"
   },
@@ -33,6 +33,7 @@
     "@types/react-icons": "^3.0.0",
     "@types/react-slick": "^0.23.13",
     "@types/slick-carousel": "^1.6.40",
-    "prettier": "^3.0.0-alpha.6"
+    "prettier": "^3.0.0-alpha.6",
+    "sass": "^1.70.0"
   }
 }

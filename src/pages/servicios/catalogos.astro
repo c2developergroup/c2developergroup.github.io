@@ -1,4 +1,5 @@
 ---
+import C2AnimationParent from "../../components/AnimationParent.astro";
 import C2MainPage from "../../components/MainPage.astro";
 import C2NavHeader from "../../components/NavHeader.astro";
 ---
@@ -11,108 +12,112 @@ import C2NavHeader from "../../components/NavHeader.astro";
     >
       Catálogos y Portafolios
     </h2>
-    <div
-      class="c2animate fade-in-bottom flex gap-24 resp:gap-5 justify-center resp:flex-col mt-3"
-    >
-      <!-- Plan estándar -->
-      <div class="mb-10 resp:mb-0">
-        <div class="flex justify-center mb-2">
-          <div
-            class="shadow-[0_0_20px_0_rgba(0,0,0,0.15)] resp:w-[21rem] w-[30rem] h-[34rem] mt-5 rounded-3xl"
-          >
-            <h2 class="text-center text-4xl mt-5">Plan estándar</h2>
-            <p class="text-center text-[18px] mt-6 mx-10 font-bold">
-              La mejor opción para aquellos que quieren mostrar sus trabajos y
-              servicios de manera online e instántanea.
-            </p>
-            <div class="flex mt-8 items-baseline gap-2 justify-center">
-              <h2 class="text-[#1843A2] text-5xl">$30+</h2>
-              <h2 class="text-[#1843A2] text-xl">Al mes*</h2>
-            </div>
-            <div class="flex justify-center">
-              <a href="/"
-                ><button
-                  class="hover:text-blue-800 hover:border-blue-800 cursor-pointer transition duration-300 border-[0.005rem] md:mt-2 mt-3 border-black text-black font-['Smooch_sans'] font-bold 4xl:text-4xl md:text-[30px] text-xl md:px-8 px-3 md:py-2 py-2 rounded-[16px]"
+    <C2AnimationParent>
+      <div
+        class="c2animate fade-in-bottom flex gap-24 resp:gap-5 justify-center resp:flex-col mt-3"
+      >
+        <!-- Plan estándar -->
+        <div class="mb-10 resp:mb-0">
+          <div class="flex justify-center mb-2">
+            <div
+              class="shadow-[0_0_20px_0_rgba(0,0,0,0.15)] resp:w-[21rem] w-[30rem] h-[34rem] mt-5 rounded-3xl"
+            >
+              <h2 class="text-center text-4xl mt-5">Plan estándar</h2>
+              <p class="text-center text-[18px] mt-6 mx-10 font-bold">
+                La mejor opción para aquellos que quieren mostrar sus trabajos y
+                servicios de manera online e instántanea.
+              </p>
+              <div class="flex mt-8 items-baseline gap-2 justify-center">
+                <h2 class="text-[#1843A2] text-5xl">$30+</h2>
+                <h2 class="text-[#1843A2] text-xl">Al mes*</h2>
+              </div>
+              <div class="flex justify-center">
+                <a href="/"
+                  ><button
+                    class="hover:text-blue-800 hover:border-blue-800 cursor-pointer transition duration-300 border-[0.005rem] md:mt-2 mt-3 border-black text-black font-['Smooch_sans'] font-bold 4xl:text-4xl md:text-[30px] text-xl md:px-8 px-3 md:py-2 py-2 rounded-[16px]"
+                  >
+                    Adquirir
+                  </button></a
                 >
-                  Adquirir
-                </button></a
-              >
+              </div>
+              <ul class="mx-10 text-xl mt-5 font-bold">
+                <li>
+                  • Diseño predeterminado (puedes escoger entre nuestros
+                  templates).
+                </li>
+                <li>• Portal para subir sus propias fotos y videos.</li>
+                <li>• 1000+ visitantes al día.</li>
+                <li class="mt-24 resp:mt-8 resp:text-[14px] text-neutral-400">
+                  * Al menos 12 meses deben ser pagados por adelantado
+                </li>
+              </ul>
             </div>
-            <ul class="mx-10 text-xl mt-5 font-bold">
-              <li>
-                • Diseño predeterminado (puedes escoger entre nuestros
-                templates).
-              </li>
-              <li>• Portal para subir sus propias fotos y videos.</li>
-              <li>• 1000+ visitantes al día.</li>
-              <li class="mt-24 resp:mt-8 resp:text-[14px] text-neutral-400">
-                * Al menos 12 meses deben ser pagados por adelantado
-              </li>
-            </ul>
+          </div>
+          <div class="flex">
+            <a href="/" class="w-52">
+              <p
+                class="resp:ml-14 ml-3 mt-2 text-neutral-400 text-2xl font-bold underline hover:text-blue-800 transition duration-300"
+              >
+                Ver referencia
+              </p>
+            </a>
           </div>
         </div>
-        <div class="flex">
-          <a href="/" class="w-52">
-            <p
-              class="resp:ml-14 ml-3 mt-2 text-neutral-400 text-2xl font-bold underline hover:text-blue-800 transition duration-300"
+        <!-- Plan personalizado -->
+        <div class="mb-10">
+          <div class="flex justify-center mb-2">
+            <div
+              class="shadow-[0_0_20px_0_rgba(0,0,0,0.15)] resp:w-[21rem] w-[30rem] h-[34rem] mt-5 rounded-3xl"
             >
-              Ver referencia
-            </p>
-          </a>
-        </div>
-      </div>
-      <!-- Plan personalizado -->
-      <div class="mb-10">
-        <div class="flex justify-center mb-2">
-          <div
-            class="shadow-[0_0_20px_0_rgba(0,0,0,0.15)] resp:w-[21rem] w-[30rem] h-[34rem] mt-5 rounded-3xl"
-          >
-            <h2 class="text-center text-4xl mt-5">Plan personalizado</h2>
-            <p class="text-center text-[18px] mt-4 mx-10 font-bold">
-              Trabajaremos estrechamente contigo para comprender tus necesidades
-              específicas. Haz realidad tus ideas con un plan diseñado
-              exclusivamente para ti.
-            </p>
-            <h2 class="text-[#1843A2] text-center text-5xl mt-6">
-              A consultar
-            </h2>
-            <div class="flex justify-center">
-              <a href="/planes-páginas-webs"
-                ><button
-                  class="hover:text-blue-800 hover:border-blue-800 cursor-pointer transition duration-300 border-[0.005rem] md:mt-2 mt-3 border-black text-black font-['Smooch_sans'] font-bold 4xl:text-4xl md:text-[30px] text-xl md:px-5 px-3 md:py-2 py-2 rounded-[16px]"
+              <h2 class="text-center text-4xl mt-5">Plan personalizado</h2>
+              <p class="text-center text-[18px] mt-4 mx-10 font-bold">
+                Trabajaremos estrechamente contigo para comprender tus
+                necesidades específicas. Haz realidad tus ideas con un plan
+                diseñado exclusivamente para ti.
+              </p>
+              <h2 class="text-[#1843A2] text-center text-5xl mt-6">
+                A consultar
+              </h2>
+              <div class="flex justify-center">
+                <a href="/planes-páginas-webs"
+                  ><button
+                    class="hover:text-blue-800 hover:border-blue-800 cursor-pointer transition duration-300 border-[0.005rem] md:mt-2 mt-3 border-black text-black font-['Smooch_sans'] font-bold 4xl:text-4xl md:text-[30px] text-xl md:px-5 px-3 md:py-2 py-2 rounded-[16px]"
+                  >
+                    Contáctanos
+                  </button></a
                 >
-                  Contáctanos
-                </button></a
-              >
+              </div>
+              <ul class="mx-8 text-xl mt-5 font-bold">
+                <li>• Diseño personalizado.</li>
+                <li>• Portal para subir sus propias fotos y videos.</li>
+                <li>• Vistas personalizadas para cada foto.</li>
+                <li>• Subir fotos automáticamente a sus redes sociales.</li>
+                <li>• 10.000 + visitas al día.</li>
+              </ul>
             </div>
-            <ul class="mx-8 text-xl mt-5 font-bold">
-              <li>• Diseño personalizado.</li>
-              <li>• Portal para subir sus propias fotos y videos.</li>
-              <li>• Vistas personalizadas para cada foto.</li>
-              <li>• Subir fotos automáticamente a sus redes sociales.</li>
-              <li>• 10.000 + visitas al día.</li>
-            </ul>
+          </div>
+          <div class="flex">
+            <a href="/" class="w-52">
+              <p
+                class="resp:ml-14 ml-3 mt-2 text-neutral-400 text-2xl font-bold underline hover:text-blue-800 transition duration-300"
+              >
+                Ver referencia
+              </p>
+            </a>
           </div>
         </div>
-        <div class="flex">
-          <a href="/" class="w-52">
-            <p
-              class="resp:ml-14 ml-3 mt-2 text-neutral-400 text-2xl font-bold underline hover:text-blue-800 transition duration-300"
-            >
-              Ver referencia
-            </p>
-          </a>
-        </div>
       </div>
-    </div>
+    </C2AnimationParent>
   </section>
   <section
-    class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center"
+    class="bg-[url('/110428-black-and-blue-blurred-background-vector.webp')] bg-cover bg-center"
   >
     <h2 class="text-7xl text-center text-white pt-20">
       Hosting y mantenimiento
     </h2>
-    <p class="text-white text-center resp:text-3xl text-4xl font-bold max-w-[45rem] m-auto mt-10 px-5 tiny:px-16 md:px-5">
+    <p
+      class="text-white text-center resp:text-3xl text-4xl font-bold max-w-[45rem] m-auto mt-10 px-5 tiny:px-16 md:px-5"
+    >
       Nos encargamos de alojar tu sitio web en servidores seguros y confiables,
       garantizando un rendimiento óptimo. Además, nuestro equipo se encarga del
       mantenimiento continuo para que tú puedas centrarte en tu negocio. Todos

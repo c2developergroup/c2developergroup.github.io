@@ -1,12 +1,11 @@
 ---
 import { MarqueeComponent } from "../components/MarqueeCustomers";
+import C2AnimationParent from "../components/AnimationParent.astro";
 import C2MainPage from "../components/MainPage.astro";
-import C2ReviewCarousel from "../components/ReviewCarousel.astro";
-import C2ProyectosCarousel from "../components/ProyectosCarousel.astro";
 import C2NavHeader from "../components/NavHeader.astro";
+import C2ProyectosCarousel from "../components/ProyectosCarousel.astro";
+import C2ReviewCarousel from "../components/ReviewCarousel.astro";
 import C2WhatWeDo from "../components/WhatWeDo.astro";
-
-import "../css/main.css";
 ---
 
 <C2MainPage>
@@ -15,28 +14,30 @@ import "../css/main.css";
     class="bg-[url('/c2bg-main.png')] bg-cover bg-bottom min-h-[100vh]"
   >
     <C2NavHeader invisible={true} />
-    <div class="w-10/12 m-auto pt-40 3xl:pt-28">
-      <div
-        class="c2animate slide-in-blurred-left-long relative z-10 text-white dark:text-white 3xl:text-[10rem] xl:text-9xl text-8xl resp:text-6xl drop-shadow-xl shadow-black"
-      >
-        <h2 class="md:block hidden">Exponenciamos tu <br /> proyecto</h2>
-        <h2 class="md:hidden block">Exponenciamos tu proyecto</h2>
+    <C2AnimationParent>
+      <div class="w-10/12 m-auto pt-40 3xl:pt-28">
+        <div
+          class="c2animate slide-in-blurred-left-long relative z-10 text-white dark:text-white 3xl:text-[10rem] xl:text-9xl text-8xl resp:text-6xl drop-shadow-xl shadow-black"
+        >
+          <h2 class="md:block hidden">Exponenciamos tu <br /> proyecto</h2>
+          <h2 class="md:hidden block">Exponenciamos tu proyecto</h2>
+        </div>
+        <h2
+          class="c2animate slide-in-blurred-left-long relative z-10 text-white dark:text-white font-['Smooch_Sans'] font-bold 2xl:text-7xl xl:text-5xl text-4xl resp:text-4xl"
+        >
+          E-commerce, páginas web y aplicaciones.
+        </h2>
+        <div class="c2animate slide-in-blurred-left-long">
+          <a href="/#contacto">
+            <button
+              class="hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl mb-20"
+            >
+              Contáctanos
+            </button>
+          </a>
+        </div>
       </div>
-      <h2
-        class="c2animate slide-in-blurred-left-long relative z-10 text-white dark:text-white font-['Smooch_Sans'] font-bold 2xl:text-7xl xl:text-5xl text-4xl resp:text-4xl"
-      >
-        E-commerce, páginas web y aplicaciones.
-      </h2>
-      <div class="c2animate slide-in-blurred-left-long">
-        <a href="/#contacto">
-          <button
-            class="hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl mb-20"
-          >
-            Contáctanos
-          </button>
-        </a>
-      </div>
-    </div>
+    </C2AnimationParent>
   </section>
   <section class="m-auto flex gap-5 justify-evenly flex-wrap items-center">
     <MarqueeComponent
@@ -77,39 +78,41 @@ import "../css/main.css";
     />
   </section>
   <section class="to-40% pb-10">
-    <div
-      class="c2animate fade-in-bottom flex justify-center px-20 mobl:px-10 3xl:px-48 3xl:mt-20 mt-5"
-    >
+    <C2AnimationParent>
       <div
-        id="c2dev-nuestro-enfoque-text"
-        class="resp:w-full w-3/5 md:p-20 flex flex-col"
+        class="c2animate fade-in-bottom flex justify-center px-20 mobl:px-10 3xl:px-48 3xl:mt-20 mt-5"
       >
-        <h2 class="md:text-8xl sm:text-6xl text-5xl 3xl:text-9xl">
-          Nuestro enfoque
-        </h2>
-        <p
-          class="text-black text-2xl md:text-4xl 3xl:text-5xl text-start mt-5 md:mt-10"
+        <div
+          id="c2dev-nuestro-enfoque-text"
+          class="resp:w-full w-3/5 md:p-20 flex flex-col"
         >
-          Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases sólidas
-          en <b>diseño y funcionabilidad</b> que hagan destacar a la empresa u organización
-          en el internet.
-        </p>
+          <h2 class="md:text-8xl sm:text-6xl text-5xl 3xl:text-9xl">
+            Nuestro enfoque
+          </h2>
+          <p
+            class="text-black text-2xl md:text-4xl 3xl:text-5xl text-start mt-5 md:mt-10"
+          >
+            Brindamos un servicio de <b>aplicaciones y sitios web</b> con bases sólidas
+            en <b>diseño y funcionabilidad</b> que hagan destacar a la empresa u
+            organización en el internet.
+          </p>
+        </div>
+        <div class="flex justify-center resp:hidden w-2/5 h-2/5 md:p-20">
+          <img
+            id="c2dev-nuestro-enfoque-image"
+            src="c2squarelogoblack.png"
+            class="resp:w-1/2 3xl:w-9/12"
+          />
+        </div>
       </div>
-      <div class="flex justify-center resp:hidden w-2/5 h-2/5 md:p-20">
-        <img
-          id="c2dev-nuestro-enfoque-image"
-          src="c2squarelogoblack.png"
-          class="resp:w-1/2 3xl:w-9/12"
-        />
-      </div>
-    </div>
+    </C2AnimationParent>
   </section>
   <section
     id="servicios"
     class="w-full flex flex-col items-center md:mt-20 mt-10"
   >
     <div
-      class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center w-full p-10"
+      class="bg-[url('/110428-black-and-blue-blurred-background-vector.webp')] bg-cover bg-center w-full p-10"
     >
       <h2 class="text-white md:text-7xl text-5xl font-medium text-center">
         ¿Qué hacemos?
@@ -122,7 +125,7 @@ import "../css/main.css";
     </div>
   </section>
   <section
-    class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center py-20 mt-20 flex flex-col items-center gap-5 p-6"
+    class="bg-[url('/110428-black-and-blue-blurred-background-vector.webp')] bg-cover bg-center py-20 mt-20 flex flex-col items-center gap-5 p-6"
   >
     <h2
       class="text-white md:text-7xl text-5xl 3xl:text-8xl font-medium text-center"
@@ -133,50 +136,52 @@ import "../css/main.css";
     <C2ReviewCarousel />
   </section>
   <section>
-    <div
-      class="c2animate fade-in-bottom flex flex-row w-full md:h-[calc(100vh-4.75rem)] md:min-h-[700px] tallratio:min-h-0 tallratio:h-auto h-auto bg-none bg-contain bg-no-repeat bg-right-bottom 2xl:mt-10 md:mt-5 mt-2"
-    >
+    <C2AnimationParent>
       <div
-        class="absolute md:block tallratio:hidden md:min-h-[700px] hidden resp:hidden -z-10 w-full h-[calc(100vh-4.75rem)] text-end"
+        class="c2animate fade-in-bottom flex flex-row w-full md:h-[calc(100vh-4.75rem)] md:min-h-[700px] tallratio:min-h-0 tallratio:h-auto h-auto bg-none bg-contain bg-no-repeat bg-right-bottom 2xl:mt-10 md:mt-5 mt-2"
       >
-        <img
-          class="inline-block md:w-[40%] pe-[5%] w-full h-full object-contain object-right"
-          src="/soporte.svg"
-        />
-      </div>
-      <div class="px-20 resp:px-10">
-        <h2
-          class="4xl:text-9xl 3xl:text-7xl 2xl:text-7xl xl:text-7xl lg:text-6xl text-5xl font-medium h-auto mt-20 resp:mt-8"
+        <div
+          class="absolute md:block tallratio:hidden md:min-h-[700px] hidden resp:hidden -z-10 w-full h-[calc(100vh-4.75rem)] text-end"
         >
-          Mantenimiento y Soporte
-        </h2>
-        <p
-          class="3xl:text-6xl xl:text-4xl md:text-4xl text-xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto md:w-[50%] text-start tallratio:w-full"
-        >
-          Después de lanzar tu proyecto, seguimos cuidándolo. Con nuestro
-          servicio de mantenimiento, nos aseguramos de que funcione bien
-          siempre. Hacemos actualizaciones para mantenerlo seguro y mejoramos su
-          rendimiento. Estamos aquí para que tu proyecto digital tenga éxito a
-          largo plazo.
-        </p>
-        <p class="2xl:mt-20 md:mt-10 mt-4">
-          <a href="/#contacto">
-            <button
-              class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-2 border-black text-black hover:border-blue-800 hover:text-blue-800 transition duration-300 cursor-pointer font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
-            >
-              Contáctanos
-            </button>
-            <!-- <span class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl font-bold underline bg-white pe-4 py-4">
+          <img
+            class="inline-block md:w-[40%] pe-[5%] w-full h-full object-contain object-right"
+            src="/soporte.svg"
+          />
+        </div>
+        <div class="px-20 resp:px-10">
+          <h2
+            class="4xl:text-9xl 3xl:text-7xl 2xl:text-7xl xl:text-7xl lg:text-6xl text-5xl font-medium h-auto mt-20 resp:mt-8"
+          >
+            Mantenimiento y Soporte
+          </h2>
+          <p
+            class="3xl:text-6xl xl:text-4xl md:text-4xl text-xl 2xl:mt-20 md:mt-10 tallratio:mt-5 mt-5 h-auto md:w-[50%] text-start tallratio:w-full"
+          >
+            Después de lanzar tu proyecto, seguimos cuidándolo. Con nuestro
+            servicio de mantenimiento, nos aseguramos de que funcione bien
+            siempre. Hacemos actualizaciones para mantenerlo seguro y mejoramos
+            su rendimiento. Estamos aquí para que tu proyecto digital tenga
+            éxito a largo plazo.
+          </p>
+          <p class="2xl:mt-20 md:mt-10 mt-4">
+            <a href="/#contacto">
+              <button
+                class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-2 border-black text-black hover:border-blue-800 hover:text-blue-800 transition duration-300 cursor-pointer font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
+              >
+                Contáctanos
+              </button>
+              <!-- <span class="3xl:text-6xl xl:text-5xl md:text-4xl text-3xl font-bold underline bg-white pe-4 py-4">
               Leer más
             </span> -->
-          </a>
-        </p>
+            </a>
+          </p>
+        </div>
       </div>
-    </div>
-    <img
-      class="hidden resp:block mobl:w-4/5 w-3/5 m-auto mt-10 object-contain object-right"
-      src="/soporte.svg"
-    />
+      <img
+        class="c2animate fade-in-bottom hidden resp:block mobl:w-4/5 w-3/5 m-auto mt-10 object-contain object-right"
+        src="/soporte.svg"
+      />
+    </C2AnimationParent>
   </section>
   <section id="proyectos" class="">
     <h2 class="md:text-6xl text-4xl text-center mb-5 mt-5">
@@ -195,7 +200,7 @@ import "../css/main.css";
   </div>
   <section
     id="contacto"
-    class="bg-[url('/110428-black-and-blue-blurred-background-vector.jpg')] bg-cover bg-center transition duration-300 py-10 flex flex-col items-center gap-5 p-6 bg-black"
+    class="bg-[url('/110428-black-and-blue-blurred-background-vector.webp')] bg-cover bg-center transition duration-300 py-10 flex flex-col items-center gap-5 p-6 bg-black"
   >
     <h2 class="text-white md:text-4xl text-3xl font-['Bebas_Neue'] text-center">
       ¿Estás listo para hacer tu página web o aplicación
@@ -282,10 +287,7 @@ import "../css/main.css";
         </div>
       </div>
       <div class="w-[50%] flex justify-center items-center resp:hidden">
-        <img
-          src="/c2squarelogoblack.png"
-          class="w-full max-w-[28rem]"
-        />
+        <img src="/c2squarelogoblack.png" class="w-full max-w-[28rem]" />
       </div>
     </div>
   </section>

@@ -4,6 +4,8 @@
 
 <script>
   let __element_c2animate: Element[] = [];
+  let __element_c2animate_parent: Element[] = [];
+  let animationObserverTree: Map<Element, Element[]> = new Map();
   let __observer!: IntersectionObserver;
 
   const onIntersect = (
@@ -14,7 +16,10 @@
     for (const entry of entries) {
       if (entry.isIntersecting) {
         console.debug(`entry ${i} +INTERSECTING`, entry);
-        entry.target.classList.add("c2animate-visible");
+        for (const animatedChild of animationObserverTree.get(entry.target) ??
+          []) {
+          animatedChild.classList.add("c2animate-visible");
+        }
         console.debug(`entry ${i} -OBSERVING`, entry);
         observer.unobserve(entry.target);
       } else {
@@ -25,11 +30,18 @@
   };
 
   const init = () => {
-    __element_c2animate = [...document.getElementsByClassName("c2animate")!!];
+    __element_c2animate_parent = [
+      ...document.getElementsByClassName("c2animate-parent")!!,
+    ];
+    for (const parent of __element_c2animate_parent) {
+      let animatedChildren = [...parent.getElementsByClassName("c2animate")!!];
+      __element_c2animate.push(...animatedChildren);
+      animationObserverTree.set(parent, animatedChildren);
+    }
     __observer = new IntersectionObserver(onIntersect, {
       root: null,
       rootMargin: "0px",
-      threshold: 0,
+      threshold: 0.5,
     });
     console.debug("Animations: _c2animate", __element_c2animate);
 
@@ -41,7 +53,9 @@
     window.requestAnimationFrame(() => {
       for (const element of __element_c2animate) {
         element.classList.add("c2animate-start");
-        __observer.observe(element);
+      }
+      for (const parent of __element_c2animate_parent) {
+        __observer.observe(parent);
       }
       console.debug("Animations: transition init");
     });
