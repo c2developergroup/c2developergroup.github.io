@@ -114,13 +114,16 @@ import "../css/slick-review.css";
     initialized: boolean = false;
 
     constructor() {
-      1;
       super();
     }
 
-    onIntersect() {
-      if (!this.initialized) {
+    onIntersect(
+      entries: IntersectionObserverEntry[],
+      _observer: IntersectionObserver
+    ) {
+      if (entries[0]!!.isIntersecting && !this.initialized) {
         this.initialized = true;
+        console.log("Intersect", entries[0]);
 
         $(this).slick(proyectosCarouselSettings);
       }
@@ -132,13 +135,15 @@ import "../css/slick-review.css";
         new IntersectionObserver(this.onIntersect.bind(this), {
           root: null,
           rootMargin: "0px",
-          threshold: 0,
+          threshold: 0.1,
         });
       observer.observe(this);
       this.observer = observer;
     }
 
     disconnectedCallback() {
+      this.initialized = false;
+      $(this).unslick();
       this.observer?.unobserve(this);
     }
   }
