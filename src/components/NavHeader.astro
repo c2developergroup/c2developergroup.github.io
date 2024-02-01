@@ -125,67 +125,73 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
 </header>
 {
   !invisible && (
-    <div
-      id="--c2dev-navbar-header-item-servicios-popover"
-      class="hidden z-[200] w-max top-0 left-0 p-5 rounded-xl drop-shadow-xl bg-white text-black border border-gray-200"
-    >
-      <div class="mb-4">
-        <a
-          href="/servicios/paginas-web"
-          class="font-['Smooch_Sans'] font-regular text-2xl hover:text-blue-700 hover:transition-all duration-300 mt-4"
-        >
-          <div class="flex gap-4 items-center">
-            <div class="bg-blue-500 w-[3rem] h-[3rem] rounded-full text-white flex items-center justify-center">
-              <MdDevices />
+    <>
+      <div
+        id="--c2dev-navbar-header-item-servicios-popover"
+        class="hidden z-[200] w-max top-0 left-0 p-5 rounded-xl drop-shadow-xl transition duration-300 translate-y-12 opacity-0 bg-white text-black border border-gray-200"
+      >
+        <div class="mb-4">
+          <a
+            href="/servicios/paginas-web"
+            class="font-['Smooch_Sans'] font-regular text-2xl hover:text-blue-700 hover:transition-all duration-300 mt-4"
+          >
+            <div class="flex gap-4 items-center">
+              <div class="bg-blue-500 w-[3rem] h-[3rem] rounded-full text-white flex items-center justify-center">
+                <MdDevices />
+              </div>
+              <span>Páginas Web</span>
             </div>
-            <span>Páginas Web</span>
-          </div>
-        </a>
-      </div>
-      <div class="mb-4">
-        <a
-          href="/servicios/aplicaciones-moviles"
-          class="font-['Smooch_Sans'] font-regular text-2xl hover:text-blue-700 hover:transition-all duration-300 "
-        >
-          <div class="flex gap-4 items-center">
-            <div class="bg-yellow-400 w-[3rem] h-[3rem] rounded-full text-black flex items-center justify-center">
-              <MdPhoneIphone />
+          </a>
+        </div>
+        <div class="mb-4">
+          <a
+            href="/servicios/aplicaciones-moviles"
+            class="font-['Smooch_Sans'] font-regular text-2xl hover:text-blue-700 hover:transition-all duration-300"
+          >
+            <div class="flex gap-4 items-center">
+              <div class="bg-yellow-400 w-[3rem] h-[3rem] rounded-full text-black flex items-center justify-center">
+                <MdPhoneIphone />
+              </div>
+              <span>Aplicaciones Móviles</span>
             </div>
-            <span>Aplicaciones Móviles</span>
-          </div>
-        </a>
-      </div>
-      <div class="mb-4">
-        <a
-          href="/servicios/catalogos"
-          class="font-['Smooch_Sans'] font-regular text-2xl hover:text-blue-700 hover:transition-all duration-300"
-        >
-          <div class="flex gap-4 items-center">
-            <div class="bg-violet-700 w-[3rem] h-[3rem] rounded-full text-white flex items-center justify-center">
-              <MdApps />
+          </a>
+        </div>
+        <div class="mb-4">
+          <a
+            href="/servicios/catalogos"
+            class="font-['Smooch_Sans'] font-regular text-2xl hover:text-blue-700 hover:transition-all duration-300"
+          >
+            <div class="flex gap-4 items-center">
+              <div class="bg-violet-700 w-[3rem] h-[3rem] rounded-full text-white flex items-center justify-center">
+                <MdApps />
+              </div>
+              <span>Catálogos y Portafolios</span>
             </div>
-            <span>Catálogos y Portafolios</span>
-          </div>
-        </a>
-      </div>
-      <div>
-        <a
-          href="/servicios/e-commerce"
-          class="font-['Smooch_Sans'] font-regular text-2xl hover:text-blue-700 hover:transition-all duration-300"
-        >
-          <div class="flex gap-4 items-center">
-            <div class="bg-green-500 w-[3rem] h-[3rem] rounded-full text-white flex items-center justify-center">
-              <FaStore />
+          </a>
+        </div>
+        <div>
+          <a
+            href="/servicios/e-commerce"
+            class="font-['Smooch_Sans'] font-regular text-2xl hover:text-blue-700 hover:transition-all duration-300"
+          >
+            <div class="flex gap-4 items-center">
+              <div class="bg-green-500 w-[3rem] h-[3rem] rounded-full text-white flex items-center justify-center">
+                <FaStore />
+              </div>
+              <span>E-Commerce</span>
             </div>
-            <span>E-Commerce</span>
-          </div>
-        </a>
+          </a>
+        </div>
+        <div
+          id="--c2dev-navbar-header-item-servicios-popover-arrow"
+          class="absolute z-[150] w-8 h-8 rotate-45 bg-white border-t border-l border-gray-200"
+        />
       </div>
       <div
-        id="--c2dev-navbar-header-item-servicios-popover-arrow"
-        class="absolute z-[150] w-8 h-8 rotate-45 bg-white border-t border-l border-gray-200"
+        id="--c2dev-navbar-header-item-servicios-popover-backdrop"
+        class="fixed hidden w-[100vw] h-[100vh] bg-transparent z-[99]"
       />
-    </div>
+    </>
   )
 }
 <script>
@@ -211,10 +217,12 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
 
   let statePopoverOpen: boolean = false;
   let popoverCleanup: any = null;
+  let popoverLock = false;
 
   let __c2dev_navbar_servicios!: HTMLElement;
   let __c2dev_navbar_servicios_popover!: HTMLElement;
   let __c2dev_navbar_servicios_popover_arrow!: HTMLElement;
+  let __c2dev_navbar_servicios_popover_backdrop!: HTMLElement;
 
   const popoverMenu = (() => {
     const _updatePopverMenu = (stateIsOpen: boolean) => {
@@ -260,6 +268,15 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
                     bottom: "",
                     [staticSide]: "-16px",
                   });
+                  requestAnimationFrame(() => {
+                    if (isOpen) {
+                      __c2dev_navbar_servicios_popover.classList.remove(
+                        "translate-y-12",
+                        "opacity-0"
+                      );
+                      popoverLock = false;
+                    }
+                  });
                 }
               );
             }
@@ -269,35 +286,50 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
           return isOpen ? "absolute" : "hidden";
         };
 
-        __c2dev_navbar_servicios_popover.classList.replace(
-          popoverVis(!isOpen),
-          popoverVis(isOpen)
-        );
-
+        popoverLock = true;
         if (isOpen) {
+          __c2dev_navbar_servicios_popover.classList.replace(
+            popoverVis(false),
+            popoverVis(true)
+          );
+          __c2dev_navbar_servicios_popover_backdrop.classList.remove("hidden");
           update();
-        } else if (popoverCleanup !== null && popoverCleanup !== undefined) {
-          popoverCleanup();
-          popoverCleanup = null;
+        } else {
+          __c2dev_navbar_servicios_popover.classList.add(
+            "translate-y-12",
+            "opacity-0"
+          );
+          __c2dev_navbar_servicios_popover_backdrop.classList.add("hidden");
+          setTimeout(() => {
+            __c2dev_navbar_servicios_popover.classList.replace(
+              popoverVis(false),
+              popoverVis(true)
+            );
+            if (popoverCleanup !== null && popoverCleanup !== undefined) {
+              popoverCleanup();
+              popoverCleanup = null;
+            }
+            statePopoverOpen = false;
+            popoverLock = false;
+          }, 350);
         }
       };
 
       __inner(stateIsOpen);
-      return stateIsOpen;
+      return true;
     };
     const toggle = () => {
-      statePopoverOpen = _updatePopverMenu(!statePopoverOpen);
-    };
-    const open = () => {
-      statePopoverOpen = true;
-      _updatePopverMenu(true);
+      if (!popoverLock) {
+        statePopoverOpen = _updatePopverMenu(!statePopoverOpen);
+      }
     };
     const close = () => {
-      statePopoverOpen = false;
-      _updatePopverMenu(false);
+      if (!popoverLock) {
+        statePopoverOpen = _updatePopverMenu(false);
+      }
     };
 
-    return { toggle: toggle, open: open, close: close };
+    return { toggle: toggle, close: close };
   })();
 
   document.addEventListener("DOMContentLoaded", (_event) => {
@@ -317,10 +349,18 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
     __c2dev_navbar_servicios_popover_arrow = document.getElementById(
       "--c2dev-navbar-header-item-servicios-popover-arrow"
     )!!;
+    __c2dev_navbar_servicios_popover_backdrop = document.getElementById(
+      "--c2dev-navbar-header-item-servicios-popover-backdrop"
+    )!!;
 
     __c2dev_navbar_servicios.addEventListener(
       "click",
       eatEvent(popoverMenu.toggle)
+    );
+
+    __c2dev_navbar_servicios_popover_backdrop.addEventListener(
+      "click",
+      eatEvent(popoverMenu.close)
     );
   });
 </script>
