@@ -275,14 +275,21 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
                 required
                 maxlength="1000"
                 rows="6"></textarea>
+              <div class="flex justify-end">
+                <button
+                  class="bg-blue-600 rounded-full w-8 h-8 p-[0.2rem] flex justify-center items-center hover:bg-blue-700 cursor-pointer"
+                >
+                  <img src="send.svg" class="ml-[0.1rem] w-[80%] h-auto" />
+                </button>
+              </div>
             </div>
-            <div class="flex flex-row justify-end w-full">
+            <!-- <div class="flex flex-row justify-end w-full">
               <button
                 class="hover:bg-blue-600 hover:text-white cursor-pointer transition duration-300 border-[0.005rem] border-blue-600 text-blue-600 font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
               >
                 Enviar
               </button>
-            </div>
+            </div> -->
           </form>
         </div>
       </div>
@@ -291,12 +298,4 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
       </div>
     </div>
   </section>
-  <script>
-    // const habilitarPlanSelect = () => {
-    //   servicePlanSelect?.removeAttribute("disabled");
-    // };
-    // const servicePlanSelect = document.querySelector("#service-plan-select");
-    // const serviceSelect = document.querySelector("#service-select");
-    // serviceSelect?.addEventListener("change", habilitarPlanSelect);
-  </script>
 </C2MainPage>
