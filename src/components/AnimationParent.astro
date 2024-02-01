@@ -1,7 +1,14 @@
 ---
+interface Props {
+  intersectionThreshold?: number;
+}
 
+const { intersectionThreshold }: Props = Astro.props;
 ---
 
-<div class="c2animate-parent">
+<div
+  class="c2animate-parent"
+  data-intersection-threshold={intersectionThreshold ?? 0.5}
+>
   <slot />
 </div>

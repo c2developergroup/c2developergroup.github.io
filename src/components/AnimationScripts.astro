@@ -6,7 +6,7 @@
   let __element_c2animate: Element[] = [];
   let __element_c2animate_parent: Element[] = [];
   let animationObserverTree: Map<Element, Element[]> = new Map();
-  let __observer!: IntersectionObserver;
+  let __observers!: Map<number, IntersectionObserver> = new Map();
 
   const onIntersect = (
     entries: IntersectionObserverEntry[],
@@ -37,12 +37,27 @@
       let animatedChildren = [...parent.getElementsByClassName("c2animate")!!];
       __element_c2animate.push(...animatedChildren);
       animationObserverTree.set(parent, animatedChildren);
+
+      let threshold = Number(
+        (parent as HTMLElement).dataset.intersectionThreshold
+      );
+
+      console.debug(
+        `Animations: _c2animate_parent(threshold=${threshold})`,
+        parent
+      );
+
+      if (!__observers.has(threshold)) {
+        __observers.set(
+          threshold,
+          new IntersectionObserver(onIntersect, {
+            root: null,
+            rootMargin: "0px",
+            threshold: threshold,
+          })
+        );
+      }
     }
-    __observer = new IntersectionObserver(onIntersect, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
-    });
     console.debug("Animations: _c2animate", __element_c2animate);
 
     for (const element of __element_c2animate) {
@@ -55,7 +70,9 @@
         element.classList.add("c2animate-start");
       }
       for (const parent of __element_c2animate_parent) {
-        __observer.observe(parent);
+        __observers
+          .get(Number((parent as HTMLElement).dataset.intersectionThreshold))!!
+          .observe(parent);
       }
       console.debug("Animations: transition init");
     });
