@@ -1,6 +1,9 @@
 ---
 import { FaWhatsapp, FaLinkedinIn, FaArrowRight } from "react-icons/fa/index";
 import { FaInstagram } from "react-icons/fa6/index";
+import { FiPhone } from "react-icons/fi/index";
+import { HiOutlineMail } from "react-icons/hi/index";
+import { MdOutlineLocationOn } from "react-icons/md/index";
 import { TfiEmail } from "react-icons/tfi/index";
 ---
 
@@ -26,19 +29,23 @@ import { TfiEmail } from "react-icons/tfi/index";
         </h3>
         <ul>
           <li class="mb-[12px] text-[20px]">
-            <a href="" class="hover:text-blue-500 transition duration-300"
-              >Dirección</a
-            >
+            <MdOutlineLocationOn className="inline" /> Caracas, Venezuela
           </li>
           <li class="mb-[12px] text-[20px]">
-            <a href="" class="hover:text-blue-500 transition duration-300"
-              >Número de teléfono</a
+            <a
+              href="tel:+584241742700"
+              class="hover:text-blue-500 transition duration-300"
             >
+              <FiPhone className="inline" /> +58 424-1742700
+            </a>
           </li>
           <li class="mb-[12px] text-[20px]">
-            <a href="" class="hover:text-blue-500 transition duration-300"
-              >Correo electrónico</a
+            <a
+              href="mailto:c2developergroup@gmail.com"
+              class="hover:text-blue-500 transition duration-300"
             >
+              <HiOutlineMail className="inline" /> c2developergroup@gmail.com
+            </a>
           </li>
         </ul>
       </div>
