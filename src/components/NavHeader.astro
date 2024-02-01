@@ -128,7 +128,7 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
     <>
       <div
         id="--c2dev-navbar-header-item-servicios-popover"
-        class="hidden z-[200] w-max top-0 left-0 p-5 rounded-xl drop-shadow-xl transition duration-300 translate-y-12 opacity-0 bg-white text-black border border-gray-200"
+        class="hidden z-[200] w-max top-0 left-0 p-5 rounded-xl drop-shadow-xl transition duration-300 -translate-y-12 opacity-0 bg-white text-black border border-gray-200"
       >
         <div class="mb-4">
           <a
@@ -271,7 +271,7 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
                   requestAnimationFrame(() => {
                     if (isOpen) {
                       __c2dev_navbar_servicios_popover.classList.remove(
-                        "translate-y-12",
+                        "-translate-y-12",
                         "opacity-0"
                       );
                       popoverLock = false;
@@ -296,14 +296,14 @@ const headerClassPrefix = invisible ? "invisible" : "fixed";
           update();
         } else {
           __c2dev_navbar_servicios_popover.classList.add(
-            "translate-y-12",
+            "-translate-y-12",
             "opacity-0"
           );
           __c2dev_navbar_servicios_popover_backdrop.classList.add("hidden");
           setTimeout(() => {
             __c2dev_navbar_servicios_popover.classList.replace(
-              popoverVis(false),
-              popoverVis(true)
+              popoverVis(true),
+              popoverVis(false)
             );
             if (popoverCleanup !== null && popoverCleanup !== undefined) {
               popoverCleanup();
