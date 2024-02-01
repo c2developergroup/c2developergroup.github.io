@@ -7,7 +7,7 @@ import "../css/slick-review.css";
 >
   <div class="splide__track">
     <div class="splide__list">
-      <div class="splide__slide px-10 pt-10 pb-16">
+      <div class="splide__slide px-10 pt-10 pb-16 cursor-pointer">
         <img
           src="/lazyload-project.svg"
           data-splide-lazy="/serobucle.gif"
@@ -15,7 +15,7 @@ import "../css/slick-review.css";
           alt="Slide 2"
         />
       </div>
-      <div class="splide__slide px-10 pt-10 pb-16">
+      <div class="splide__slide px-10 pt-10 pb-16 cursor-pointer">
         <img
           src="/lazyload-project.svg"
           data-splide-lazy="/melaobagslandingpage.png"
@@ -23,7 +23,7 @@ import "../css/slick-review.css";
           alt="Slide 2"
         />
       </div>
-      <div class="splide__slide px-10 pt-10 pb-16">
+      <div class="splide__slide px-10 pt-10 pb-16 cursor-pointer">
         <img
           src="/lazyload-project.svg"
           data-splide-lazy="/melaobagslandingpage.png"
@@ -31,7 +31,7 @@ import "../css/slick-review.css";
           alt="Slide 3"
         />
       </div>
-      <div class="splide__slide px-10 pt-10 pb-16">
+      <div class="splide__slide px-10 pt-10 pb-16 cursor-pointer">
         <img
           src="/lazyload-project.svg"
           data-splide-lazy="/melaobagslandingpage.png"
@@ -39,7 +39,7 @@ import "../css/slick-review.css";
           alt="Slide 4"
         />
       </div>
-      <div class="splide__slide px-10 pt-10 pb-16">
+      <div class="splide__slide px-10 pt-10 pb-16 cursor-pointer">
         <img
           src="/lazyload-project.svg"
           data-splide-lazy="/melaobagslandingpage.png"
@@ -111,12 +111,51 @@ import "../css/slick-review.css";
       super();
     }
 
+    handleClick(ev: MouseEvent) {
+      let target = ev.target;
+
+      for (let i = 0; target != null && i < 5; i++) {
+        if (target instanceof HTMLElement) {
+          if (target.classList.contains("splide__slide")) {
+            console.debug(`target parent #${i} is slide`, target);
+            if (target.classList.contains("is-prev")) {
+              ev.preventDefault();
+              this.handlePrev();
+            } else if (target.classList.contains("is-next")) {
+              ev.preventDefault();
+              this.handleNext();
+            } else {
+              console.debug("slide not is-prev or is-next, ignoring...");
+            }
+            return;
+          } else {
+            target = target.parentElement;
+          }
+        } else {
+          console.debug("target !instanceof HTMLElement, aborting...", target);
+          return;
+        }
+      }
+    }
+
+    handlePrev() {
+      console.debug("got to prev slide");
+      this.splide?.go("<");
+    }
+
+    handleNext() {
+      console.debug("go to next slide");
+      this.splide?.go(">");
+    }
+
     connectedCallback() {
       this.splide = new Splide(this, options);
       this.splide.mount({ Intersection });
+      this.addEventListener("click", this.handleClick);
     }
 
     disconnectedCallback() {
+      this.removeEventListener("click", this.handleClick);
       this.splide?.destroy();
     }
   }
