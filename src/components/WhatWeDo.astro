@@ -11,13 +11,13 @@ import C2AnimationParent from "./AnimationParent.astro";
       class="flex flex-row w-full tallratio:min-h-0 tallratio:h-auto bg-none bg-contain bg-no-repeat bg-right-bottom"
     >
       <img
-        class="absolute -z-30 resp:hidden w-[60vw] max-w-[1800px] h-[auto] max-h-[900px] object-contain object-right-bottom right-0"
+        class="c2animate slide-in-blurred-right absolute -z-30 resp:hidden w-[60vw] max-w-[1800px] h-[auto] max-h-[900px] object-contain object-right-bottom right-0"
         src="/E-commerceC2LandingPage-croppedresp.webp"
       />
-      <div
-        class="c2animate slide-in-blurred-bottom flex flex-col 2xl:mx-40 md:mx-20 mx-5"
-      >
-        <div class="flex flex-row 2xl:mt-10 md:mt-5 mt-2">
+      <div class="flex flex-col 2xl:mx-40 md:mx-20 mx-5">
+        <div
+          class="c2animate slide-in-blurred-left-proyectos flex flex-row 2xl:mt-10 md:mt-5 mt-2"
+        >
           <div class="flex flex-row gap-4 items-center">
             <div
               class="bg-green-500 3xl:w-[8rem] 2xl:w-[7rem] xl:w-[6rem] md:w-[5rem] w-[3rem] 3xl:h-[8rem] 2xl:h-[7rem] xl:h-[6rem] md:h-[5rem] h-[3rem] rounded-full text-white 3xl:text-6xl 2xl:text-5xl xl:text-4xl md:text-3xl text-xl flex items-center justify-center"
@@ -35,17 +35,19 @@ import C2AnimationParent from "./AnimationParent.astro";
           </div>
         </div>
         <p
-          class="3xl:text-6xl xl:text-5xl md:text-2xl text-xl 2xl:mt-20 tallratio:mt-5 mt-5 h-auto md:w-[40%] text-start tallratio:w-full"
+          class="c2animate slide-in-blurred-left-proyectos 3xl:text-6xl xl:text-5xl md:text-2xl text-xl 2xl:mt-20 tallratio:mt-5 mt-5 h-auto md:w-[40%] text-start tallratio:w-full"
         >
           <span>
             Creamos tiendas en línea a medida, seguras y móviles. Maximizamos tu
             presencia digital con enfoque en seguridad y personalización.
           </span>
         </p>
-        <p class="2xl:mt-32 md:mt-10 mt-10">
+        <p
+          class="c2animate fade-in-bottom !delay-[1.2s] 2xl:mt-32 md:mt-10 mt-10"
+        >
           <a href="/servicios/e-commerce">
             <button
-              class="w-auto bg-transparent border-[0.15rem] md:mt-3 mt-1 mb-20 resp:mb-0 border-black text-black hover:border-blue-700 hover:text-blue-700 transition duration-300 cursor-pointer font-['Bebas_Neue'] md:text-2xl text-xl md:px-8 px-3 md:py-3 py-2 rounded-3xl"
+              class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-1 mb-20 resp:mb-0 border-black text-black hover:border-blue-700 hover:text-blue-700 transition duration-300 cursor-pointer font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-8 px-3 md:py-3 py-2 rounded-3xl"
             >
               Ver planes
             </button>
@@ -54,7 +56,7 @@ import C2AnimationParent from "./AnimationParent.astro";
       </div>
     </div>
     <img
-      class="hidden resp:block w-full"
+      class="c2animate fade-in-bottom hidden resp:block w-full"
       src="/E-commerceC2LandingPage-croppedresp.webp"
     />
   </C2AnimationParent>
@@ -65,7 +67,7 @@ import C2AnimationParent from "./AnimationParent.astro";
       class="flex flex-row mt-2 md:mt-5 w-full tallratio:min-h-0 tallratio:h-auto bg-none bg-contain bg-no-repeat bg-right-bottom"
     >
       <img
-        class="absolute -z-30 resp:hidden w-[60vw] max-w-[1800px] h-[auto] max-h-[900px] object-contain object-left-bottom left-10"
+        class="c2animate slide-in-blurred-left-proyectos absolute -z-30 resp:hidden w-[60vw] max-w-[1800px] h-[auto] max-h-[900px] object-contain object-left-bottom left-10"
         src="/PortfolioMockupC2-croppedresp.webp"
       />
       <div
@@ -99,7 +101,7 @@ import C2AnimationParent from "./AnimationParent.astro";
         <p class="2xl:mt-32 md:mt-10 mt-10">
           <a href="/servicios/catalogos">
             <button
-              class="w-auto bg-transparent border-[0.15rem] md:mt-3 mt-1 mb-20 resp:mb-0 border-black text-black hover:border-blue-700 hover:text-blue-700 transition duration-300 cursor-pointer font-['Bebas_Neue'] md:text-2xl text-xl md:px-8 px-3 md:py-3 py-2 rounded-3xl"
+              class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-1 mb-20 resp:mb-0 border-black text-black hover:border-blue-700 hover:text-blue-700 cursor-pointer font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-8 px-3 md:py-3 py-2 rounded-3xl"
             >
               Ver planes
             </button>
@@ -155,7 +157,7 @@ import C2AnimationParent from "./AnimationParent.astro";
         <p class="2xl:mt-32 md:mt-10 mt-10">
           <a href="/servicios/paginas-web">
             <button
-              class="w-auto bg-transparent border-[0.15rem] md:mt-3 mt-1 mb-20 resp:mb-0 border-black text-black hover:border-blue-700 hover:text-blue-700 transition duration-300 cursor-pointer font-['Bebas_Neue'] md:text-2xl text-xl md:px-8 px-3 md:py-3 py-2 rounded-3xl"
+              class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-1 mb-20 resp:mb-0 border-black text-black hover:border-blue-700 hover:text-blue-700 transition duration-300 cursor-pointer font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-8 px-3 md:py-3 py-2 rounded-3xl"
             >
               Ver planes
             </button>
@@ -210,7 +212,7 @@ import C2AnimationParent from "./AnimationParent.astro";
         <p class="2xl:mt-32 md:mt-10 mt-10">
           <a href="/servicios/aplicaciones-moviles">
             <button
-              class="w-auto bg-transparent border-[0.15rem] md:mt-3 mt-1 mb-20 resp:mb-0 border-black text-black hover:border-blue-700 hover:text-blue-700 transition duration-300 cursor-pointer font-['Bebas_Neue'] md:text-2xl text-xl md:px-8 px-3 md:py-3 py-2 rounded-3xl"
+              class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-1 mb-20 resp:mb-0 border-black text-black hover:border-blue-700 hover:text-blue-700 transition duration-300 cursor-pointer font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-8 px-3 md:py-3 py-2 rounded-3xl"
             >
               Ver planes
             </button>

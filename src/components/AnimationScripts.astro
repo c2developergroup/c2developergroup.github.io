@@ -6,7 +6,7 @@
   let __element_c2animate: Element[] = [];
   let __element_c2animate_parent: Element[] = [];
   let animationObserverTree: Map<Element, Element[]> = new Map();
-  let __observers!: Map<number, IntersectionObserver> = new Map();
+  let __observers: Map<number, IntersectionObserver> = new Map();
 
   const onIntersect = (
     entries: IntersectionObserverEntry[],
