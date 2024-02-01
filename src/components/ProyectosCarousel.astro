@@ -2,149 +2,115 @@
 import "../css/slick-review.css";
 ---
 
-<c2dev-proyectos-carousel class="relative max-w-[100%] w-[100%]">
-  <div class="px-10 pt-10 pb-16">
-    <img
-      src="/serobucle.gif"
-      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-      alt="Slide 2"
-    />
-  </div>
-  <div class="px-10 pt-10 pb-16">
-    <img
-      src="/melaobagslandingpage.png"
-      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-      alt="Slide 2"
-    />
-  </div>
-  <div class="px-10 pt-10 pb-16">
-    <img
-      src="/melaobagslandingpage.png"
-      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-      alt="Slide 3"
-    />
-  </div>
-  <div class="px-10 pt-10 pb-16">
-    <img
-      src="/melaobagslandingpage.png"
-      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-      alt="Slide 4"
-    />
-  </div>
-  <div class="px-10 pt-10 pb-16">
-    <img
-      src="/melaobagslandingpage.png"
-      class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
-      alt="Slide 5"
-    />
+<c2dev-proyectos-carousel class="splide relative max-w-[100%] w-[100%]">
+  <div class="splide__track">
+    <div class="splide__list">
+      <div class="splide__slide px-10 pt-10 pb-16">
+        <img
+          src="/serobucle.gif"
+          class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+          alt="Slide 2"
+        />
+      </div>
+      <div class="splide__slide px-10 pt-10 pb-16">
+        <img
+          src="/melaobagslandingpage.png"
+          class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+          alt="Slide 2"
+        />
+      </div>
+      <div class="splide__slide px-10 pt-10 pb-16">
+        <img
+          src="/melaobagslandingpage.png"
+          class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+          alt="Slide 3"
+        />
+      </div>
+      <div class="splide__slide px-10 pt-10 pb-16">
+        <img
+          src="/melaobagslandingpage.png"
+          class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+          alt="Slide 4"
+        />
+      </div>
+      <div class="splide__slide px-10 pt-10 pb-16">
+        <img
+          src="/melaobagslandingpage.png"
+          class="w-full rounded-xl shadow-[0_0_26px_0_rgba(0,0,0,0.25)] shadow-neutral-500 hover:shadow-neutral-700 dark:shadow-neutral-900 dark:hover:shadow-neutral-950 transition duration-500"
+          alt="Slide 5"
+        />
+      </div>
+    </div>
   </div>
 </c2dev-proyectos-carousel>
 <script>
-  const proyectosCarouselSettings = {
-    dots: true,
-    dotsClass: "slick-dots-portfolio",
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+  import { Splide, type Options as SplideOptions } from "@splidejs/splide";
+  import { Intersection } from "@splidejs/splide-extension-intersection";
+
+  const options: SplideOptions = {
+    type: "loop",
+    autoplay: "pause",
+    interval: 4000,
+    pauseOnHover: true,
+    lazyLoad: "nearby",
+    preloadPages: 1,
+    updateOnMove: true,
     arrows: false,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    centerMode: true,
-    centerPadding: "700px",
-    focusOnSelect: true,
-    customPaging: function (_slider: any, i: number) {
-      return `<button type="button">${i}</button>`;
+    padding: "20%",
+    intersection: {
+      inView: {
+        autoplay: true,
+      },
+      outView: {
+        autoplay: false,
+      },
     },
-    responsive: [
-      {
+    breakpoints: {
+      2100: {
         // 4xl
-        breakpoint: 2100,
-        settings: {
-          centerPadding: "600px",
-        },
+        padding: "20%",
       },
-      {
+      1800: {
         // 3xl
-        breakpoint: 1800,
-        settings: {
-          centerPadding: "500px",
-        },
+        padding: "20%",
       },
-      {
+      1536: {
         // 2xl
-        breakpoint: 1536,
-        settings: {
-          centerPadding: "400px",
-        },
+        padding: "20%",
       },
-      {
+      1280: {
         // xl
-        breakpoint: 1280,
-        settings: {
-          centerPadding: "300px",
-        },
+        padding: "20%",
       },
-      {
+      1024: {
         // lg
-        breakpoint: 1024,
-        settings: {
-          centerPadding: "200px",
-        },
+        padding: "20%",
       },
-      {
+      768: {
         // md
-        breakpoint: 768,
-        settings: {
-          centerPadding: "100px",
-        },
+        padding: "10%",
       },
-      {
+      640: {
         // sm
-        breakpoint: 640,
-        settings: {
-          centerPadding: "10px",
-        },
+        padding: "10px",
       },
-    ],
+    },
   };
 
   class C2DevProyectosCarousel extends HTMLElement {
-    observer: IntersectionObserver | null = null;
-    initialized: boolean = false;
+    splide: Splide | null = null;
 
     constructor() {
       super();
     }
 
-    onIntersect(
-      entries: IntersectionObserverEntry[],
-      _observer: IntersectionObserver
-    ) {
-      if (entries[0]!!.isIntersecting && !this.initialized) {
-        this.initialized = true;
-        console.log("Intersect", entries[0]);
-
-        $(this).slick(proyectosCarouselSettings);
-      }
-    }
-
     connectedCallback() {
-      let observer =
-        this.observer ??
-        new IntersectionObserver(this.onIntersect.bind(this), {
-          root: null,
-          rootMargin: "0px",
-          threshold: 0.1,
-        });
-      observer.observe(this);
-      this.observer = observer;
+      this.splide = new Splide(this, options);
+      this.splide.mount({ Intersection });
     }
 
     disconnectedCallback() {
-      this.initialized = false;
-      $(this).unslick();
-      this.observer?.unobserve(this);
+      this.splide?.destroy();
     }
   }
   window.customElements.define(

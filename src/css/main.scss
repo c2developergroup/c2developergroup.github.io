@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
 
 h2,
 h3 {
@@ -13,6 +13,59 @@ ul,
 button {
   font-family: "Smooch Sans", sans-serif;
   font-weight: 500;
+}
+
+.splide__arrow svg {
+  fill: #fff !important;
+}
+
+.splide__pagination {
+  bottom: -1.5em !important;
+}
+.splide__pagination li button {
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+
+  cursor: pointer;
+
+  background: transparent !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+.splide__pagination li button:hover,
+.splide__pagination li button:focus {
+  outline: none;
+  opacity: 1 !important;
+}
+.splide__pagination li button:hover:before,
+.splide__pagination li button:focus:before {
+  opacity: 1;
+}
+.splide__pagination li button:before {
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  content: "";
+  text-align: center;
+  opacity: 1;
+  background: #b1becf;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.splide__pagination li button.is-active:before {
+  opacity: 1;
+  background: #fff;
+  border: solid 3px #1c212c;
 }
 
 @media (prefers-reduced-motion: no-preference) {
