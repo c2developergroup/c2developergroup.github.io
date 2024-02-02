@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths, InferGetStaticParamsType } from "astro";
-import { Debug } from "astro:components";
+// import { Debug } from "astro:components";
 
 import C2AnimationParent from "../../../../components/AnimationParent.astro";
 import C2MainPage from "../../../../components/MainPage.astro";
@@ -48,8 +48,8 @@ const { servicio, plan } = Astro.params as Params;
     <C2NavHeader invisible={true} />
   </section>
   <section>
-    <Debug servicio={servicio} />
-    <Debug plan={plan} />
+    <!-- <Debug servicio={servicio} />
+    <Debug plan={plan} /> -->
     <C2AnimationParent intersectionThreshold={0}>
       <div class="flex c2animate fade-in-bottom">
         <div
