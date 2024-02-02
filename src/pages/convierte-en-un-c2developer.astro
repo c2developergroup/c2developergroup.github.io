@@ -1,0 +1,160 @@
+---
+import C2MainPage from "../components/MainPage.astro";
+import C2AnimationParent from "../components/AnimationParent.astro";
+import { MarqueeComponent } from "../components/MarqueeCustomers";
+---
+
+<C2MainPage>
+  <section
+    id="inicio"
+    class="bg-[url('/c2bg-recruitment.webp')] bg-cover bg-bottom min-h-[100vh]"
+  >
+    <C2AnimationParent>
+      <div class="pt-40 3xl:pt-28 text-center">
+        <div
+          class="c2animate slide-in-blurred-left-long relative z-10 text-white dark:text-white 3xl:text-[10rem] xl:text-9xl text-8xl resp:text-6xl drop-shadow-xl shadow-black"
+        >
+          <h2 class="md:block hidden">Conviérte en un<br />C2Developer</h2>
+          <h2 class="md:hidden block">Conviérte en un C2Developer</h2>
+        </div>
+        <h2
+          class="c2animate slide-in-blurred-left-long relative z-10 text-white dark:text-white font-['Smooch_Sans'] font-bold 2xl:text-7xl xl:text-5xl text-4xl resp:text-4xl"
+        >
+          Sé parte de nuestro equipo y comienza a codear grandes proyectos
+        </h2>
+      </div>
+    </C2AnimationParent>
+  </section>
+  <section>
+    <div class="flex flex-col gap-8 p-20">
+      <h2
+        class="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-950 via-blue-700 to-blue-950"
+      >
+        ¿Qué buscamos?
+      </h2>
+      <p class="3xl:text-6xl xl:text-4xl md:text-4xl text-xl md:w-1/2">
+        Desarrolladores y diseñadores con buenas ideas y capacidades de
+        resolver, pero sobre todo que sepan trabajar en equipo.
+      </p>
+      <p class="3xl:text-6xl xl:text-4xl md:text-4xl text-xl md:w-1/2 text-end self-end">
+        La proactividad también es necesaria para optimizar los trabajos y es
+        por ello que si eres de los que tiene grandes ideas debes pertenecer a
+        nuestro equipo.
+      </p>
+    </div>
+  </section>
+  <section>
+    <div
+      class="bg-[url('/110428-black-and-blue-blurred-background-vector.webp')] bg-cover bg-center p-10"
+    >
+      <h2 class="text-white md:text-7xl text-5xl font-medium text-center">
+        ¿Qué Tecnologías usamos?
+      </h2>
+      <MarqueeComponent
+        logosTop={[
+          {
+            src: "/bynxlogowhite.png",
+            class:
+              "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
+          },
+          {
+            src: "/serologowhite.png",
+            class:
+              "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
+            href: "https://sero-project.vercel.app/",
+          },
+          {
+            src: "/jonoappslogowhite.png",
+            class:
+              "w-54 h-36 cursor-pointer hover:scale-110 transition duration-300",
+            href: "https://jonoapps.com",
+          },
+          {
+            src: "/melaologowhite.png",
+            class:
+              "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
+          },
+          {
+            src: "/sebasphotographylogowhite.png",
+            class:
+              "w-54 h-40 cursor-pointer hover:scale-110 transition duration-300",
+          },
+          {
+            src: "/c2logowhite.png",
+            class:
+              "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
+          },
+        ]}
+      />
+    </div>
+  </section>
+  <section>
+    <div class="flex">
+      <form
+        class="w-[50%] resp:w-full p-20 mobl:p-10 font-['Smooch_Sans'] md:text-2xl text-xl"
+      >
+        <h2 class="md:text-5xl text-3xl text-black mb-5">
+          Envíanos tu currículum
+        </h2>
+        <input
+          type="text"
+          name="name"
+          placeholder="Nombres y Apellidos"
+          required
+          maxlength="100"
+          class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
+        />
+        <input
+          type="text"
+          name="email"
+          placeholder="Correo electrónico"
+          required
+          maxlength="100"
+          class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
+        />
+        <input
+          type="text"
+          name="number"
+          placeholder="Número de teléfono"
+          required
+          maxlength="100"
+          class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
+        />
+        <label
+          for="curriculum"
+          class="block leading-tight w-full mr-3 py-2 px-1 mb-5 border rounded border-blue-700 text-[#a9a9a9]"
+          >Adjunta tu currículum vitae</label
+        >
+        <input
+          type="file"
+          name="curriculum"
+          id="curriculum"
+          placeholder="Adjunta tu currículum vitae"
+          required
+          class="hidden"
+        />
+        <div
+          class="mt-5 flex flex-col border rounded-lg border-blue-700 p-2 mb-6"
+        >
+          <textarea
+            name="message"
+            placeholder="Mensaje"
+            class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none resize-none"
+            required
+            maxlength="1000"
+            rows="6"></textarea>
+        </div>
+        <div class="flex flex-row justify-end w-full">
+          <button
+            class="hover:bg-blue-600 hover:text-white cursor-pointer transition duration-300 border-[0.005rem] border-blue-600 text-blue-600 font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
+          >
+            Enviar
+          </button>
+        </div>
+      </form>
+      <div class="w-[50%] flex justify-center items-center resp:hidden">
+        <img src="/c2squarelogoblack.png" class="w-full max-w-[28rem]" />
+      </div>
+    </div>
+  </section>
+</C2MainPage>
