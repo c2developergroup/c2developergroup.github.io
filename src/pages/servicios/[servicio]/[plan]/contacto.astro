@@ -15,7 +15,11 @@ export const getStaticPaths = (() => {
     { name: "catalogos", plans: 1, custom: true },
     { name: "e-commerce", plans: 1, custom: true },
     { name: "paginas-web", plans: 3, custom: true },
-    { name: "hosting-mantenimiento", plans: 2, custom: false },
+    {
+      name: "hosting-mantenimiento",
+      plans: ["aplicaciones-moviles", "paginas-web"],
+      custom: false,
+    },
   ];
 
   return servicios.flatMap((servicio) => {
@@ -58,6 +62,7 @@ const { servicio, plan } = Astro.params as Params;
             <form
               class="font-['Smooch_Sans'] md:text-2xl text-xl"
               data-servicio={servicio}
+              data-plan={plan}
             >
               <input
                 type="text"
