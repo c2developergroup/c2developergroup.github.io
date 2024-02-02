@@ -2,22 +2,41 @@
 import type { GetStaticPaths, InferGetStaticParamsType } from "astro";
 import { Debug } from "astro:components";
 
-import C2AnimationParent from "../../../components/AnimationParent.astro";
-import C2MainPage from "../../../components/MainPage.astro";
-import C2NavHeader from "../../../components/NavHeader.astro";
+import C2AnimationParent from "../../../../components/AnimationParent.astro";
+import C2MainPage from "../../../../components/MainPage.astro";
+import C2NavHeader from "../../../../components/NavHeader.astro";
 
 export const getStaticPaths = (() => {
-  return [
-    { params: { servicio: "aplicaciones-moviles" } },
-    { params: { servicio: "catalogos" } },
-    { params: { servicio: "e-commerce" } },
-    { params: { servicio: "paginas-web" } },
-    { params: { servicio: "hosting-mantenimiento" } },
+  const params = (servicio: string, plan: string) => {
+    return { params: { servicio: servicio, plan: plan } };
+  };
+  const servicios = [
+    { name: "aplicaciones-moviles", plans: 0, custom: true },
+    { name: "catalogos", plans: 1, custom: true },
+    { name: "e-commerce", plans: 1, custom: true },
+    { name: "paginas-web", plans: 3, custom: true },
+    { name: "hosting-mantenimiento", plans: 2, custom: false },
   ];
+
+  return servicios.flatMap((servicio) => {
+    let plans: string[];
+    if (Array.isArray(servicio.plans)) {
+      plans = servicio.plans;
+    } else {
+      plans = Array.from({ length: servicio.plans }, (_, i) => {
+        return `plan${i + 1}`;
+      });
+    }
+    if (servicio.custom) {
+      plans.push("custom");
+    }
+
+    return plans.map((plan) => params(servicio.name, plan));
+  });
 }) satisfies GetStaticPaths;
 
 type Params = InferGetStaticParamsType<typeof getStaticPaths>;
-const { servicio } = Astro.params as Params;
+const { servicio, plan } = Astro.params as Params;
 ---
 
 <C2MainPage>
@@ -26,6 +45,7 @@ const { servicio } = Astro.params as Params;
   </section>
   <section>
     <Debug servicio={servicio} />
+    <Debug plan={plan} />
     <C2AnimationParent intersectionThreshold={0}>
       <div class="flex c2animate fade-in-bottom">
         <div
