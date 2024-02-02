@@ -5,10 +5,35 @@ import C2NavHeader from "../components/NavHeader.astro";
 ---
 
 <C2MainPage>
-  <section class="bg-[url('/aboutus.png')] bg-cover bg-center mt-20">
+  <section class="bg-[url('/aboutus.png')] bg-cover bg-top min-h-[100vh]">
     <C2NavHeader invisible={true} />
     <C2AnimationParent>
-      <div class="c2animate fade-in-bottom w-10/12 m-auto pt-20 pb-20">
+      <div class="w-10/12 m-auto pt-40 3xl:pt-28">
+        <div
+          class="c2animate slide-in-blurred-left-long relative z-10 text-white dark:text-white 3xl:text-[10rem] xl:text-9xl text-8xl resp:text-6xl drop-shadow-xl shadow-black"
+        >
+          <h2 class="md:block hidden text-center">Somos C² Developer Group</h2>
+          <h2 class="md:hidden block">Somos <br /> C² Developer Group</h2>
+        </div>
+        <h2
+          class="c2animate slide-in-blurred-left-long relative z-10 text-white dark:text-white font-['Smooch_Sans'] font-medium 2xl:text-7xl xl:text-5xl text-4xl resp:text-4xl text-center"
+        >
+          Un grupo de <b> desarrolladores y diseñadores</b> que busca exponenciar
+          proyectos a través de <b>
+            páginas web, e-commerce y aplicaciones móviles.
+          </b>
+        </h2>
+        <div class="c2animate slide-in-blurred-left-long text-center">
+          <a href="/#contacto">
+            <button
+              class="hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl mb-20"
+            >
+              Contáctanos
+            </button>
+          </a>
+        </div>
+      </div>
+      <!-- <div class="c2animate fade-in-bottom w-10/12 m-auto pt-20 pb-20">
         <div
           class="c2animate fade-in-bottom relative z-10 text-white 3xl:text-[10rem] xl:text-8xl text-8xl text-center resp:text-6xl transition duration-300 drop-shadow-xl shadow-black mt-80 mb-10"
           class="c2animate fade-in-bottom relative z-10 text-white 3xl:text-[10rem] xl:text-8xl text-8xl resp:text-6xl drop-shadow-xl shadow-black mt-80 mb-10"
@@ -31,7 +56,7 @@ import C2NavHeader from "../components/NavHeader.astro";
             Contáctanos
           </button>
         </div>
-      </div>
+      </div> -->
     </C2AnimationParent>
   </section>
   <section>
