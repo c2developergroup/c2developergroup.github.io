@@ -221,7 +221,7 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
             <input
               type="text"
               name="name"
-              placeholder="Nombres y Apellidos"
+              placeholder="Nombres y Apellidos*"
               required
               maxlength="100"
               class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
@@ -229,7 +229,7 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
             <input
               type="text"
               name="email"
-              placeholder="Correo electrónico"
+              placeholder="Correo electrónico*"
               required
               maxlength="100"
               class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
@@ -237,7 +237,7 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
             <input
               type="text"
               name="number"
-              placeholder="Número de teléfono"
+              placeholder="Número de teléfono*"
               required
               maxlength="100"
               class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
@@ -246,14 +246,13 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
               type="text"
               name="subject"
               placeholder="Asunto"
-              required
               maxlength="100"
               class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
             />
             <div>
-              <label for="service-select" class="text-gray-400"
-                >Tipo de Servicio</label
-              >
+              <label for="service-select" class="text-gray-400">
+                Tipo de Servicio
+              </label>
               <select
                 name="service-select"
                 id="service-select"
@@ -261,10 +260,12 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
                 required
               >
                 <option disabled selected>Seleccione una opción</option>
-                <option value="value2">Página web</option>
-                <option value="value3">Aplicación móvil</option>
-                <option value="value3">Catálogo o portafolio</option>
-                <option value="value3">E-Commerce</option>
+                <option value="pagina-web">Página web</option>
+                <option value="aplicacion-movil">Aplicación móvil</option>
+                <option value="catalogo-o-portafolio"
+                  >Catálogo o portafolio</option
+                >
+                <option value="e-commerce">E-Commerce</option>
               </select>
             </div>
             <div
@@ -272,10 +273,10 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
             >
               <textarea
                 name="message"
-                placeholder="Mensaje"
+                placeholder="Mensaje*"
                 class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none resize-none"
                 required
-                maxlength="1000"
+                maxlength="10000"
                 rows="6"></textarea>
               <div class="flex justify-end">
                 <button
