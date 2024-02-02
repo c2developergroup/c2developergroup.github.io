@@ -1,7 +1,6 @@
 ---
 import C2MainPage from "../components/MainPage.astro";
 import C2AnimationParent from "../components/AnimationParent.astro";
-import { MarqueeComponent } from "../components/MarqueeCustomers";
 ---
 
 <C2MainPage>
@@ -10,12 +9,12 @@ import { MarqueeComponent } from "../components/MarqueeCustomers";
     class="bg-[url('/c2bg-recruitment.webp')] bg-cover bg-bottom min-h-[100vh]"
   >
     <C2AnimationParent>
-      <div class="pt-40 3xl:pt-28 text-center">
+      <div class="pt-64 3xl:pt-28 text-center">
         <div
           class="c2animate slide-in-blurred-left-long relative z-10 text-white dark:text-white 3xl:text-[10rem] xl:text-9xl text-8xl resp:text-6xl drop-shadow-xl shadow-black"
         >
-          <h2 class="md:block hidden">Conviérte en un<br />C2Developer</h2>
-          <h2 class="md:hidden block">Conviérte en un C2Developer</h2>
+          <h2 class="md:block hidden">Conviérte en un<br />C² Developer</h2>
+          <h2 class="md:hidden block">Conviérte en un C² Developer</h2>
         </div>
         <h2
           class="c2animate slide-in-blurred-left-long relative z-10 text-white dark:text-white font-['Smooch_Sans'] font-bold 2xl:text-7xl xl:text-5xl text-4xl resp:text-4xl"
@@ -26,20 +25,19 @@ import { MarqueeComponent } from "../components/MarqueeCustomers";
     </C2AnimationParent>
   </section>
   <section>
-    <div class="flex flex-col gap-8 p-20">
+    <div class="p-20">
       <h2
-        class="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-950 via-blue-700 to-blue-950"
+        class="text-6xl text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-950 via-blue-700 to-blue-950"
       >
         ¿Qué buscamos?
       </h2>
-      <p class="3xl:text-6xl xl:text-4xl md:text-4xl text-xl md:w-1/2">
-        Desarrolladores y diseñadores con buenas ideas y capacidades de
-        resolver, pero sobre todo que sepan trabajar en equipo.
-      </p>
-      <p class="3xl:text-6xl xl:text-4xl md:text-4xl text-xl md:w-1/2 text-end self-end">
-        La proactividad también es necesaria para optimizar los trabajos y es
-        por ello que si eres de los que tiene grandes ideas debes pertenecer a
-        nuestro equipo.
+      <p
+        class="3xl:text-6xl xl:text-4xl md:text-4xl text-xl text-center mt-10 mx-10"
+      >
+        <b>Desarrolladores y diseñadores</b> con buenas ideas y capacidades de resolver,
+        pero sobre todo que sepan <b>trabajar en equipo</b>. La proactividad
+        también es necesaria para optimizar los trabajos y es por ello que, si
+        eres de los que tiene grandes ideas, debes pertenecer a nuestro equipo.
       </p>
     </div>
   </section>
@@ -50,42 +48,6 @@ import { MarqueeComponent } from "../components/MarqueeCustomers";
       <h2 class="text-white md:text-7xl text-5xl font-medium text-center">
         ¿Qué Tecnologías usamos?
       </h2>
-      <MarqueeComponent
-        logosTop={[
-          {
-            src: "/bynxlogowhite.png",
-            class:
-              "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
-          },
-          {
-            src: "/serologowhite.png",
-            class:
-              "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
-            href: "https://sero-project.vercel.app/",
-          },
-          {
-            src: "/jonoappslogowhite.png",
-            class:
-              "w-54 h-36 cursor-pointer hover:scale-110 transition duration-300",
-            href: "https://jonoapps.com",
-          },
-          {
-            src: "/melaologowhite.png",
-            class:
-              "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
-          },
-          {
-            src: "/sebasphotographylogowhite.png",
-            class:
-              "w-54 h-40 cursor-pointer hover:scale-110 transition duration-300",
-          },
-          {
-            src: "/c2logowhite.png",
-            class:
-              "w-54 h-24 cursor-pointer hover:scale-110 transition duration-300",
-          },
-        ]}
-      />
     </div>
   </section>
   <section>
@@ -143,13 +105,13 @@ import { MarqueeComponent } from "../components/MarqueeCustomers";
             required
             maxlength="1000"
             rows="6"></textarea>
-        </div>
-        <div class="flex flex-row justify-end w-full">
-          <button
-            class="hover:bg-blue-600 hover:text-white cursor-pointer transition duration-300 border-[0.005rem] border-blue-600 text-blue-600 font-['Bebas_Neue'] md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
-          >
-            Enviar
-          </button>
+          <div class="flex justify-end">
+            <button
+              class="bg-blue-600 rounded-full 2xl:w-8 2xl:h-8 md:w-7 md:h-7 p-[0.2rem] flex justify-center items-center hover:bg-blue-700 cursor-pointer"
+            >
+              <img src="/send.svg" class="ml-[0.1rem] w-[80%] h-auto" />
+            </button>
+          </div>
         </div>
       </form>
       <div class="w-[50%] flex justify-center items-center resp:hidden">
