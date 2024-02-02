@@ -30,7 +30,7 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
         <div class="c2animate slide-in-blurred-left-long">
           <a href="/#contacto">
             <button
-              class="hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl mb-20"
+              class="hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-3xl mb-20"
             >
               Contáctanos
             </button>
@@ -166,7 +166,7 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
           <p class="2xl:mt-20 md:mt-10 mt-4">
             <a href="/#contacto">
               <button
-                class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-2 border-black text-black hover:border-blue-800 hover:text-blue-800 transition duration-300 cursor-pointer font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
+                class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-2 border-black text-black hover:border-blue-800 hover:text-blue-800 transition duration-300 cursor-pointer font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-3xl"
               >
                 Contáctanos
               </button>
@@ -184,12 +184,23 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
     </C2AnimationParent>
   </section>
   <section id="proyectos" class="">
-    <h2 class="md:text-6xl text-4xl text-center mb-5 mt-5">
+    <h2 class="md:text-6xl text-4xl text-center mb-5 mt-5 2xl:mt-40">
       Algunos de nuestros trabajos
     </h2>
     <C2ProyectosCarousel />
   </section>
-  <div>
+  <C2AnimationParent>
+    <div class="flex justify-center w-full my-10 c2animate fade-in-bottom">
+      <a href="/proyectos">
+        <button
+          class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-2 border-black text-black hover:border-blue-800 hover:text-blue-800 transition duration-300 cursor-pointer font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-10 px-8 md:py-3 py-2 rounded-3xl"
+        >
+          Ver más
+        </button>
+      </a>
+    </div>
+  </C2AnimationParent>
+  <!-- <div>
     <a href="/proyectos" class="my-20 ml-8 block">
       <p
         class="md:text-4xl text-2xl font-bold underline hover:text-blue-800 transition duration-300"
@@ -197,7 +208,7 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
         Ver más proyectos {">"}
       </p>
     </a>
-  </div>
+  </div> -->
   <section
     id="contacto"
     class="bg-[url('/110428-black-and-blue-blurred-background-vector.webp')] bg-cover bg-center transition duration-300 py-10 flex flex-col items-center gap-5 p-6 bg-black"
