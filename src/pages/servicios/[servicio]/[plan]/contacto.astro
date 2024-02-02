@@ -61,6 +61,7 @@ const { servicio, plan } = Astro.params as Params;
             </h2>
             <form
               class="font-['Smooch_Sans'] md:text-2xl text-xl"
+              id="--c2dev-form-contact-proyecto"
               data-servicio={servicio}
               data-plan={plan}
             >
@@ -73,7 +74,7 @@ const { servicio, plan } = Astro.params as Params;
                 class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
               />
               <input
-                type="text"
+                type="email"
                 name="email"
                 placeholder="Correo electrónico*"
                 required
@@ -81,7 +82,7 @@ const { servicio, plan } = Astro.params as Params;
                 class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
               />
               <input
-                type="text"
+                type="tel"
                 name="number"
                 placeholder="Número de teléfono*"
                 required
@@ -114,6 +115,41 @@ const { servicio, plan } = Astro.params as Params;
                 </div>
               </div>
             </form>
+
+            <script>
+              let __c2dev_form_contact_proyecto!: HTMLFormElement;
+
+              const submitForm = (event: SubmitEvent) => {
+                event.preventDefault();
+
+                const formData = new FormData(__c2dev_form_contact_proyecto);
+                let name = formData.get("name");
+                let email = formData.get("email");
+                let number = formData.get("number");
+                let service = __c2dev_form_contact_proyecto.dataset.servicio;
+                let plan = __c2dev_form_contact_proyecto.dataset.plan;
+                let subject = formData.get("subject");
+                let message = formData.get("message");
+                console.debug(`name: "${name}"`);
+                console.debug(`email: "${email}"`);
+                console.debug(`number: "${number}"`);
+                console.debug(`service: "${service}"`);
+                console.debug(`plan: "${plan}"`);
+                console.debug(`subject: "${subject}"`);
+                console.debug(`message: "${message}"`);
+              };
+
+              document.addEventListener("DOMContentLoaded", (_event) => {
+                __c2dev_form_contact_proyecto = document.getElementById(
+                  "--c2dev-form-contact-proyecto"
+                )!! as HTMLFormElement;
+
+                __c2dev_form_contact_proyecto.addEventListener(
+                  "submit",
+                  submitForm
+                );
+              });
+            </script>
           </div>
         </div>
         <div class="w-[50%] flex justify-center items-center resp:hidden">

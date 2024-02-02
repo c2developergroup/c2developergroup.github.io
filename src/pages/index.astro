@@ -228,7 +228,10 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
           <h2 class="md:text-5xl text-3xl text-black mb-5">
             Cuéntanos tu proyecto
           </h2>
-          <form class="font-['Smooch_Sans'] md:text-2xl text-xl">
+          <form
+            id="--c2dev-form-contact-inicio"
+            class="font-['Smooch_Sans'] md:text-2xl text-xl"
+          >
             <input
               type="text"
               name="name"
@@ -273,9 +276,9 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
                 <option disabled selected>Seleccione una opción</option>
                 <option value="pagina-web">Página web</option>
                 <option value="aplicacion-movil">Aplicación móvil</option>
-                <option value="catalogo-o-portafolio"
-                  >Catálogo o portafolio</option
-                >
+                <option value="catalogo-o-portafolio">
+                  Catálogo o portafolio
+                </option>
                 <option value="e-commerce">E-Commerce</option>
               </select>
             </div>
@@ -305,6 +308,38 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
               </button>
             </div> -->
           </form>
+          <script>
+            let __c2dev_form_contact_inicio!: HTMLFormElement;
+
+            const submitForm = (event: SubmitEvent) => {
+              event.preventDefault();
+
+              const formData = new FormData(__c2dev_form_contact_inicio);
+              let name = formData.get("name");
+              let email = formData.get("email");
+              let number = formData.get("number");
+              let service = formData.get("service-select");
+              let subject = formData.get("subject");
+              let message = formData.get("message");
+              console.debug(`name: "${name}"`);
+              console.debug(`email: "${email}"`);
+              console.debug(`number: "${number}"`);
+              console.debug(`service: "${service}"`);
+              console.debug(`subject: "${subject}"`);
+              console.debug(`message: "${message}"`);
+            };
+
+            document.addEventListener("DOMContentLoaded", (_event) => {
+              __c2dev_form_contact_inicio = document.getElementById(
+                "--c2dev-form-contact-inicio"
+              )!! as HTMLFormElement;
+
+              __c2dev_form_contact_inicio.addEventListener(
+                "submit",
+                submitForm
+              );
+            });
+          </script>
         </div>
       </div>
       <div class="w-[50%] flex justify-center items-center resp:hidden">
