@@ -146,25 +146,25 @@ import { TfiEmail } from "react-icons/tfi/index";
     </div>
   </footer>
   <script>
+    const toggleContactList = () => {
+      contactList?.classList.toggle("hidden");
+      contactPlusBotton?.classList.toggle("hidden");
+      contactMinusBotton?.classList.toggle("hidden");
+    }
+    const toggleLinksList = () => {
+      linksList?.classList.toggle("hidden");
+      linksPlusBotton?.classList.toggle("hidden");
+      linksMinusBotton?.classList.toggle("hidden");
+    }
     let contactList = document.querySelector("#contactList");
     let linksList = document.querySelector("#linksList");
-    const toggleContactList = () => {
-       contactList?.classList.toggle("hidden");
-       contactPlusBotton?.classList.toggle("hidden");
-       contactMinusBotton?.classList.toggle("hidden");
-     }
-    const toggleLinksList = () => {
-       linksList?.classList.toggle("hidden");
-       linksPlusBotton?.classList.toggle("hidden");
-       linksMinusBotton?.classList.toggle("hidden");
-     }
     let contactPlusBotton = document.querySelector("#contactPlusBotton");
     let linksPlusBotton = document.querySelector("#linksPlusBotton");
     let contactMinusBotton = document.querySelector("#contactMinusBotton");
     let linksMinusBotton = document.querySelector("#linksMinusBotton");
     contactPlusBotton?.addEventListener("click", toggleContactList);
-    linksPlusBotton?.addEventListener("click", toggleLinksList);
     contactMinusBotton?.addEventListener("click", toggleContactList);
+    linksPlusBotton?.addEventListener("click", toggleLinksList);
     linksMinusBotton?.addEventListener("click", toggleLinksList);
   </script>
 </div>
