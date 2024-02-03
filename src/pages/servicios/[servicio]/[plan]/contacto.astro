@@ -1,0 +1,161 @@
+---
+import type { GetStaticPaths, InferGetStaticParamsType } from "astro";
+// import { Debug } from "astro:components";
+
+import C2AnimationParent from "../../../../components/AnimationParent.astro";
+import C2MainPage from "../../../../components/MainPage.astro";
+import C2NavHeader from "../../../../components/NavHeader.astro";
+
+export const getStaticPaths = (() => {
+  const params = (servicio: string, plan: string) => {
+    return { params: { servicio: servicio, plan: plan } };
+  };
+  const servicios = [
+    { name: "aplicaciones-moviles", plans: 0, custom: true },
+    { name: "catalogos", plans: 1, custom: true },
+    { name: "e-commerce", plans: 1, custom: true },
+    { name: "paginas-web", plans: 3, custom: true },
+    {
+      name: "hosting-mantenimiento",
+      plans: ["aplicaciones-moviles", "paginas-web"],
+      custom: false,
+    },
+  ];
+
+  return servicios.flatMap((servicio) => {
+    let plans: string[];
+    if (Array.isArray(servicio.plans)) {
+      plans = servicio.plans;
+    } else {
+      plans = Array.from({ length: servicio.plans }, (_, i) => {
+        return `plan${i + 1}`;
+      });
+    }
+    if (servicio.custom) {
+      plans.push("custom");
+    }
+
+    return plans.map((plan) => params(servicio.name, plan));
+  });
+}) satisfies GetStaticPaths;
+
+type Params = InferGetStaticParamsType<typeof getStaticPaths>;
+const { servicio, plan } = Astro.params as Params;
+---
+
+<C2MainPage>
+  <section id="inicio">
+    <C2NavHeader invisible={true} />
+  </section>
+  <section>
+    <!-- <Debug servicio={servicio} />
+    <Debug plan={plan} /> -->
+    <C2AnimationParent intersectionThreshold={0}>
+      <div class="flex c2animate fade-in-bottom">
+        <div
+          class="xl:ms-[8%] xl:w-[42%] w-[50%] resp:w-full p-20 mobl:p-10 flex justify-center"
+        >
+          <div class="w-full">
+            <h2 class="md:text-5xl text-3xl text-black mb-5">
+              Cuéntanos tu proyecto
+            </h2>
+            <form
+              class="font-['Smooch_Sans'] md:text-2xl text-xl"
+              id="--c2dev-form-contact-proyecto"
+              data-servicio={servicio}
+              data-plan={plan}
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombres y Apellidos*"
+                required
+                maxlength="100"
+                class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Correo electrónico*"
+                required
+                maxlength="100"
+                class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
+              />
+              <input
+                type="tel"
+                name="number"
+                placeholder="Número de teléfono*"
+                required
+                maxlength="100"
+                class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
+              />
+              <input
+                type="text"
+                name="subject"
+                placeholder="Asunto"
+                maxlength="100"
+                class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
+              />
+              <div
+                class="mt-5 flex flex-col border rounded-lg border-blue-700 p-2 mb-6"
+              >
+                <textarea
+                  name="message"
+                  placeholder="Mensaje*"
+                  class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none resize-none"
+                  required
+                  maxlength="10000"
+                  rows="6"></textarea>
+                <div class="flex justify-end">
+                  <button
+                    class="bg-blue-600 rounded-full 2xl:w-8 2xl:h-8 md:w-7 md:h-7 p-[0.2rem] flex justify-center items-center hover:bg-blue-700 cursor-pointer"
+                  >
+                    <img src="/send.svg" class="ml-[0.1rem] w-[80%] h-auto" />
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <script>
+              let __c2dev_form_contact_proyecto!: HTMLFormElement;
+
+              const submitForm = (event: SubmitEvent) => {
+                event.preventDefault();
+
+                const formData = new FormData(__c2dev_form_contact_proyecto);
+                let name = formData.get("name");
+                let email = formData.get("email");
+                let number = formData.get("number");
+                let service = __c2dev_form_contact_proyecto.dataset.servicio;
+                let plan = __c2dev_form_contact_proyecto.dataset.plan;
+                let subject = formData.get("subject");
+                let message = formData.get("message");
+                console.debug(`name: "${name}"`);
+                console.debug(`email: "${email}"`);
+                console.debug(`number: "${number}"`);
+                console.debug(`service: "${service}"`);
+                console.debug(`plan: "${plan}"`);
+                console.debug(`subject: "${subject}"`);
+                console.debug(`message: "${message}"`);
+              };
+
+              document.addEventListener("DOMContentLoaded", (_event) => {
+                __c2dev_form_contact_proyecto = document.getElementById(
+                  "--c2dev-form-contact-proyecto"
+                )!! as HTMLFormElement;
+
+                __c2dev_form_contact_proyecto.addEventListener(
+                  "submit",
+                  submitForm
+                );
+              });
+            </script>
+          </div>
+        </div>
+        <div class="w-[50%] flex justify-center items-center resp:hidden">
+          <img src="/c2squarelogoblack.png" class="w-full max-w-[28rem]" />
+        </div>
+      </div>
+    </C2AnimationParent>
+  </section>
+</C2MainPage>

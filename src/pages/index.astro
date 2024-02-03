@@ -15,7 +15,7 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
   >
     <C2NavHeader invisible={true} />
     <C2AnimationParent>
-      <div class="w-10/12 m-auto pt-40 3xl:pt-28">
+      <div class="w-10/12 m-auto xl:pt-28 lg:pt-40 pt-36 3xl:pt-28">
         <div
           class="c2animate slide-in-blurred-left-long relative z-10 text-white dark:text-white 3xl:text-[10rem] xl:text-9xl text-8xl resp:text-6xl drop-shadow-xl shadow-black"
         >
@@ -30,7 +30,7 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
         <div class="c2animate slide-in-blurred-left-long">
           <a href="/#contacto">
             <button
-              class="hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl mb-20"
+              class="hover:bg-neutral-400 hover:bg-opacity-25 cursor-pointer border-[0.005rem] md:mt-6 mt-3 border-white text-white font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-3xl mb-20"
             >
               Contáctanos
             </button>
@@ -166,7 +166,7 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
           <p class="2xl:mt-20 md:mt-10 mt-4">
             <a href="/#contacto">
               <button
-                class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-2 border-black text-black hover:border-blue-800 hover:text-blue-800 transition duration-300 cursor-pointer font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-2xl"
+                class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-2 border-black text-black hover:border-blue-800 hover:text-blue-800 transition duration-300 cursor-pointer font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-5 px-3 md:py-3 py-2 rounded-3xl"
               >
                 Contáctanos
               </button>
@@ -184,12 +184,23 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
     </C2AnimationParent>
   </section>
   <section id="proyectos" class="">
-    <h2 class="md:text-6xl text-4xl text-center mb-5 mt-5">
+    <h2 class="md:text-6xl text-4xl text-center mb-5 mt-5 resp:mt-20 2xl:mt-40">
       Algunos de nuestros trabajos
     </h2>
     <C2ProyectosCarousel />
   </section>
-  <div>
+  <C2AnimationParent>
+    <div class="flex justify-center w-full my-10 c2animate fade-in-bottom">
+      <a href="/proyectos">
+        <button
+          class="w-auto bg-transparent border-[0.005rem] md:mt-3 mt-2 border-black text-black hover:border-blue-800 hover:text-blue-800 transition duration-300 cursor-pointer font-['Bebas_Neue'] 4xl:text-4xl md:text-2xl text-xl md:px-10 px-8 md:py-3 py-2 rounded-3xl"
+        >
+          Ver más
+        </button>
+      </a>
+    </div>
+  </C2AnimationParent>
+  <!-- <div>
     <a href="/proyectos" class="my-20 ml-8 block">
       <p
         class="md:text-4xl text-2xl font-bold underline hover:text-blue-800 transition duration-300"
@@ -197,7 +208,7 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
         Ver más proyectos {">"}
       </p>
     </a>
-  </div>
+  </div> -->
   <section
     id="contacto"
     class="bg-[url('/110428-black-and-blue-blurred-background-vector.webp')] bg-cover bg-center transition duration-300 py-10 flex flex-col items-center gap-5 p-6 bg-black"
@@ -217,11 +228,14 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
           <h2 class="md:text-5xl text-3xl text-black mb-5">
             Cuéntanos tu proyecto
           </h2>
-          <form class="font-['Smooch_Sans'] md:text-2xl text-xl">
+          <form
+            id="--c2dev-form-contact-inicio"
+            class="font-['Smooch_Sans'] md:text-2xl text-xl"
+          >
             <input
               type="text"
               name="name"
-              placeholder="Nombres y Apellidos"
+              placeholder="Nombres y Apellidos*"
               required
               maxlength="100"
               class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
@@ -229,7 +243,7 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
             <input
               type="text"
               name="email"
-              placeholder="Correo electrónico"
+              placeholder="Correo electrónico*"
               required
               maxlength="100"
               class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
@@ -237,7 +251,7 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
             <input
               type="text"
               name="number"
-              placeholder="Número de teléfono"
+              placeholder="Número de teléfono*"
               required
               maxlength="100"
               class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
@@ -246,14 +260,13 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
               type="text"
               name="subject"
               placeholder="Asunto"
-              required
               maxlength="100"
               class="appearance-none text-black leading-tight focus:ring-0 focus:outline-none w-full mr-3 pb-2 mb-5 border-b border-blue-700"
             />
             <div>
-              <label for="service-select" class="text-gray-400"
-                >Tipo de Servicio</label
-              >
+              <label for="service-select" class="text-gray-400">
+                Tipo de Servicio
+              </label>
               <select
                 name="service-select"
                 id="service-select"
@@ -261,10 +274,12 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
                 required
               >
                 <option disabled selected>Seleccione una opción</option>
-                <option value="value2">Página web</option>
-                <option value="value3">Aplicación móvil</option>
-                <option value="value3">Catálogo o portafolio</option>
-                <option value="value3">E-Commerce</option>
+                <option value="pagina-web">Página web</option>
+                <option value="aplicacion-movil">Aplicación móvil</option>
+                <option value="catalogo-o-portafolio">
+                  Catálogo o portafolio
+                </option>
+                <option value="e-commerce">E-Commerce</option>
               </select>
             </div>
             <div
@@ -272,16 +287,16 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
             >
               <textarea
                 name="message"
-                placeholder="Mensaje"
+                placeholder="Mensaje*"
                 class="appearance-none border-none text-black mr-3 leading-tight focus:ring-0 focus:outline-none resize-none"
                 required
-                maxlength="1000"
+                maxlength="10000"
                 rows="6"></textarea>
               <div class="flex justify-end">
                 <button
-                  class="bg-blue-600 rounded-full 2xl:w-8 2xl:h-8 md:w-7 md:h-7 p-[0.2rem] flex justify-center items-center hover:bg-blue-700 cursor-pointer"
+                  class="bg-blue-600 rounded-full 2xl:w-8 2xl:h-8 md:w-7 md:h-7 w-7 h-7 p-[0.2rem] flex justify-center items-center hover:bg-blue-700 cursor-pointer"
                 >
-                  <img src="send.svg" class="ml-[0.1rem] w-[80%] h-auto" />
+                  <img src="/send.svg" class="ml-[0.1rem] w-[80%] h-auto" />
                 </button>
               </div>
             </div>
@@ -293,6 +308,38 @@ import C2WhatWeDo from "../components/WhatWeDo.astro";
               </button>
             </div> -->
           </form>
+          <script>
+            let __c2dev_form_contact_inicio!: HTMLFormElement;
+
+            const submitForm = (event: SubmitEvent) => {
+              event.preventDefault();
+
+              const formData = new FormData(__c2dev_form_contact_inicio);
+              let name = formData.get("name");
+              let email = formData.get("email");
+              let number = formData.get("number");
+              let service = formData.get("service-select");
+              let subject = formData.get("subject");
+              let message = formData.get("message");
+              console.debug(`name: "${name}"`);
+              console.debug(`email: "${email}"`);
+              console.debug(`number: "${number}"`);
+              console.debug(`service: "${service}"`);
+              console.debug(`subject: "${subject}"`);
+              console.debug(`message: "${message}"`);
+            };
+
+            document.addEventListener("DOMContentLoaded", (_event) => {
+              __c2dev_form_contact_inicio = document.getElementById(
+                "--c2dev-form-contact-inicio"
+              )!! as HTMLFormElement;
+
+              __c2dev_form_contact_inicio.addEventListener(
+                "submit",
+                submitForm
+              );
+            });
+          </script>
         </div>
       </div>
       <div class="w-[50%] flex justify-center items-center resp:hidden">
