@@ -4,6 +4,7 @@ import {
   FaLinkedinIn,
   FaArrowRight,
   FaPlus,
+  FaMinus,
 } from "react-icons/fa/index";
 import { FaInstagram } from "react-icons/fa6/index";
 import { FiPhone } from "react-icons/fi/index";
@@ -16,19 +17,22 @@ import { TfiEmail } from "react-icons/tfi/index";
   class="bottom-0 pt-[30px] leading-[20px] box-border border-t-[1px] border-black border-solid bg-white text-neutral-700"
 >
   <footer>
-    <div class="tiny:w-[85%] m-auto flex flex-wrap items-start justify-between px-6 tiny:px-0">
+    <div
+      class="tiny:w-[85%] m-auto flex flex-wrap items-start justify-between px-6 tiny:px-0"
+    >
       <div class="mt-[10px] md:mr-[40px] m-auto">
         <img src="/c2logoblack.png" class="w-56 mb-2" />
         <h2 class="slogan text-center text-lg mb-2">
           EXPONENCIAMOS TU PROYECTO
         </h2>
       </div>
-      <div class="p-[10px] basis-full md:basis-1/4">
+      <div class="p-[10px] tiny:m-0 mt-10 basis-full md:basis-1/4">
         <h3
           class="flex justify-between items-center font-bold text-[30px] tiny:w-fit mb-[20px] relative"
         >
           Contacto
           <FaPlus id="contactPlusBotton" className="tiny:hidden text-xl" />
+          <FaMinus id="contactMinusBotton" className="hidden text-xl" />
           <div
             class="w-full h-[2px] absolute top-[25px] left-0 overflow-hidden bg-blue-700 rounded-[3px]"
           >
@@ -62,6 +66,7 @@ import { TfiEmail } from "react-icons/tfi/index";
         >
           Links
           <FaPlus id="linksPlusBotton" className="tiny:hidden text-xl" />
+          <FaMinus id="linksMinusBotton" className="hidden text-xl" />
           <div
             class="w-full h-[2px] absolute top-[25px] left-0 overflow-hidden bg-blue-700 rounded-[3px]"
           >
@@ -141,17 +146,25 @@ import { TfiEmail } from "react-icons/tfi/index";
     </div>
   </footer>
   <script>
-    let contactPlusBotton = document.querySelector("#contactPlusBotton")
-    let linksPlusBotton = document.querySelector("#linksPlusBotton")
-    contactPlusBotton?.addEventListener("click", toggleContactList)
-    linksPlusBotton?.addEventListener("click", toggleLinksList)
-    function toggleContactList() {
-      let contactList = document.querySelector("#contactList")
-      contactList?.classList.toggle("hidden")
-    }
-    function toggleLinksList() {
-      let linksList = document.querySelector("#linksList")
-      linksList?.classList.toggle("hidden")
-    }
+    let contactList = document.querySelector("#contactList");
+    let linksList = document.querySelector("#linksList");
+    const toggleContactList = () => {
+       contactList?.classList.toggle("hidden");
+       contactPlusBotton?.classList.toggle("hidden");
+       contactMinusBotton?.classList.toggle("hidden");
+     }
+    const toggleLinksList = () => {
+       linksList?.classList.toggle("hidden");
+       linksPlusBotton?.classList.toggle("hidden");
+       linksMinusBotton?.classList.toggle("hidden");
+     }
+    let contactPlusBotton = document.querySelector("#contactPlusBotton");
+    let linksPlusBotton = document.querySelector("#linksPlusBotton");
+    let contactMinusBotton = document.querySelector("#contactMinusBotton");
+    let linksMinusBotton = document.querySelector("#linksMinusBotton");
+    contactPlusBotton?.addEventListener("click", toggleContactList);
+    linksPlusBotton?.addEventListener("click", toggleLinksList);
+    contactMinusBotton?.addEventListener("click", toggleContactList);
+    linksMinusBotton?.addEventListener("click", toggleLinksList);
   </script>
 </div>
