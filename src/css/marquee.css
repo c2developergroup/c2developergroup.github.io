@@ -8,6 +8,8 @@
   --duration: 60s;
   --scroll-start: 0;
   --scroll-end: calc(-100% - var(--gap));
+  --scrollY-start: 0;
+  --scrollY-end: calc(-100% - var(--gap));
   --slowdown-factor: 4; 
 }
 
@@ -48,17 +50,26 @@
   min-width: 100%;
   animation: scroll-x var(--duration) linear infinite;
 }
-  
+
 .marquee--reverse .marquee__group {
   animation-direction: reverse;
 }
-  
+
 @keyframes scroll-x {
   from {
     transform: translateX(var(--scroll-start));
   }
   to {
     transform: translateX(var(--scroll-end));
+  }
+}
+
+@keyframes scroll-y {
+  from {
+    transform: translateY(var(--scrollY-start));
+  }
+  to {
+    transform: translateY(var(--scrollY-end));
   }
 }
   
@@ -78,7 +89,7 @@
   flex-direction: column;
   gap: var(--gap);
   margin: auto;
-  max-width: 100vw;
+  max-height: 20rem;
 }
   
 .marquee:hover .marquee__group {
@@ -87,4 +98,18 @@
   
 .marquee img:hover {
   /* background-color: var(--color-hover); */
+}
+
+.reverse {
+  animation-direction: reverse;
+}
+
+.vertical{
+  flex-direction: column;
+  animation: scroll-y var(--duration) linear infinite;
+}
+
+.horizontal{
+  flex-direction: row;
+  animation: scroll-x var(--duration) linear infinite;
 }

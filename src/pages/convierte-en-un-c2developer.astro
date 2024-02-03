@@ -1,7 +1,7 @@
 ---
 import C2MainPage from "../components/MainPage.astro";
 import C2AnimationParent from "../components/AnimationParent.astro";
-import { MarqueeComponent } from "../components/MarqueeCustomers";
+import { MarqueeComponent } from "../components/MarqueeCustomersVertical.tsx";
 ---
 
 <C2MainPage>
@@ -36,7 +36,9 @@ import { MarqueeComponent } from "../components/MarqueeCustomers";
         Desarrolladores y diseñadores con buenas ideas y capacidades de
         resolver, pero sobre todo que sepan trabajar en equipo.
       </p>
-      <p class="3xl:text-6xl xl:text-4xl md:text-4xl text-xl md:w-1/2 text-end self-end">
+      <p
+        class="3xl:text-6xl xl:text-4xl md:text-4xl text-xl md:w-1/2 text-end self-end"
+      >
         La proactividad también es necesaria para optimizar los trabajos y es
         por ello que si eres de los que tiene grandes ideas debes pertenecer a
         nuestro equipo.
@@ -51,6 +53,8 @@ import { MarqueeComponent } from "../components/MarqueeCustomers";
         ¿Qué Tecnologías usamos?
       </h2>
       <MarqueeComponent
+        vertical
+        reverse
         logosTop={[
           {
             src: "/bynxlogowhite.png",

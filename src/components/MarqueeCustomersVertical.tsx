@@ -7,7 +7,14 @@ export interface MarqueeLogo {
   href?: string;
 }
 
-export const MarqueeComponent = ({ logosTop }: { logosTop: MarqueeLogo[] }) => {
+interface MarqueeComponentProps {
+  logosTop: MarqueeLogo[];
+  vertical?: boolean;
+  reverse?: boolean;
+}
+
+
+export const MarqueeComponent = ({ logosTop, vertical = false, reverse = false }: MarqueeComponentProps) => {
   const cardsTop = logosTop.map((item: MarqueeLogo, index: number) => {
     const logo = <img key={index} src={item.src} className={item.class} />;
     if (item.href !== undefined) {
@@ -27,11 +34,11 @@ export const MarqueeComponent = ({ logosTop }: { logosTop: MarqueeLogo[] }) => {
   return (
     <div className="marquee__parent">
       <article className="wrapper">
-        <div className="marquee">
-          <div className="marquee__group">{cardsTop}</div>
-          <div className="marquee__group">{cardsTop}</div>
-          <div className="marquee__group">{cardsTop}</div>
-          <div className="marquee__group">{cardsTop}</div>
+        <div className={"marquee" + (vertical ? " flex-col" : "")}>
+          <div className={"marquee__group" + (vertical ? " vertical" : "horizontal")  + (reverse ? " reverse" : "")}>{cardsTop}</div>
+          <div className={"marquee__group" + (vertical ? " vertical" : "horizontal")  + (reverse ? " reverse" : "")}>{cardsTop}</div>
+          <div className={"marquee__group" + (vertical ? " vertical" : "horizontal")  + (reverse ? " reverse" : "")}>{cardsTop}</div>
+          <div className={"marquee__group" + (vertical ? " vertical" : "horizontal")  + (reverse ? " reverse" : "")}>{cardsTop}</div>
         </div>
         {/* <div className="marquee marquee--reverse">
           <div className="marquee__group">{cardsBtm}</div>
