@@ -38,7 +38,10 @@ import { TfiEmail } from "react-icons/tfi/index";
           >
           </div>
         </h3>
-        <ul id="contactList" class="tiny:block hidden">
+        <ul
+          id="contactList"
+          class="tiny:block hidden tiny:transform-none tiny:opacity-100 -translate-y-8 opacity-0 transition duration-300"
+        >
           <li class="mb-[12px] text-[20px] flex">
             <MdOutlineLocationOn className="inline" /> Caracas, Venezuela
           </li>
@@ -73,7 +76,10 @@ import { TfiEmail } from "react-icons/tfi/index";
             <span></span>
           </div>
         </h3>
-        <ul id="linksList" class="tiny:block hidden">
+        <ul
+          id="linksList"
+          class="tiny:block hidden tiny:transform-none tiny:opacity-100 -translate-y-8 opacity-0 transition duration-300"
+        >
           <li class="mb-[12px] text-[20px]">
             <a href="/" class="hover:text-blue-500 transition duration-300"
               >Inicio</a
@@ -146,16 +152,72 @@ import { TfiEmail } from "react-icons/tfi/index";
     </div>
   </footer>
   <script>
+    let contactListOpen: boolean = false;
+    let contactListLock: boolean = false;
+
+    let linksListOpen: boolean = false;
+    let linksListLock: boolean = false;
+
     const toggleContactList = () => {
-      contactList?.classList.toggle("hidden");
-      contactPlusBotton?.classList.toggle("hidden");
-      contactMinusBotton?.classList.toggle("hidden");
-    }
+      if (contactListLock) return;
+      contactListLock = true;
+
+      if (!contactListOpen) {
+        contactList?.classList.remove("hidden");
+        requestAnimationFrame(() => {
+          contactList?.classList.replace("-translate-y-8", "translate-y-0");
+          contactList?.classList.replace("opacity-0", "opacity-100");
+        });
+
+        contactMinusBotton?.classList.remove("hidden");
+        contactPlusBotton?.classList.add("hidden");
+
+        contactListLock = false;
+      } else {
+        contactMinusBotton?.classList.add("hidden");
+        contactPlusBotton?.classList.remove("hidden");
+
+        contactList?.classList.replace("translate-y-0", "-translate-y-8");
+        contactList?.classList.replace("opacity-100", "opacity-0");
+
+        setTimeout(() => {
+          contactList?.classList.add("hidden");
+
+          contactListLock = false;
+        }, 350);
+      }
+      contactListOpen = !contactListOpen;
+    };
     const toggleLinksList = () => {
-      linksList?.classList.toggle("hidden");
-      linksPlusBotton?.classList.toggle("hidden");
-      linksMinusBotton?.classList.toggle("hidden");
-    }
+      if (linksListLock) return;
+      linksListLock = true;
+
+      if (!linksListOpen) {
+        linksList?.classList.remove("hidden");
+        requestAnimationFrame(() => {
+          linksList?.classList.replace("-translate-y-8", "translate-y-0");
+          linksList?.classList.replace("opacity-0", "opacity-100");
+        });
+
+        linksMinusBotton?.classList.remove("hidden");
+        linksPlusBotton?.classList.add("hidden");
+
+        linksListLock = false;
+      } else {
+        linksMinusBotton?.classList.add("hidden");
+        linksPlusBotton?.classList.remove("hidden");
+
+        linksList?.classList.replace("translate-y-0", "-translate-y-8");
+        linksList?.classList.replace("opacity-100", "opacity-0");
+
+        setTimeout(() => {
+          linksList?.classList.add("hidden");
+
+          linksListLock = false;
+        }, 350);
+      }
+      linksListOpen = !linksListOpen;
+    };
     let contactList = document.querySelector("#contactList");
     let linksList = document.querySelector("#linksList");
     let contactPlusBotton = document.querySelector("#contactPlusBotton");
