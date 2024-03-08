@@ -4,7 +4,7 @@
 
 <div class="flex justify-center">
   <c2dev-techs-carousel
-    class="splide flex justify-center relative max-w-[20%] w-[20%]"
+    class="splide flex justify-center relative md:max-w-[20%] md:w-[20%] max-w-[10%] w-[10%]"
     role="group"
     aria-label="Technologías"
     data-direction="ttb"
@@ -50,7 +50,7 @@
     </div>
   </c2dev-techs-carousel>
   <c2dev-techs-carousel
-    class="splide flex justify-center relative max-w-[20%] w-[20%]"
+    class="splide flex justify-center relative md:max-w-[20%] md:w-[20%] max-w-[10%] w-[10%]"
     role="group"
     aria-label="Technologías"
     data-direction="btt"
@@ -89,7 +89,7 @@
     </div>
   </c2dev-techs-carousel>
   <c2dev-techs-carousel
-    class="splide flex justify-center relative max-w-[20%] w-[20%]"
+    class="splide flex justify-center relative md:max-w-[20%] md:w-[20%] max-w-[10%] w-[10%]"
     role="group"
     aria-label="Technologías"
     data-direction="ttb"
@@ -135,7 +135,7 @@
     </div>
   </c2dev-techs-carousel>
   <c2dev-techs-carousel
-    class="splide flex justify-center relative max-w-[20%] w-[20%]"
+    class="splide flex justify-center relative md:max-w-[20%] md:w-[20%] max-w-[10%] w-[10%]"
     role="group"
     aria-label="Technologías"
     data-direction="btt"
@@ -176,9 +176,51 @@
 </div>
 
 <script>
-  import { Splide, type Options as SplideOptions } from "@splidejs/splide";
+  import {
+    Splide,
+    type Options as SplideOptions,
+    type ResponsiveOptions as SplideResponsiveOptions,
+  } from "@splidejs/splide";
   import { Intersection } from "@splidejs/splide-extension-intersection";
   import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+
+  const optionsBreakpoints: Record<number, SplideResponsiveOptions> = {
+    2100: {
+      // 4xl
+      gap: "5rem",
+      width: "15%",
+    },
+    1800: {
+      // 3xl
+      gap: "5rem",
+      width: "15%",
+    },
+    1536: {
+      // 2xl
+      gap: "5rem",
+      width: "15%",
+    },
+    1280: {
+      // xl
+      gap: "5rem",
+      width: "15%",
+    },
+    1024: {
+      // lg
+      gap: "5rem",
+      width: "22.5%",
+    },
+    768: {
+      // md
+      gap: "5rem",
+      width: "50%",
+    },
+    640: {
+      // sm
+      gap: "5rem",
+      width: "50%",
+    },
+  };
 
   const optionsTtb: SplideOptions = {
     type: "loop",
@@ -194,6 +236,7 @@
     autoScroll: {
       speed: -1,
     },
+    breakpoints: optionsBreakpoints,
   };
 
   const optionsBtt: SplideOptions = {
@@ -210,6 +253,7 @@
     autoScroll: {
       speed: 1,
     },
+    breakpoints: optionsBreakpoints,
   };
 
   class C2TechsCarousel extends HTMLElement {
