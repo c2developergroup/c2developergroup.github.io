@@ -5,6 +5,10 @@ import C2Navbar from "../components/Navbar.astro";
 
 import "../css/main.scss";
 import "@splidejs/splide/css";
+
+const currentPath = Astro.url.pathname;
+const hideNavbarOn = ["/central-madeirense", "/otra-pagina", "/tercera-pagina"];  // Agrega aquí todas las rutas donde no quieres mostrar el navbar
+const showNavbar = !hideNavbarOn.includes(currentPath);
 ---
 
 <html lang="es" class="light">
@@ -27,8 +31,8 @@ import "@splidejs/splide/css";
   </head>
   <body class="bg-white overflow-x-clip">
     <div id="root">
-      <C2Navbar />
-      <div id="content" class="w-screen overflow-x-clip overflow-y-auto">
+      {showNavbar && <C2Navbar />}
+      <div id="content">
         <slot />
       </div>
       <C2Footer />

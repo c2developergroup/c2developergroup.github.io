@@ -1,0 +1,233 @@
+---
+import C2NavHeader from "../../components/NavHeader.astro";
+import { FaStore } from "react-icons/fa/index";
+import { MdApps, MdPhoneIphone, MdDevices } from "react-icons/md/index";
+
+// import "../css/main.css";
+---
+
+<div
+  id="--c2dev-navbar-mobile"
+  class="navbar-home collapse hidden fluent:block fluent:visible text-gray-900 bg-white fluent:m-0 fluent:fixed fluent:w-60 fluent:h-screen fluent:top-0 fluent:p-7 fluent:z-30 fluent:-right-60 fluent:translate-x-0 transition-transform duration-300"
+>
+  <ul class="flex items-center fluent:mt-5 fluent:flex-col">
+    <li class="my-4"></li>
+    <li class="my-2.5">
+      <a
+        href="/"
+        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 fluent:m-0"
+      >
+        Inicio
+      </a>
+    </li>
+    <li id="--c2dev-navbar-mobile-item-servicios" class="my-2.5">
+      <span
+        id="--c2dev-navbar-mobile-item-servicios-span"
+        class="text-xl font-bold ml-10 hover:text-neutral-700 hover:transition-all fluent:m-0 after:content-['►']"
+      >
+        <span class="hidden after:content-['▼']"></span>
+        Servicios
+      </span>
+    </li>
+    <li class="my-2.5 hamburger-menu-servicios w-full hidden">
+      <hr />
+    </li>
+    <li class="my-2.5 self-start hamburger-menu-servicios hidden">
+      <a
+        href="/servicios/paginas-web/"
+        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 fluent:m-0"
+      >
+        <div class="flex gap-2 items-center text-lg">
+          <div
+            class="bg-blue-500 w-8 h-8 rounded-full text-white flex items-center justify-center"
+          >
+            <MdDevices className="text-md" />
+          </div>
+          <span>Páginas Web</span>
+        </div>
+      </a>
+    </li>
+    <li class="my-2.5 self-start hamburger-menu-servicios hidden">
+      <a
+        href="/servicios/aplicaciones-moviles/"
+        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 fluent:m-0"
+      >
+        <div class="flex gap-2 items-center text-lg">
+          <div
+            class="bg-yellow-400 w-8 h-8 rounded-full text-black flex items-center justify-center"
+          >
+            <MdPhoneIphone className="text-md" />
+          </div>
+          <span>Aplicaciones Móviles</span>
+        </div>
+      </a>
+    </li>
+    <li class="my-2.5 self-start hamburger-menu-servicios hidden">
+      <a
+        href="/servicios/catalogos/"
+        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 fluent:m-0"
+      >
+        <div class="flex gap-2 items-center text-lg">
+          <div
+            class="bg-violet-700 w-8 h-8 rounded-full text-white flex items-center justify-center"
+          >
+            <MdApps className="text-md" />
+          </div>
+          <span>Catálogos y Portafolios</span>
+        </div>
+      </a>
+    </li>
+    <li class="my-2.5 self-start hamburger-menu-servicios hidden">
+      <a
+        href="/servicios/e-commerce/"
+        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 fluent:m-0"
+      >
+        <div class="flex gap-2 items-center text-lg">
+          <div
+            class="bg-green-500 w-8 h-8 rounded-full text-white flex items-center justify-center"
+          >
+            <FaStore className="text-md" />
+          </div>
+          <span>E-Commerce</span>
+        </div>
+      </a>
+    </li>
+    <li class="my-2.5 hamburger-menu-servicios w-full hidden">
+      <hr />
+    </li>
+    <li class="my-2.5">
+      <a
+        href="/proyectos/"
+        class="text-xl font-bold ml-10 hover:text-blue-700 hover:transition-all duration-300 fluent:m-0"
+      >
+        Proyectos
+      </a>
+    </li>
+    <li class="my-2.5">
+      <a
+        href="/acerca-de-nosotros/"
+        class="text-xl font-bold ml-10 mr-6 hover:text-blue-700 hover:transition-all duration-300 fluent:m-0"
+      >
+        Acerca de nosotros
+      </a>
+    </li>
+    <li class="my-2.5">
+      <a
+        href="/unete-a-nuestro-equipo/"
+        class="text-xl font-bold ml-10 mr-6 hover:text-blue-700 hover:transition-all duration-300 fluent:m-0"
+      >
+        Únete a nuestro equipo
+      </a>
+    </li>
+  </ul>
+</div>
+<C2NavHeader />
+<div
+  class="collapse fluent:visible fluent:fixed fluent:top-0 fluent:left-0 fluent:w-full fluent:h-screen fluent:z-20 fluent:bg-[rgba(0,0,0,0.5)] hidden"
+  id="--c2dev-navbar-back"
+>
+</div>
+<script>
+  let stateMobileMenuOpen: boolean = false;
+  let stateServiciosOpen: boolean = false;
+
+  let __c2dev_navbar_back!: HTMLElement;
+  let __c2dev_navbar_hamburger!: HTMLElement;
+  let __c2dev_navbar_mobile_item_servicios!: HTMLElement;
+  let __c2dev_navbar_mobile_item_servicios_span!: HTMLElement;
+  let __c2dev_navbar_mobile!: HTMLElement;
+
+  let __c2dev_hamburger_menu_servicios: HTMLElement[] = [];
+
+  const hamburgerMenu = (() => {
+    const _updateHamburgerMenu = (stateMobileOpen: boolean) => {
+      const __inner = (isOpen: boolean) => {
+        const backVis = (isOpen: boolean) => {
+          return isOpen ? "fluent:block" : "hidden";
+        };
+        const navVis = (isOpen: boolean) => {
+          return isOpen ? "fluent:-translate-x-60" : "fluent:translate-x-0";
+        };
+
+        __c2dev_navbar_back.classList.replace(
+          backVis(!isOpen),
+          backVis(isOpen)
+        );
+        __c2dev_navbar_mobile.classList.replace(
+          navVis(!isOpen),
+          navVis(isOpen)
+        );
+      };
+
+      __inner(stateMobileOpen);
+      return stateMobileOpen;
+    };
+    const toggle = () => {
+      stateMobileMenuOpen = _updateHamburgerMenu(!stateMobileMenuOpen);
+    };
+    const close = () => {
+      stateMobileMenuOpen = false;
+      _updateHamburgerMenu(false);
+    };
+
+    return { toggle: toggle, close: close };
+  })();
+
+  const serviciosMenu = (() => {
+    const _updateServiciosMenu = (stateServiciosOpen: boolean) => {
+      const __inner = (isOpen: boolean) => {
+        const subVis = (isOpen: boolean) => {
+          return isOpen ? "fluent:block" : "hidden";
+        };
+        const arrowVis = (isOpen: boolean) => {
+          return isOpen ? "after:content-['▼']" : "after:content-['►']";
+        };
+
+        for (let navItem of __c2dev_hamburger_menu_servicios) {
+          navItem.classList.replace(subVis(!isOpen), subVis(isOpen));
+        }
+        __c2dev_navbar_mobile_item_servicios_span.classList.replace(
+          arrowVis(!isOpen),
+          arrowVis(isOpen)
+        );
+      };
+
+      __inner(stateServiciosOpen);
+      return stateServiciosOpen;
+    };
+    const toggle = () => {
+      stateServiciosOpen = _updateServiciosMenu(!stateServiciosOpen);
+    };
+    const close = () => {
+      stateServiciosOpen = false;
+      _updateServiciosMenu(false);
+    };
+
+    return { toggle: toggle, close: close };
+  })();
+
+  document.addEventListener("DOMContentLoaded", (_event) => {
+    __c2dev_navbar_back = document.getElementById("--c2dev-navbar-back")!!;
+    __c2dev_navbar_hamburger = document.getElementById(
+      "--c2dev-navbar-hamburger"
+    )!!;
+    __c2dev_navbar_mobile = document.getElementById("--c2dev-navbar-mobile")!!;
+    __c2dev_navbar_mobile_item_servicios = document.getElementById(
+      "--c2dev-navbar-mobile-item-servicios"
+    )!!;
+    __c2dev_navbar_mobile_item_servicios_span = document.getElementById(
+      "--c2dev-navbar-mobile-item-servicios-span"
+    )!!;
+
+    __c2dev_hamburger_menu_servicios = [
+      ...document.getElementsByClassName("hamburger-menu-servicios")!!,
+    ] as HTMLElement[];
+
+    __c2dev_navbar_hamburger.addEventListener("click", hamburgerMenu.toggle);
+    __c2dev_navbar_back.addEventListener("click", hamburgerMenu.close);
+    __c2dev_navbar_mobile_item_servicios.addEventListener(
+      "click",
+      serviciosMenu.toggle
+    );
+  });
+</script>
