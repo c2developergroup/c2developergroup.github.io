@@ -10,11 +10,43 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Smooch+Sans:wght@500;700;800;900&display=swap"
     />
-    <!-- <link
-      rel="stylesheet"
-      type="text/css"
-      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    /> -->
+    <style>
+      select {
+        appearance: none; /* Oculta la flecha del select en todos los navegadores */
+        -webkit-appearance: none; /* Oculta la flecha en Safari y Chrome */
+        -moz-appearance: none; /* Oculta la flecha en Firefox */
+        background: transparent; /* Asegura que el fondo es transparente */
+      }
+
+      .no-arrow {
+        position: relative;
+        background-color: transparent;
+      }
+      
+      /* Estilos para los placeholders */
+      ::placeholder {
+        color: white;
+        opacity: 1; /* Asegura que el color sea aplicado */
+      }
+
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: white;
+      }
+
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        color: white;
+      }
+
+      input::placeholder { /* También para inputs específicos */
+        color: white;
+        opacity: 1;
+      }
+
+      select::placeholder { /* Placeholder para select (aunque select no usa placeholder, lo añadimos por seguridad) */
+        color: white;
+        opacity: 1;
+      }
+    </style>
   </head>
   <body>
     <section class="w-full h-full">
@@ -61,14 +93,50 @@
     </section>
     <section>
       <div class="flex">
-        <div class="w-1/4 p-40 bg-center bg-cover bg-[url('/mercantilenlineapersona.jpg')] hover:bg-[url('/mercantilenlineapersonahover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10">
+        <div class="w-1/4 p-40 bg-center bg-cover bg-[url('/limitesdeoperacionesmercantil.jpg')] hover:bg-[url('/limitesdeoperacionesmercantilhover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10">
         </div>
         <div class="w-1/4 p-40 bg-center bg-cover bg-[url('/mercantilenlineapersona.jpg')] hover:bg-[url('/mercantilenlineapersonahover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10">
         </div>
-        <div class="w-1/4 p-40 bg-center bg-cover bg-[url('/mercantilenlineapersona.jpg')] hover:bg-[url('/mercantilenlineapersonahover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10">
+        <div class="w-1/4 p-40 bg-center bg-cover bg-[url('/portaldepagosmercantil.jpg')] hover:bg-[url('/portaldepagosmercantilhover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10">
         </div>
-        <div class="w-1/4 p-40 bg-center bg-cover bg-[url('/mercantilenlineapersona.jpg')] hover:bg-[url('/mercantilenlineapersonahover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10">
+        <div class="w-1/4 p-40 bg-center bg-cover bg-[url('/inversionesmercantil.jpg')] hover:bg-[url('/inversionesmercantilhover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10">
         </div>
+      </div>
+    </section>
+    <section class="px-16 pt-36 pb-16 flex justify-between gap-20">
+      <div class="w-[45%]">
+        <h2 class="text-white text-center text-6xl font-bold">
+          Adquiere la nueva <br />
+          <span class="text-orange-500"> Tarjeta Premium </span>
+        </h2>
+        <div class="mt-10 no-arrow">
+          <select
+            class="border border-white rounded-2xl pl-5 bg-transparent text-white p-3 w-full"
+            required
+          >
+            <option disabled selected class="text-white">SEDES MERCANTIL</option>
+            <option value="">La Castellana</option>
+            <option value="">CCCT</option>
+            <option value="">
+              N/A
+            </option>
+            <option value="">N/A</option>
+          </select>
+        </div>
+        <input
+              placeholder="CÉDULA"
+              maxlength="100"
+              class="border border-white rounded-2xl pl-5 bg-transparent text-white p-3 w-full mt-5"
+            />
+            <input
+            placeholder="CORREO ELECTRÓNICO"
+            maxlength="100"
+            class="border border-white rounded-2xl pl-5 bg-transparent text- p-3 w-full mt-5"
+          />
+          <button class="rounded-2xl pl-5 bg-white text-[#05368b] p-3 w-full mt-5">Enviar</button>
+      </div>
+      <div class="w-1/2">
+       <img src="/tarjetamercantil.png" class="mt-12">
       </div>
     </section>
   </body>
