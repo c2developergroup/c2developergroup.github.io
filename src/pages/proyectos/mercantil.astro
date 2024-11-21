@@ -1,3 +1,7 @@
+---
+import { GrSend } from "react-icons/gr";
+---
+
 <html lang="es" class="bg-[#05368b]">
   <head>
     <meta charset="UTF-8" />
@@ -7,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Smooch+Sans:wght@500;700;800;900&display=swap"
     />
     <style>
       select {
@@ -22,29 +26,175 @@
         position: relative;
         background-color: transparent;
       }
-      
+
       /* Estilos para los placeholders */
       ::placeholder {
         color: white;
         opacity: 1; /* Asegura que el color sea aplicado */
       }
 
-      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
         color: white;
       }
 
-      ::-ms-input-placeholder { /* Microsoft Edge */
+      ::-ms-input-placeholder {
+        /* Microsoft Edge */
         color: white;
       }
 
-      input::placeholder { /* También para inputs específicos */
+      input::placeholder {
+        /* También para inputs específicos */
         color: white;
         opacity: 1;
       }
 
-      select::placeholder { /* Placeholder para select (aunque select no usa placeholder, lo añadimos por seguridad) */
+      select::placeholder {
+        /* Placeholder para select (aunque select no usa placeholder, lo añadimos por seguridad) */
         color: white;
         opacity: 1;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif; /* Aplica Poppins al body */
+      }
+
+      .poppins-thin {
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+      }
+
+      .poppins-extralight {
+        font-family: "Poppins", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+      }
+
+      .poppins-light {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      .poppins-regular {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .poppins-medium {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      .poppins-semibold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      .poppins-bold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      .poppins-extrabold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+      }
+
+      .poppins-black {
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+      }
+
+      .poppins-thin-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        font-style: italic;
+      }
+
+      .poppins-extralight-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 200;
+        font-style: italic;
+      }
+
+      .poppins-light-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-style: italic;
+      }
+
+      .poppins-regular-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: italic;
+      }
+
+      .poppins-medium-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: italic;
+      }
+
+      .poppins-semibold-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      .poppins-bold-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      .poppins-extrabold-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-style: italic;
+      }
+
+      .poppins-black-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+      }
+
+      .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 50%; /* Hace el video redondo */
+        background: yellow; /* Color de fondo amarillo */
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background-color: yellow;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
       }
     </style>
   </head>
@@ -52,10 +202,10 @@
     <section class="w-full h-full">
       <div class="w-full h-auto flex justify-end">
         <div class="grid grid-cols-1 mt-40 mr-[40%] ml-[10%] gap-10 absolute">
-          <div>
-            <h2 class="text-white text-7xl font-bold">
+          <div class="">
+            <h2 class="text-white text-center text-6xl font-bold">
               Ahorra de manera <br />
-              <span class="text-orange-500"> efectiva y segura </span>
+              <span class="text-orange-500 text-7xl"> efectiva y segura </span>
             </h2>
           </div>
           <p class="text-white text-xl font-light">
@@ -75,9 +225,12 @@
         </p>
       </div>
       <div>
-        <button class="bg-[#05368b] hover:bg-blue-950 transition duration-300 text-white rounded-3xl py-2 px-4 mr-48 z-10"
-          >conocer más</button
-        >
+        <a href="/">
+          <button
+            class="bg-[#05368b] hover:bg-blue-950 transition duration-300 text-white rounded-3xl py-2 px-4 mr-48 z-10"
+            >conocer más</button
+          >
+        </a>
       </div>
       <div class="absolute">
         <img
@@ -91,52 +244,120 @@
         Ingresa de forma segura
       </h2>
     </section>
-    <section>
-      <div class="flex">
-        <div class="w-1/4 p-40 bg-center bg-cover bg-[url('/limitesdeoperacionesmercantil.jpg')] hover:bg-[url('/limitesdeoperacionesmercantilhover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10">
-        </div>
-        <div class="w-1/4 p-40 bg-center bg-cover bg-[url('/mercantilenlineapersona.jpg')] hover:bg-[url('/mercantilenlineapersonahover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10">
-        </div>
-        <div class="w-1/4 p-40 bg-center bg-cover bg-[url('/portaldepagosmercantil.jpg')] hover:bg-[url('/portaldepagosmercantilhover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10">
-        </div>
-        <div class="w-1/4 p-40 bg-center bg-cover bg-[url('/inversionesmercantil.jpg')] hover:bg-[url('/inversionesmercantilhover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10">
-        </div>
+    <section class="w-full">
+      <div class="flex flex-wrap w-screen">
+        <a href="/" class="flex-1 min-w-0 h-[25vw] max-h-auto cursor-pointer">
+          <div
+            class="flex-1 min-w-0 p-4 h-[25vw] max-h-auto bg-center bg-cover bg-[url('/limitesdeoperacionesmercantil.jpg')] hover:bg-[url('/limitesdeoperacionesmercantilhover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10"
+          >
+          </div>
+        </a>
+        <a href="/" class="flex-1 min-w-0 h-[25vw] max-h-auto cursor-pointer">
+          <div
+            class="flex-1 min-w-0 p-4 h-[25vw] max-h-auto bg-center bg-cover bg-[url('/mercantilenlineapersona.jpg')] hover:bg-[url('/mercantilenlineapersonahover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10"
+          >
+          </div>
+        </a>
+        <a href="/" class="flex-1 min-w-0 h-[25vw] max-h-auto cursor-pointer">
+          <div
+            class="flex-1 min-w-0 p-4 h-[25vw] max-h-auto bg-center bg-cover bg-[url('/portaldepagosmercantil.jpg')] hover:bg-[url('/portaldepagosmercantilhover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10"
+          >
+          </div>
+        </a>
+        <a href="/" class="flex-1 min-w-0 h-[25vw] max-h-auto cursor-pointer">
+          <div
+            class="flex-1 min-w-0 p-4 h-[25vw] max-h-auto bg-center bg-cover bg-[url('/inversionesmercantil.jpg')] hover:bg-[url('/inversionesmercantilhover.jpg')] transition-all duration-300 hover:scale-110 cursor-pointer hover:z-10"
+          >
+          </div>
+        </a>
       </div>
     </section>
-    <section class="px-16 pt-36 pb-16 flex justify-between gap-20">
+    <section class="px-16 pt-36 pb-16 flex">
       <div class="w-[45%]">
-        <h2 class="text-white text-center text-6xl font-bold">
+        <h2 class="text-white text-center text-5xl font-bold">
           Adquiere la nueva <br />
-          <span class="text-orange-500"> Tarjeta Premium </span>
+          <span class="text-orange-500">Tarjeta Premium </span>
         </h2>
         <div class="mt-10 no-arrow">
           <select
             class="border border-white rounded-2xl pl-5 bg-transparent text-white p-3 w-full"
             required
           >
-            <option disabled selected class="text-white">SEDES MERCANTIL</option>
-            <option value="">La Castellana</option>
-            <option value="">CCCT</option>
-            <option value="">
-              N/A
-            </option>
-            <option value="">N/A</option>
+            <option disabled selected class="text-white">SEDES MERCANTIL</option
+            >
+            <option value="">ALTAMIRA</option>
+            <option value="">BELLO MONTE</option>
+            <option value="">BOLEÍTA</option>
+            <option value="">BOLEÍTA CENTER</option>
+            <option value="">C.C.C. TAMANACO II</option>
+            <option value="">C.C. EL TOLÓN</option>
+            <option value="">C.C. LÍDER</option>
+            <option value="">C.C. MANZANARES</option>
+            <option value="">C.C. MILLENNIUM</option>
+            <option value="">C.C. PASEO EL HATILLO - LA LAGUNITA</option>
+            <option value="">C.C. SANTA FE</option>
+            <option value="">C.C. SAN IGNACIO</option>
+            <option value="">CAMPO ALEGRE</option>
+            <option value="">CENTRO PLAZA</option>
+            <option value="">CENTRO SAMBIL</option>
+            <option value="">CENTRO SAMBIL II</option>
+            <option value="">CHACAO</option>
+            <option value="">CHUAO</option>
+            <option value="">CONCRESA</option>
+            <option value="">CUMBRES DE CURUMO</option>
+            <option value="">EL MARQUÉS II</option>
+            <option value="">EL PLACER</option>
+            <option value="">EL ROSAL</option>
+            <option value="">LA CASTELLANA</option>
+            <option value="">LA TRINIDAD</option>
+            <option value="">LA URBINA</option>
+            <option value="">LAS MERCEDES</option>
+            <option value="">LOS PALOS GRANDES</option>
+            <option value="">LOS RUICES</option>
+            <option value="">LOS SAMANES</option>
+            <option value="">MACARACUAY</option>
+            <option value="">PLAZA LAS AMÉRICAS</option>
+            <option value="">TERRAZAS DEL ÁVILA</option>
           </select>
         </div>
         <input
-              placeholder="CÉDULA"
-              maxlength="100"
-              class="border border-white rounded-2xl pl-5 bg-transparent text-white p-3 w-full mt-5"
-            />
-            <input
-            placeholder="CORREO ELECTRÓNICO"
-            maxlength="100"
-            class="border border-white rounded-2xl pl-5 bg-transparent text- p-3 w-full mt-5"
-          />
-          <button class="rounded-2xl pl-5 bg-white text-[#05368b] p-3 w-full mt-5">Enviar</button>
+          placeholder="CÉDULA"
+          maxlength="100"
+          class="border border-white rounded-2xl pl-5 bg-transparent text-white p-3 w-full mt-5"
+        />
+        <input
+          placeholder="CORREO ELECTRÓNICO"
+          maxlength="100"
+          class="border border-white rounded-2xl pl-5 bg-transparent text- p-3 w-full mt-5"
+        />
+        <a href="/">
+          <button
+            class="rounded-2xl px-5 flex justify-center bg-white text-[#05368b] hover:bg-orange-600 hover:text-white hover:scale-105 transition duration-300 p-3 w-full mt-5"
+          >
+            <div class="flex gap-3">
+              <div class="p-1"><GrSend /></div>Enviar
+            </div>
+          </button></a
+        >
       </div>
-      <div class="w-1/2">
-       <img src="/tarjetamercantil.png" class="mt-12">
+      <div class="-z-10">
+        <img src="/tarjetamercantil.png" class="-mt-12 absolute w-1/2" />
+      </div>
+    </section>
+    <section>
+      <div class="flex bg-red-500 w-full h-48">
+        <div class="w-1/2 bg-green-500 h-full">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/watch?v=Lxub2edCeUc"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="bg-blue-500 w-1/2 h-full">
+          <div class="grid grid-cols-1"></div>
+        </div>
       </div>
     </section>
   </body>
