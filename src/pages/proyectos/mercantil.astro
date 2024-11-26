@@ -166,36 +166,6 @@ import { GrSend } from "react-icons/gr/index";
         font-weight: 900;
         font-style: italic;
       }
-
-      .video-container {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* Aspect ratio 16:9 */
-        height: 0;
-        overflow: hidden;
-        border-radius: 50%; /* Hace el video redondo */
-        background: yellow; /* Color de fondo amarillo */
-      }
-      .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-      .play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
-        background-color: yellow;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 10;
-      }
     </style>
   </head>
   <body>
@@ -345,18 +315,23 @@ import { GrSend } from "react-icons/gr/index";
       </div>
     </section>
     <section>
-      <div class="flex bg-red-500 w-full h-48">
-        <div class="w-1/2 bg-green-500 h-full">
+      <div class="flex bg-red-500 w-full h-[20vw]">
+        <div class="w-[60vw] h-auto object-cover">
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/watch?v=Lxub2edCeUc"
+            src="https://www.youtube.com/embed/Lxub2edCeUc"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         </div>
-        <div class="bg-blue-500 w-1/2 h-full">
-          <div class="grid grid-cols-1"></div>
+        <div class="w-full">
+          <div class="flex flex-col w-full h-full">
+            <div class="bg-[#0a2c4e] flex-1 w-full p-4"><img src="/maletamercantil.png" class="w-5"/></div>
+            <div class="bg-[#0b3055] flex-1 w-full p-4"><img src="/dineromercantil.png" class="w-5"/></div>
+            <div class="bg-[#0c355d] flex-1 w-full p-4"><img src="/maletamercantil.png" class="w-5"/></div>
+            <div class="bg-[#0d3a65] flex-1 w-full p-4"><img src="/maletamercantil.png" class="w-5"/></div>
+          </div>
         </div>
       </div>
     </section>
